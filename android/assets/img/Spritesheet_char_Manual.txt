@@ -1,0 +1,13 @@
+Spritesheet_char: Manual
+1:	IdleRight1,	IdleRight2,	IdleRight3,	IdleRight4,	IdleLeft4,	IdleLeft3,	IdleLeft2,	IdleLeft1,
+2:	IdleRight1,	WalkAttRight,	Walk Right1, 	Walk Right2,	Walk Right3, 	Walk Right4,	Walk Right5,
+3: 	IdleRight1,	Front, 		IdleLeft1,	WalkAttLeft,	Walk Left1, 	Walk Left2,	Walk Left3, 	Walk Leftt4,	Walk Left5,
+4:	WalkDown1,	Front,		WalkDown2, 	WalkAttRight, 	TurnUpRight,	Back,		WalkUp1,	WalkUp2,	TurnUpLeft, 	WalkAttLeft,
+
+Idle Motion: IdleRight/Left1-4
+Walking Motion: WalkAttRight/Left(Start of Walk), WalkRight/Left1-5
+Side-Turning Motion: IdleRight/Left, Front, IdleLeft/Right
+Up-Turning Motion: WalkAttRight/Left, TurnUpRight/Left, Back
+Down-Turing Motion: IdleRight/Left1, Front
+Up-Walking-Motion: WalkUp1,Back,WalkUp2,Back
+Down-Walking-Motion: WalkDown1,Front,WalkDown,Front
