@@ -79,6 +79,49 @@ Puzzle
 Number denotes actions that have to be taken in order. Letters denote actions that can be taken in any order. Brackets denote steps that are theoretically optional, but might give the player useful information
 
 1 Location: Mage’s Laboratorium  
-2a Investigate Elixir shelf => Find green elixir  
+2a Investigate elixir shelf => Find green elixir  
 (2b) Investigate book shelf => Find out elixicon is missing  
 2c Investigate body of mage => Find emerald and sandwich  
+3 Location: Inner Ward  
+4 Take bucket from well
+5 Location: Wall  (Talk to drunk guy)
+6 Bribe Guard with Emerald  
+7 Location: Tower
+(8a) Location: Room 51: Find out you need the King’s hand  
+8b Location: Cellar: Find keys  
+9 Location: Tower
+10 Location: Walls  
+11 Location: Inner Ward  
+12 Use keys on barn door  
+13 Location: Barn  
+14a Grab Gold From Chest  
+14b Grab straw from straw stack  
+15 Turn hay into straw man  
+16 Location: Inner Ward  
+17 Buy elixicon from boy  
+18 Location: Tavern  
+19 Buy met from employee  (Talk to employee about Room 51)  
+20 Location: Inner Ward  
+21 Location: Wall  
+22a Give met to drunk guy, take cheese and dagger  
+22b Use straw man on wall => turns into burning straw man  
+23 Location: Tower  
+24 Location: Cellar  
+25 Use cheese on rat => acquire rat  
+26 Combine dagger and rat => acquire rat tail  
+27 Location: Tower  
+28 Location: Inner Ward  
+29 Location: Mage’s Laboratory  
+30 Brew Sleep Potion  
+31 Location: Inner Ward  
+32 Use burning straw man on barn => light it on fire => guards come and try to extinguish it  
+33 Location: Palace  
+34 Use frog potion on bodyguard => turns into a frog  
+35 Use sleep potion on king => falls asleep  
+36a Interact with king => acquire sleeping king  
+(36b) use dagger on king => acquire king’s hand  
+37 Location: Tower  
+38 Location: Room 51  
+39a use king on hand scanner => door opens  
+(39b) use king’s hand on hand scanner => door opens  
+40 interact with box
