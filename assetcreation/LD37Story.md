@@ -31,37 +31,54 @@ Eugh.”
 Environments
 -----------
 
+Format: Object. “Examination Text”, effect on interaction (using a certain item item) 
+
 **Mage’s Laboratory**
 
 *connected to: Inner Ward*
-* Dead Mage. Contains a sacred scroll and a sandwich. May contain gluten.
-* Broken Elexirs. Not useful
-* Green Elexirs. Allows turning into frog (maybe)
-* Blue Elexir. Makes people fall asleep
-* Yellow Elexirs. Makes people emit light 
-* Cauldron. Allows mixing of elexirs using ingredients.
+* Dead Mage. “He really grew on me throughout the two days I’ve known him. May he rest in pieces”, acquire emerald and sandwich
+* Broken Elixirs. “It would probably a bad idea to drink that”, no effect
+* Book Shelf. “Lots of old books. Hey, the Elixicon is missing! Maybe someone stole it?”, nothing
+* Green Elixir. “I don’t know what this elixir does.”, acquire green elixir  
+* Cauldron. “That’s what my master used to make his elixirs.”, nothing (with rat tail after acquiring Elixicon: acquire blue elixir)
 
 **Inner Ward**
 
-*connected to: Mage’s Laboratory, Castle Walls, Palace*
+*connected to: Mage’s Laboratory, Castle Walls, Palace, Tavern, Barn*
 
-* Well. Water can be acquired from it using a bucket.
-* Flaming Arrows. Not useful.
-* Random Building. Door Locked. Can be set on fire using a torch and oil.
+* Well. “The water from the well can be used to drink or to save the buildings from the experimental mishaps of my master. I guess it’s ex-master now.”, acquire bucket and prevent soldiers from extinguishing flames,
+* Flaming Arrows. “The guys outside the castle give us these for free.”
+* Barn. “It’s where we store the horses and the hay. (The door is locked)”, nothing (with key: door opens)
+* Tavern. “This is not room 51. But the place’s got good drinks I’ve heard. (The door is locked)”, nothing (after visiting the bar: door opens)
+* Stairs. “They lead to the wall. Not sure if that’s the place to be these days.”, go to Walls
 
 **Palace**
 
-*connected to: Inner Ward, Cellar, Castle Walls*
+*connected to: Inner Ward, Cellar, Walls*
+
+* King. “He’s in charge here. (He might let me into room 51.) / (He’s in deep slumber) I’d love it if he could lend me a hand.”, start conversation with King. 
+* Bodyguard. “The king’s body guard is not a man of many words. Or any.”, start conversation with Bodyguard
+* Door. “Leads to the tower. (The guards wouldn’t want me going there)”, nothing (after fire is set: door opens)
+* Guard. “That guy’s got a big stick. / He will literally say the same thing as the other guard. / They are extinguishing the flames!”, start conversation with guard / nothing
 
 **Cellar**
 
-* Rats. Can be caught if baited with cheese.
+* Rats. “They are delicious. Pretty hard to catch, though.”, nothing (say: “It slipped away. Maybe I should lure it in somehow”) (with cheese: acquire rat. Say: “Got it!”)
 
 **Room 51**
 
-**Castle Walls**
+* Box: “I see an odd magical force flowing through that box.”, Box turns into a dragon and the game is completed
 
-Puzzles
--------
+**Walls**
 
-The player starts the game in the mage’s laboratory. There is a lot of
+
+
+Puzzle
+------
+
+Number denotes actions that have to be taken in order. Letters denote actions that can be taken in any order. Brackets denote steps that are theoretically optional, but might give the player useful information
+
+1 Location: Mage’s Laboratorium  
+2a Investigate Elixir shelf => Find green elixir  
+(2b) Investigate book shelf => Find out elixicon is missing  
+2c Investigate body of mage => Find emerald and sandwich  
