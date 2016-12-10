@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objecttypes>
+ <objecttype name="spawn" color="#ff0000">
+  <property name="fromlevel" type="string"/>
+  <property name="portalid" type="string"/>
+ </objecttype>
+ <objecttype name="exit" color="#0055ff">
+  <property name="delay" type="int" default="0"/>
+  <property name="portalid" type="string"/>
+  <property name="tolevel" type="string"/>
+ </objecttype>
+ <objecttype name="hero" color="#00aa00"/>
+ <objecttype name="entity" color="#ffaa00">
+  <property name="examine" type="string"/>
+  <property name="oninteract" type="int" default="0"/>
+ </objecttype>
+</objecttypes>

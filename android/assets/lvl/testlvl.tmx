@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="13" tilewidth="16" tileheight="16" nextobjectid="60">
+ <tileset firstgid="1" name="Mat" tilewidth="16" tileheight="16" tilecount="256" columns="16">
+  <image source="../img/tiles.png" width="256" height="256"/>
+  <terraintypes>
+   <terrain name="Wand" tile="0"/>
+   <terrain name="Boden" tile="64"/>
+   <terrain name="Säule" tile="17"/>
+  </terraintypes>
+  <tile id="0" terrain="0,0,0,0"/>
+  <tile id="1" terrain="0,0,0,0"/>
+  <tile id="2" terrain="0,0,0,0"/>
+  <tile id="3" terrain="0,0,0,0"/>
+  <tile id="6">
+   <animation>
+    <frame tileid="6" duration="1000"/>
+    <frame tileid="7" duration="1000"/>
+   </animation>
+  </tile>
+  <tile id="17" terrain="2,2,2,2"/>
+  <tile id="32" terrain="2,2,2,2"/>
+  <tile id="38">
+   <animation>
+    <frame tileid="37" duration="1000"/>
+    <frame tileid="38" duration="100"/>
+    <frame tileid="39" duration="100"/>
+    <frame tileid="40" duration="2000"/>
+    <frame tileid="39" duration="100"/>
+    <frame tileid="38" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="48">
+   <animation>
+    <frame tileid="48" duration="10000"/>
+    <frame tileid="49" duration="50"/>
+   </animation>
+  </tile>
+  <tile id="49">
+   <animation>
+    <frame tileid="48" duration="50"/>
+    <frame tileid="49" duration="2000"/>
+   </animation>
+  </tile>
+  <tile id="54">
+   <animation>
+    <frame tileid="53" duration="1000"/>
+    <frame tileid="54" duration="100"/>
+    <frame tileid="55" duration="100"/>
+    <frame tileid="56" duration="2000"/>
+    <frame tileid="55" duration="100"/>
+    <frame tileid="54" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="64" terrain="1,1,1,1"/>
+  <tile id="65" terrain="1,1,1,1"/>
+  <tile id="66" terrain="1,1,1,1"/>
+  <tile id="85">
+   <animation>
+    <frame tileid="85" duration="2000"/>
+    <frame tileid="101" duration="300"/>
+    <frame tileid="85" duration="2000"/>
+    <frame tileid="117" duration="300"/>
+   </animation>
+  </tile>
+  <tile id="88">
+   <animation>
+    <frame tileid="88" duration="2000"/>
+    <frame tileid="104" duration="200"/>
+    <frame tileid="120" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="149">
+   <animation>
+    <frame tileid="149" duration="300"/>
+    <frame tileid="165" duration="300"/>
+    <frame tileid="181" duration="300"/>
+   </animation>
+  </tile>
+  <tile id="150">
+   <animation>
+    <frame tileid="150" duration="700"/>
+    <frame tileid="166" duration="200"/>
+    <frame tileid="150" duration="700"/>
+    <frame tileid="182" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="214">
+   <animation>
+    <frame tileid="212" duration="1000"/>
+    <frame tileid="214" duration="100"/>
+    <frame tileid="216" duration="100"/>
+    <frame tileid="218" duration="2000"/>
+    <frame tileid="216" duration="100"/>
+    <frame tileid="214" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="215">
+   <animation>
+    <frame tileid="213" duration="1000"/>
+    <frame tileid="215" duration="100"/>
+    <frame tileid="217" duration="100"/>
+    <frame tileid="219" duration="2000"/>
+    <frame tileid="217" duration="100"/>
+    <frame tileid="215" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="230">
+   <animation>
+    <frame tileid="228" duration="1000"/>
+    <frame tileid="230" duration="100"/>
+    <frame tileid="232" duration="100"/>
+    <frame tileid="234" duration="2000"/>
+    <frame tileid="232" duration="100"/>
+    <frame tileid="230" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="231">
+   <animation>
+    <frame tileid="229" duration="1000"/>
+    <frame tileid="231" duration="100"/>
+    <frame tileid="233" duration="100"/>
+    <frame tileid="235" duration="2000"/>
+    <frame tileid="233" duration="100"/>
+    <frame tileid="231" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="246">
+   <animation>
+    <frame tileid="244" duration="1000"/>
+    <frame tileid="246" duration="100"/>
+    <frame tileid="248" duration="100"/>
+    <frame tileid="250" duration="2000"/>
+    <frame tileid="248" duration="100"/>
+    <frame tileid="246" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="247">
+   <animation>
+    <frame tileid="245" duration="1000"/>
+    <frame tileid="247" duration="100"/>
+    <frame tileid="249" duration="100"/>
+    <frame tileid="251" duration="2000"/>
+    <frame tileid="249" duration="100"/>
+    <frame tileid="247" duration="100"/>
+   </animation>
+  </tile>
+ </tileset>
+ <tileset firstgid="257" name="Char" tilewidth="16" tileheight="32" tilecount="450" columns="30">
+  <image source="../img/Spritesheet_char.PNG" width="480" height="480"/>
+  <tile id="0">
+   <objectgroup draworder="index"/>
+   <animation>
+    <frame tileid="0" duration="2500"/>
+    <frame tileid="1" duration="500"/>
+    <frame tileid="2" duration="500"/>
+    <frame tileid="3" duration="500"/>
+   </animation>
+  </tile>
+  <tile id="4">
+   <animation>
+    <frame tileid="7" duration="2500"/>
+    <frame tileid="6" duration="500"/>
+    <frame tileid="5" duration="500"/>
+    <frame tileid="4" duration="500"/>
+   </animation>
+  </tile>
+  <tile id="32">
+   <animation>
+    <frame tileid="32" duration="200"/>
+    <frame tileid="33" duration="200"/>
+    <frame tileid="34" duration="200"/>
+    <frame tileid="35" duration="200"/>
+    <frame tileid="36" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="60">
+   <animation>
+    <frame tileid="60" duration="250"/>
+    <frame tileid="61" duration="250"/>
+    <frame tileid="62" duration="250"/>
+   </animation>
+  </tile>
+  <tile id="64">
+   <animation>
+    <frame tileid="64" duration="200"/>
+    <frame tileid="65" duration="200"/>
+    <frame tileid="66" duration="200"/>
+    <frame tileid="67" duration="200"/>
+    <frame tileid="68" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="90">
+   <animation>
+    <frame tileid="90" duration="250"/>
+    <frame tileid="91" duration="250"/>
+    <frame tileid="92" duration="250"/>
+    <frame tileid="91" duration="250"/>
+   </animation>
+  </tile>
+  <tile id="96">
+   <animation>
+    <frame tileid="96" duration="250"/>
+    <frame tileid="95" duration="250"/>
+    <frame tileid="97" duration="250"/>
+    <frame tileid="95" duration="250"/>
+   </animation>
+  </tile>
+ </tileset>
+ <tileset firstgid="707" name="Meta" tilewidth="16" tileheight="16" tilecount="2" columns="2">
+  <image source="../img/meta.png" width="32" height="16"/>
+  <tile id="0">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="BG2" width="32" height="13">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjALqA20oJgVoDbD9VgNs/0gDAFCiAWc=
+  </data>
+ </layer>
+ <layer name="BG1" width="32" height="13">
+  <data encoding="base64" compression="zlib">
+   eJx1lNlRBDEMRD3jjcBAAF4gAiAAxvl/cCTAkQBHAGiq3FVvG+3HK49tqXVYNa2UsgQ1WMG+P0y63S32fZhrO+MvKrTk15LYi2m0uepM9tKUVi//8zqYdpt3oiW2iktd2lSLTW3Wor7SvplGN1vqapWN4iuXFeeyY++y9+rlNC+vv5q23qwaWR6eZ7Vv9Ug+7L9q5Txl778m395L2vCN1CPm1Mpp332mFP/c/NNPWj4XPsv042x57UsSnz2nXaa1JraslzO7cxFcBlfWv24+u9Y24b+D8/8UPAcvwStyYjzOw353HdwEt/Zm8uGbPAbDetCh+xa8Bx/BJ3y7aR1R111wHzxAp06bBbHqrH3Y2x6x/wq+g5/gFzGO5XTOtlmL9Ljqe6Be3m3J2TAd7h8TBuJvth9noG/mw7ORxKP9H8aHJSQ=
+  </data>
+ </layer>
+ <layer name="BG0" width="32" height="13">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUhAFxOBBHAnEMEMdSycwwKpgz1AA2PxMKB3YCfFrbPwoGBgAAxQID0g==
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="14" name="oldfancywizard" gid="257" x="92.25" y="202.25" width="16" height="32" rotation="-86.3252"/>
+  <object id="21" gid="55" x="64" y="176" width="16" height="16">
+   <properties>
+    <property name="animationonly" value="exit2"/>
+   </properties>
+  </object>
+  <object id="22" gid="39" x="64" y="160" width="16" height="16">
+   <properties>
+    <property name="animationonly" value="exit2"/>
+   </properties>
+  </object>
+  <object id="25" name="kocke" type="entity" gid="150" x="240" y="144" width="16" height="16">
+   <properties>
+    <property name="examine" value="its hot"/>
+    <property name="oninteract" type="int" value="2"/>
+    <property name="oninteract_0" value="Class"/>
+    <property name="oninteract_1" value="take"/>
+   </properties>
+  </object>
+  <object id="26" name="kerze" type="entity" gid="151" x="224" y="144" width="16" height="16">
+   <properties>
+    <property name="examine" value="Tats a kerze"/>
+    <property name="oninteract" type="int" value="2"/>
+    <property name="oninteract_0" value="activate exit2"/>
+    <property name="oninteract_1" value="take"/>
+   </properties>
+  </object>
+  <object id="29" gid="247" x="368" y="176" width="16" height="16">
+   <properties>
+    <property name="animationonly" value="exit3"/>
+   </properties>
+  </object>
+  <object id="30" gid="231" x="368" y="160" width="16" height="16">
+   <properties>
+    <property name="animationonly" value="exit3"/>
+   </properties>
+  </object>
+  <object id="31" gid="215" x="368" y="144" width="16" height="16">
+   <properties>
+    <property name="animationonly" value="exit3"/>
+   </properties>
+  </object>
+  <object id="32" gid="216" x="384" y="144" width="16" height="16">
+   <properties>
+    <property name="animationonly" value="exit3"/>
+   </properties>
+  </object>
+  <object id="33" gid="232" x="384" y="160" width="16" height="16">
+   <properties>
+    <property name="animationonly" value="exit3"/>
+   </properties>
+  </object>
+  <object id="34" gid="248" x="384" y="176" width="16" height="16">
+   <properties>
+    <property name="animationonly" value="exit3"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="meta">
+  <object id="3" name="spawn1" type="spawn" x="16" y="160" width="16" height="32">
+   <properties>
+    <property name="fromlevel" value="testlvl"/>
+    <property name="portalid" value="test_test_1"/>
+   </properties>
+  </object>
+  <object id="10" name="exit1" type="exit" x="480" y="144" width="32" height="64">
+   <properties>
+    <property name="portalid" value="test_test_1"/>
+    <property name="tolevel" value="testlvl"/>
+   </properties>
+  </object>
+  <object id="11" name="main" type="spawn" x="352" y="160" width="16" height="32">
+   <properties>
+    <property name="fromlevel" value="main"/>
+    <property name="portalid" value="main"/>
+   </properties>
+  </object>
+  <object id="23" name="exit2" type="exit" x="64" y="144" width="16" height="32">
+   <properties>
+    <property name="active" type="bool" value="false"/>
+    <property name="delay" type="int" value="2000"/>
+    <property name="portalid" value="test_test_3"/>
+    <property name="start" type="int" value="900"/>
+    <property name="tolevel" value="testlvl"/>
+   </properties>
+  </object>
+  <object id="35" name="exit3" type="exit" x="368" y="128" width="32" height="48">
+   <properties>
+    <property name="delay" type="int" value="2000"/>
+    <property name="portalid" value="test_test_1"/>
+    <property name="start" type="int" value="900"/>
+    <property name="tolevel" value="testlvl"/>
+   </properties>
+  </object>
+  <object id="42" name="spawn3" type="spawn" x="416" y="160" width="16" height="32">
+   <properties>
+    <property name="fromlevel" value="testlvl"/>
+    <property name="portalid" value="test_test_3"/>
+   </properties>
+  </object>
+  <object id="43" name="hero_wait_right" type="hero" gid="257" x="80" y="64" width="16" height="32"/>
+  <object id="44" name="hero_wait_left" type="hero" gid="261" x="96" y="64" width="16" height="32"/>
+  <object id="45" name="hero_walk_right" type="hero" gid="289" x="112" y="64" width="16" height="32"/>
+  <object id="47" name="hero_walk_left" type="hero" gid="321" x="128" y="64" width="16" height="32"/>
+  <object id="48" name="hero_walk_down" type="hero" gid="347" x="144" y="64" width="16" height="32"/>
+  <object id="49" name="hero_walk_up" type="hero" gid="353" x="160" y="64" width="16" height="32"/>
+ </objectgroup>
+ <layer name="collision" width="32" height="13" visible="0" opacity="0.29">
+  <data encoding="base64" compression="zlib">
+   eJw7zMTAcHgUj+JRPIpJwEegeKjbDwIDaf+REY4BLDQ/sQ==
+  </data>
+ </layer>
+</map>
