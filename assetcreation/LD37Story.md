@@ -28,6 +28,21 @@ If you don’t get to it, we’ll be overrun.
 Eugh.”  
 [Mage dies and player is prompted to press F to pay respects]
 
+**Monologue**
+
+Generally, when trying to use an item when it isn’t appropriate, say one of these:  
+“I don’t think that’s going to work.”  
+“That doesn’t make sense.”  
+“Bad idea.”  
+“That’s not how the programmer envisioned it.”  
+“This won’t get us ahead.”  
+“I should try something else.”
+
+When trying to use a potion on a wrong person:
+“I think there’s a better use for that.”
+“Maybe someone else is better suited.”
+“Now is not the time for this.”
+
 **With Characters**
 
 *Maid (in front of tavern)*
@@ -96,9 +111,14 @@ Guard: “That makes no difference to me. I’m not about to risk my job for you
 Me: “You are worried about money? Well maybe I can help with that.”  
 Guard: “Now we’re getting somewhere”
 
-After you give emerald:
+If asked again:  
+Guard: “Do you have anything to offer?”
 
+After you give emerald:  
 Guard: “It would seem like your presence in this tower truly is a necessity. But whatever happens to you, it is none of my concern.”
+
+If asked again:  
+Guard: “No refunds.”
 
 *Drunk Soldier*
 
@@ -187,6 +207,53 @@ Format: Object. “Examination Text”, effect on interaction (using a certain i
 
 * Woman: “She might sell me some beverage. But I need money.”, start conversation with woman (with gold coin: acquire met, woman says: “Here you go, enjoy!”) 
 * Butcher Knife: “That looks useful.”, acquire butcher knife
+
+Items
+-----
+**Green Elixir**  
+“I don’t know what it does” => after read elixicon: “Transforms a person into a frog for a few minutes. Or years. Something like that. I can use it by throwing it at someone.”
+
+**Blue Elixir**  
+“Makes a person fall asleep. I can use it by throwing it at someone.”
+
+**Rat tail**  
+“Like Spaghetti, except more rat-tail-y.”
+
+**Living Rat**  
+“Not to be served raw.”
+
+**Emerald**  
+“A glittering green gem.”
+
+**Bucket**  
+“Used to operate the well.”
+
+**Keys**  
+“Opens doors, probably.” => “Opens the barn, definitely.”
+
+**Gold Coin**  
+“Even during a siege, you can still buy stuff with it.”
+
+**Straw**  
+“Food food.”
+
+**Straw Man**  
+“Looks like a guy.”
+
+**Burning Straw Man**  
+“Burns like a guy. Not that I’d know about that.”
+
+**Elixicon**  
+“It contains interesting information and recipes. Two are of interest to me: The green potion can turn people into frogs and a blue sleeping potion is made by cooking a rat tail in the cauldron.” (Alternative: Make book actually show up when examining it)
+
+**Cheese**  
+“Loved by man and beast alike.”
+
+**King**  
+“I can’t believe he fit in my pocket.”
+
+**King’s Hand**  
+“Might come in handy later.”
 
 Puzzle
 ------
