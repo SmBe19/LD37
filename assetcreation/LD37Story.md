@@ -51,7 +51,7 @@ Maid:
 1.2 & 2 “… I don’t know what to say”  
 
 You:  
-1.1 “That’s right. Lady, could you tell me about Room 51?”  
+1.1 “Quite right. Lady, could you tell me about Room 51?”  
 1.2 & 2 “His last words were about Room 51. Do you know what that is?”  
 
 Maid:  
@@ -69,7 +69,7 @@ You:
 
 Maid:  
 1 “Nobody really knows. The king never talks about it.”  
-2 “Is that what your master said? Well I can’t help you”  
+2 “Is that what your master said? Well I am really sorry, but I can’t help you”  
 
 You:  
 “Well then I’m going to have to ask him myself.”  
@@ -107,7 +107,7 @@ Bodyguard:
 
 You:  
 1 “How are you doing?”  
-2 “Can you tell me about Room 51?”   
+2 “Can you get me to Room 51?”   
 
 Bodyguard:  
 “…”  
@@ -117,7 +117,76 @@ You:
 
 *King*
 
+You:  
+//1 “Hi there.”  
+2 “Your Majesty.”  
 
+King:  
+//1 “What insolence! Today’s youth truly does not know respect. Speak.”  
+2 “Oh loyal subject, what is your inquiry?”  
+
+You:  
+//1 “I want to ask you about Room 51.”  
+2 “I am here on a quest given to me by my master. I need to access Room 51 as soon as possible.”
+
+King:  
+“Impossible! Room 51 is not to be entered by lowly peasants such as you.”
+
+You:  
+“But it is our only hope to survive this siege. My master said this:
+There is only one hope for all of us  
+This siege turned out disastrous.  
+That hope is the one room, room 51.  
+If you don’t …“
+
+King:  
+“Silence! Room 51 at the top of the tower is not to be used under any circumstances. Your master has lost his mind and it seems so have you. Now leave me alone!”
+
+*Corrupt Guard*
+
+Guard:  
+“This tower is off limits for you, kid, I’m afraid.”
+
+Me:  
+1 “This is a matter of grave importance. I must access the one room, room 51, so that we will not be overrun. My master has …”
+2 “I need to get to room 51. I know that it’s at the top of this tower, let me through.”
+
+Guard:  
+1 “Orders are orders, kid. You aren’t getting through here unless…”  
+2 “No way, kid. Keep your childish curiosity away from my tower.”
+
+Me:  
+1 “Unless?”  
+2 “Please. It’s a matter of life and death.”
+
+Guard:  
+1 “Well maybe you can convince me with some … shiny arguments?”  
+2 “That makes no difference to me. I’m not about to risk my job for your drama. Not in this economy anyway.”
+
+Me:  
+1.1 “That’s corruption!”  
+1.2 “I might just be able to do that.”  
+2 “You are worried about money? Well maybe I can help with that.”
+
+Guard:  
+1.1 “I have no idea what you’re talking about. [whistles innocently]”
+2 “Now we’re getting somewhere”
+
+After you give emerald:
+
+Guard:  
+“It would seem like your presence in this tower truly is a necessity. But whatever happens to you, it is none of my concern.”
+
+*Drunk Soldier*
+
+Soldier:  
+“Heeeeeey theeere. Are youuu [hick] here to bring me more mead?”
+
+If asked again:  
+“Shome more meaaaad, pleashe.”
+
+If given mead:  
+“Sha-Shank youuuuu. …” [falls unconscious]
 
 Environments
 -----------
