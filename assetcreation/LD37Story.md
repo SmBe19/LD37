@@ -28,6 +28,97 @@ If you don’t get to it, we’ll be overrun.
 Eugh.”  
 [Mage dies and player is prompted to press F to pay respects]
 
+**With Characters**
+
+*Maid (in front of tavern)*
+
+Maid: “Oh my god, I just saw that this stone flew into your master’s house. Are you all right?”
+You: (choices)  
+1 “Yeah, I’m good, thank you. How are you?”  
+2 “My master… he’s dead.”  
+
+Maid:  
+1 “Well what about your master?”  
+2 “Oh god, that’s horrible.”  
+
+You:  
+1.1 “He’s taking a nap, s’all good.”  
+1.2 “He didn’t make it. But he was old anyway.”  
+2 “It is pretty sad, but he was He was pretty old anyway”  
+
+Maid:  
+1.1 “What a relief”  
+1.2 & 2 “… I don’t know what to say”  
+
+You:  
+1.1 “That’s right. Lady, could you tell me about Room 51?”  
+1.2 & 2 “His last words were about Room 51. Do you know what that is?”  
+
+Maid:  
+“How do you not know? Room 51 is the room at the top of the castle tower.”  
+
+You:  
+“Can you take me there?”  
+
+Maid:  
+“Oh no, the king will not allow anyone to enter that room.”  
+
+You:  
+1 “Why?”  
+2 “But Room 51 is our only hope.”  
+
+Maid:  
+1 “Nobody really knows. The king never talks about it.”  
+2 “Is that what your master said? Well I can’t help you”  
+
+You:  
+“Well then I’m going to have to ask him myself.”  
+
+*Boy (in Inner Ward)*
+
+Boy: 
+“Well if it isn’t the apprentice. You survived that projectile? Quite a shame.”
+
+You:
+“Whatever, Jake. Did you steal the elixicon?”
+
+Boy:
+“Maybe. Depends on your ability to pay. If you give me a gold piece, maybe I will talk”
+
+You:
+“Fuck you, Jake”
+
+After gold is transferred
+
+Jake:
+“It was a pleasure doing business with you, here’s your stupid old book.”
+
+You:
+1. “Fuck you, Jake”
+2. Apply fist to face (not sure if this can be implemented)
+
+*King’s Bodyguard*
+
+You:  
+“Hi”
+
+Bodyguard:  
+“…”
+
+You:  
+1 “How are you doing?”  
+2 “Can you tell me about Room 51?”   
+
+Bodyguard:  
+“…”  
+
+You:  
+“Well bye then, I guess.”
+
+*King*
+
+
+
 Environments
 -----------
 
@@ -36,7 +127,6 @@ Format: Object. “Examination Text”, effect on interaction (using a certain i
 **Mage’s Laboratory**
 
 *connected to: Inner Ward*
-
 * Dead Mage. “He really grew on me throughout the two days I’ve known him. May he rest in pieces”, acquire emerald and sandwich
 * Broken Elixirs. “It would probably a bad idea to drink that”, no effect
 * Book Shelf. “Lots of old books. Hey, the Elixicon is missing! Maybe someone stole it?”, nothing
@@ -130,7 +220,7 @@ Number denotes actions that have to be taken in order. Letters denote actions th
 13 Location: Barn  
 14a Grab Gold From Chest  
 14b Grab straw from straw stack  
-15 Turn hay into straw man  
+15 Turn straw into straw man  
 16 Location: Inner Ward  
 17 Buy elixicon from boy  
 18 Location: Tavern  
@@ -146,7 +236,7 @@ Number denotes actions that have to be taken in order. Letters denote actions th
 27 Location: Tower  
 28 Location: Inner Ward  
 29 Location: Mage’s Laboratory  
-30 Brew Sleep Potion  
+30 Brew Sleep Elixir  
 31 Location: Inner Ward  
 32 Use burning straw man on barn => light it on fire => guards come and try to extinguish it  
 33 Location: Palace  
