@@ -5,7 +5,7 @@ Summary
 ------------
 
 A castle is under siege. This has been the case for several weeks. The old insane magician has recently accepted a new apprentice, the player. However, he is killed by a catapult before he can pass on a significant amount of knowledge. Just before his death, he remembers an old artifact that was stored in room 51, which might be the key to winning the battle and ending the siege. He manages to relay that information to the player in his dying breath. However, nobody listens to the insane old mage and even less his newly accepted and equally insane apprentice. So the player has to make his way to room 51 on his own.
-Once he gets there, he finds a box that seems to emit magical energy. When you unpack it, it turns into a dragon. He subsequently kills all of the invaders and (almost) none of the defenders.
+Once he gets there, he finds the princess locked up and a box that seems to emit magical energy. When he unpacks it, it turns into a dragon. He subsequently kills all of the invaders and (almost) none of the defenders.
 
 Dialogue
 --------
@@ -35,8 +35,9 @@ Generally, when trying to use an item when it isn’t appropriate, say one of th
 “That doesn’t make sense.”  
 “Bad idea.”  
 “That’s not how the programmer envisioned it.”  
-“This won’t get us ahead.”  
+“This won’t get me ahead.”  
 “I should try something else.”
+“Doesn’t seem to be making any progress.”
 
 When trying to use a potion on a wrong person:
 “I think there’s a better use for that.”
@@ -125,24 +126,47 @@ Guard: “No refunds.”
 Soldier: “Heeeeeey theeere. Are youuu [hick] here to bring me more mead?”  
 
 If asked again:  
-Soldier: “Shome more meaaaad, pleashe.”  
+Soldier: “Shome more mead, pleashe.”  
 
 If given mead:  
 Soldier: “Sha-Shank youuuuu. …” [drinks mead and falls unconscious]
 
+*Tavern Employee*
+
+Employee: “What’ll it be for you?”  
+You: “You seem to be someone who hears a lot of stories. What is so special about Room 51?”  
+Employee: “Nobody really knows anything concrete about it. Some people think there’s ghosts in there or some sort of mystical creature. What’s for sure is that the king doesn’t want anyone finding it out.”
+
+If asked again:  
+Employee: “Drinks ain’t free around here. If you want anything, you’ll need some money.”
+
+If given gold coin:  
+You: “I’ll have a bottle of mead, please.”  
+Employee: “Very well. Here you go. Enjoy.”
+
+Tutorial
+--------
+
+How does the player learn mechanics?  
+“Press F to pay respect” forces the player to learn interaction. They immediately plunder the body of the mage. This should be reinforced through the text “You successfully plundered your former master’s body. You’ve found a valuable emerald.”  
+After that, the player should learn about examination “Now press e to examine him.”.  
+And to summarize, the player should read: “F can always be used to interact and E to investigate. Before you can calm down, you should extinguish that flame.”
+After picking up the bucket: “This should be useful. Press I to show your currently equipped item. You can use R to cycle through your items. While an item is displayed, the examination button gives you information on it. If you want to use an item, stand near an object and press Q. This might not always be sensible.”
+
 Environments
 -----------
 
-Format: Object. “Examination Text”, effect on interaction (using a certain item item) 
+Format: Object. “Examination Text”, effect on interaction (using a certain item) 
 
 **Mage’s Laboratory**
 
 *connected to: Inner Ward*
-* Dead Mage. “He really grew on me throughout the two days I’ve known him. May he rest in pieces”, acquire emerald and sandwich
-* Broken Elixirs. “It would probably a bad idea to drink that”, no effect
+* Dead Mage. “He really grew on me throughout the two days I’ve known him. May he rest in pieces”, acquire emerald 
+* Broken Elixirs. “It would probably a bad idea to drink that”, nothing
 * Book Shelf. “Lots of old books. Hey, the Elixicon is missing! Maybe someone stole it?”, nothing
 * Green Elixir. “I don’t know what this elixir does.”, acquire green elixir  
-* Cauldron. “That’s what my master used to make his elixirs.”, nothing (with rat tail after acquiring Elixicon: acquire blue elixir)
+* Cauldron. “It’s too heavy to use as a fire extinguisher. (Only say this at the first time, if the bucket hasn’t been used yet) / That’s what my master used to make his elixirs.”, nothing (with rat tail after acquiring Elixicon: acquire blue elixir)
+* Bucket of Water: “This could help me extinguish the flames.”, acquire Bucket of Water
 
 **Inner Ward**
 
@@ -161,7 +185,7 @@ Format: Object. “Examination Text”, effect on interaction (using a certain i
 
 *connected to: Inner Ward, Cellar, Walls*
 
-* King. “He’s in charge here. (He might let me into room 51.) / (He’s in deep slumber) I’d love it if he could lend me a hand.”, start conversation with King. 
+* King. “He’s in charge here. (He might let me into room 51.) / (He looks heavy.) I’d love it if he could lend me a hand.”, start conversation with King. 
 * Bodyguard. “The king’s body guard is not a man of many words. Or any.”, start conversation with Bodyguard
 * Door. “Leads to the tower. (The guards wouldn’t want me going there)”, nothing (after fire is set: door opens)
 * Guard. “That guy’s got a big stick. / He will literally say the same thing as the other guard. / He doesn’t seem to be in the mood for chit-chat.”, start conversation with guard / nothing
@@ -178,7 +202,7 @@ Format: Object. “Examination Text”, effect on interaction (using a certain i
 *connected to: Room 51, Tower*
 
 * Door: “This is the door to the fated Room 51, the saving grace for the people of this castle. But it is locked. That probably has something to do with this contraption over there.”, nothing (after it unlocks: open door)
-* Hand Scanner: “This piece of technology seems to require a certain handprint.”, nothing (with sleeping king: unlock door, with king’s hand: unlock door  and say “Maybe I didn’t have to cut it off. Oh well”)
+* Hand Scanner: “This piece of technology seems to require a certain handprint.”, nothing (with sleeping king: unlock door, with king’s hand: unlock door and say “I’m not sure I actually had to cut it off. Oh well.”)
 
 **Room 51**
 
@@ -190,7 +214,7 @@ Format: Object. “Examination Text”, effect on interaction (using a certain i
 
 *connected to: Inner Ward, Tower*
 
-* Drunk Soldier: “Looks like he’s barely conscious. / He’s definitely had enough.”, start conversation with drunk solider (with met: turn him unconscious, then investigate him to acquire cheese and dagger)
+* Drunk Soldier: “Looks like he’s barely conscious. / He’s definitely had enough.”, start conversation with drunk solider (with mead: turn him unconscious, then investigate him to acquire cheese //and dagger)
 * Corrupt Guard: “He guards this door. But his eyes say that certain things are more important to him than his job.”, start conversation with corrupt guard (with emerald: guard corrupted)
 * Door: “This door leads to the tower. (The guard won’t let me through.)”, nothing (after guard bribed: door opens)
 
@@ -200,13 +224,14 @@ Format: Object. “Examination Text”, effect on interaction (using a certain i
 
 * Chest: “Maybe there’s valuables inside? / It’s empty now. ”, acquire 2 gold pieces / nothing
 * Straw stack: “This stuff looks fun when it’s on fire.”, acquire straw
+//* Saw: “Looks useful.”, acquire saw
 
 **Tavern**
 
 *connected to: Inner Ward*
 
 * Woman: “She might sell me some beverage. But I need money.”, start conversation with woman (with gold coin: acquire met, woman says: “Here you go, enjoy!”) 
-* Butcher Knife: “That looks useful.”, acquire butcher knife
+//* Butcher Knife: “That looks useful.”, acquire butcher knife
 
 Items
 -----
@@ -226,7 +251,10 @@ Items
 “A glittering green gem.”
 
 **Bucket**  
-“Used to operate the well.”
+“Can carry liquids. One of these is used in the well.” 
+
+**Water Bucket**  
+“The water seems like a good way to extinguish flames.”
 
 **Keys**  
 “Opens doors, probably.” => “Opens the barn, definitely.”
@@ -244,7 +272,7 @@ Items
 “Burns like a guy. Not that I’d know about that.”
 
 **Elixicon**  
-“It contains interesting information and recipes. Two are of interest to me: The green potion can turn people into frogs and a blue sleeping potion is made by cooking a rat tail in the cauldron.” (Alternative: Make book actually show up when examining it)
+“It contains interesting information and recipes. Two are of interest to me: The green potion can turn people into frogs and a blue sleeping elixir is made by cooking a rat tail in the cauldron.” (Alternative: Make book actually show up when examining it)
 
 **Cheese**  
 “Loved by man and beast alike.”
@@ -255,6 +283,12 @@ Items
 **King’s Hand**  
 “Might come in handy later.”
 
+**Saw**  
+“Potentially Dangerous.”
+
+**Mead**  
+“Cheers people up in times like these.”
+
 Puzzle
 ------
 
@@ -264,46 +298,49 @@ Number denotes actions that have to be taken in order. Letters denote actions th
 2a Investigate elixir shelf => Find green elixir  
 (2b) Investigate book shelf => Find out elixicon is missing  
 2c Investigate body of mage => Find emerald and sandwich  
-3 Location: Inner Ward  
-4 Take bucket from well  
-5 Location: Wall  (Talk to drunk guy)  
-6 Bribe Guard with Emerald  
-7 Location: Tower  
-(8a) Location: Room 51: Find out you need the King’s hand  
-8b Location: Cellar: Find keys  
-9 Location: Tower
-10 Location: Walls  
-11 Location: Inner Ward  
-12 Use keys on barn door  
-13 Location: Barn  
-14a Grab Gold From Chest  
-14b Grab straw from straw stack  
-15 Turn straw into straw man  
-16 Location: Inner Ward  
-17 Buy elixicon from boy  
-18 Location: Tavern  
-19 Buy met from employee  (Talk to employee about Room 51)  
-20 Location: Inner Ward  
-21 Location: Wall  
-22a Give met to drunk guy, take cheese and dagger  
-22b Use straw man on wall => turns into burning straw man  
-23 Location: Tower  
-24 Location: Cellar  
-25 Use cheese on rat => acquire rat  
-26 Combine dagger and rat => acquire rat tail  
-27 Location: Tower  
-28 Location: Inner Ward  
-29 Location: Mage’s Laboratory  
-30 Brew Sleep Elixir  
-31 Location: Inner Ward  
-32 Use burning straw man on barn => light it on fire => guards come and try to extinguish it  
-33 Location: Palace  
-34 Use frog potion on bodyguard => turns into a frog  
-35 Use sleep potion on king => falls asleep  
-36a Interact with king => acquire sleeping king  
-(36b) use dagger on king => acquire king’s hand  
-37 Location: Tower  
-38 Location: Room 51  
-39a use king on hand scanner => door opens  
-(39b) use king’s hand on hand scanner => door opens  
-40 interact with box
+2d Grab bucket of water
+3 Use bucket on flames
+4 Location: Inner Ward  
+5 Take bucket from well  
+6 Location: Wall  (Talk to drunk guy)  
+7 Bribe Guard with Emerald  
+8 Location: Tower  
+(9a) Location: Room 51: Find out you need the King’s hand  
+9b Location: Cellar: Find keys  
+10 Location: Tower
+11 Location: Walls  
+12 Location: Inner Ward  
+13 Use keys on barn door  
+14 Location: Barn  
+15a Grab Gold From Chest  
+15b Grab straw from straw stack  
+15c Grab saw from floor
+16 Turn straw into straw man  
+17 Location: Inner Ward  
+18 Buy elixicon from boy  
+19 Location: Tavern  
+20 Buy met from employee  (Talk to employee about Room 51)  
+21 Location: Inner Ward  
+22 Location: Wall  
+23a Give met to drunk guy, take cheese 
+23b Use straw man on wall => turns into burning straw man  
+24 Location: Tower  
+25 Location: Cellar  
+26 Use cheese on rat => rat is still  
+27 Use saw and rat => acquire rat tail  
+28 Location: Tower  
+29 Location: Inner Ward  
+30 Location: Mage’s Laboratory  
+31 Brew Sleep Elixir  
+32 Location: Inner Ward  
+33 Use burning straw man on barn => light it on fire => guards come and try to extinguish it  
+34 Location: Palace  
+35 Use frog potion on bodyguard => turns into a frog  
+36 Use sleep potion on king => falls asleep  
+37a Interact with king => acquire sleeping king  
+(37b) use saw on king => acquire king’s hand  
+38 Location: Tower  
+39 Location: Room 51  
+40a use king on hand scanner => door opens  
+(40b) use king’s hand on hand scanner => door opens  
+41 interact with box
