@@ -18,8 +18,8 @@ Mage: “Unfortunately, that castle was attacked by an enemy army and is now und
 [show catapult shot flying like the twinkling star in the video, except flying towards the castle]  
 Mage: “It would seem that there is only one hope …”  
 [stone hits the castle]  
-Mage: “AAaaaah! I was hit!”  
-[Image changes to in game situation, in mage building. The mage lies half under a rock. Only his upper body and head are looking out from under it. The player stands beside him and listens to him ]  
+Mage: “Aaaaaah! I was hit!”  
+[Image changes to in game situation, in mage laboratory. The mage lies half under a rock. Only his upper body and head are looking out from under it. The player stands beside him and listens to him.]  
 Mage: “Listen to me closely… ehm what was your name? Ah, right, Merlin.  
 There is only one hope for all of us  
 This siege turned out disastrous.  
@@ -32,161 +32,83 @@ Eugh.”
 
 *Maid (in front of tavern)*
 
-Maid: “Oh my god, I just saw that this stone flew into your master’s house. Are you all right?”
-You: (choices)  
-1 “Yeah, I’m good, thank you. How are you?”  
-2 “My master… he’s dead.”  
-
-Maid:  
-1 “Well what about your master?”  
-2 “Oh god, that’s horrible.”  
-
-You:  
-1.1 “He’s taking a nap, s’all good.”  
-1.2 “He didn’t make it. But he was old anyway.”  
-2 “It is pretty sad, but he was He was pretty old anyway”  
-
-Maid:  
-1.1 “What a relief”  
-1.2 & 2 “… I don’t know what to say”  
-
-You:  
-1.1 “Quite right. Lady, could you tell me about Room 51?”  
-1.2 & 2 “His last words were about Room 51. Do you know what that is?”  
-
-Maid:  
-“How do you not know? Room 51 is the room at the top of the castle tower.”  
-
-You:  
-“Can you take me there?”  
-
-Maid:  
-“Oh no, the king will not allow anyone to enter that room.”  
-
-You:  
-1 “Why?”  
-2 “But Room 51 is our only hope.”  
-
-Maid:  
-1 “Nobody really knows. The king never talks about it.”  
-2 “Is that what your master said? Well I am really sorry, but I can’t help you”  
-
-You:  
-“Well then I’m going to have to ask him myself.”  
+Maid: “Oh my god, I just saw that this stone flew into your master’s house. Are you all right?”  
+You: “Yeah, I’m good, thank you. How are you?”  
+Maid: Well what about your master?”  
+You: “He didn’t make it. But he was pretty old anyway.”  
+Maid: “… I don’t know what to say”  
+You: “His last words were about Room 51. Do you know what that is?”  
+Maid: “Of course I do. How do you not know? Room 51 is the room at the top of the castle tower.”  
+You: “Can you take me there?”  
+Maid: “Oh no, the king will not allow anyone to enter that room.”  
+You: “But why?”  
+Maid: “Nobody really knows. The king never talks about it.”  
+You: “But master said Room 51 is our only hope or something.”  
+Maid: “Well I am really sorry, but I can’t help you”  
+You: “Well then I’m going to have to ask the king myself.”  
 
 *Boy (in Inner Ward)*
 
-Boy: 
-“Well if it isn’t the apprentice. You survived that projectile? Quite a shame.”
-
-You:
-“Whatever, Jake. Did you steal the elixicon?”
-
-Boy:
-“Maybe. Depends on your ability to pay. If you give me a gold piece, maybe I will talk”
-
-You:
-“Fuck you, Jake”
+Boy: “Well if it isn’t the apprentice. You survived that projectile? Quite a shame.”  
+You: “Whatever, Jake. Did you steal the elixicon?”  
+Boy: “Maybe. Depends on your ability to pay. If you give me a gold piece, maybe I will talk”  
+You: “Fuck you, Jake”  
 
 After gold is transferred
 
-Jake:
-“It was a pleasure doing business with you, here’s your stupid old book.”
-
-You:
-1. “Fuck you, Jake”
-2. Apply fist to face (not sure if this can be implemented)
+Jake: “It was a pleasure doing business with you, here’s your stupid old book.”  
+You: “Fuck you, Jake”
 
 *King’s Bodyguard*
 
-You:  
-“Hi”
-
-Bodyguard:  
-“…”
-
-You:  
-1 “How are you doing?”  
-2 “Can you get me to Room 51?”   
-
-Bodyguard:  
-“…”  
-
-You:  
-“Well bye then, I guess.”
+You: “Hi”  
+Bodyguard: “…”  
+You: “How are you doing?”  
+Bodyguard: “…”  
+You: “Well bye then, I guess.”
 
 *King*
 
-You:  
-//1 “Hi there.”  
-2 “Your Majesty.”  
-
-King:  
-//1 “What insolence! Today’s youth truly does not know respect. Speak.”  
-2 “Oh loyal subject, what is your inquiry?”  
-
-You:  
-//1 “I want to ask you about Room 51.”  
-2 “I am here on a quest given to me by my master. I need to access Room 51 as soon as possible.”
-
-King:  
-“Impossible! Room 51 is not to be entered by lowly peasants such as you.”
-
-You:  
-“But it is our only hope to survive this siege. My master said this:
+You: “Your Majesty.”  
+King: “Oh loyal subject, what is your inquiry?”  
+You: “I am here on a quest given to me by my master. I need to access Room 51 as soon as possible.”  
+King: “Impossible! Room 51 is not to be entered by lowly peasants such as you.”  
+You: “But it is our only hope to survive this siege. My master said this:  
 There is only one hope for all of us  
 This siege turned out disastrous.  
 That hope is the one room, room 51.  
-If you don’t …“
+If you don’t …“  
+King: “Silence! Room 51 is not to be used under any circumstances. We are facing a great crisis here; your master’s ridiculous prophecies do not help! Tell min to keep his insane ramblings to himself!”  
+You: “He’s dead.”  
+King: “I … didn’t know that. … Well good riddance, I say! Now get out of my sight.”  
 
-King:  
-“Silence! Room 51 at the top of the tower is not to be used under any circumstances. Your master has lost his mind and it seems so have you. Now leave me alone!”
+When you talk to him again:
+
+King: “Didn’t you hear me? Get out of here!”
 
 *Corrupt Guard*
 
-Guard:  
-“This tower is off limits for you, kid, I’m afraid.”
-
-Me:  
-1 “This is a matter of grave importance. I must access the one room, room 51, so that we will not be overrun. My master has …”
-2 “I need to get to room 51. I know that it’s at the top of this tower, let me through.”
-
-Guard:  
-1 “Orders are orders, kid. You aren’t getting through here unless…”  
-2 “No way, kid. Keep your childish curiosity away from my tower.”
-
-Me:  
-1 “Unless?”  
-2 “Please. It’s a matter of life and death.”
-
-Guard:  
-1 “Well maybe you can convince me with some … shiny arguments?”  
-2 “That makes no difference to me. I’m not about to risk my job for your drama. Not in this economy anyway.”
-
-Me:  
-1.1 “That’s corruption!”  
-1.2 “I might just be able to do that.”  
-2 “You are worried about money? Well maybe I can help with that.”
-
-Guard:  
-1.1 “I have no idea what you’re talking about. [whistles innocently]”
-2 “Now we’re getting somewhere”
+Guard: “This tower is off limits for you, kid, I’m afraid.”  
+Me: “I need to get to room 51. I know that it’s at the top of this tower, let me through.”  
+Guard: “No way, kid. Keep your childish curiosity away from my tower.”   
+Me: “It’s a matter of life and death.”  
+Guard: “That makes no difference to me. I’m not about to risk my job for your drama. Not in this economy, anyway.”  
+Me: “You are worried about money? Well maybe I can help with that.”  
+Guard: “Now we’re getting somewhere”
 
 After you give emerald:
 
-Guard:  
-“It would seem like your presence in this tower truly is a necessity. But whatever happens to you, it is none of my concern.”
+Guard: “It would seem like your presence in this tower truly is a necessity. But whatever happens to you, it is none of my concern.”
 
 *Drunk Soldier*
 
-Soldier:  
-“Heeeeeey theeere. Are youuu [hick] here to bring me more mead?”
+Soldier: “Heeeeeey theeere. Are youuu [hick] here to bring me more mead?”  
 
 If asked again:  
-“Shome more meaaaad, pleashe.”
+Soldier: “Shome more meaaaad, pleashe.”  
 
 If given mead:  
-“Sha-Shank youuuuu. …” [falls unconscious]
+Soldier: “Sha-Shank youuuuu. …” [drinks mead and falls unconscious]
 
 Environments
 -----------
