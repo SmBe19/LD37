@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="13" tilewidth="16" tileheight="16" nextobjectid="63">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="26" height="13" tilewidth="16" tileheight="16" nextobjectid="100">
  <tileset firstgid="1" name="Mat" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../img/tiles.png" width="256" height="256"/>
   <terraintypes>
@@ -9,6 +9,7 @@
    <terrain name="Holzwand" tile="96"/>
    <terrain name="Holzboden" tile="112"/>
    <terrain name="Gras" tile="128"/>
+   <terrain name="holzsaeule" tile="123"/>
   </terraintypes>
   <tile id="0" terrain="0,0,0,0"/>
   <tile id="1" terrain="0,0,0,0"/>
@@ -20,7 +21,23 @@
     <frame tileid="7" duration="1000"/>
    </animation>
   </tile>
+  <tile id="9">
+   <animation>
+    <frame tileid="8" duration="1000"/>
+    <frame tileid="9" duration="100"/>
+    <frame tileid="10" duration="100"/>
+    <frame tileid="11" duration="2000"/>
+   </animation>
+  </tile>
   <tile id="17" terrain="2,2,2,2"/>
+  <tile id="25">
+   <animation>
+    <frame tileid="24" duration="1000"/>
+    <frame tileid="25" duration="100"/>
+    <frame tileid="26" duration="100"/>
+    <frame tileid="27" duration="2000"/>
+   </animation>
+  </tile>
   <tile id="32" terrain="2,2,2,2"/>
   <tile id="38">
    <animation>
@@ -78,9 +95,11 @@
   <tile id="112" terrain="4,4,4,4"/>
   <tile id="113" terrain="4,4,4,4"/>
   <tile id="114" terrain="4,4,4,4"/>
+  <tile id="123" terrain="6,6,6,6"/>
   <tile id="128" terrain="5,5,5,5"/>
   <tile id="129" terrain="5,5,5,5"/>
   <tile id="130" terrain="5,5,5,5"/>
+  <tile id="139" terrain="6,6,6,6"/>
   <tile id="148">
    <animation>
     <frame tileid="148" duration="2000"/>
@@ -237,135 +256,86 @@
    </properties>
   </tile>
  </tileset>
- <layer name="BG2" width="32" height="13">
+ <layer name="BG1" width="26" height="13">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjALqA20oJgVoDbD9VgNs/0gDAFCiAWc=
+   eJyNkksOwjAMRH3VNCdwcgNYIu5MKhVpeIwDi1Hj2H7+pC0iGnQY9UuM0buOr+bTfvPIOcD7pxfaDXxXu8HHmXSWXV3H1pnZE2M0lrm9qHk37+XY3EEvmO6NHku3pWfh74bvfLqj85xL49J5nqIU/85O+JSX4A2xh9EM34+Lm6jj6mqv09xVNRJ3zu/2wh4yPmdnvotnnvasrDRnzkJWxnf/5P56I763Y3C/1T+jvoq9+xfcPk69ANAgjUk=
   </data>
  </layer>
- <layer name="BG1" width="32" height="13">
+ <layer name="BG0" width="26" height="13">
   <data encoding="base64" compression="zlib">
-   eJx1k+tRxDAMhH1xKjBQgA+oACiASyXhKghUAFTIowEeDfAogPWMdmaz+H58IyeRdy1ZKSmlDchgENrzGFT7trH1GLEc2E+yaHFf6XhvTKNE5DvmU5NaNf0/12jaJb6R0smlr+pqTjZv1dZa2FfNL6ZRLVd1GZlDf55lkPfM09717qum9bm8/mzavLNs9M7h58y2Zo+4R/vPWnWeevc/dNbeS83RO2KP9EwlrfvuM0X/Q/Ov+6jlc+GzrPt0trx2/UduwD7iHFGZO1raB2pqvTqzjSNwDE6sfzW8SfO7D+g9p/X8P4Fn8AJe5Uzqp/PQvp2CM3Bud1ZCn96NB/Hn+yq6b+AdfIBP6Qtz+LyVWi/AJbgSnRw5WmdbPwb03kce93yBb/ADfsVjm9ZztgPXESeLXDeW4BbcRVxizfear+tJfJxJ/Hf2rPvpt5i/4jWovvqpxx+QlzUu
-  </data>
- </layer>
- <layer name="BG0" width="32" height="13">
-  <data encoding="base64" compression="zlib">
-   eJxjYBgFtAKCQ8j8oeRWWoAwIA4H4kggjgHiWCxqSPUDOxSPNIDNz4TCAV2eknAjx/5RMDAAAPVtAk0=
+   eJxjYGBgqGHADyiRr8HBHrVn1B5coIdK9oyCUUAvAACY5A2h
   </data>
  </layer>
  <objectgroup name="Objects">
-  <object id="14" name="oldfancywizard" gid="257" x="92.25" y="202.25" width="16" height="32" rotation="-86.3252"/>
-  <object id="21" gid="55" x="64" y="176" width="16" height="16">
+  <object id="63" gid="10" x="80" y="80" width="16" height="16">
    <properties>
-    <property name="animationonly" value="exit2"/>
+    <property name="animationonly" value="exit"/>
    </properties>
   </object>
-  <object id="22" gid="39" x="64" y="160" width="16" height="16">
+  <object id="64" gid="26" x="80" y="96" width="16" height="16">
    <properties>
-    <property name="animationonly" value="exit2"/>
+    <property name="animationonly" value="exit"/>
    </properties>
   </object>
-  <object id="25" name="kocke" type="entity" gid="150" x="240" y="144" width="16" height="16">
-   <properties>
-    <property name="displayname" value="Kocke"/>
-    <property name="examine" value="its hot"/>
-    <property name="oninteract" type="int" value="2"/>
-    <property name="oninteract_0" value="class"/>
-    <property name="oninteract_1" value="take"/>
-   </properties>
-  </object>
-  <object id="26" name="kerze" type="entity" gid="151" x="224" y="144" width="16" height="16">
-   <properties>
-    <property name="displayname" value="Kerze"/>
-    <property name="examine" value="Tats a kerze"/>
-    <property name="oninteract" type="int" value="2"/>
-    <property name="oninteract_0" value="activate exit2"/>
-    <property name="oninteract_1" value="take"/>
-   </properties>
-  </object>
-  <object id="29" gid="247" x="368" y="176" width="16" height="16">
-   <properties>
-    <property name="animationonly" value="exit3"/>
-   </properties>
-  </object>
-  <object id="30" gid="231" x="368" y="160" width="16" height="16">
-   <properties>
-    <property name="animationonly" value="exit3"/>
-   </properties>
-  </object>
-  <object id="31" gid="215" x="368" y="144" width="16" height="16">
-   <properties>
-    <property name="animationonly" value="exit3"/>
-   </properties>
-  </object>
-  <object id="32" gid="216" x="384" y="144" width="16" height="16">
-   <properties>
-    <property name="animationonly" value="exit3"/>
-   </properties>
-  </object>
-  <object id="33" gid="232" x="384" y="160" width="16" height="16">
-   <properties>
-    <property name="animationonly" value="exit3"/>
-   </properties>
-  </object>
-  <object id="34" gid="248" x="384" y="176" width="16" height="16">
-   <properties>
-    <property name="animationonly" value="exit3"/>
-   </properties>
-  </object>
-  <object id="60" gid="149" x="384" y="192" width="16" height="16"/>
+  <object id="69" gid="46" x="320" y="128" width="16" height="16"/>
+  <object id="70" gid="47" x="336" y="128" width="16" height="16"/>
+  <object id="71" gid="62" x="320" y="144" width="16" height="16"/>
+  <object id="72" gid="63" x="336" y="144" width="16" height="16"/>
+  <object id="73" gid="46" x="224" y="128" width="16" height="16"/>
+  <object id="74" gid="47" x="240" y="128" width="16" height="16"/>
+  <object id="75" gid="62" x="224" y="144" width="16" height="16"/>
+  <object id="76" gid="63" x="240" y="144" width="16" height="16"/>
+  <object id="77" gid="48" x="240" y="176" width="16" height="16"/>
+  <object id="79" gid="64" x="96" y="144" width="16" height="16"/>
+  <object id="80" gid="64" x="384" y="176" width="16" height="16"/>
+  <object id="81" gid="64" x="32" y="208" width="16" height="16"/>
+  <object id="82" gid="64" x="0" y="144" width="16" height="16"/>
+  <object id="83" gid="48" x="144" y="128" width="16" height="16"/>
+  <object id="84" gid="48" x="112" y="176" width="16" height="16"/>
+  <object id="85" gid="48" x="16" y="176" width="16" height="16"/>
+  <object id="86" gid="48" x="272" y="144" width="16" height="16"/>
+  <object id="87" gid="48" x="304" y="192" width="16" height="16"/>
+  <object id="88" gid="48" x="400" y="128" width="16" height="16"/>
+  <object id="89" gid="48" x="208" y="160" width="16" height="16"/>
+  <object id="90" gid="64" x="240" y="160" width="16" height="16"/>
+  <object id="91" gid="64" x="256" y="144" width="16" height="16"/>
+  <object id="92" gid="64" x="208" y="128" width="16" height="16"/>
+  <object id="93" gid="64" x="320" y="160" width="16" height="16"/>
+  <object id="94" gid="64" x="352" y="144" width="16" height="16"/>
+  <object id="95" gid="48" x="336" y="112" width="16" height="16"/>
+  <object id="96" gid="48" x="352" y="128" width="16" height="16"/>
  </objectgroup>
- <objectgroup name="meta">
-  <object id="3" name="spawn1" type="spawn" x="16" y="160" width="16" height="32">
+ <objectgroup name="meta" visible="0">
+  <object id="3" name="spawn1" type="spawn" x="80" y="96" width="16" height="32">
    <properties>
-    <property name="fromlevel" value="testlvl"/>
-    <property name="portalid" value="test_test_1"/>
+    <property name="fromlevel" value="ward"/>
+    <property name="portalid" value="ward_barn"/>
    </properties>
   </object>
-  <object id="10" name="exit1" type="exit" x="480" y="144" width="32" height="64">
-   <properties>
-    <property name="portalid" value="test_test_1"/>
-    <property name="tolevel" value="testlvl"/>
-   </properties>
-  </object>
-  <object id="11" name="main" type="spawn" x="352" y="160" width="16" height="32">
-   <properties>
-    <property name="fromlevel" value="main"/>
-    <property name="portalid" value="main"/>
-   </properties>
-  </object>
-  <object id="23" name="exit2" type="exit" x="64" y="144" width="16" height="32">
+  <object id="23" name="exit" type="exit" x="80" y="64" width="16" height="32">
    <properties>
     <property name="active" type="bool" value="false"/>
     <property name="delay" type="int" value="2000"/>
-    <property name="portalid" value="test_test_3"/>
+    <property name="portalid" value="barn_ward"/>
     <property name="start" type="int" value="900"/>
-    <property name="tolevel" value="testlvl"/>
+    <property name="tolevel" value="lvl_ward"/>
    </properties>
   </object>
-  <object id="35" name="exit3" type="exit" x="368" y="128" width="32" height="48">
-   <properties>
-    <property name="delay" type="int" value="2000"/>
-    <property name="portalid" value="test_test_1"/>
-    <property name="start" type="int" value="900"/>
-    <property name="tolevel" value="testlvl"/>
-   </properties>
-  </object>
-  <object id="42" name="spawn3" type="spawn" x="416" y="160" width="16" height="32">
-   <properties>
-    <property name="fromlevel" value="testlvl"/>
-    <property name="portalid" value="test_test_3"/>
-   </properties>
-  </object>
-  <object id="43" name="hero_wait_right" type="hero" gid="257" x="80" y="64" width="16" height="32"/>
-  <object id="44" name="hero_wait_left" type="hero" gid="261" x="96" y="64" width="16" height="32"/>
-  <object id="45" name="hero_walk_right" type="hero" gid="289" x="112" y="64" width="16" height="32"/>
-  <object id="47" name="hero_walk_left" type="hero" gid="321" x="128" y="64" width="16" height="32"/>
-  <object id="48" name="hero_walk_down" type="hero" gid="347" x="144" y="64" width="16" height="32"/>
-  <object id="49" name="hero_walk_up" type="hero" gid="353" x="160" y="64" width="16" height="32"/>
+  <object id="43" name="hero_wait_right" type="hero" gid="257" x="236" y="60" width="16" height="32"/>
+  <object id="44" name="hero_wait_left" type="hero" gid="261" x="252" y="60" width="16" height="32"/>
+  <object id="45" name="hero_walk_right" type="hero" gid="289" x="268" y="60" width="16" height="32"/>
+  <object id="47" name="hero_walk_left" type="hero" gid="321" x="284" y="60" width="16" height="32"/>
+  <object id="48" name="hero_walk_down" type="hero" gid="347" x="300" y="60" width="16" height="32"/>
+  <object id="49" name="hero_walk_up" type="hero" gid="353" x="316" y="60" width="16" height="32"/>
  </objectgroup>
- <layer name="collision" width="32" height="13" visible="0" opacity="0.29">
+ <layer name="fg" width="26" height="13">
   <data encoding="base64" compression="zlib">
-   eJw7zMTAcHgUj+JRPIpJwEegeKjbDwIDaf+REY4BLDQ/sQ==
+   eJxjYECAHgb8gJB8DQF5YtVRyx56+YdScwabPZTGDyF5aplDrD308g+l4T/U0jW17BkOAACthBEd
+  </data>
+ </layer>
+ <layer name="collision" width="26" height="13" opacity="0.29">
+  <data encoding="base64" compression="zlib">
+   eJw7zMTAcHgUj2I64SNINC5MiTwhvaOYeEzreBpOGADo0wSl
   </data>
  </layer>
 </map>
