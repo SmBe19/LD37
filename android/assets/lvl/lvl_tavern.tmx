@@ -303,7 +303,7 @@
     <property name="animateonly" value="exit"/>
    </properties>
   </object>
-  <object id="68" gid="714" x="176" y="128" width="16" height="32"/>
+  <object id="68" gid="714" x="192" y="128" width="16" height="32"/>
  </objectgroup>
  <objectgroup name="meta">
   <object id="3" name="spawn1" type="spawn" x="64" y="96" width="16" height="32">
@@ -328,7 +328,7 @@
   <object id="48" name="hero_walk_down" type="hero" gid="347" x="272" y="96" width="16" height="32"/>
   <object id="49" name="hero_walk_up" type="hero" gid="353" x="288" y="96" width="16" height="32"/>
  </objectgroup>
- <layer name="collision" width="20" height="13" opacity="0.29">
+ <layer name="collision" width="20" height="13" visible="0" opacity="0.29">
   <data encoding="base64" compression="zlib">
    eJw7zMTAcHgUj2Ii8RESMKnqR/HAYwCCdMiM
   </data>
