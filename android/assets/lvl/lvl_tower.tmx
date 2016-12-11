@@ -314,7 +314,7 @@
     <property name="examine" value="Back outside, this door leads."/>
     <property name="portalid" value="tower_ward"/>
     <property name="start" type="int" value="900"/>
-    <property name="tolevel" value="ward"/>
+    <property name="tolevel" value="lvl_ward"/>
    </properties>
   </object>
   <object id="43" name="hero_wait_right" type="hero" gid="257" x="57.3597" y="30.4488" width="16" height="32"/>
@@ -337,7 +337,7 @@
     <property name="examine" value="The guards in the Palace wouldn't like seeing me go through that door."/>
     <property name="portalid" value="tower_palace"/>
     <property name="start" type="int" value="900"/>
-    <property name="tolevel" value="palace"/>
+    <property name="tolevel" value="lvl_palace"/>
    </properties>
   </object>
   <object id="73" name="exit3" type="exit" x="224" y="48" width="16" height="32">
@@ -348,7 +348,7 @@
     <property name="examine" value="This door seems to lead to Room 51."/>
     <property name="portalid" value="tower_room51door"/>
     <property name="start" type="int" value="900"/>
-    <property name="tolevel" value="room51_door"/>
+    <property name="tolevel" value="lvl_room51_door"/>
    </properties>
   </object>
   <object id="74" name="spawn3" type="spawn" x="224" y="80" width="16" height="32">
@@ -365,7 +365,7 @@
     <property name="examine" value="The door to the cellar is open."/>
     <property name="portalid" value="tower_cellar"/>
     <property name="start" type="int" value="900"/>
-    <property name="tolevel" value="cellar"/>
+    <property name="tolevel" value="lvl_cellar"/>
    </properties>
   </object>
   <object id="76" name="spawn3" type="spawn" x="320" y="80" width="16" height="32">

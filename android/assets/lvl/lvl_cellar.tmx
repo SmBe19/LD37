@@ -298,7 +298,7 @@
     <property name="examine" value="Leads back up to the tower."/>
     <property name="portalid" value="cellar_tower"/>
     <property name="start" type="int" value="900"/>
-    <property name="tolevel" value="tower"/>
+    <property name="tolevel" value="lvl_tower"/>
    </properties>
   </object>
  </objectgroup>
@@ -307,7 +307,7 @@
    eJxjYBgFo4B8AAACQAAB
   </data>
  </layer>
- <layer name="collision" width="12" height="12" opacity="0.29">
+ <layer name="collision" width="12" height="12" visible="0" opacity="0.29">
   <data encoding="base64" compression="zlib">
    eJw7zMTAcHgQ4SOjeEhhAOwLbz0=
   </data>

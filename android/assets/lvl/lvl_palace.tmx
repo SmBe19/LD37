@@ -320,7 +320,7 @@
     <property name="examine" value="This gets me into the tower. But the guards wouldn't like me opening that door."/>
     <property name="portalid" value="palace_tower"/>
     <property name="start" type="int" value="900"/>
-    <property name="tolevel" value="tower"/>
+    <property name="tolevel" value="lvl_tower"/>
    </properties>
   </object>
   <object id="35" name="exit1" type="exit" x="496" y="32" width="32" height="48">
@@ -330,7 +330,7 @@
     <property name="examine" value="The big door leading back outside."/>
     <property name="portalid" value="palace_ward"/>
     <property name="start" type="int" value="900"/>
-    <property name="tolevel" value="ward"/>
+    <property name="tolevel" value="lvl_ward"/>
    </properties>
   </object>
   <object id="42" name="spawn1" type="spawn" x="504" y="80" width="16" height="32">
@@ -351,7 +351,7 @@
    eJzNkrENACAMw3oF8P+lzGSxrIJEtigtNdCqUyP8BE/1macnUb/lu83TnUfnWZ4uH9VbHrsv1lue1/tEWtCfec63/VZ0H8rt/5B+46H37ea/awNwDQUe
   </data>
  </layer>
- <layer name="collision" width="36" height="11" visible="0" opacity="0.29">
+ <layer name="collision" width="36" height="11" opacity="0.29">
   <data encoding="base64" compression="zlib">
    eJw7zMTAcHgUj+Jhgo8MckzIjbSWH8WDO/4GOwYAwu4xnQ==
   </data>

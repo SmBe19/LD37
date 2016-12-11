@@ -281,6 +281,8 @@
   <object id="70" gid="47" x="336" y="128" width="16" height="16"/>
   <object id="71" name="straw" type="entity" gid="62" x="320" y="144" width="16" height="16">
    <properties>
+    <property name="displayname" value="Straw"/>
+    <property name="examine" value="This stuff looks fun when it’s on fire."/>
     <property name="oninteract" type="int" value="2"/>
     <property name="oninteract_0" value="take"/>
     <property name="oninteract_1" value="show $this"/>
@@ -291,6 +293,8 @@
   <object id="74" gid="47" x="240" y="128" width="16" height="16"/>
   <object id="75" name="straw" type="entity" gid="62" x="224" y="144" width="16" height="16">
    <properties>
+    <property name="displayname" value="Straw"/>
+    <property name="examine" value="This stuff looks fun when it’s on fire."/>
     <property name="oninteract" type="int" value="2"/>
     <property name="oninteract_0" value="take"/>
     <property name="oninteract_1" value="show $this"/>
