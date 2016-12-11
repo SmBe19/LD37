@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="37" height="13" tilewidth="16" tileheight="16" nextobjectid="83">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="37" height="13" tilewidth="16" tileheight="16" nextobjectid="90">
  <tileset firstgid="1" name="Mat" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../img/tiles.png" width="256" height="256"/>
   <terraintypes>
@@ -307,34 +307,6 @@
     <property name="animationonly" value="exit1"/>
    </properties>
   </object>
-  <object id="63" name="king4" type="entity" gid="722" x="96" y="176" width="16" height="16">
-   <properties>
-    <property name="displayname" value="The King"/>
-    <property name="examine">He’s in charge here.
-He might let me into room 51.</property>
-   </properties>
-  </object>
-  <object id="64" name="king1" type="entity" gid="713" x="80" y="160" width="16" height="16">
-   <properties>
-    <property name="displayname" value="The King"/>
-    <property name="examine">He’s in charge here.
-He might let me into room 51.</property>
-   </properties>
-  </object>
-  <object id="65" name="king2" type="entity" gid="714" x="96" y="160" width="16" height="16">
-   <properties>
-    <property name="displayname" value="The King"/>
-    <property name="examine">He’s in charge here.
-He might let me into room 51.</property>
-   </properties>
-  </object>
-  <object id="66" name="king 3" type="entity" gid="721" x="80" y="176" width="16" height="16">
-   <properties>
-    <property name="displayname" value="The King"/>
-    <property name="examine">He’s in charge here.
-He might let me into room 51.</property>
-   </properties>
-  </object>
   <object id="67" name="bodyguard1" type="entity" gid="779" x="96" y="128" width="16" height="16">
    <properties>
     <property name="displayname" value="King's Bodyguard"/>
@@ -375,6 +347,34 @@ Or any at all.</property>
    <properties>
     <property name="displayname" value="Guard"/>
     <property name="examine" value="That guy’s got a big stick."/>
+   </properties>
+  </object>
+  <object id="83" name="king1" type="entity" gid="863" x="80" y="160" width="16" height="16">
+   <properties>
+    <property name="displayname" value="The King"/>
+    <property name="examine">He’s in charge here.
+He might let me into room 51.</property>
+   </properties>
+  </object>
+  <object id="84" name="king2" type="entity" gid="864" x="96" y="160" width="16" height="16">
+   <properties>
+    <property name="displayname" value="The King"/>
+    <property name="examine">He’s in charge here.
+He might let me into room 51.</property>
+   </properties>
+  </object>
+  <object id="85" name="king3" type="entity" gid="878" x="80" y="176" width="16" height="16">
+   <properties>
+    <property name="displayname" value="The King"/>
+    <property name="examine">He’s in charge here.
+He might let me into room 51.</property>
+   </properties>
+  </object>
+  <object id="86" name="king4" type="entity" gid="879" x="96" y="176" width="16" height="16">
+   <properties>
+    <property name="displayname" value="The King"/>
+    <property name="examine">He’s in charge here.
+He might let me into room 51.</property>
    </properties>
   </object>
  </objectgroup>
@@ -432,7 +432,7 @@ me opening that door.</property>
    eJxjYCAMxAnIi1GonxxAqZ2E9JMDKLWTFm4aDSfiAKV20iKNEzKTUnlywGBMT0PRTYOxzBwIN0nQWH4oAADj5AMt
   </data>
  </layer>
- <layer name="collision" width="37" height="13" opacity="0.29">
+ <layer name="collision" width="37" height="13" visible="0" opacity="0.29">
   <data encoding="base64" compression="zlib">
    eJw7zMTAcHgUj+JRPOLxERw0sjw6xiVOLXlcegarm0jVR0s8GN000HE10HkMGwYAa69y2Q==
   </data>
