@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="74" height="40" tilewidth="16" tileheight="16" nextobjectid="103">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="74" height="40" tilewidth="16" tileheight="16" nextobjectid="111">
  <properties>
   <property name="mapscale" type="float" value="2"/>
  </properties>
@@ -277,6 +277,12 @@
  </tileset>
  <tileset firstgid="773" name="GianniGraphics" tilewidth="16" tileheight="16" tilecount="150" columns="15">
   <image source="../img/Spritesheet_sidechar.PNG" width="240" height="160"/>
+  <tile id="2">
+   <animation>
+    <frame tileid="2" duration="1800"/>
+    <frame tileid="3" duration="200"/>
+   </animation>
+  </tile>
  </tileset>
  <layer name="Schwarzer Hintergrund" width="74" height="40">
   <data encoding="base64" compression="zlib">
@@ -414,6 +420,20 @@ But his eyes say that certain things
 are more important to him than his job.</property>
    </properties>
   </object>
+  <object id="105" name="maid1" type="entity" gid="775" x="352" y="400" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Maid"/>
+    <property name="examine">The master’s set her hair
+on fire multiple times before.</property>
+   </properties>
+  </object>
+  <object id="107" name="maid2" type="entity" gid="790" x="352" y="416" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Maid"/>
+    <property name="examine">The master’s set her hair
+on fire multiple times before.</property>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="Vordere Mauer und Häuser" width="74" height="40">
   <data encoding="base64" compression="zlib">
@@ -425,7 +445,7 @@ are more important to him than his job.</property>
    eJztlssNAUEAhvemAFSACtAJHXDCjZOoQBxQASpABajAowGPBjwK8G+ykknYzUwyY8b4v+TLJpN57H6X2SAghBBCCCGEEPJthnCkWR9hJznYSQ7TnXTuP1bYL5w7hwtJl+zETj/eKQ0zMMtOieZgHhbYKdEiLMEyOyUqMoFTTc4U9gvnruBa0o3lTr7gSqcGbMKWwhrxvjB9liudutGzp7BGvC9Mn+VKp370HCisEe8L02e50sl12EkOdpJD5//Ny3+gAqsaxn2nBusaxn2HneSI++427CjM9524Hrrm+8wW7uAeHiy/i6uk4BGe4BleojHyzhXe4B0+LL8LIeQzTwLEsJY=
   </data>
  </layer>
- <objectgroup name="meta" visible="0">
+ <objectgroup name="meta">
   <object id="3" name="spawn_tower" type="spawn" x="944" y="112" width="16" height="32">
    <properties>
     <property name="fromlevel" value="lvl_tower"/>
@@ -549,6 +569,18 @@ It's not open right now.</property>
     <property name="tolevel" value="lvl_tavern"/>
    </properties>
   </object>
+  <object id="108" name="boy1" type="entity" gid="709" x="640" y="512" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Thieving Jake"/>
+    <property name="examine" value="He’s often been caught stealing stuff around here."/>
+   </properties>
+  </object>
+  <object id="109" name="boy2" type="entity" gid="717" x="640" y="528" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Thieving Jake"/>
+    <property name="examine" value="He’s often been caught stealing stuff around here."/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="Zinne" width="74" height="40">
   <data encoding="base64" compression="zlib">
@@ -557,7 +589,7 @@ It's not open right now.</property>
  </layer>
  <layer name="collision" width="74" height="40" visible="0" opacity="0.29">
   <data encoding="base64" compression="zlib">
-   eJzt18EJwCAQRUFJ/12ZwlLDQszf6BzmKu4TROc1xgSAw9w/8uWsOu3fKXkm6f10lb4PAQCA91Xe+9W/QeKfsWp9nXTSSSedMp12oZNOOtVm00mnbnTSSSedutJJJzjFAxjs6s8=
+   eJzt19EJwCAMQEHp/lulg3WGQGvSeB/3G/QJonGtFQBwmPtHdu5Vp/mdKs+kej1dVd+HAADA+zLv/ezfoOKf8dV8nXTSaX+nSMzTaW6nKXTSSafc3nTSqRuddNJJp6500glO8QD1terN
   </data>
  </layer>
 </map>
