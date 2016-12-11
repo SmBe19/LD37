@@ -17,6 +17,7 @@
    <terrain name="Säule Links" tile="68"/>
    <terrain name="Säule Rechts" tile="71"/>
    <terrain name="Säule Ohne" tile="21"/>
+   <terrain name="Straw roof" tile="177"/>
   </terraintypes>
   <tile id="0" terrain="0,0,0,0"/>
   <tile id="1" terrain="0,0,0,0"/>
@@ -138,6 +139,9 @@
     <frame tileid="182" duration="200"/>
    </animation>
   </tile>
+  <tile id="177" terrain="10,10,10,10"/>
+  <tile id="179" terrain="10,10,10,10"/>
+  <tile id="195" terrain="10,10,10,10"/>
   <tile id="214">
    <animation>
     <frame tileid="212" duration="1000"/>
@@ -443,7 +447,7 @@ on fire multiple times before.</property>
  </layer>
  <layer name="Dächer und Türen" width="74" height="40">
   <data encoding="base64" compression="zlib">
-   eJztlssNAUEAhvemAFSACtAJHXDCjZOoQBxQASpABajAowGPBjwK8G+ykknYzUwyY8b4v+TLJpN57H6X2SAghBBCCCGEEPJthnCkWR9hJznYSQ7TnXTuP1bYL5w7hwtJl+zETj/eKQ0zMMtOieZgHhbYKdEiLMEyOyUqMoFTTc4U9gvnruBa0o3lTr7gSqcGbMKWwhrxvjB9liudutGzp7BGvC9Mn+VKp370HCisEe8L02e50sl12EkOdpJD5//Ny3+gAqsaxn2nBusaxn2HneSI++427CjM9524Hrrm+8wW7uAeHiy/i6uk4BGe4BleojHyzhXe4B0+LL8LIeQzTwLEsJY=
+   eJztltttwjAYhfPGAMAEhQmATegG5Ql4gyfUCVAfgAnaTkDoAoUswGUBoAtAO0APUiKZNJFsyal/OeeTPhn98SU5smyCgBBCCCGEEELIfzODc8v6CHPSgznpUXRONudfGMx367uEEfyIjVKGyvNVyXMKlYzU31GqxpzuVfNxvZ+qsAbrQnKKMtp0zUVOD7ABmwJySvZL1n5SWxc5tWAbdgTkFAb3Z1L6TE8ydH0+vcI3S74bzHfr+wnXmm4c5+QLUnLqwwEcGoxR74ui15KS0yRunw3GqPdF0WtJyWkaty8GY9T7oui1pOQkHeakB3PSw+b/m8Qy0IWPFuq+8wR7Fuq+w5z0yPvuERwb9PedvDxs9feZLdzBPTw4fhepVOARnuAZfsU18pcLvMJv+OP4XQgh2fwC0yKylA==
   </data>
  </layer>
  <objectgroup name="meta">
