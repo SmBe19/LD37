@@ -10,8 +10,8 @@ public class Consts {
 	public static final int TEX_SIZE = 16;
 	public static final float UNIT_SCALE = 1.f / TEX_SIZE;
 
-	public static final float CAMERA_BORDER_X = 5;
-	public static final float CAMERA_BORDER_Y = 4;
+	public static final float CAMERA_BORDER_X = 6;
+	public static final float CAMERA_BORDER_Y = 5;
 	public static final float INVENTORY_ACTIVE_SIZE = 1;
 	public static final float FONT_SIZE = 1.f/16;
 	public static final float FONT_LINE_SPACING = 1.125f;
@@ -44,6 +44,7 @@ public class Consts {
 	public static final String PROP_DISPLAYNAME = "displayname";
 	public static final String PROP_TYPE = "type";
 	public static final String PROP_MAPSCALE = "mapscale";
+	public static final String PROP_VELOSCALE = "veloscale";
 
 	public static final int INPUT_MOVE_UP = Input.Keys.UP;
 	public static final int INPUT_MOVE_LEFT = Input.Keys.LEFT;

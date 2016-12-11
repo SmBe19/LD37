@@ -144,16 +144,18 @@ public class GameScreen implements Screen {
 		bottom = camera.position.y - camera.viewportHeight / 2;
 		top = bottom + camera.viewportHeight;
 
-		if (gameWorld.hero.x - left < Consts.CAMERA_BORDER_X) {
-			camera.position.x = Math.max(gameWorld.hero.x - Consts.CAMERA_BORDER_X + camera.viewportWidth / 2, camera.viewportWidth / 2);
-		} else if (right - gameWorld.hero.x < Consts.CAMERA_BORDER_X) {
-			camera.position.x = Math.min(gameWorld.hero.x + Consts.CAMERA_BORDER_X - camera.viewportWidth / 2,
+		float cameraBorderX = Consts.CAMERA_BORDER_X * currentScale;
+		float cameraBorderY = Consts.CAMERA_BORDER_Y * currentScale;
+		if (gameWorld.hero.x - left < cameraBorderX) {
+			camera.position.x = Math.max(gameWorld.hero.x - cameraBorderX + camera.viewportWidth / 2, camera.viewportWidth / 2);
+		} else if (right - gameWorld.hero.x < cameraBorderX) {
+			camera.position.x = Math.min(gameWorld.hero.x + cameraBorderX - camera.viewportWidth / 2,
 					gameWorld.level.get().map.getProperties().get("width", 0, Integer.class) - camera.viewportWidth / 2);
 		}
-		if (gameWorld.hero.y - bottom < Consts.CAMERA_BORDER_Y) {
-			camera.position.y = Math.max(gameWorld.hero.y - Consts.CAMERA_BORDER_Y + camera.viewportHeight / 2, camera.viewportHeight / 2);
-		} else if (top - gameWorld.hero.y < Consts.CAMERA_BORDER_Y) {
-			camera.position.y = Math.min(gameWorld.hero.y + Consts.CAMERA_BORDER_Y - camera.viewportHeight / 2,
+		if (gameWorld.hero.y - bottom < cameraBorderY) {
+			camera.position.y = Math.max(gameWorld.hero.y - cameraBorderY + camera.viewportHeight / 2, camera.viewportHeight / 2);
+		} else if (top - gameWorld.hero.y < cameraBorderY) {
+			camera.position.y = Math.min(gameWorld.hero.y + cameraBorderY - camera.viewportHeight / 2,
 					gameWorld.level.get().map.getProperties().get("height", 0, Integer.class) - camera.viewportHeight / 2);
 		}
 	}
