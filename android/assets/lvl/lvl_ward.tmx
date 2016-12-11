@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="74" height="40" tilewidth="16" tileheight="16" nextobjectid="111">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="74" height="40" tilewidth="16" tileheight="16" nextobjectid="113">
  <properties>
   <property name="mapscale" type="float" value="1.5"/>
   <property name="veloscale" type="float" value="1.5"/>
@@ -472,6 +472,18 @@ qthink Well then I'm going to have%Nto ask the king myself.</property>
     <property name="onnointeract_0" value="sayxy 22.5 16 Hope you're doing alright."/>
    </properties>
   </object>
+  <object id="111" name="drunkguard" type="entity" gid="838" x="672" y="80" width="16" height="16"/>
+  <object id="112" name="drunkguard" type="entity" gid="853" x="672" y="96" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Drunk Guard"/>
+    <property name="examine">Looks like he’s barely conscious enough
+to eat that piece of cheese in his hand.</property>
+    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract_0" value="qsayxy 22.5 16 Heeeeeey theeere. Are youuu %N [hick] %N here to bring me more mead?”  "/>
+    <property name="onnointeract" type="int" value="1"/>
+    <property name="onnointeract_0" value="qsayxy 22.5 16 Shome more mead, pleashe."/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="Vordere Mauer und Häuser" width="74" height="40">
   <data encoding="base64" compression="zlib">
@@ -494,6 +506,9 @@ qthink Well then I'm going to have%Nto ask the king myself.</property>
    <properties>
     <property name="active" type="bool" value="false"/>
     <property name="delay" type="int" value="2000"/>
+    <property name="displayname" value="Tower"/>
+    <property name="examine">Room 51 is at the top of this tower.
+I need to get access somehow...</property>
     <property name="portalid" value="wall_tower"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="lvl_tower"/>
@@ -508,6 +523,8 @@ qthink Well then I'm going to have%Nto ask the king myself.</property>
   <object id="23" name="exit_ward" type="exit" x="784" y="96" width="16" height="32">
    <properties>
     <property name="delay" type="int" value="2000"/>
+    <property name="displayname" value="Ward"/>
+    <property name="examine" value="Leads back downstairs."/>
     <property name="portalid" value="wall_ward"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="lvl_ward"/>
