@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="28" height="13" tilewidth="16" tileheight="16" nextobjectid="82">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="28" height="13" tilewidth="16" tileheight="16" nextobjectid="85">
  <tileset firstgid="1" name="Mat" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../img/tiles.png" width="256" height="256"/>
   <terraintypes>
@@ -305,6 +305,15 @@ as a fire extinguisher.</property>
     <property name="examine" value="This could help me extinguish the flames."/>
     <property name="oninteract" type="int" value="1"/>
     <property name="oninteract_0" value="take $this"/>
+   </properties>
+  </object>
+  <object id="82" gid="104" x="208" y="112" width="16" height="16"/>
+  <object id="83" name="bookcase" type="entity" gid="120" x="208" y="128" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Bookcase"/>
+    <property name="examine">There's a lot of books on potions
+in here. The most advanced of them,
+the Elixcicon, is missing.</property>
    </properties>
   </object>
  </objectgroup>
