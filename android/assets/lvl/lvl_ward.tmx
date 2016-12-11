@@ -530,7 +530,7 @@ catches fire.</property>
  </layer>
  <layer name="Dächer und Türen" width="74" height="40">
   <data encoding="base64" compression="zlib">
-   eJztltttwjAYhfPGAMAEhQmATegG5Ql4gyfUCVAfgAnaTkDoAoUswGUBoAtAO0APUiKZNJFsyal/OeeTPhn98SU5smyCgBBCCCGEEELIfzODc8v6CHPSgznpUXRONudfGMx367uEEfyIjVKGyvNVyXMKlYzU31GqxpzuVfNxvZ+qsAbrQnKKMtp0zUVOD7ABmwJySvZL1n5SWxc5tWAbdgTkFAb3Z1L6TE8ydH0+vcI3S74bzHfr+wnXmm4c5+QLUnLqwwEcGoxR74ui15KS0yRunw3GqPdF0WtJyWkaty8GY9T7oui1pOQkHeakB3PSw+b/m8Qy0IWPFuq+8wR7Fuq+w5z0yPvuERwb9PedvDxs9feZLdzBPTw4fhepVOARnuAZfsU18pcLvMJv+OP4XQgh2fwC0yKylA==
+   eJztls9NAkEcRvdGAUAFQAVCJ9KBnoCbnggVEA9iBWoFLlwhAfaKCWADgg2oFOBHsiQ/10VmktmdyfC95GXIMPuHl80sQUAIIYQQQgghJG/u4cCwPsJOarCTGll3Mnn+B43z7de+wAiOYqOEofh+eOadQtFIfo4Sc753GsPJiU5S2cf281SEJVjOodMCvp7oFKWMyTkbnSqwCms5dPpvrdyf0p4nOdrodAHrsOFApzD4vScl9/RDQ9v70yN8MuSzxvn2a6dwpujccidfcKVTC7ZhR+MY+b7I+lqudOrGY0/jGPm+yPparnTqx+OdxjHyfZH1tVzp5DrspAY7qWHy/83Bc+ASNg3M+84VvDYw7zvspMax330DbzXW+86xHqbW+8wSruAavlm+F1cpwHe4gVv4Ec+Rv3zCL/gNd5bvhRCSzg9YjbNi
   </data>
  </layer>
  <objectgroup name="meta">
