@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="74" height="40" tilewidth="16" tileheight="16" nextobjectid="98">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="74" height="40" tilewidth="16" tileheight="16" nextobjectid="103">
  <properties>
   <property name="mapscale" type="float" value="2"/>
  </properties>
@@ -272,9 +272,15 @@
    </properties>
   </tile>
  </tileset>
+ <tileset firstgid="709" name="placeholders" tilewidth="16" tileheight="16" tilecount="64" columns="8">
+  <image source="../img/placeholders.png" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="773" name="GianniGraphics" tilewidth="16" tileheight="16" tilecount="150" columns="15">
+  <image source="../img/Spritesheet_sidechar.PNG" width="240" height="160"/>
+ </tileset>
  <layer name="Schwarzer Hintergrund" width="74" height="40">
   <data encoding="base64" compression="zlib">
-   eJztwwEJAAAMBKHr8/37rcdQcNVUVVVVVVVVVVVVVX3/ACiw8UA=
+   eJztzsEJAEAIBLEFS7mn/fcnVnEIGch/OkkDACdsr/5/AAAAAAAAAAAAcNMA7snxEA==
   </data>
  </layer>
  <layer name="Gras und Mauer und Treppen" width="74" height="40">
@@ -284,7 +290,7 @@
  </layer>
  <layer name="Türme" width="74" height="40">
   <data encoding="base64" compression="zlib">
-   eJztlMENgzAMAA3JBGwAT7oBE7TP7r9MsYiFG7WPoApk9U6ygDZKnJPtLCJpjW6Nh8RilC1vzT+7Z19Fcuu6EmPjWbZ3ZE8adofalXfYl/cs7Z6yi/sPcj+TQTY3veyu0od3c5Xd2lZPtmdET3pXqyPzYmFO/NOvOepJ94rmSevJ6sP6zO6S5H1GWV0d9RS973w/9fJ9jvvQ347McYuoc/wme72YKz+XfC3NZc3QeJbv32ieJtnurp7qWVT3mf23lO+p8Sy/TzRPZ2IzUF09L84FAAAAAOAfma9OIAjL1QkAAAAAAAAAAAAAAJzMC092B0Y=
+   eJztlE0KgzAQRsckp7E3cN/fXe9/mRr0w2loF7FgCH0PBhVDknnMTDKzOMcwx9364mLLvfP9k3uGIqJbN6xxqzxLe/fo6Wxb3sqhdOUdhvU9R22uyUWt49aonoJtruKHd7lKbm1trtqzV0+qI3lRyIl/+jW19aQz8l69ecp9p/pQnymXaO8zSnW111Pvfef7Kdj3Oe5jT0384rg1mk8n2+pFrvxc8rU02j5Pvn9783S1JffsqZxFZZ/p37R+PyrP8vv05ulINAOzq2fjuwAAAAAA/CNj6wt0wtT6AgAAAAAAAAAAAAAAB/MCWMYJ5A==
   </data>
  </layer>
  <objectgroup name="Objects">
@@ -293,7 +299,7 @@
     <property name="animationonly" value="exit_tower"/>
    </properties>
   </object>
-  <object id="64" gid="55" x="784" y="96" width="16" height="16">
+  <object id="64" gid="55" x="784" y="128" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_tower"/>
    </properties>
@@ -315,7 +321,7 @@ I guess it's ex-master now.</property>
     <property name="animationonly" value="exit_tower"/>
    </properties>
   </object>
-  <object id="71" gid="55" x="960" y="96" width="16" height="16">
+  <object id="71" gid="55" x="960" y="128" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_tower"/>
    </properties>
@@ -399,10 +405,19 @@ I guess it's ex-master now.</property>
     <property name="animationonly" value="exit_wall"/>
    </properties>
   </object>
+  <object id="100" gid="803" x="928" y="128" width="16" height="16"/>
+  <object id="102" name="guard" type="entity" gid="818" x="928" y="144" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Guard"/>
+    <property name="examine">He guards this tower.
+But his eyes say that certain things
+are more important to him than his job.</property>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="Vordere Mauer und Häuser" width="74" height="40">
   <data encoding="base64" compression="zlib">
-   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
+   eJztmA2O0zAQhSc/JyhwgGrhBMARFna5RbvX2CPsoYlFRn35+lwQqtRiPNIoTjLx2G/eeGJHdOnSpUuXLreTd4u+X/TDlW1bk4dFPy766cq2rcnnRb8s+vXKtl3+TsZF51W71GVadIhfOO3X+9Ie1/YUJyzTLtuD2A/yfjLvss9R+hxhO0n/6jdt8pshtvEdzLc6h9n4ok/2x/mq7518O8R2TvrNFPV5qe0U27G6udJP+iYWaUvs3f1olPEkB3Re2tYYp90O7xhHxo4+iT3Hof1OsBmlP+LJsQz4jvhM5r3OlXOp9cXcyfYecVTMHI+IBznBfHUcGM0zl3MT3jluqRKz2tjUhrGvYbEzzx1vL+Vxbe1i/nKuxNHNfYBqH+pjgo8aPvqtW1vJ8Xy2j/O5kwPKA+KhfdMHc55xq+UWa8Ac59jU6g3XWh274ynXFcYr+9iZZw5XjRnncAk/feewpz3rhMaOMXY+FKfaejHDB/lI+1yf3JpEnrPf38WVa2GNE4wR+1Bu6F7Ncc7luatLLt4aD32meVfjITns/n245ria7XDRvLi0PilnHuK0V9P6z1rIPGCMXE67Psp9rNe9wYZcYB2Z43zefO5qgIudq4XM8xy/7tXcmqMY8d/A2emcmDvE6Ud0+VN5XfS46mHRN2kf8S6v+c3Lqm/S37c4r8Mawyfj+wXXbKeve5Ayx5zvUe4dPmn3ChudS8FJ6xHXKcUpY5L9HsSfjuceJMeaYyv3ionioZw7iJ3i9Bjbmsn68iy2yafsR32k3gufyA3lU14Pq61iWcuNwqfEKOK8zitO5HLiFeFz+pbCsSZumm/H1Vb5o/miOH2PU22L2OZgwUxrh8ZIYxXi+1741OX/ksdbD+Afkfwf4f8p9/isxfpfnevFc7QrBSf+W9fOGbhXGaCt46R7LNYP7r3cPjltn6JdKeuTO1/iOQHPX7iP579wa5L/t+78j23NOXdm0HLeFZwUC+aW2xsorxS3lvnk9t/UFD1rcue5LfNJcXJngYPYEhfi1jKfyn6pdm6ZHEshh3g+18/lunS5jfwE+61OOQ==
   </data>
  </layer>
  <layer name="Dächer und Türen" width="74" height="40">
@@ -410,7 +425,7 @@ I guess it's ex-master now.</property>
    eJztlssNAUEAhvemAFSACtAJHXDCjZOoQBxQASpABajAowGPBjwK8G+ykknYzUwyY8b4v+TLJpN57H6X2SAghBBCCCGEEPJthnCkWR9hJznYSQ7TnXTuP1bYL5w7hwtJl+zETj/eKQ0zMMtOieZgHhbYKdEiLMEyOyUqMoFTTc4U9gvnruBa0o3lTr7gSqcGbMKWwhrxvjB9liudutGzp7BGvC9Mn+VKp370HCisEe8L02e50sl12EkOdpJD5//Ny3+gAqsaxn2nBusaxn2HneSI++427CjM9524Hrrm+8wW7uAeHiy/i6uk4BGe4BleojHyzhXe4B0+LL8LIeQzTwLEsJY=
   </data>
  </layer>
- <objectgroup name="meta">
+ <objectgroup name="meta" visible="0">
   <object id="3" name="spawn_tower" type="spawn" x="944" y="112" width="16" height="32">
    <properties>
     <property name="fromlevel" value="lvl_tower"/>
