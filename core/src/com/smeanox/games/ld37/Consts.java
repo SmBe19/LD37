@@ -3,7 +3,7 @@ package com.smeanox.games.ld37;
 import com.badlogic.gdx.Input;
 
 public class Consts {
-
+	public static final String GAME_NAME = "Room 51";
 	public static final int WIDTH = 800;
 	public static final int HEIGHT = 600;
 	public static final float SCALE = 1/48f;
@@ -18,7 +18,7 @@ public class Consts {
 	public static final long OBSERVE_MIN_DURATION = 1000;
 	public static final float SPEECH_BUBBLE_OFFSET = 0.5f;
 	public static final float SPEECH_BUBBLE_SIZE = 0.5f;
-	public static final float SPEECH_BUBBLE_DURATION = 5f;
+	public static final float SPEECH_BUBBLE_DURATION = 2f;
 	public static final float SPEECH_BUBBLE_DURATION_PER_CHAR = 0.025f;
 	public static final float SPEECH_BUBBLE_ANIM_OFFSET = 0.5f;
 	public static final float SPEECH_BUBBLE_ANIM_DURATION = 0.5f;
@@ -59,6 +59,7 @@ public class Consts {
 	public static final int INPUT_USE_ITEM = Input.Keys.Q;
 	public static final int INPUT_INVENTORY = Input.Keys.C;
 	public static final int INPUT_INVENTORY_NEXT = Input.Keys.R;
+	public static final int INPUT_SKIP = Input.Keys.ENTER;
 
 	public static final float HERO_VELO_X = 4;
 	public static final float HERO_VELO_Y = 2;
@@ -71,6 +72,8 @@ public class Consts {
 	public static final String ONINTERACT_THIS = "$this";
 	public static final String ONINTERACT_CLASS = "class";
 	public static final String ONINTERACT_TAKE = "take";
+	public static final String ONINTERACT_PAUSE = "pause";
+	public static final String ONINTERACT_CLEARSPEECH = "clearspeech";
 	public static final String ONINTERACT_ACTIVATE = "activate";
 	public static final String ONINTERACT_DEACTIVATE = "deactivate";
 	public static final String ONINTERACT_SET_EXAMINE = "set_examine";
@@ -79,4 +82,6 @@ public class Consts {
 	public static final String ONINTERACT_SHOW = "show";
 	public static final String ONINTERACT_SAY = "say";
 	public static final String ONINTERACT_SAYXY = "sayxy";
+	public static final String ONINTERACT_QSAY = "qsay";
+	public static final String ONINTERACT_QSAYXY = "qsayxy";
 }

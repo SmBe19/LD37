@@ -137,6 +137,8 @@ public class GameWorld {
 	protected void initEntities(){
 		addEntity(new Entity("kerze", Textures.tiles.getTextureRegion(6, 9)));
 		addEntity(new Entity("kocke", Textures.tiles.getTextureRegion(5, 9)));
+
+
 	}
 
 	protected void updateInput(float delta){
@@ -222,18 +224,33 @@ public class GameWorld {
 		}
 	}
 
+	public void skipSpeeches() {
+		for (Speech speech : speeches) {
+			speech.age = speech.duration - Consts.SPEECH_BUBBLE_ANIM_DURATION;
+		}
+	}
+
 	public void update(float delta){
-		if(!inputPaused && !cinematic) {
-			if (hero.portalAction == null) {
-				updateInput(delta);
-				hero.update(delta, level.get().map, (TiledMapTileLayer) level.get().map.getLayers().get(Consts.LAYER_COLLISION));
-			} else {
-				if (fadeOut.get() == 0 && TimeUtils.millis() > hero.portalAction.start + hero.portalAction.delay - (long) (1000 * Consts.FADE_DURATION)) {
-					fadeOut.set(Math.min((hero.portalAction.start + hero.portalAction.delay - TimeUtils.millis()) / 1000.f, Consts.FADE_DURATION));
+		if(!cinematic) {
+			if (!inputPaused) {
+				if (hero.portalAction == null) {
+					updateInput(delta);
+					hero.update(delta, level.get().map, (TiledMapTileLayer) level.get().map.getLayers().get(Consts.LAYER_COLLISION));
+				} else {
+					if (fadeOut.get() == 0 && TimeUtils.millis() > hero.portalAction.start + hero.portalAction.delay - (long) (1000 * Consts.FADE_DURATION)) {
+						fadeOut.set(Math.min((hero.portalAction.start + hero.portalAction.delay - TimeUtils.millis()) / 1000.f, Consts.FADE_DURATION));
+					}
+					if (TimeUtils.millis() > hero.portalAction.start + hero.portalAction.delay) {
+						loadLevel(Level.valueOf(hero.portalAction.tolevel), hero.portalAction.id);
+						hero.portalAction = null;
+					}
 				}
-				if (TimeUtils.millis() > hero.portalAction.start + hero.portalAction.delay) {
-					loadLevel(Level.valueOf(hero.portalAction.tolevel), hero.portalAction.id);
-					hero.portalAction = null;
+			} else {
+				if(Gdx.input.isKeyJustPressed(Consts.INPUT_SKIP)){
+					skipSpeeches();
+					if (subtitles.size > 0) {
+						subtitles.first().age = subtitles.first().duration - Consts.SPEECH_BUBBLE_ANIM_DURATION;
+					}
 				}
 			}
 		}

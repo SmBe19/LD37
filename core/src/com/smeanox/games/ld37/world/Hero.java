@@ -48,6 +48,22 @@ public class Hero {
 		}
 	}
 
+	public static final String[] dontdothisstrings = new String[]{
+			"I don't think that's going to work.",
+			"That doesn't make sense.",
+			"Bad idea.",
+			"That's not how the programmer envisioned it.",
+			"This won't get me ahead.",
+			"I should try something else.",
+			"Doesn't seem to be making any progress.",
+	};
+
+	public static final String[] wrongpersonstrings = new String[]{
+			"I think there's a better use for that.",
+			"Maybe someone else is better suited.",
+			"Now is not the time for this.",
+	};
+
 	public final GameWorld gameWorld;
 	public float x, y, vx, vy;
 	public float animationTime;
@@ -200,6 +216,10 @@ public class Hero {
 							if (ob2 != null) {
 								ob2.getProperties().put(Consts.PROP_ACTIVE, false);
 							}
+						} else if (Consts.ONINTERACT_PAUSE.equalsIgnoreCase(cmd[0])) {
+							gameWorld.inputPaused = true;
+						} else if (Consts.ONINTERACT_CLEARSPEECH.equalsIgnoreCase(cmd[0])) {
+							gameWorld.skipSpeeches();
 						} else if (Consts.ONINTERACT_TAKE.equalsIgnoreCase(cmd[0])) {
 							if (cmd[1].length() == 0 || Consts.ONINTERACT_THIS.equals(cmd[1])){
 								addToInventory(object);
@@ -236,6 +256,11 @@ public class Hero {
 						} else if (Consts.ONINTERACT_SAYXY.equalsIgnoreCase(cmd[0])) {
 							String[] split = cmd[1].split(" ", 3);
 							gameWorld.speeches.add(new GameWorld.Speech(split[2].replace("%N", "\n"), Float.parseFloat(split[0]), Float.parseFloat(split[1]), false));
+						} else if (Consts.ONINTERACT_QSAY.equalsIgnoreCase(cmd[0])) {
+							gameWorld.speechQueue.addLast(new GameWorld.Speech(cmd[1].replace("%N", "\n"), 0, 0, false, true));
+						} else if (Consts.ONINTERACT_QSAYXY.equalsIgnoreCase(cmd[0])) {
+							String[] split = cmd[1].split(" ", 3);
+							gameWorld.speechQueue.addLast(new GameWorld.Speech(split[2].replace("%N", "\n"), Float.parseFloat(split[0]), Float.parseFloat(split[1]), false));
 						}
 					}
 				}

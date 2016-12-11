@@ -289,6 +289,17 @@
    <properties>
     <property name="displayname" value="Master"/>
     <property name="examine" value="My dead master"/>
+    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract_0">pause
+clearspeech
+qsay Hello there!
+qsayxy 6 2 Hi
+qsay Hello there! 2
+qsayxy 6 2 Hi 2
+qsay Hello there! 3
+qsayxy 6 2 Hi 3
+qsay Hello there! 4
+qsayxy 6 2 Hi 4</property>
    </properties>
   </object>
   <object id="21" gid="55" x="64" y="176" width="16" height="16">

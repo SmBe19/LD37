@@ -291,7 +291,7 @@ public class GameScreen implements Screen {
 				break;
 			}
 		}
-		if (aidx < 0 || aidx >= keyframes.length - 1) {
+		if (aidx < 0 || aidx >= keyframes.length - 1 || Gdx.input.isKeyJustPressed(Consts.INPUT_SKIP)) {
 			gameWorld.loadLevel(Level.lvl_magelab, "main");
 			keyframes = null;
 			return;
