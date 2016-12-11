@@ -9,6 +9,20 @@ import com.smeanox.games.ld37.Consts;
 import com.smeanox.games.ld37.io.Level;
 import com.smeanox.games.ld37.io.Textures;
 import com.smeanox.games.ld37.world.entity.Entity;
+import com.smeanox.games.ld37.world.entity.EntityBlueElixir;
+import com.smeanox.games.ld37.world.entity.EntityBurningStraw;
+import com.smeanox.games.ld37.world.entity.EntityCheese;
+import com.smeanox.games.ld37.world.entity.EntityEmerald;
+import com.smeanox.games.ld37.world.entity.EntityGoldCoin;
+import com.smeanox.games.ld37.world.entity.EntityGreenElixir;
+import com.smeanox.games.ld37.world.entity.EntityKeys;
+import com.smeanox.games.ld37.world.entity.EntityKing;
+import com.smeanox.games.ld37.world.entity.EntityMead;
+import com.smeanox.games.ld37.world.entity.EntityRattail;
+import com.smeanox.games.ld37.world.entity.EntitySaw;
+import com.smeanox.games.ld37.world.entity.EntitySilverCoin;
+import com.smeanox.games.ld37.world.entity.EntityStraw;
+import com.smeanox.games.ld37.world.entity.EntityWaterBucket;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,6 +44,7 @@ public class GameWorld {
 	public boolean speechHeroActive;
 	public boolean inventoryVisible;
 	public boolean inputPaused;
+	public boolean walkingPaused;
 	public boolean cinematic;
 
 	public static class Speech{
@@ -110,7 +125,7 @@ public class GameWorld {
 
 	public void loadLevel(Level level, String portalId) {
 		this.speeches.clear();
-		this.cinematic = level == Level.lvl_intro;
+		this.cinematic = level == Level.lvl_intro || level == Level.lvl_outro;
 		this.level.set(level);
 		this.heroVeloScale = level.map.getProperties().get(Consts.PROP_VELOSCALE, 1.f, Float.class);
 
@@ -138,21 +153,42 @@ public class GameWorld {
 		addEntity(new Entity("kerze", Textures.tiles.getTextureRegion(6, 9)));
 		addEntity(new Entity("kocke", Textures.tiles.getTextureRegion(5, 9)));
 
-
+		addEntity(new EntityGreenElixir("greenelixir", Textures.tiles.getTextureRegion(15, 5)));
+		addEntity(new EntityBlueElixir("blueelixir", Textures.tiles.getTextureRegion(15, 6), "Makes a person fall asleep.\nI can use it by throwing it at someone."));
+		addEntity(new EntityRattail("rattail", Textures.tiles.getTextureRegion(15, 7), "Like Spaghetti, except more rat-tail-y."));
+		addEntity(new Entity("rat", Textures.tiles.getTextureRegion(4, 9)));
+		addEntity(new EntityEmerald("emerald", Textures.tiles.getTextureRegion(15, 8), "A glittering green gem."));
+		addEntity(new Entity("bucket", Textures.tiles.getTextureRegion(15, 9), "Can carry liquids.\nOne of these is used in the well."));
+		addEntity(new EntityWaterBucket("waterbucket", Textures.tiles.getTextureRegion(15, 4), "The water seems like a good way to extinguish flames."));
+		addEntity(new EntityKeys("keys", Textures.tiles.getTextureRegion(15, 10), "Opens doors, probably."));
+		addEntity(new EntityGoldCoin("goldcoin", Textures.tiles.getTextureRegion(15, 11)));
+		addEntity(new EntitySilverCoin("silvercoin", Textures.tiles.getTextureRegion(14, 4), "Even during a siege, you can\nstill buy stuff with it."));
+		addEntity(new EntityStraw("straw", Textures.tiles.getTextureRegion(14, 5)));
+		addEntity(new Entity("strawman", Textures.tiles.getTextureRegion(14, 6)));
+		addEntity(new EntityBurningStraw("burningstrawman", Textures.tiles.getTextureRegion(14, 7), "Burns like a guy.\nNot that I'd know about that."));
+		addEntity(new Entity("elixicon", Textures.tiles.getTextureRegion(14, 8), "It contains interesting information and recipes.\nTwo are of interest to me:\nThe green potion can turn people into frogs\nand a blue sleeping elixir is made by\ncooking a rat tail in the cauldron."));
+		addEntity(new EntityCheese("cheese", Textures.tiles.getTextureRegion(14, 9), "Loved by man and beast alike."));
+		addEntity(new Entity("king", Textures.tiles.getTextureRegion(14, 10)));
+		addEntity(new EntityKing("sleepingking", Textures.tiles.getTextureRegion(14, 10), "I can't believe he fit in my pocket."));
+		addEntity(new EntityKing("kingshand", Textures.tiles.getTextureRegion(14, 11), "Might come in handy later."));
+		addEntity(new EntitySaw("saw", Textures.tiles.getTextureRegion(14, 12), "Potentially Dangerous."));
+		addEntity(new EntityMead("mead", Textures.tiles.getTextureRegion(15, 12), "Cheers people up in times like these."));
 	}
 
 	protected void updateInput(float delta){
-		if (Gdx.input.isKeyPressed(Consts.INPUT_MOVE_LEFT)) {
-			hero.vx = -Consts.HERO_VELO_X * heroVeloScale;
-		}
-		if (Gdx.input.isKeyPressed(Consts.INPUT_MOVE_RIGHT)) {
-			hero.vx = Consts.HERO_VELO_X * heroVeloScale;
-		}
-		if (Gdx.input.isKeyPressed(Consts.INPUT_MOVE_UP)) {
-			hero.vy = Consts.HERO_VELO_Y * heroVeloScale;
-		}
-		if (Gdx.input.isKeyPressed(Consts.INPUT_MOVE_DOWN)) {
-			hero.vy = -Consts.HERO_VELO_Y * heroVeloScale;
+		if(!walkingPaused) {
+			if (Gdx.input.isKeyPressed(Consts.INPUT_MOVE_LEFT)) {
+				hero.vx = -Consts.HERO_VELO_X * heroVeloScale;
+			}
+			if (Gdx.input.isKeyPressed(Consts.INPUT_MOVE_RIGHT)) {
+				hero.vx = Consts.HERO_VELO_X * heroVeloScale;
+			}
+			if (Gdx.input.isKeyPressed(Consts.INPUT_MOVE_UP)) {
+				hero.vy = Consts.HERO_VELO_Y * heroVeloScale;
+			}
+			if (Gdx.input.isKeyPressed(Consts.INPUT_MOVE_DOWN)) {
+				hero.vy = -Consts.HERO_VELO_Y * heroVeloScale;
+			}
 		}
 		if(!Gdx.input.isKeyPressed(Consts.INPUT_MOVE_LEFT) && !Gdx.input.isKeyPressed(Consts.INPUT_MOVE_RIGHT)){
 			hero.vx = 0;
@@ -187,6 +223,12 @@ public class GameWorld {
 				hero.activeInventory %= hero.inventory.size();
 			} else {
 				hero.activeInventory = 0;
+			}
+		}
+		if(Gdx.input.isKeyJustPressed(Consts.INPUT_SKIP)){
+			skipSpeeches();
+			if (subtitles.size > 0) {
+				subtitles.first().age = subtitles.first().duration - Consts.SPEECH_BUBBLE_ANIM_DURATION;
 			}
 		}
 	}

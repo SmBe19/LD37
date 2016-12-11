@@ -312,11 +312,11 @@ But I need money.</property>
     <property name="oninteract_0">pause
 clearspeech
 deactivate $this
-qsayxy 22.5 16 What'll it be for you?
+qsayxy 12.5 7 What'll it be for you?
 qsay You seem to be someone who hears %N a lot of stories. What is so %N special about Room 51?
-qsayxy 22.5 16 Nobody really knows anything specific about it. %N But there certainly is rumours. %N Some people think there’s ghosts in there %N  or some sort of mystical creature. %N What’s for sure is that the king %N doesn’t want anyone finding it out.</property>
+qsayxy 12.5 7 Nobody really knows anything specific about it. %N But there certainly is rumours. %N Some people think there’s ghosts in there %N  or some sort of mystical creature. %N What’s for sure is that the king %N doesn’t want anyone finding it out.</property>
     <property name="onnointeract" type="int" value="1"/>
-    <property name="onnointeract_0" value="qsayxy 22.5 16 Drinks ain’t free around here. %N If you want anything, you’ll need some money.”"/>
+    <property name="onnointeract_0" value="qsayxy 12.5 7 Drinks ain’t free around here. %N If you want anything, you’ll need some money.”"/>
    </properties>
   </object>
  </objectgroup>

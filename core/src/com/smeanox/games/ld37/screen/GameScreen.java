@@ -2,8 +2,10 @@ package com.smeanox.games.ld37.screen;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -27,13 +29,19 @@ public class GameScreen implements Screen {
 	private float fadeStart;
 	private boolean isDark;
 	private int screenWidth, screenHeight;
+	private float bgwidth;
+	private float bgheight;
 	private float currentScale;
 	public float cinematicProgress;
 	public float cinematicAlpha;
+	public float logoAlpha;
 
 	private final TextureRegion fadeTexture;
+	private final Texture logo;
+	private final Texture castlebg;
 	private final TextureRegion inventoryBackground;
 	private final TextureRegion[] speechBubble;
+	private final Music introNarration;
 
 	private class Keyframe {
 		float time;
@@ -41,26 +49,42 @@ public class GameScreen implements Screen {
 		float centerx;
 		float centery;
 		float alpha;
+		float logo;
 
-		public Keyframe(float time, float scale, float centerx, float centery, float alpha) {
+		public Keyframe(float time, float scale, float centerx, float centery, float alpha, float logo) {
 			this.time = time;
 			this.scale = scale;
 			this.centerx = centerx;
 			this.centery = centery;
 			this.alpha = alpha;
+			this.logo = logo;
 		}
 	}
 
 	private Keyframe[] keyframesIntro = new Keyframe[]{
-			new Keyframe(0, 0.1f, 9, 12, 1),
-			new Keyframe(2, 0.1f, 11f, 11.4f, 0),
-			new Keyframe(4, 0.2f, 12, 8.75f, 0),
-			new Keyframe(4.01f, 0.1f, 12, 8.75f, 0),
-			new Keyframe(6, 0.1f, 13.5f, 7, 0),
-			new Keyframe(12, 0.5f, 12, 7, 0),
-			new Keyframe(18, 1, 12, 7, 0),
-			new Keyframe(26, 1, 12, 7, 0),
-			new Keyframe(30, 1, 12, 7, 1),
+			new Keyframe(0, 0.1f, 9, 12, 1, 0),
+			new Keyframe(2, 0.1f, 11f, 11.4f, 0, 0),
+			new Keyframe(4, 0.2f, 12, 8.75f, 0, 0),
+			new Keyframe(4.01f, 0.1f, 12, 8.75f, 0, 0),
+			new Keyframe(6, 0.1f, 13.5f, 7, 0, 0),
+			new Keyframe(7, 0.1f, 13.5f, 7, 0, 0),
+			new Keyframe(12, 0.5f, 12, 7, 0, 0),
+			new Keyframe(18, 1, 12, 7, 0, 1),
+			new Keyframe(26, 1, 12, 7, 0, 1),
+			new Keyframe(30, 1, 12, 7, 1, 1),
+	};
+
+	private Keyframe[] keyframesOutro = new Keyframe[]{
+			new Keyframe(0, 0.1f, 9, 12, 1, 0),
+			new Keyframe(2, 0.1f, 11f, 11.4f, 0, 0),
+			new Keyframe(4, 0.2f, 12, 8.75f, 0, 0),
+			new Keyframe(4.01f, 0.1f, 12, 8.75f, 0, 0),
+			new Keyframe(6, 0.1f, 13.5f, 7, 0, 0),
+			new Keyframe(7, 0.1f, 13.5f, 7, 0, 0),
+			new Keyframe(12, 0.5f, 12, 7, 0, 0),
+			new Keyframe(18, 1, 12, 7, 0, 1),
+			new Keyframe(26, 1, 12, 7, 0, 1),
+			new Keyframe(30, 1, 12, 7, 1, 1),
 	};
 
 	private Keyframe[] keyframes = null;
@@ -72,7 +96,10 @@ public class GameScreen implements Screen {
 		mapRenderer = null;
 		currentScale = 1;
 
+		introNarration = Gdx.audio.newMusic(Gdx.files.internal("snd/IntroNarration.mp3"));
 		fadeTexture = Textures.tiles.getTextureRegion(10, 3);
+		logo = Textures.logo.texture;
+		castlebg = Textures.castlebg.texture;
 		inventoryBackground = Textures.tiles.getTextureRegion(14, 13, 2 * Consts.TEX_SIZE, 2 * Consts.TEX_SIZE);
 		speechBubble = new TextureRegion[]{
 				Textures.tiles.getTextureRegion(29, 0, 8, 8, 8),
@@ -98,6 +125,8 @@ public class GameScreen implements Screen {
 				cinematicProgress = 0;
 				if(((ObservableValue<Level>) o).get() == level.lvl_intro){
 					initIntro();
+				} else if (((ObservableValue<Level>) o).get() == level.lvl_outro){
+					initOutro();
 				}
 			}
 		});
@@ -124,6 +153,18 @@ public class GameScreen implements Screen {
 		gameWorld.subtitles.addLast(new GameWorld.Speech("Unfortunately, that castle was attacked\nby an enemy army and is now under siege.", 10));
 		gameWorld.subtitles.addLast(new GameWorld.Speech("It would seem that there is only one hope...", 6));
 		gameWorld.subtitles.addLast(new GameWorld.Speech("Aaaaaah! I was hit!", 4));
+		gameWorld.subtitles.addLast(new GameWorld.Speech("Press F to pay respect", 60));
+		gameWorld.walkingPaused = true;
+		if (introNarration.isPlaying()) {
+			introNarration.stop();
+		}
+		introNarration.play();
+	}
+
+	private void initOutro(){
+		keyframes = keyframesOutro;
+		gameWorld.subtitles.addLast(new GameWorld.Speech("Once upon a time, there was a cute\nlittle castle on a hill.", 10));
+		gameWorld.subtitles.addLast(new GameWorld.Speech("Unfortunately, that castle was attacked\nby an enemy army and is now under siege.", 10));
 	}
 
 	@Override
@@ -164,6 +205,14 @@ public class GameScreen implements Screen {
 		spriteBatch.setColor(1, 1, 1, alpha);
 		spriteBatch.begin();
 		spriteBatch.draw(fadeTexture, 0, 0, guicamera.viewportWidth, guicamera.viewportHeight);
+		spriteBatch.end();
+		spriteBatch.setColor(1, 1, 1, 1);
+	}
+
+	private void drawLogo(float alpha){
+		spriteBatch.setColor(1, 1, 1, alpha);
+		spriteBatch.begin();
+		spriteBatch.draw(logo, 8, 2, 6, 3);
 		spriteBatch.end();
 		spriteBatch.setColor(1, 1, 1, 1);
 	}
@@ -243,14 +292,27 @@ public class GameScreen implements Screen {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		camera.update();
 		guicamera.update();
+
+		spriteBatch.setProjectionMatrix(guicamera.combined);
+		spriteBatch.begin();
+		spriteBatch.draw(Textures.castlebg.texture, 0, guicamera.viewportHeight - bgheight, bgwidth, bgheight);
+		spriteBatch.end();
+
 		spriteBatch.setProjectionMatrix(camera.combined);
 		mapRenderer.setView(camera);
 		mapRenderer.render();
+
+		if (gameWorld.cinematic) {
+			drawLogo(logoAlpha);
+		}
 
 		drawSpeechBubbles();
 
 		spriteBatch.setProjectionMatrix(guicamera.combined);
 		drawGUI(delta);
+		if(gameWorld.cinematic){
+			drawDark(cinematicAlpha);
+		}
 		if (fadeProgress != 0) {
 			float alpha = fadeStart < 0 ? fadeProgress / fadeStart : (fadeStart - fadeProgress) / fadeStart;
 			drawDark(alpha);
@@ -267,9 +329,6 @@ public class GameScreen implements Screen {
 		}
 		if (isDark) {
 			drawDark(1);
-		}
-		if(gameWorld.cinematic){
-			drawDark(cinematicAlpha);
 		}
 	}
 
@@ -291,7 +350,15 @@ public class GameScreen implements Screen {
 				break;
 			}
 		}
-		if (aidx < 0 || aidx >= keyframes.length - 1 || Gdx.input.isKeyJustPressed(Consts.INPUT_SKIP)) {
+		if(Gdx.input.isKeyJustPressed(Consts.INPUT_SKIP)){
+			gameWorld.loadLevel(Level.lvl_magelab, "main");
+			keyframes = null;
+			introNarration.stop();
+			gameWorld.speechQueue.clear();
+			gameWorld.subtitles.clear();
+			return;
+		}
+		if (aidx < 0 || aidx >= keyframes.length - 1) {
 			gameWorld.loadLevel(Level.lvl_magelab, "main");
 			keyframes = null;
 			return;
@@ -301,6 +368,7 @@ public class GameScreen implements Screen {
 		Keyframe k2 = keyframes[aidx+1];
 		float progress = (cinematicProgress - k1.time) / (k2.time - k1.time);
 		cinematicAlpha = interpolate(k1.alpha, k2.alpha, progress);
+		logoAlpha = interpolate(k1.logo, k2.logo, progress);
 		float centerx = interpolate(k1.centerx, k2.centerx, progress);
 		float centery = interpolate(k1.centery, k2.centery, progress);
 		float scale = interpolate(k1.scale, k2.scale, progress);
@@ -324,6 +392,9 @@ public class GameScreen implements Screen {
 		screenWidth = width;
 		screenHeight = height;
 		setScale(currentScale);
+		float aspect = castlebg.getWidth() / ((float) castlebg.getHeight());
+		bgwidth = guicamera.viewportWidth;
+		bgheight = bgwidth / aspect;
 	}
 
 	public void setScale(float scale) {
@@ -360,6 +431,9 @@ public class GameScreen implements Screen {
 		}
 		for (Level level : Level.values()) {
 			level.map.dispose();
+		}
+		if (introNarration != null) {
+			introNarration.dispose();
 		}
 	}
 }

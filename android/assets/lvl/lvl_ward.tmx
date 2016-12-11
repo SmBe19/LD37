@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="74" height="40" tilewidth="16" tileheight="16" nextobjectid="121">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="74" height="40" tilewidth="16" tileheight="16" nextobjectid="256">
  <properties>
   <property name="mapscale" type="float" value="1.5"/>
   <property name="veloscale" type="float" value="1.5"/>
@@ -113,17 +113,48 @@
     <frame tileid="120" duration="200"/>
    </animation>
   </tile>
+  <tile id="93">
+   <animation>
+    <frame tileid="93" duration="300"/>
+    <frame tileid="109" duration="300"/>
+    <frame tileid="125" duration="300"/>
+    <frame tileid="141" duration="300"/>
+   </animation>
+  </tile>
   <tile id="96" terrain="3,3,3,3"/>
   <tile id="97" terrain="3,3,3,3"/>
   <tile id="98" terrain="3,3,3,3"/>
+  <tile id="109">
+   <animation>
+    <frame tileid="109" duration="300"/>
+    <frame tileid="125" duration="300"/>
+    <frame tileid="141" duration="300"/>
+    <frame tileid="93" duration="300"/>
+   </animation>
+  </tile>
   <tile id="112" terrain="4,4,4,4"/>
   <tile id="113" terrain="4,4,4,4"/>
   <tile id="114" terrain="4,4,4,4"/>
-  <tile id="123" terrain="6,6,6,6"/>
+  <tile id="125">
+   <animation>
+    <frame tileid="125" duration="250"/>
+    <frame tileid="141" duration="300"/>
+    <frame tileid="93" duration="250"/>
+    <frame tileid="109" duration="300"/>
+   </animation>
+  </tile>
   <tile id="128" terrain="5,5,5,5"/>
   <tile id="129" terrain="5,5,5,5"/>
   <tile id="130" terrain="5,5,5,5"/>
   <tile id="139" terrain="6,6,6,6"/>
+  <tile id="141">
+   <animation>
+    <frame tileid="141" duration="200"/>
+    <frame tileid="93" duration="300"/>
+    <frame tileid="109" duration="200"/>
+    <frame tileid="125" duration="300"/>
+   </animation>
+  </tile>
   <tile id="148">
    <animation>
     <frame tileid="148" duration="2000"/>
@@ -294,8 +325,40 @@
     <frame tileid="3" duration="200"/>
    </animation>
   </tile>
+  <tile id="40">
+   <animation>
+    <frame tileid="71" duration="2000"/>
+    <frame tileid="40" duration="300"/>
+    <frame tileid="42" duration="300"/>
+    <frame tileid="72" duration="300"/>
+   </animation>
+  </tile>
+  <tile id="41">
+   <animation>
+    <frame tileid="39" duration="2000"/>
+    <frame tileid="41" duration="300"/>
+    <frame tileid="43" duration="300"/>
+    <frame tileid="73" duration="300"/>
+   </animation>
+  </tile>
+  <tile id="55">
+   <animation>
+    <frame tileid="86" duration="2000"/>
+    <frame tileid="55" duration="300"/>
+    <frame tileid="57" duration="300"/>
+    <frame tileid="87" duration="300"/>
+   </animation>
+  </tile>
+  <tile id="56">
+   <animation>
+    <frame tileid="54" duration="2000"/>
+    <frame tileid="56" duration="300"/>
+    <frame tileid="58" duration="300"/>
+    <frame tileid="88" duration="300"/>
+   </animation>
+  </tile>
  </tileset>
- <layer name="Schwarzer Hintergrund" width="74" height="40">
+ <layer name="Schwarzer Hintergrund" width="74" height="40" visible="0">
   <data encoding="base64" compression="zlib">
    eJztzsEJAEAIBLEFS7mn/fcnVnEIGch/OkkDACdsr/5/AAAAAAAAAAAAcNMA7snxEA==
   </data>
@@ -330,6 +393,10 @@
 to drink or to save the buildings
 from the experimental mishaps of my master.
 I guess it's ex-master now.</property>
+    <property name="oninteract" type="int" value="3"/>
+    <property name="oninteract_0" value="take bucket"/>
+    <property name="oninteract_1" value="deactivate $this"/>
+    <property name="oninteract_2" value="setvar bucket 1"/>
    </properties>
   </object>
   <object id="69" gid="61" x="576" y="496" width="16" height="16"/>
@@ -485,9 +552,10 @@ qthink Well then I'm going to have%Nto ask the king myself.</property>
     <property name="examine">Looks like he’s barely conscious enough
 to eat that piece of cheese in his hand.</property>
     <property name="oninteract" type="int" value="1"/>
-    <property name="oninteract_0" value="qsayxy 22.5 16 Heeeeeey theeere. Are youuu %N [hick] %N here to bring me more mead?”  "/>
+    <property name="oninteract_0">deactivate $this
+qsayxy 42 36 Heeeeeey theeere. Are youuu %N [hick] %N here to bring me more mead?” </property>
     <property name="onnointeract" type="int" value="1"/>
-    <property name="onnointeract_0" value="qsayxy 22.5 16 Shome more mead, pleashe."/>
+    <property name="onnointeract_0" value="qsayxy 42 36 Shome more mead, pleashe."/>
    </properties>
   </object>
   <object id="117" name="flamearrow" type="entity" gid="75" x="720" y="544" width="16" height="16">
@@ -522,6 +590,34 @@ It's all fun and games until something
 catches fire.</property>
    </properties>
   </object>
+  <object id="122" name="barndoor" type="entity" x="656" y="400" width="16" height="16"/>
+  <object id="205" name="barnfire" type="entity" x="576" y="400" width="16" height="16"/>
+  <object id="209" name="barnfire" type="entity" x="592" y="400" width="16" height="16"/>
+  <object id="210" name="barnfire" type="entity" x="608" y="400" width="16" height="16"/>
+  <object id="211" name="barnfire" type="entity" x="624" y="400" width="16" height="16"/>
+  <object id="212" name="barnfire" type="entity" x="688" y="400" width="16" height="16"/>
+  <object id="214" name="boy" gid="826" x="640" y="528" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Thieving Jake"/>
+    <property name="examine" value="He's often been caught stealing stuff around here."/>
+    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract_0">pause
+clearspeech
+qsayxy 40 9 Well if it isn't the apprentice.%NYou survived that projectile? Quite a shame.
+qsay Whatever, Jake. Did you steal the elixicon?
+qsayxy 40 9 Maybe. Depends on your ability to pay.%NIf you give me a gold piece,%Nmaybe I will talk
+qsay Fuck you, Jake</property>
+    <property name="onnointeract" type="int" value="1"/>
+    <property name="onnointeract_0">qsayxy 40 9 It was a pleasure doing business with you
+qsay Fuck you, Jake</property>
+   </properties>
+  </object>
+  <object id="215" name="boy" gid="811" x="640" y="512" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Thieving Jake"/>
+    <property name="examine" value="He's often been caught stealing stuff around here."/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="Vordere Mauer und Häuser" width="74" height="40">
   <data encoding="base64" compression="zlib">
@@ -552,7 +648,7 @@ I need to get access somehow...</property>
     <property name="tolevel" value="lvl_tower"/>
    </properties>
   </object>
-  <object id="11" name="main" type="spawn" x="464" y="432" width="16" height="32">
+  <object id="11" name="main" type="spawn" x="864" y="112" width="16" height="32">
    <properties>
     <property name="fromlevel" value="main"/>
     <property name="portalid" value="main"/>
@@ -631,7 +727,7 @@ that's the place to be these days.</property>
     <property name="tolevel" value="lvl_palace"/>
    </properties>
   </object>
-  <object id="93" name="exit_wall" type="exit" x="656" y="384" width="16" height="32">
+  <object id="93" name="exit_barn" type="exit" x="656" y="384" width="16" height="32">
    <properties>
     <property name="active" type="bool" value="false"/>
     <property name="delay" type="int" value="2000"/>
@@ -663,28 +759,6 @@ got good drinks I've heard.</property>
     <property name="tolevel" value="lvl_tavern"/>
    </properties>
   </object>
-  <object id="108" name="boy" type="entity" gid="709" x="640" y="512" width="16" height="16">
-   <properties>
-    <property name="displayname" value="Thieving Jake"/>
-    <property name="examine" value="He's often been caught stealing stuff around here."/>
-   </properties>
-  </object>
-  <object id="109" name="boy" type="entity" gid="717" x="640" y="528" width="16" height="16">
-   <properties>
-    <property name="displayname" value="Thieving Jake"/>
-    <property name="examine" value="He's often been caught stealing stuff around here."/>
-    <property name="oninteract" type="int" value="1"/>
-    <property name="oninteract_0">pause
-clearspeech
-qsayxy 40 9 Well if it isn't the apprentice.%NYou survived that projectile? Quite a shame.
-qsay Whatever, Jake. Did you steal the elixicon?
-qsayxy 40 9 Maybe. Depends on your ability to pay.%NIf you give me a gold piece,%Nmaybe I will talk
-qsay Fuck you, Jake</property>
-    <property name="onnointeract" type="int" value="1"/>
-    <property name="onnointeract_0">qsayxy 40 9 It was a pleasure doing business with you
-qsay Fuck you, Jake</property>
-   </properties>
-  </object>
  </objectgroup>
  <layer name="Zinne" width="74" height="40">
   <data encoding="base64" compression="zlib">
@@ -696,4 +770,119 @@ qsay Fuck you, Jake</property>
    eJzt19EJwCAMQEHp/lulg3WGQGvSeB/3G/QJonGtFQBwmPtHdu5Vp/mdKs+kej1dVd+HAADA+zLv/ezfoOKf8dV8nXTSaX+nSMzTaW6nKXTSSafc3nTSqRuddNJJp6500glO8QD1terN
   </data>
  </layer>
+ <objectgroup name="fire">
+  <object id="124" name="fire" gid="94" x="613.333" y="282.333" width="16" height="16" visible="0"/>
+  <object id="125" name="fire" gid="94" x="636.667" y="305.667" width="16" height="16" visible="0"/>
+  <object id="126" name="fire" gid="94" x="678.667" y="290.667" width="16" height="16" visible="0"/>
+  <object id="127" name="fire" gid="94" x="691.667" y="281.333" width="16" height="16" visible="0"/>
+  <object id="128" name="fire" gid="94" x="688.667" y="320.667" width="16" height="16" visible="0"/>
+  <object id="129" name="fire" gid="94" x="637.333" y="336.333" width="16" height="16" visible="0"/>
+  <object id="130" name="fire" gid="94" x="551.333" y="314.333" width="16" height="16" visible="0"/>
+  <object id="131" name="fire" gid="94" x="560" y="281.333" width="16" height="16" visible="0"/>
+  <object id="132" name="fire" gid="94" x="606.667" y="261" width="16" height="16" visible="0"/>
+  <object id="133" name="fire" gid="94" x="648" y="291" width="16" height="16" visible="0"/>
+  <object id="134" name="fire" gid="94" x="696.333" y="255.667" width="16" height="16" visible="0"/>
+  <object id="135" name="fire" gid="94" x="706.333" y="276.667" width="16" height="16" visible="0"/>
+  <object id="136" name="fire" gid="110" x="592.333" y="283.333" width="16" height="16" visible="0"/>
+  <object id="137" name="fire" gid="110" x="604.333" y="310" width="16" height="16" visible="0"/>
+  <object id="138" name="fire" gid="110" x="657" y="301" width="16" height="16" visible="0"/>
+  <object id="139" name="fire" gid="110" x="668.333" y="268.333" width="16" height="16" visible="0"/>
+  <object id="140" name="fire" gid="110" x="676.333" y="256.333" width="16" height="16" visible="0"/>
+  <object id="141" name="fire" gid="110" x="681" y="302" width="16" height="16" visible="0"/>
+  <object id="142" name="fire" gid="110" x="661.333" y="319.667" width="16" height="16" visible="0"/>
+  <object id="143" name="fire" gid="110" x="605.333" y="328.333" width="16" height="16" visible="0"/>
+  <object id="144" name="fire" gid="110" x="580" y="304" width="16" height="16" visible="0"/>
+  <object id="145" name="fire" gid="110" x="579.333" y="275.667" width="16" height="16" visible="0"/>
+  <object id="146" name="fire" gid="110" x="601.333" y="259" width="16" height="16" visible="0"/>
+  <object id="147" name="fire" gid="126" x="566.333" y="343.333" width="16" height="16" visible="0"/>
+  <object id="148" name="fire" gid="126" x="566.667" y="327.667" width="16" height="16" visible="0"/>
+  <object id="149" name="fire" gid="126" x="615" y="299.667" width="16" height="16" visible="0"/>
+  <object id="150" name="fire" gid="126" x="656.333" y="262.667" width="16" height="16" visible="0"/>
+  <object id="151" name="fire" gid="126" x="660.333" y="257.667" width="16" height="16" visible="0"/>
+  <object id="152" name="fire" gid="126" x="591" y="265.667" width="16" height="16" visible="0"/>
+  <object id="155" name="fire" gid="126" x="629.667" y="267.333" width="16" height="16" visible="0"/>
+  <object id="156" name="fire" gid="126" x="663.333" y="281.333" width="16" height="16" visible="0"/>
+  <object id="157" name="fire" gid="126" x="680.333" y="315.667" width="16" height="16" visible="0"/>
+  <object id="158" name="fire" gid="126" x="689" y="341" width="16" height="16" visible="0"/>
+  <object id="159" name="fire" gid="126" x="658.333" y="340.333" width="16" height="16" visible="0"/>
+  <object id="160" name="fire" gid="126" x="573.667" y="333.667" width="16" height="16" visible="0"/>
+  <object id="161" name="fire" gid="126" x="590.667" y="311.333" width="16" height="16" visible="0"/>
+  <object id="162" name="fire" gid="126" x="646" y="268.667" width="16" height="16" visible="0"/>
+  <object id="163" name="fire" gid="126" x="634.667" y="253" width="16" height="16" visible="0"/>
+  <object id="164" name="fire" gid="142" x="667.333" y="325.667" width="16" height="16" visible="0"/>
+  <object id="165" name="fire" gid="142" x="636.667" y="322.667" width="16" height="16" visible="0"/>
+  <object id="166" name="fire" gid="142" x="608" y="335.667" width="16" height="16" visible="0"/>
+  <object id="167" name="fire" gid="142" x="606" y="314.667" width="16" height="16" visible="0"/>
+  <object id="168" name="fire" gid="142" x="626.667" y="295" width="16" height="16" visible="0"/>
+  <object id="169" name="fire" gid="142" x="625.667" y="274.333" width="16" height="16" visible="0"/>
+  <object id="170" name="fire" gid="142" x="600.333" y="259.667" width="16" height="16" visible="0"/>
+  <object id="171" name="fire" gid="142" x="571.667" y="259" width="16" height="16" visible="0"/>
+  <object id="172" name="fire" gid="142" x="577.333" y="278" width="16" height="16" visible="0"/>
+  <object id="173" name="fire" gid="142" x="590.333" y="311.667" width="16" height="16" visible="0"/>
+  <object id="174" name="fire" gid="142" x="594" y="335.667" width="16" height="16" visible="0"/>
+  <object id="175" name="fire" gid="142" x="690" y="331.333" width="16" height="16" visible="0"/>
+  <object id="176" name="fire" gid="142" x="697.667" y="301" width="16" height="16" visible="0"/>
+  <object id="177" name="fire" gid="142" x="697" y="284.667" width="16" height="16" visible="0"/>
+  <object id="178" name="fire" gid="142" x="695" y="274" width="16" height="16" visible="0"/>
+  <object id="179" name="fire" gid="142" x="692.667" y="270" width="16" height="16" visible="0"/>
+  <object id="180" name="fire" gid="94" x="675.333" y="341" width="16" height="16" visible="0"/>
+  <object id="181" name="fire" gid="94" x="655" y="343" width="16" height="16" visible="0"/>
+  <object id="182" name="fire" gid="94" x="647.333" y="337.667" width="16" height="16" visible="0"/>
+  <object id="183" name="fire" gid="94" x="627.667" y="332.333" width="16" height="16" visible="0"/>
+  <object id="184" name="fire" gid="94" x="620.667" y="312.667" width="16" height="16" visible="0"/>
+  <object id="185" name="fire" gid="94" x="583.333" y="304" width="16" height="16" visible="0"/>
+  <object id="186" name="fire" gid="94" x="566" y="319.333" width="16" height="16" visible="0"/>
+  <object id="187" name="fire" gid="94" x="567" y="325.333" width="16" height="16" visible="0"/>
+  <object id="188" name="fire" gid="94" x="562.333" y="298" width="16" height="16" visible="0"/>
+  <object id="189" name="fire" gid="94" x="563.667" y="277" width="16" height="16" visible="0"/>
+  <object id="190" name="fire" gid="94" x="563.667" y="270" width="16" height="16" visible="0"/>
+  <object id="191" name="fire" gid="94" x="567.667" y="261" width="16" height="16" visible="0"/>
+  <object id="192" name="fire" gid="94" x="617.333" y="303.333" width="16" height="16" visible="0"/>
+  <object id="193" name="fire" gid="94" x="610" y="298" width="16" height="16" visible="0"/>
+  <object id="194" name="fire" gid="94" x="609.667" y="288.667" width="16" height="16" visible="0"/>
+  <object id="195" name="fire" gid="94" x="616.333" y="273.667" width="16" height="16" visible="0"/>
+  <object id="196" name="fire" gid="94" x="633" y="264.667" width="16" height="16" visible="0"/>
+  <object id="197" name="fire" gid="110" x="665" y="303.667" width="16" height="16" visible="0"/>
+  <object id="198" name="fire" gid="110" x="670.667" y="287.667" width="16" height="16" visible="0"/>
+  <object id="199" name="fire" gid="110" x="679.333" y="284.333" width="16" height="16" visible="0"/>
+  <object id="200" name="fire" gid="110" x="695" y="325" width="16" height="16" visible="0"/>
+  <object id="201" name="fire" gid="110" x="705.667" y="321.667" width="16" height="16" visible="0"/>
+  <object id="202" name="fire" gid="110" x="708" y="335.667" width="16" height="16" visible="0"/>
+  <object id="218" name="guardfire" type="entity" gid="829" x="688" y="432" width="16" height="16" visible="0"/>
+  <object id="219" name="guardfire" type="entity" gid="828" x="672" y="432" width="16" height="16" visible="0"/>
+  <object id="220" name="guardfire" type="entity" gid="814" x="688" y="416" width="16" height="16" visible="0"/>
+  <object id="221" name="guardfire" type="entity" gid="813" x="672" y="416" width="16" height="16" visible="0"/>
+  <object id="222" name="guardfire" type="entity" gid="2147484477" x="592" y="432" width="16" height="16" visible="0"/>
+  <object id="223" name="guardfire" type="entity" gid="2147484462" x="592" y="416" width="16" height="16" visible="0"/>
+  <object id="224" name="guardfire" type="entity" gid="2147484476" x="608" y="432" width="16" height="16" visible="0"/>
+  <object id="225" name="guardfire" type="entity" gid="2147484461" x="608" y="416" width="16" height="16" visible="0"/>
+  <object id="226" name="guardfire" type="entity" gid="2147484462" x="560" y="416" width="16" height="16" visible="0"/>
+  <object id="227" name="guardfire" type="entity" gid="2147484477" x="560" y="432" width="16" height="16" visible="0"/>
+  <object id="228" name="guardfire" type="entity" gid="2147484476" x="576" y="432" width="16" height="16" visible="0"/>
+  <object id="229" name="guardfire" type="entity" gid="2147484461" x="576" y="416" width="16" height="16" visible="0"/>
+  <object id="230" name="guardfire" type="entity" gid="829" x="720" y="432" width="16" height="16" visible="0"/>
+  <object id="231" name="guardfire" type="entity" gid="813" x="704" y="416" width="16" height="16" visible="0"/>
+  <object id="232" name="guardfire" type="entity" gid="828" x="704" y="432" width="16" height="16" visible="0"/>
+  <object id="233" name="guardfire" type="entity" gid="814" x="720" y="416" width="16" height="16" visible="0"/>
+  <object id="234" name="guardfire" type="entity" gid="2147484462" x="624" y="416" width="16" height="16" visible="0"/>
+  <object id="235" name="guardfire" type="entity" gid="2147484477" x="624" y="432" width="16" height="16" visible="0"/>
+  <object id="236" gid="2147484461" x="640" y="416" width="16" height="16" visible="0"/>
+  <object id="237" gid="2147484476" x="640" y="432" width="16" height="16" visible="0"/>
+  <object id="238" name="guardfire" type="entity" gid="829" x="736" y="416" width="16" height="16" visible="0"/>
+  <object id="239" name="guardfire" type="entity" gid="2147484476" x="544" y="384" width="16" height="16" visible="0"/>
+  <object id="240" name="guardfire" type="entity" gid="2147484462" x="528" y="400" width="16" height="16" visible="0"/>
+  <object id="241" name="guardfire" type="entity" gid="813" x="720" y="368" width="16" height="16" visible="0"/>
+  <object id="242" name="guardfire" type="entity" gid="828" x="720" y="416" width="16" height="16" visible="0"/>
+  <object id="243" name="guardfire" type="entity" gid="2147484476" x="544" y="416" width="16" height="16" visible="0"/>
+  <object id="244" name="guardfire" type="entity" gid="2147484461" x="544" y="400" width="16" height="16" visible="0"/>
+  <object id="245" name="guardfire" type="entity" gid="2147484461" x="544" y="368" width="16" height="16" visible="0"/>
+  <object id="247" name="guardfire" type="entity" gid="814" x="736" y="368" width="16" height="16" visible="0"/>
+  <object id="248" name="guardfire" type="entity" gid="814" x="736" y="400" width="16" height="16" visible="0"/>
+  <object id="249" name="guardfire" type="entity" gid="2147484462" x="528" y="368" width="16" height="16" visible="0"/>
+  <object id="250" name="guardfire" type="entity" gid="813" x="720" y="400" width="16" height="16" visible="0"/>
+  <object id="251" name="guardfire" type="entity" gid="2147484477" x="528" y="416" width="16" height="16" visible="0"/>
+  <object id="252" name="guardfire" type="entity" gid="828" x="720" y="384" width="16" height="16" visible="0"/>
+  <object id="253" name="guardfire" type="entity" gid="829" x="736" y="384" width="16" height="16" visible="0"/>
+  <object id="255" name="guardfire" type="entity" gid="2147484477" x="528" y="384" width="16" height="16" visible="0"/>
+ </objectgroup>
 </map>

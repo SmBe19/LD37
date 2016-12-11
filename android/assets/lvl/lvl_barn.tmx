@@ -328,7 +328,7 @@
     <property name="oninteract_0" value="take $this"/>
    </properties>
   </object>
-  <object id="102" name="godlcoin" type="entity" gid="192" x="64" y="192" width="16" height="16">
+  <object id="102" name="goldcoin" type="entity" gid="192" x="64" y="192" width="16" height="16">
    <properties>
     <property name="displayname" value="Gold Coin"/>
     <property name="examine" value="A gold coin is pretty valuable. "/>

@@ -275,6 +275,8 @@
 Pretty hard to catch, though.</property>
     <property name="oninteract" type="int" value="1"/>
     <property name="oninteract_0" value="say It's too quick to catch."/>
+    <property name="onnointeract" type="int" value="1"/>
+    <property name="onnointeract_0" value="say I only need the tail."/>
    </properties>
   </object>
   <object id="84" name="key" type="entity" gid="176" x="64" y="176" width="16" height="16">

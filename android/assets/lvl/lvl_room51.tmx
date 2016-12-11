@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="18" height="17" tilewidth="16" tileheight="16" nextobjectid="87">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="18" height="17" tilewidth="16" tileheight="16" nextobjectid="93">
  <tileset firstgid="1" name="Mat" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../img/tiles.png" width="256" height="256"/>
   <terraintypes>
@@ -254,7 +254,7 @@
  </layer>
  <layer name="BG0" width="18" height="17">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFAwGmQzG58oMZEPIXpWYNdLhMx8Em1wxKzBqM4TMQAACBgwhD
+   eJxjYBgFo2AUjIKhDQAEyAAB
   </data>
  </layer>
  <objectgroup name="Objects">
@@ -291,10 +291,46 @@
     <property name="animationonly" value="exit"/>
    </properties>
   </object>
+  <object id="88" name="amazon" type="entity" gid="187" x="128" y="256" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Box"/>
+    <property name="examine">I see an odd magical force
+flowing through that box.</property>
+    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract_0" value="class"/>
+   </properties>
+  </object>
+  <object id="89" name="amazon" type="entity" gid="188" x="144" y="256" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Box"/>
+    <property name="examine">I see an odd magical force
+flowing through that box.</property>
+    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract_0" value="class"/>
+   </properties>
+  </object>
+  <object id="90" name="amazon" type="entity" gid="203" x="128" y="272" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Box"/>
+    <property name="examine">I see an odd magical force
+flowing through that box.</property>
+    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract_0" value="class"/>
+   </properties>
+  </object>
+  <object id="91" name="amazon" type="entity" gid="204" x="144" y="272" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Box"/>
+    <property name="examine">I see an odd magical force
+flowing through that box.</property>
+    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract_0" value="class"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="FG0" width="18" height="17">
   <data encoding="base64" compression="zlib">
-   eJxjYBgF5IKLQHwJiC8D8RUy9D8C4sdA/BCJ/YQC93wE4k9A/BmIv1BgziigH9gNxHuoYM5pID5DBXOGKgAAkp0Pcg==
+   eJxjYBgF5IKLQHwJiC8D8RUy9D8C4sdA/BCJ/YQC93wE4k9A/BmIv1BgzigYBUMNAAAhGAxk
   </data>
  </layer>
  <objectgroup name="meta">
@@ -316,9 +352,9 @@
     <property name="delay" type="int" value="2000"/>
     <property name="displayname" value="Room 51"/>
     <property name="examine" value="This is where I need to go. But it is locked."/>
-    <property name="portalid" value="tower_palace"/>
+    <property name="portalid" value="room_51_room51_door"/>
     <property name="start" type="int" value="900"/>
-    <property name="tolevel" value="lvl_room51"/>
+    <property name="tolevel" value="lvl_room51_door"/>
    </properties>
   </object>
   <object id="77" name="main" type="spawn" x="160" y="96" width="16" height="32">
@@ -330,7 +366,7 @@
  </objectgroup>
  <layer name="collision" width="18" height="17" visible="0" opacity="0.29">
   <data encoding="base64" compression="zlib">
-   eJw7zMTAcHgUjzh8ZBQPCkyt+CDWnIFOd7TCAMzn6/U=
+   eJw7zMTAcHgUjzh8ZBSP4mGEAeij7C8=
   </data>
  </layer>
 </map>

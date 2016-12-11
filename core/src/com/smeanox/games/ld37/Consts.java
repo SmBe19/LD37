@@ -73,11 +73,13 @@ public class Consts {
 	public static final String ONINTERACT_CLASS = "class";
 	public static final String ONINTERACT_TAKE = "take";
 	public static final String ONINTERACT_PAUSE = "pause";
+	public static final String ONINTERACT_PAUSEWALK = "pausewalk";
+	public static final String ONINTERACT_UNPAUSEWALK = "unpausewalk";
 	public static final String ONINTERACT_CLEARSPEECH = "clearspeech";
 	public static final String ONINTERACT_ACTIVATE = "activate";
 	public static final String ONINTERACT_DEACTIVATE = "deactivate";
 	public static final String ONINTERACT_SET_EXAMINE = "set_examine";
-	public static final String ONINTERACT_SET_VAR = "set_var";
+	public static final String ONINTERACT_SET_VAR = "setvar";
 	public static final String ONINTERACT_HIDE = "hide";
 	public static final String ONINTERACT_SHOW = "show";
 	public static final String ONINTERACT_SAY = "say";
@@ -86,4 +88,5 @@ public class Consts {
 	public static final String ONINTERACT_QSAYXY = "qsayxy";
 	public static final String ONINTERACT_QTHINK = "qthink";
 	public static final String ONINTERACT_QTHINKXY = "qthinkxy";
+	public static final String ONINTERACT_SAYSUB = "saysub";
 }

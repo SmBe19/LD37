@@ -5,6 +5,7 @@ import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 
 public enum Level {
 	lvl_intro("lvl/lvl_intro.tmx"),
+	lvl_outro("lvl/lvl_outro.tmx"),
 	testlvl("lvl/testlvl.tmx"),
 	lvl_barn("lvl/lvl_barn.tmx"),
 	lvl_cellar("lvl/lvl_cellar.tmx"),

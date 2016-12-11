@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="28" height="13" tilewidth="16" tileheight="16" nextobjectid="85">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="28" height="13" tilewidth="16" tileheight="16" nextobjectid="124">
  <tileset firstgid="1" name="Mat" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../img/tiles.png" width="256" height="256"/>
   <terraintypes>
@@ -66,15 +66,47 @@
     <frame tileid="120" duration="200"/>
    </animation>
   </tile>
+  <tile id="93">
+   <animation>
+    <frame tileid="93" duration="300"/>
+    <frame tileid="109" duration="300"/>
+    <frame tileid="125" duration="300"/>
+    <frame tileid="141" duration="300"/>
+   </animation>
+  </tile>
   <tile id="96" terrain="3,3,3,3"/>
   <tile id="97" terrain="3,3,3,3"/>
   <tile id="98" terrain="3,3,3,3"/>
+  <tile id="109">
+   <animation>
+    <frame tileid="109" duration="300"/>
+    <frame tileid="125" duration="300"/>
+    <frame tileid="141" duration="300"/>
+    <frame tileid="93" duration="300"/>
+   </animation>
+  </tile>
   <tile id="112" terrain="4,4,4,4"/>
   <tile id="113" terrain="4,4,4,4"/>
   <tile id="114" terrain="4,4,4,4"/>
+  <tile id="125">
+   <animation>
+    <frame tileid="125" duration="250"/>
+    <frame tileid="141" duration="300"/>
+    <frame tileid="93" duration="250"/>
+    <frame tileid="109" duration="300"/>
+   </animation>
+  </tile>
   <tile id="128" terrain="5,5,5,5"/>
   <tile id="129" terrain="5,5,5,5"/>
   <tile id="130" terrain="5,5,5,5"/>
+  <tile id="141">
+   <animation>
+    <frame tileid="141" duration="200"/>
+    <frame tileid="93" duration="300"/>
+    <frame tileid="109" duration="200"/>
+    <frame tileid="125" duration="300"/>
+   </animation>
+  </tile>
   <tile id="148">
    <animation>
     <frame tileid="148" duration="2000"/>
@@ -262,26 +294,27 @@
   </object>
   <object id="74" name="deadmage1" type="entity" gid="709" x="176" y="176" width="16" height="32">
    <properties>
-    <property name="displayname" value="Dead Mage"/>
+    <property name="displayname" value=""/>
     <property name="examine">He really grew on me throughout
 the two days I’ve known him.
 May he rest in pieces</property>
-    <property name="oninteract" type="int" value="3"/>
-    <property name="oniteract_0" value="take emerald"/>
-    <property name="oniteract_1" value="deactivate deadmage1"/>
-    <property name="oniteract_2" value="deactivate deadmage2"/>
+    <property name="oninteract" type="int" value="0"/>
    </properties>
   </object>
   <object id="75" name="deadmage2" type="entity" gid="710" x="192" y="176" width="16" height="32">
    <properties>
-    <property name="displayname" value="Dead Mage"/>
+    <property name="displayname" value=""/>
     <property name="examine">He really grew on me throughout
 the two days I’ve known him.
 May he rest in pieces</property>
-    <property name="oninteract" type="int" value="3"/>
-    <property name="oniteract_0" value="take emerald"/>
-    <property name="oniteract_1" value="deactivate deadmage1"/>
-    <property name="oniteract_2" value="deactivate deadmage2"/>
+    <property name="oninteract" type="int" value="5"/>
+    <property name="oninteract_0" value="take emerald"/>
+    <property name="oninteract_1" value="deactivate deadmage1"/>
+    <property name="oninteract_2" value="deactivate deadmage2"/>
+    <property name="oninteract_3">saysub You successfully plundered%Nyour former master's body.%NYou've found a valuable emerald.
+saysub Now press e to examine him.
+saysub F can always be used to interact%Nand E to investigate.%NBefore you can calm down,%Nyou should extinguish that flame.</property>
+    <property name="oninteract_4" value="unpausewalk"/>
    </properties>
   </object>
   <object id="77" name="cauldron" type="entity" gid="150" x="352" y="128" width="16" height="16">
@@ -303,8 +336,11 @@ as a fire extinguisher.</property>
    <properties>
     <property name="displayname" value="Water Bucket"/>
     <property name="examine" value="This could help me extinguish the flames."/>
-    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract" type="int" value="2"/>
     <property name="oninteract_0" value="take $this"/>
+    <property name="oninteract_1">saysub This should be useful. Press I to show/hide your currently equipped item.%N
+saysub You can use R to cycle through your items.%NWhile an item is displayed,%Nthe examination button gives you information on it.
+saysub If you want to use an item,%Nstand near an object and press Q.%NThis might not always be sensible.</property>
    </properties>
   </object>
   <object id="82" gid="104" x="208" y="112" width="16" height="16"/>
@@ -316,7 +352,252 @@ in here. The most advanced of them,
 the Elixcicon, is missing.</property>
    </properties>
   </object>
+  <object id="84" name="fire" type="entity" gid="94" x="176" y="128" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="85" name="fire" type="entity" gid="94" x="236" y="148" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="86" name="fire" type="entity" gid="94" x="136" y="188" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="87" name="fire" type="entity" gid="94" x="132" y="160" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="88" name="fire" type="entity" gid="94" x="220" y="200" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="89" name="fire" type="entity" gid="110" x="244" y="172" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="90" name="fire" type="entity" gid="110" x="180" y="200" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="91" name="fire" type="entity" gid="110" x="140" y="128" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="92" name="fire" type="entity" gid="110" x="108" y="192" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="93" name="fire" type="entity" gid="126" x="276" y="192" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="94" name="fire" type="entity" gid="126" x="272" y="164" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="95" name="fire" type="entity" gid="126" x="232" y="132" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="96" name="fire" type="entity" gid="126" x="104" y="164" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="97" name="fire" type="entity" gid="126" x="72" y="188" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="98" name="fire" type="entity" gid="126" x="64" y="164" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="99" name="fire" type="entity" gid="142" x="328" y="188" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="100" name="fire" type="entity" gid="142" x="312" y="172" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="101" name="fire" type="entity" gid="142" x="60" y="152" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="102" name="fire" type="entity" gid="142" x="32" y="184" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="103" name="fire" type="entity" gid="110" x="364" y="180" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="104" name="fire" type="entity" gid="110" x="420" y="148" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="105" name="fire" type="entity" gid="110" x="412" y="128" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="106" name="fire" type="entity" gid="110" x="424" y="192" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="107" name="fire" type="entity" gid="110" x="280" y="152" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="108" name="fire" type="entity" gid="110" x="344" y="140" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="109" name="fire" type="entity" gid="126" x="256" y="204" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="110" name="fire" type="entity" gid="126" x="148" y="164" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="111" name="fire" type="entity" gid="126" x="120" y="148" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="112" name="fire" type="entity" gid="126" x="12" y="148" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="113" name="fire" type="entity" gid="126" x="12" y="128" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="114" name="fire" type="entity" gid="142" x="328" y="164" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="115" name="fire" type="entity" gid="142" x="16" y="200" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="116" name="fire" type="entity" gid="142" x="4" y="172" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="117" name="fire" type="entity" gid="94" x="320" y="152" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="118" name="fire" type="entity" gid="94" x="304" y="204" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="119" name="fire" type="entity" gid="94" x="124" y="208" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="120" name="fire" type="entity" gid="94" x="76" y="148" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="121" name="fire" type="entity" gid="94" x="96" y="132" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="122" name="fire" type="entity" gid="110" x="296" y="148" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
+  <object id="123" name="fire" type="entity" gid="110" x="252" y="136" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Fire"/>
+    <property name="examine" value="Fire!!!"/>
+   </properties>
+  </object>
  </objectgroup>
+ <layer name="fg" width="28" height="13">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFww0IA7EIEIvSyT5lIFYBYlU62WcMxCZAbEon+0bBKBgsAAArdAFF
+  </data>
+ </layer>
  <objectgroup name="meta">
   <object id="3" name="spawn1" type="spawn" x="96" y="96" width="16" height="32">
    <properties>
@@ -328,6 +609,8 @@ the Elixcicon, is missing.</property>
    <properties>
     <property name="active" type="bool" value="false"/>
     <property name="delay" type="int" value="2000"/>
+    <property name="onnointeract" type="int" value="1"/>
+    <property name="onnointeract_0" value="say I probably should take%Ncare of those fires first."/>
     <property name="portalid" value="magelab_ward"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="lvl_ward"/>
@@ -349,11 +632,6 @@ the Elixcicon, is missing.</property>
  <layer name="collision" width="28" height="13" visible="0" opacity="0.29">
   <data encoding="base64" compression="zlib">
    eJw7zMTAcHgUj+JRDMZHaIRpaTYt3UxPd9PbvqGIAcehGM8=
-  </data>
- </layer>
- <layer name="fg" width="28" height="13">
-  <data encoding="base64" compression="zlib">
-   eJxjYBgFww0IA7EIEIvSyT5lIFYBYlU62WcMxCZAbEon+0bBKBgsAAArdAFF
   </data>
  </layer>
 </map>

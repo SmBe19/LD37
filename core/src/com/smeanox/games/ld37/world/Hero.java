@@ -84,7 +84,7 @@ public class Hero {
 		inventory = new ArrayList<Entity>();
 		variables = new HashMap<String, String>();
 		animation = HeroAnimation.wait_right;
-		lastWalkRight = true;
+		lastWalkRight = false;
 		portalAction = null;
 		activeInventory = 0;
 		activeDisplayText = "";
@@ -134,13 +134,13 @@ public class Hero {
 		return minOb;
 	}
 
-	protected MapObject findObjectByName(TiledMap map, String name) {
+	public static MapObject findObjectByName(TiledMap map, String name, boolean visible){
 		for (MapLayer layer : map.getLayers()) {
 			if (!layer.isVisible()) {
 				continue;
 			}
 			for (MapObject object : layer.getObjects()) {
-				if (!object.isVisible()) {
+				if (object.isVisible() != visible) {
 					continue;
 				}
 				if (name.equals(object.getName())) {
@@ -151,11 +151,15 @@ public class Hero {
 		return null;
 	}
 
+	public static MapObject findObjectByName(TiledMap map, String name) {
+		return findObjectByName(map, name, true);
+	}
+
 	public void addToInventory(MapObject object) {
 		Entity entity = gameWorld.entityHashMap.get(object.getName());
 		String examine = object.getProperties().get(Consts.PROP_EXAMINE, "", String.class);
 		if(!inventory.contains(entity)) {
-			if (examine.length() > 0) {
+			if (examine.length() > 0 && entity.examineText.length() == 0) {
 				entity.examineText = examine;
 			}
 			if (entity != null) {
@@ -165,8 +169,20 @@ public class Hero {
 		}
 	}
 
+	public void removeCurrentItemFromInventory(){
+		inventory.remove(activeInventory);
+		if (inventory.size() > 0) {
+			activeInventory %= inventory.size();
+		} else {
+			activeInventory = 0;
+		}
+	}
+
 	public String getVar(String variable) {
-		return variables.get(variable);
+		if(variables.containsKey(variable)) {
+			return variables.get(variable);
+		}
+		return "";
 	}
 
 	public void setVar(String variable, String value) {
@@ -218,6 +234,10 @@ public class Hero {
 							}
 						} else if (Consts.ONINTERACT_PAUSE.equalsIgnoreCase(cmd[0])) {
 							gameWorld.inputPaused = true;
+						} else if (Consts.ONINTERACT_PAUSEWALK.equalsIgnoreCase(cmd[0])) {
+							gameWorld.walkingPaused = true;
+						} else if (Consts.ONINTERACT_UNPAUSEWALK.equalsIgnoreCase(cmd[0])) {
+							gameWorld.walkingPaused = false;
 						} else if (Consts.ONINTERACT_CLEARSPEECH.equalsIgnoreCase(cmd[0])) {
 							gameWorld.skipSpeeches();
 						} else if (Consts.ONINTERACT_TAKE.equalsIgnoreCase(cmd[0])) {
@@ -266,6 +286,8 @@ public class Hero {
 						} else if (Consts.ONINTERACT_QTHINKXY.equalsIgnoreCase(cmd[0])) {
 							String[] split = cmd[1].split(" ", 3);
 							gameWorld.speechQueue.addLast(new GameWorld.Speech(split[2].replace("%N", "\n"), Float.parseFloat(split[0]), Float.parseFloat(split[1]), true));
+						} else if (Consts.ONINTERACT_SAYSUB.equalsIgnoreCase(cmd[0])) {
+							gameWorld.subtitles.addLast(new GameWorld.Speech(cmd[1].replace("%N", "\n")));
 						} else {
 							System.out.println("unknown cmd: " + cmd[0]);
 						}
@@ -307,11 +329,9 @@ public class Hero {
 				return (Consts.TYPE_ENTITY.equals(object.getProperties().get(Consts.PROP_TYPE, "", String.class)));
 			}
 		});
-		if (object != null) {
-			Entity entity = gameWorld.entityHashMap.get(object.getName());
-			if (entity != null) {
-				return entity.useItem(this);
-			}
+		if (object != null && activeInventory < inventory.size()) {
+			Entity entity = inventory.get(activeInventory);
+			return entity.useItem(this, object);
 		}
 		return null;
 	}

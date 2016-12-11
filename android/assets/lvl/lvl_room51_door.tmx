@@ -330,7 +330,7 @@ What does this hand shape mean?</property>
     <property name="delay" type="int" value="2000"/>
     <property name="displayname" value="Tower"/>
     <property name="examine" value="Leads back down into the base of the tower."/>
-    <property name="portalid" value="tower_wall"/>
+    <property name="portalid" value="room51_door_tower"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="lvl_tower"/>
    </properties>
@@ -344,7 +344,7 @@ What does this hand shape mean?</property>
   <object id="69" name="spawn2" type="spawn" x="176" y="64" width="16" height="32">
    <properties>
     <property name="fromlevel" value="lvl_room51"/>
-    <property name="portalid" value="room51_room51_door"/>
+    <property name="portalid" value="room_51_room51_door"/>
    </properties>
   </object>
   <object id="70" name="exit2" type="exit" x="192" y="48" width="32" height="32">
@@ -353,7 +353,7 @@ What does this hand shape mean?</property>
     <property name="delay" type="int" value="2000"/>
     <property name="displayname" value="Room 51"/>
     <property name="examine" value="This is where I need to go. But it is locked."/>
-    <property name="portalid" value="tower_palace"/>
+    <property name="portalid" value="room51_door_room51"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="lvl_room51"/>
    </properties>

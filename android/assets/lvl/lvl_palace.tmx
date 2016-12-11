@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="37" height="13" tilewidth="16" tileheight="16" nextobjectid="96">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="37" height="13" tilewidth="16" tileheight="16" nextobjectid="100">
  <tileset firstgid="1" name="Mat" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../img/tiles.png" width="256" height="256"/>
   <terraintypes>
@@ -489,6 +489,8 @@ He might let me into room 51.</property>
     <property name="displayname" value="The King"/>
     <property name="examine">He looks heavy asleep like that.
 I’d love it if he could lend me a hand.</property>
+    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract_0" value="take $this"/>
    </properties>
   </object>
   <object id="93" name="sleepingking" type="entity" gid="866" x="96" y="160" width="16" height="16" visible="0">
@@ -506,8 +508,13 @@ I’d love it if he could lend me a hand.</property>
     <property name="displayname" value="The King"/>
    </properties>
   </object>
+  <object id="98" name="bodyguard_frog" type="entity" gid="825" x="112" y="144" width="16" height="16" visible="0">
+   <properties>
+    <property name="examine" value="A frog"/>
+   </properties>
+  </object>
  </objectgroup>
- <objectgroup name="meta" visible="0">
+ <objectgroup name="meta">
   <object id="3" name="spawn2" type="spawn" x="32" y="96" width="16" height="32">
    <properties>
     <property name="fromlevel" value="lvl_tower"/>

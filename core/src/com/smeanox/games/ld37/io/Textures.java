@@ -8,10 +8,12 @@ import com.smeanox.games.ld37.Consts;
 
 public enum Textures {
 	tiles("img/tiles.png"),
+	castlebg("img/castle_bg.png"),
 	character("img/Spritesheet_char.PNG"),
 	sidecharacter("img/Spritesheet_sidechar.PNG"),
 	font("img/font.png"),
 	intro("img/intro_bg.png"),
+	logo("img/logo.png"),
 	;
 
 	public final Texture texture;
