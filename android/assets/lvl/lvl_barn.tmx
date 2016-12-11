@@ -279,11 +279,23 @@
   </object>
   <object id="69" gid="46" x="320" y="128" width="16" height="16"/>
   <object id="70" gid="47" x="336" y="128" width="16" height="16"/>
-  <object id="71" gid="62" x="320" y="144" width="16" height="16"/>
+  <object id="71" name="straw" type="entity" gid="62" x="320" y="144" width="16" height="16">
+   <properties>
+    <property name="oninteract" type="int" value="2"/>
+    <property name="oninteract_0" value="take"/>
+    <property name="oninteract_1" value="show $this"/>
+   </properties>
+  </object>
   <object id="72" gid="63" x="336" y="144" width="16" height="16"/>
   <object id="73" gid="46" x="224" y="128" width="16" height="16"/>
   <object id="74" gid="47" x="240" y="128" width="16" height="16"/>
-  <object id="75" gid="62" x="224" y="144" width="16" height="16"/>
+  <object id="75" name="straw" type="entity" gid="62" x="224" y="144" width="16" height="16">
+   <properties>
+    <property name="oninteract" type="int" value="2"/>
+    <property name="oninteract_0" value="take"/>
+    <property name="oninteract_1" value="show $this"/>
+   </properties>
+  </object>
   <object id="76" gid="63" x="240" y="144" width="16" height="16"/>
   <object id="77" gid="48" x="240" y="176" width="16" height="16"/>
   <object id="79" gid="64" x="96" y="144" width="16" height="16"/>
@@ -333,7 +345,7 @@
    eJxjYECAHgb8gJB8DQF5YtVRyx56+YdScwabPZTGDyF5aplDrD308g+l4T/U0jW17BkOAACthBEd
   </data>
  </layer>
- <layer name="collision" width="26" height="13" opacity="0.29">
+ <layer name="collision" width="26" height="13" visible="0" opacity="0.29">
   <data encoding="base64" compression="zlib">
    eJw7zMTAcHgUj2I64SNINC5MiTwhvaOYeEzreBpOGADo0wSl
   </data>
