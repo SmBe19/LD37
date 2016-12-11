@@ -127,6 +127,18 @@ public class Hero {
 		return null;
 	}
 
+	public void addToInventory(MapObject object) {
+		Entity entity = gameWorld.entityHashMap.get(object.getName());
+		String examine = object.getProperties().get(Consts.PROP_EXAMINE, "", String.class);
+		if (examine.length() > 0) {
+			entity.examineText = examine;
+		}
+		if (entity != null) {
+			inventory.add(entity);
+			object.setVisible(false);
+		}
+	}
+
 	public String interact(TiledMap map) {
 		MapObject object = findClosestObject(map, new ObjectFilter() {
 			@Override
@@ -162,11 +174,7 @@ public class Hero {
 							ob2.getProperties().put(Consts.PROP_ACTIVE, false);
 						}
 					} else if (Consts.ONINTERACT_TAKE.equalsIgnoreCase(cmd[0])) {
-						Entity entity = gameWorld.entityHashMap.get(object.getName());
-						if (entity != null) {
-							inventory.add(entity);
-							object.setVisible(false);
-						}
+						addToInventory(object);
 					} else if (Consts.ONINTERACT_SET_VAR.equalsIgnoreCase(cmd[0])) {
 						String[] split = cmd[1].split(" ", 2);
 						variables.put(split[0], split[1]);
@@ -204,6 +212,12 @@ public class Hero {
 		if (object != null && object.getProperties().get(Consts.PROP_EXAMINE, "", String.class).length() > 0) {
 			return object.getProperties().get(Consts.PROP_EXAMINE, "", String.class);
 		}
+
+		if (inventory.size() > 0 && inventory.get(activeInventory).examineText.length() > 0) {
+			gameWorld.inventoryVisible = true;
+			return inventory.get(activeInventory).examineText;
+		}
+
 		return null;
 	}
 

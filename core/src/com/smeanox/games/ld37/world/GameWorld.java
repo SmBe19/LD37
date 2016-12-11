@@ -58,7 +58,9 @@ public class GameWorld {
 		this.entityHashMap = new HashMap<String, Entity>();
 		this.speeches = new ArrayList<Speech>();
 
+		// TODO remove
 		speeches.add(new Speech("Hello there", 0, 0, false, true));
+		inventoryVisible = true;
 
 		initEntities();
 	}
@@ -66,7 +68,6 @@ public class GameWorld {
 	public void loadLevel(Level level, String portalId) {
 		this.level.set(level);
 		this.fadeIn.set(Consts.FADE_DURATION);
-		inventoryVisible = false;
 
 		for (RectangleMapObject meta : level.map.getLayers().get(Consts.LAYER_META).getObjects().getByType(RectangleMapObject.class)) {
 			if (meta.getProperties().get(Consts.PROP_FROMLEVEL, "", String.class).length() > 0 && portalId.equals(meta.getProperties().get(Consts.PROP_PORTALID, "", String.class))) {
@@ -138,15 +139,18 @@ public class GameWorld {
 	}
 
 	protected void updateSpeeches(float delta) {
+		boolean foundFollowing = false;
 		for(int i = speeches.size() - 1; i >= 0; i--) {
-			speeches.get(i).age += delta;
-			if(speeches.get(i).followHero){
-				speeches.get(i).x = hero.x;
-				speeches.get(i).y = hero.y + Consts.SPEECH_BUBBLE_OFFSET;
+			Speech speech = speeches.get(i);
+			speech.age += delta;
+			if(speech.followHero){
+				speech.x = hero.x;
+				speech.y = hero.y + Consts.SPEECH_BUBBLE_OFFSET;
 			}
-			if(speeches.get(i).age > Consts.SPEECH_BUBBLE_DURATION){
+			if(speech.age > Consts.SPEECH_BUBBLE_DURATION || (speech.followHero && foundFollowing)){
 				speeches.remove(i);
 			}
+			foundFollowing = foundFollowing || speech.followHero;
 		}
 	}
 

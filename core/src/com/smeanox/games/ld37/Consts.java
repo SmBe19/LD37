@@ -46,10 +46,10 @@ public class Consts {
 //	public static final int INPUT_MOVE_LEFT = Input.Keys.A;
 //	public static final int INPUT_MOVE_DOWN = Input.Keys.S;
 //	public static final int INPUT_MOVE_RIGHT = Input.Keys.D;
-	public static final int INPUT_INTERACT = Input.Keys.Q;
+	public static final int INPUT_INTERACT = Input.Keys.F;
 	public static final int INPUT_EXAMINE = Input.Keys.E;
-	public static final int INPUT_USE_ITEM = Input.Keys.F;
-	public static final int INPUT_INVENTORY = Input.Keys.I;
+	public static final int INPUT_USE_ITEM = Input.Keys.Q;
+	public static final int INPUT_INVENTORY = Input.Keys.C;
 	public static final int INPUT_INVENTORY_NEXT = Input.Keys.R;
 
 	public static final float HERO_VELO_X = 4;
