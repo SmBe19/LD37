@@ -3,6 +3,7 @@ package com.smeanox.games.ld37.world;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
+import com.badlogic.gdx.utils.Queue;
 import com.badlogic.gdx.utils.TimeUtils;
 import com.smeanox.games.ld37.Consts;
 import com.smeanox.games.ld37.io.Level;
@@ -23,8 +24,12 @@ public class GameWorld {
 	public final List<Entity> entities;
 	public final Map<String, Entity> entityHashMap;
 	public final List<Speech> speeches;
+	public final Queue<Speech> speechQueue;
+	public final Queue<Speech> subtitles;
 	public boolean speechHeroActive;
 	public boolean inventoryVisible;
+	public boolean inputPaused;
+	public boolean cinematic;
 
 	public static class Speech{
 		public String text;
@@ -33,6 +38,18 @@ public class GameWorld {
 		public float x, y;
 		public boolean think;
 		public boolean followHero;
+
+		public Speech(String text) {
+			this.text = text;
+			this.followHero = false;
+			this.duration = Consts.SPEECH_BUBBLE_DURATION + text.length() * Consts.SPEECH_BUBBLE_DURATION_PER_CHAR;
+		}
+
+		public Speech(String text, float duration) {
+			this.text = text;
+			this.duration = duration;
+			this.followHero = false;
+		}
 
 		public Speech(String text, float duration, float x, float y, boolean think, boolean followHero) {
 			this.text = text;
@@ -49,7 +66,16 @@ public class GameWorld {
 			this.y = y;
 			this.think = think;
 			this.followHero = followHero;
-			this.duration = Consts.SPEECH_BUBBLE_DURATION;
+			this.duration = Consts.SPEECH_BUBBLE_DURATION + text.length() * Consts.SPEECH_BUBBLE_DURATION_PER_CHAR;
+		}
+
+		public Speech(String text, float duration, float x, float y, boolean think) {
+			this.text = text;
+			this.duration = duration;
+			this.x = x;
+			this.y = y;
+			this.think = think;
+			this.followHero = false;
 		}
 
 		public Speech(String text, float x, float y, boolean think) {
@@ -58,7 +84,7 @@ public class GameWorld {
 			this.y = y;
 			this.think = think;
 			this.followHero = false;
-			this.duration = Consts.SPEECH_BUBBLE_DURATION;
+			this.duration = Consts.SPEECH_BUBBLE_DURATION + text.length() * Consts.SPEECH_BUBBLE_DURATION_PER_CHAR;
 		}
 	}
 
@@ -70,14 +96,27 @@ public class GameWorld {
 		this.entities = new ArrayList<Entity>();
 		this.entityHashMap = new HashMap<String, Entity>();
 		this.speeches = new ArrayList<Speech>();
+		this.speechQueue = new Queue<Speech>();
+		this.subtitles = new Queue<Speech>();
 
 		inventoryVisible = true;
+		inputPaused = false;
+		cinematic = false;
 
 		initEntities();
 	}
 
 	public void loadLevel(Level level, String portalId) {
+		this.speeches.clear();
+
+		this.cinematic = level == Level.lvl_intro;
+
 		this.level.set(level);
+
+		if(this.cinematic){
+			return;
+		}
+
 		this.fadeIn.set(Consts.FADE_DURATION);
 
 		for (RectangleMapObject meta : level.map.getLayers().get(Consts.LAYER_META).getObjects().getByType(RectangleMapObject.class)) {
@@ -87,7 +126,6 @@ public class GameWorld {
 				break;
 			}
 		}
-		this.speeches.clear();
 	}
 
 	protected void addEntity(Entity entity) {
@@ -164,21 +202,39 @@ public class GameWorld {
 			}
 			speechHeroActive = speechHeroActive || speech.followHero;
 		}
+		if(speeches.isEmpty() && speechQueue.size != 0){
+			speeches.add(speechQueue.first());
+			speechQueue.removeFirst();
+		}
+	}
+
+	protected void updateSubtitles(float delta) {
+		if (subtitles.size == 0) {
+			return;
+		}
+		Speech first = subtitles.first();
+		first.age += delta;
+		if(first.age > first.duration){
+			subtitles.removeFirst();
+		}
 	}
 
 	public void update(float delta){
-		if(hero.portalAction == null) {
-			updateInput(delta);
-			hero.update(delta, level.get().map, (TiledMapTileLayer) level.get().map.getLayers().get(Consts.LAYER_COLLISION));
-		} else {
-			if(fadeOut.get() == 0 && TimeUtils.millis() > hero.portalAction.start + hero.portalAction.delay - (long)(1000 * Consts.FADE_DURATION)){
-				fadeOut.set(Math.min((hero.portalAction.start + hero.portalAction.delay - TimeUtils.millis()) / 1000.f, Consts.FADE_DURATION));
-			}
-			if (TimeUtils.millis() > hero.portalAction.start + hero.portalAction.delay) {
-				loadLevel(Level.valueOf(hero.portalAction.tolevel), hero.portalAction.id);
-				hero.portalAction = null;
+		if(!inputPaused && !cinematic) {
+			if (hero.portalAction == null) {
+				updateInput(delta);
+				hero.update(delta, level.get().map, (TiledMapTileLayer) level.get().map.getLayers().get(Consts.LAYER_COLLISION));
+			} else {
+				if (fadeOut.get() == 0 && TimeUtils.millis() > hero.portalAction.start + hero.portalAction.delay - (long) (1000 * Consts.FADE_DURATION)) {
+					fadeOut.set(Math.min((hero.portalAction.start + hero.portalAction.delay - TimeUtils.millis()) / 1000.f, Consts.FADE_DURATION));
+				}
+				if (TimeUtils.millis() > hero.portalAction.start + hero.portalAction.delay) {
+					loadLevel(Level.valueOf(hero.portalAction.tolevel), hero.portalAction.id);
+					hero.portalAction = null;
+				}
 			}
 		}
 		updateSpeeches(delta);
+		updateSubtitles(delta);
 	}
 }

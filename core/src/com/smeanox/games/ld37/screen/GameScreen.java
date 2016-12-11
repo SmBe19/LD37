@@ -28,12 +28,44 @@ public class GameScreen implements Screen {
 	private boolean isDark;
 	private int screenWidth, screenHeight;
 	private float currentScale;
+	public float cinematicProgress;
+	public float cinematicAlpha;
 
 	private final TextureRegion fadeTexture;
 	private final TextureRegion inventoryBackground;
 	private final TextureRegion[] speechBubble;
 
-	public GameScreen(Level level) {
+	private class Keyframe {
+		float time;
+		float scale;
+		float centerx;
+		float centery;
+		float alpha;
+
+		public Keyframe(float time, float scale, float centerx, float centery, float alpha) {
+			this.time = time;
+			this.scale = scale;
+			this.centerx = centerx;
+			this.centery = centery;
+			this.alpha = alpha;
+		}
+	}
+
+	private Keyframe[] keyframesIntro = new Keyframe[]{
+			new Keyframe(0, 0.1f, 9, 12, 1),
+			new Keyframe(2, 0.1f, 11f, 11.4f, 0),
+			new Keyframe(4, 0.2f, 12, 8.75f, 0),
+			new Keyframe(4.01f, 0.1f, 12, 8.75f, 0),
+			new Keyframe(6, 0.1f, 13.5f, 7, 0),
+			new Keyframe(12, 0.5f, 12, 7, 0),
+			new Keyframe(18, 1, 12, 7, 0),
+			new Keyframe(26, 1, 12, 7, 0),
+			new Keyframe(30, 1, 12, 7, 1),
+	};
+
+	private Keyframe[] keyframes = null;
+
+	public GameScreen(final Level level) {
 		spriteBatch = new SpriteBatch();
 		camera = new OrthographicCamera();
 		guicamera = new OrthographicCamera();
@@ -63,6 +95,10 @@ public class GameScreen implements Screen {
 				TiledMap map = ((ObservableValue<Level>) o).get().map;
 				mapRenderer = new MyMapRenderer(map, Consts.UNIT_SCALE, spriteBatch, gameWorld);
 				setScale(map.getProperties().get(Consts.PROP_MAPSCALE, 1.f, Float.class));
+				cinematicProgress = 0;
+				if(((ObservableValue<Level>) o).get() == level.lvl_intro){
+					initIntro();
+				}
 			}
 		});
 		gameWorld.fadeOut.addObserver(new Observer() {
@@ -82,6 +118,14 @@ public class GameScreen implements Screen {
 		gameWorld.loadLevel(level, "main");
 	}
 
+	private void initIntro(){
+		keyframes = keyframesIntro;
+		gameWorld.subtitles.addLast(new GameWorld.Speech("Once upon a time, there was a cute\nlittle castle on a hill.", 10));
+		gameWorld.subtitles.addLast(new GameWorld.Speech("Unfortunately, that castle was attacked\nby an enemy army and is now under siege.", 10));
+		gameWorld.subtitles.addLast(new GameWorld.Speech("It would seem that there is only one hope...", 6));
+		gameWorld.subtitles.addLast(new GameWorld.Speech("Aaaaaah! I was hit!", 4));
+	}
+
 	@Override
 	public void show() {
 
@@ -89,6 +133,10 @@ public class GameScreen implements Screen {
 
 	private void update(float delta){
 		gameWorld.update(delta);
+
+		if (gameWorld.cinematic) {
+			return;
+		}
 
 		float left, right, top, bottom;
 		left = camera.position.x - camera.viewportWidth / 2;
@@ -121,13 +169,31 @@ public class GameScreen implements Screen {
 	private void drawGUI(float delta) {
 		spriteBatch.begin();
 		if (gameWorld.inventoryVisible && gameWorld.hero.inventory.size() > 0) {
-			spriteBatch.draw(inventoryBackground, (guicamera.viewportWidth - 2 * Consts.INVENTORY_ACTIVE_SIZE) / 2, 0,
+			spriteBatch.draw(inventoryBackground, (guicamera.viewportWidth - 2 * Consts.INVENTORY_ACTIVE_SIZE) / 2,
+					guicamera.viewportHeight - 2*Consts.INVENTORY_ACTIVE_SIZE,
 					2 * Consts.INVENTORY_ACTIVE_SIZE, 2 * Consts.INVENTORY_ACTIVE_SIZE);
 			spriteBatch.draw(gameWorld.hero.inventory.get(gameWorld.hero.activeInventory).textureRegion,
-					(guicamera.viewportWidth - Consts.INVENTORY_ACTIVE_SIZE) / 2, Consts.INVENTORY_ACTIVE_SIZE / 2,
+					(guicamera.viewportWidth - Consts.INVENTORY_ACTIVE_SIZE) / 2,
+					guicamera.viewportHeight - Consts.INVENTORY_ACTIVE_SIZE * 1.5f,
 					Consts.INVENTORY_ACTIVE_SIZE, Consts.INVENTORY_ACTIVE_SIZE);
 		}
+		drawSubtitles(delta);
 		spriteBatch.end();
+	}
+
+	private void drawSubtitles(float delta) {
+		if (gameWorld.subtitles.size == 0) {
+			return;
+		}
+		GameWorld.Speech subtitle = gameWorld.subtitles.first();
+		String text = subtitle.text;
+		float width = Font.mango.getWidth(text), height = Font.mango.getHeight(text);
+		float progress = subtitle.age < Consts.SPEECH_BUBBLE_ANIM_DURATION ? (subtitle.age / Consts.SPEECH_BUBBLE_ANIM_DURATION) : 1;
+		progress = subtitle.age > subtitle.duration - Consts.SPEECH_BUBBLE_ANIM_DURATION
+				? (subtitle.duration - subtitle.age) / Consts.SPEECH_BUBBLE_ANIM_DURATION : progress;
+		spriteBatch.setColor(1, 1, 1, progress);
+		Font.mango.draw(spriteBatch, text, (guicamera.viewportWidth - width) / 2, Consts.SUBTITLES_OFFSET_Y + height);
+		spriteBatch.setColor(1, 1, 1, 1);
 	}
 
 	private void drawSpeechBubble(String text, float x, float y, float ax, boolean think, float alpha) {
@@ -200,10 +266,53 @@ public class GameScreen implements Screen {
 		if (isDark) {
 			drawDark(1);
 		}
+		if(gameWorld.cinematic){
+			drawDark(cinematicAlpha);
+		}
+	}
+
+	protected float interpolate(float a, float b, float progress) {
+		return (a * (1 - progress)) + (b * progress);
+	}
+
+	protected void updateCinematic(float delta) {
+		if (keyframes == null) {
+			return;
+		}
+
+		cinematicProgress += delta;
+
+		int aidx = -1;
+		for(int i = 0; i < keyframes.length; i++) {
+			if(keyframes[i].time > cinematicProgress){
+				aidx = i - 1;
+				break;
+			}
+		}
+		if (aidx < 0 || aidx >= keyframes.length - 1) {
+			gameWorld.loadLevel(Level.lvl_magelab, "main");
+			keyframes = null;
+			return;
+		}
+
+		Keyframe k1 = keyframes[aidx];
+		Keyframe k2 = keyframes[aidx+1];
+		float progress = (cinematicProgress - k1.time) / (k2.time - k1.time);
+		cinematicAlpha = interpolate(k1.alpha, k2.alpha, progress);
+		float centerx = interpolate(k1.centerx, k2.centerx, progress);
+		float centery = interpolate(k1.centery, k2.centery, progress);
+		float scale = interpolate(k1.scale, k2.scale, progress);
+
+		setScale(scale);
+		camera.position.x = centerx;
+		camera.position.y = centery;
 	}
 
 	@Override
 	public void render(float delta) {
+		if (gameWorld.cinematic) {
+			updateCinematic(delta);
+		}
 		update(delta);
 		draw(delta);
 	}
@@ -218,9 +327,9 @@ public class GameScreen implements Screen {
 	public void setScale(float scale) {
 		currentScale = scale;
 		float aspect = ((float) screenWidth) / screenHeight;
-		float newheight = Consts.HEIGHT * Consts.SCALE * currentScale;
+		float newheight = Consts.HEIGHT * Consts.SCALE;
 		float newwidth = aspect * newheight;
-		camera.setToOrtho(false, newwidth, newheight);
+		camera.setToOrtho(false, newwidth * currentScale, newheight * currentScale);
 		guicamera.setToOrtho(false, newwidth, newheight);
 	}
 
