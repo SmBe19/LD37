@@ -7,6 +7,7 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.objects.TiledMapTileMapObject;
+import com.badlogic.gdx.utils.StringBuilder;
 import com.badlogic.gdx.utils.TimeUtils;
 import com.smeanox.games.ld37.Consts;
 import com.smeanox.games.ld37.world.entity.Entity;
@@ -24,7 +25,8 @@ public class Hero {
 		walk_left("hero_walk_left"),
 		walk_right("hero_walk_right"),
 		walk_up("hero_walk_up"),
-		walk_down("hero_walk_down"),;
+		walk_down("hero_walk_down"),
+		;
 
 		public final String id;
 
@@ -53,7 +55,12 @@ public class Hero {
 	public PortalAction portalAction;
 	public final List<Entity> inventory;
 	public int activeInventory;
+	public String activeDisplayText;
 	public final Map<String, String> variables;
+	private long observeLastChange;
+	private MapObject observeLastObject;
+	private boolean observeDisplayed;
+	private GameWorld.Speech observeLastSpeech;
 	private boolean lastWalkRight;
 
 	public Hero(GameWorld gameWorld) {
@@ -64,6 +71,7 @@ public class Hero {
 		lastWalkRight = true;
 		portalAction = null;
 		activeInventory = 0;
+		activeDisplayText = "";
 	}
 
 	protected float getDistance2(MapObject object, float x, float y) {
@@ -152,57 +160,77 @@ public class Hero {
 			@Override
 			public boolean filter(MapObject object) {
 				return ((object.getProperties().get(Consts.PROP_ONINTERACT, 0, Integer.class) > 0)
-						|| (Consts.TYPE_EXIT.equals(object.getProperties().get(Consts.PROP_TYPE, "", String.class))))
-						&& (object.getProperties().get(Consts.PROP_ACTIVE, true, Boolean.class));
+						|| (object.getProperties().get(Consts.PROP_ONNOINTERACT, 0, Integer.class) > 0)
+						|| (Consts.TYPE_EXIT.equals(object.getProperties().get(Consts.PROP_TYPE, "", String.class))));
 			}
 		});
 		if (object != null) {
-			if (Consts.TYPE_EXIT.equals(object.getProperties().get(Consts.PROP_TYPE, "", String.class))) {
+			if (Consts.TYPE_EXIT.equals(object.getProperties().get(Consts.PROP_TYPE, "", String.class))
+					&& object.getProperties().get(Consts.PROP_ACTIVE, true, Boolean.class)) {
 				portalAction = new PortalAction(object.getProperties().get(Consts.PROP_PORTALID, "", String.class),
 						object.getName(), object.getProperties().get(Consts.PROP_TOLEVEL, "", String.class),
 						TimeUtils.millis() - object.getProperties().get(Consts.PROP_START, 0, Integer.class),
 						object.getProperties().get(Consts.PROP_DELAY, 0, Integer.class));
 			} else {
-				int oninteract = object.getProperties().get(Consts.PROP_ONINTERACT, 0, Integer.class);
+				StringBuilder sayText = new StringBuilder();
+				String oninteracteprefix = object.getProperties().get(Consts.PROP_ACTIVE, true, Boolean.class) ? Consts.PROP_ONINTERACT : Consts.PROP_ONNOINTERACT;
+				int oninteract = object.getProperties().get(oninteracteprefix, 0, Integer.class);
 				for (int i = 0; i < oninteract; i++) {
-					String[] cmd = object.getProperties().get(Consts.PROP_ONINTERACT + "_" + i, "", String.class).split(" ", 2);
-					if (Consts.ONINTERACT_CLASS.equalsIgnoreCase(cmd[0])) {
-						Entity entity = gameWorld.entityHashMap.get(object.getName());
-						if (entity != null) {
-							entity.interact(this);
-						}
-					} else if (Consts.ONINTERACT_ACTIVATE.equalsIgnoreCase(cmd[0])) {
-						MapObject ob2 = Consts.ONINTERACT_THIS.equals(cmd[1]) ? object : findObjectByName(map, cmd[1]);
-						if (ob2 != null) {
-							ob2.getProperties().put(Consts.PROP_ACTIVE, true);
-						}
-					} else if (Consts.ONINTERACT_DEACTIVATE.equalsIgnoreCase(cmd[0])) {
-						MapObject ob2 = Consts.ONINTERACT_THIS.equals(cmd[1]) ? object : findObjectByName(map, cmd[1]);
-						if (ob2 != null) {
-							ob2.getProperties().put(Consts.PROP_ACTIVE, false);
-						}
-					} else if (Consts.ONINTERACT_TAKE.equalsIgnoreCase(cmd[0])) {
-						addToInventory(object);
-					} else if (Consts.ONINTERACT_SET_VAR.equalsIgnoreCase(cmd[0])) {
-						String[] split = cmd[1].split(" ", 2);
-						setVar(split[0], split[1]);
-					} else if (Consts.ONINTERACT_SET_EXAMINE.equalsIgnoreCase(cmd[0])) {
-						String[] split = cmd[1].split(" ", 2);
-						MapObject ob2 = Consts.ONINTERACT_THIS.equals(split[0]) ? object : findObjectByName(map, split[0]);
-						if (ob2 != null) {
-							ob2.getProperties().put(Consts.PROP_EXAMINE, split[1]);
-						}
-					} else if (Consts.ONINTERACT_HIDE.equalsIgnoreCase(cmd[0])) {
-						MapObject ob2 = Consts.ONINTERACT_THIS.equals(cmd[1]) ? object : findObjectByName(map, cmd[1]);
-						if (ob2 != null) {
-							ob2.setVisible(false);
-						}
-					} else if (Consts.ONINTERACT_SHOW.equalsIgnoreCase(cmd[0])) {
-						MapObject ob2 = Consts.ONINTERACT_THIS.equals(cmd[1]) ? object : findObjectByName(map, cmd[1]);
-						if (ob2 != null) {
-							ob2.setVisible(true);
+					String[] lines = object.getProperties().get(oninteracteprefix + "_" + i, "", String.class).replace("\r", "").split("\n");
+					for (String line : lines) {
+						String[] cmd = line.split(" ", 2);
+						if (Consts.ONINTERACT_CLASS.equalsIgnoreCase(cmd[0])) {
+							Entity entity = gameWorld.entityHashMap.get(object.getName());
+							if (entity != null) {
+								String interact = entity.interact(this);
+								if (interact != null) {
+									sayText.append(interact);
+									sayText.append("\n");
+								}
+							}
+						} else if (Consts.ONINTERACT_ACTIVATE.equalsIgnoreCase(cmd[0])) {
+							MapObject ob2 = Consts.ONINTERACT_THIS.equals(cmd[1]) ? object : findObjectByName(map, cmd[1]);
+							if (ob2 != null) {
+								ob2.getProperties().put(Consts.PROP_ACTIVE, true);
+							}
+						} else if (Consts.ONINTERACT_DEACTIVATE.equalsIgnoreCase(cmd[0])) {
+							MapObject ob2 = Consts.ONINTERACT_THIS.equals(cmd[1]) ? object : findObjectByName(map, cmd[1]);
+							if (ob2 != null) {
+								ob2.getProperties().put(Consts.PROP_ACTIVE, false);
+							}
+						} else if (Consts.ONINTERACT_TAKE.equalsIgnoreCase(cmd[0])) {
+							addToInventory(object);
+						} else if (Consts.ONINTERACT_SET_VAR.equalsIgnoreCase(cmd[0])) {
+							String[] split = cmd[1].split(" ", 2);
+							setVar(split[0], split[1]);
+						} else if (Consts.ONINTERACT_SET_EXAMINE.equalsIgnoreCase(cmd[0])) {
+							String[] split = cmd[1].split(" ", 2);
+							MapObject ob2 = Consts.ONINTERACT_THIS.equals(split[0]) ? object : findObjectByName(map, split[0]);
+							if (ob2 != null) {
+								ob2.getProperties().put(Consts.PROP_EXAMINE, split[1]);
+							}
+						} else if (Consts.ONINTERACT_HIDE.equalsIgnoreCase(cmd[0])) {
+							MapObject ob2 = Consts.ONINTERACT_THIS.equals(cmd[1]) ? object : findObjectByName(map, cmd[1]);
+							if (ob2 != null) {
+								ob2.setVisible(false);
+							}
+						} else if (Consts.ONINTERACT_SHOW.equalsIgnoreCase(cmd[0])) {
+							MapObject ob2 = Consts.ONINTERACT_THIS.equals(cmd[1]) ? object : findObjectByName(map, cmd[1]);
+							if (ob2 != null) {
+								ob2.setVisible(true);
+							}
+						} else if (Consts.ONINTERACT_SAY.equalsIgnoreCase(cmd[0])) {
+							sayText.append(cmd[1].replace("%N", "\n"));
+							sayText.append("\n");
+						} else if (Consts.ONINTERACT_SAYXY.equalsIgnoreCase(cmd[0])) {
+							String[] split = cmd[1].split(" ", 3);
+							gameWorld.speeches.add(new GameWorld.Speech(split[2].replace("%N", "\n"), Float.parseFloat(split[0]), Float.parseFloat(split[1]), false));
 						}
 					}
+				}
+				if(sayText.length() > 0){
+					sayText.deleteCharAt(sayText.length() - 1);
+					return sayText.toString();
 				}
 			}
 		}
@@ -233,13 +261,13 @@ public class Hero {
 		MapObject object = findClosestObject(map, new ObjectFilter() {
 			@Override
 			public boolean filter(MapObject object) {
-				return (object.getProperties().get(Consts.PROP_EXAMINE, "", String.class).length() > 0);
+				return (Consts.TYPE_ENTITY.equals(object.getProperties().get(Consts.PROP_TYPE, "", String.class)));
 			}
 		});
 		if (object != null) {
 			Entity entity = gameWorld.entityHashMap.get(object.getName());
 			if (entity != null) {
-				entity.useItem(this);
+				return entity.useItem(this);
 			}
 		}
 		return null;
@@ -270,7 +298,31 @@ public class Hero {
 		return checkCollisionXY(colx, coly, collisionLayer);
 	}
 
-	public void update(float delta, TiledMapTileLayer collisionLayer) {
+	protected void updateObserve(TiledMap map) {
+		MapObject closestObject = findClosestObject(map, new ObjectFilter() {
+			@Override
+			public boolean filter(MapObject object) {
+				return object.getProperties().get(Consts.PROP_DISPLAYNAME, "", String.class).length() > 0;
+			}
+		});
+		if (closestObject != observeLastObject) {
+			observeLastObject = closestObject;
+			observeLastChange = TimeUtils.millis();
+			observeDisplayed = false;
+			if(observeLastSpeech != null){
+				observeLastSpeech.age = observeLastSpeech.duration - Consts.SPEECH_BUBBLE_ANIM_DURATION;
+				observeLastSpeech = null;
+			}
+		} else if (closestObject != null) {
+			if (!gameWorld.speechHeroActive && ! observeDisplayed && observeLastChange + Consts.OBSERVE_MIN_DURATION < TimeUtils.millis()) {
+				observeDisplayed = true;
+				observeLastSpeech = new GameWorld.Speech(closestObject.getProperties().get(Consts.PROP_DISPLAYNAME, "", String.class), 0, 0, true, true);
+				gameWorld.speeches.add(observeLastSpeech);
+			}
+		}
+	}
+
+	public void update(float delta, TiledMap map, TiledMapTileLayer collisionLayer) {
 		animationTime += delta;
 		if (!checkCollisionX(delta, collisionLayer)) {
 			x += vx * delta;
@@ -291,5 +343,6 @@ public class Hero {
 		} else {
 			animation = lastWalkRight ? HeroAnimation.wait_right : HeroAnimation.wait_left;
 		}
+		updateObserve(map);
 	}
 }

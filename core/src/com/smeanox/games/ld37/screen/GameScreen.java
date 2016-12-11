@@ -155,8 +155,8 @@ public class GameScreen implements Screen {
 		spriteBatch.begin();
 		for (GameWorld.Speech speech : gameWorld.speeches) {
 			float progress = speech.age < Consts.SPEECH_BUBBLE_ANIM_DURATION ? (speech.age / Consts.SPEECH_BUBBLE_ANIM_DURATION) : 1;
-			progress = speech.age > Consts.SPEECH_BUBBLE_DURATION - Consts.SPEECH_BUBBLE_ANIM_DURATION
-					? (Consts.SPEECH_BUBBLE_DURATION - speech.age) / Consts.SPEECH_BUBBLE_ANIM_DURATION : progress;
+			progress = speech.age > speech.duration - Consts.SPEECH_BUBBLE_ANIM_DURATION
+					? (speech.duration - speech.age) / Consts.SPEECH_BUBBLE_ANIM_DURATION : progress;
 			float off = (1 - progress) * Consts.SPEECH_BUBBLE_ANIM_OFFSET;
 			drawSpeechBubble(speech.text, speech.x, speech.y + off, speech.think, progress);
 		}

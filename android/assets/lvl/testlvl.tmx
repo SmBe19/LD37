@@ -285,7 +285,12 @@
   </data>
  </layer>
  <objectgroup name="Objects">
-  <object id="14" name="oldfancywizard" gid="257" x="92.25" y="202.25" width="16" height="32" rotation="-86.3252"/>
+  <object id="14" name="oldfancywizard" type="entity" gid="257" x="112" y="192" width="16" height="32" rotation="-70.2998">
+   <properties>
+    <property name="displayname" value="Master"/>
+    <property name="examine" value="My dead master"/>
+   </properties>
+  </object>
   <object id="21" gid="55" x="64" y="176" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit2"/>
@@ -309,9 +314,12 @@
    <properties>
     <property name="displayname" value="Kerze"/>
     <property name="examine" value="Tats a kerze"/>
-    <property name="oninteract" type="int" value="2"/>
+    <property name="oninteract" type="int" value="4"/>
     <property name="oninteract_0" value="activate exit2"/>
     <property name="oninteract_1" value="take"/>
+    <property name="oninteract_2">say Oh nice, a kerze!!!
+hide kocke</property>
+    <property name="oninteract_3" value="say I think I can now go to the dach"/>
    </properties>
   </object>
   <object id="29" gid="247" x="368" y="176" width="16" height="16">
@@ -344,7 +352,12 @@
     <property name="animationonly" value="exit3"/>
    </properties>
   </object>
-  <object id="60" gid="149" x="384" y="192" width="16" height="16"/>
+  <object id="60" name="ratte" type="entity" gid="149" x="384" y="192" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Ratte!!!?!?!?"/>
+    <property name="examine" value="Joeoeoe"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="meta">
   <object id="3" name="spawn1" type="spawn" x="16" y="160" width="16" height="32">
@@ -369,14 +382,18 @@
    <properties>
     <property name="active" type="bool" value="false"/>
     <property name="delay" type="int" value="2000"/>
-    <property name="portalid" value="test_test_3"/>
+    <property name="displayname" value="Dach"/>
+    <property name="onnointeract" type="int" value="1"/>
+    <property name="onnointeract_0" value="sayxy 6 3 Sorry, this door%Nis locked!"/>
+    <property name="portalid" value="main"/>
     <property name="start" type="int" value="900"/>
-    <property name="tolevel" value="testlvl"/>
+    <property name="tolevel" value="lvl_magelab"/>
    </properties>
   </object>
   <object id="35" name="exit3" type="exit" x="368" y="128" width="32" height="48">
    <properties>
     <property name="delay" type="int" value="2000"/>
+    <property name="displayname" value="Keller"/>
     <property name="portalid" value="test_test_1"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="testlvl"/>

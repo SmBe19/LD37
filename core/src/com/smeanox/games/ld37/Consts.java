@@ -15,6 +15,7 @@ public class Consts {
 	public static final float INVENTORY_ACTIVE_SIZE = 1;
 	public static final float FONT_SIZE = 1.f/16;
 	public static final float FONT_LINE_SPACING = 1.125f;
+	public static final long OBSERVE_MIN_DURATION = 1000;
 	public static final float SPEECH_BUBBLE_OFFSET = 0.5f;
 	public static final float SPEECH_BUBBLE_SIZE = 0.5f;
 	public static final float SPEECH_BUBBLE_DURATION = 5f;
@@ -26,6 +27,7 @@ public class Consts {
 	public static final String LAYER_META = "meta";
 	public static final String LAYER_COLLISION = "collision";
 	public static final String TYPE_EXIT = "exit";
+	public static final String TYPE_ENTITY = "entity";
 	public static final String PROP_FROMLEVEL = "fromlevel";
 	public static final String PROP_TOLEVEL = "tolevel";
 	public static final String PROP_ACTIVE = "active";
@@ -34,8 +36,10 @@ public class Consts {
 	public static final String PROP_START = "start";
 	public static final String PROP_COLLISION = "collision";
 	public static final String PROP_ONINTERACT = "oninteract";
+	public static final String PROP_ONNOINTERACT = "onnointeract";
 	public static final String PROP_EXAMINE = "examine";
 	public static final String PROP_ANIMATIONONLY = "animationonly";
+	public static final String PROP_DISPLAYNAME = "displayname";
 	public static final String PROP_TYPE = "type";
 
 	public static final int INPUT_MOVE_UP = Input.Keys.UP;
@@ -69,4 +73,6 @@ public class Consts {
 	public static final String ONINTERACT_SET_VAR = "set_var";
 	public static final String ONINTERACT_HIDE = "hide";
 	public static final String ONINTERACT_SHOW = "show";
+	public static final String ONINTERACT_SAY = "say";
+	public static final String ONINTERACT_SAYXY = "sayxy";
 }

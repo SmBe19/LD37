@@ -23,14 +23,25 @@ public class GameWorld {
 	public final List<Entity> entities;
 	public final Map<String, Entity> entityHashMap;
 	public final List<Speech> speeches;
+	public boolean speechHeroActive;
 	public boolean inventoryVisible;
 
 	public static class Speech{
 		public String text;
 		public float age;
+		public float duration;
 		public float x, y;
 		public boolean think;
 		public boolean followHero;
+
+		public Speech(String text, float duration, float x, float y, boolean think, boolean followHero) {
+			this.text = text;
+			this.duration = duration;
+			this.x = x;
+			this.y = y;
+			this.think = think;
+			this.followHero = followHero;
+		}
 
 		public Speech(String text, float x, float y, boolean think, boolean followHero) {
 			this.text = text;
@@ -38,6 +49,7 @@ public class GameWorld {
 			this.y = y;
 			this.think = think;
 			this.followHero = followHero;
+			this.duration = Consts.SPEECH_BUBBLE_DURATION;
 		}
 
 		public Speech(String text, float x, float y, boolean think) {
@@ -46,6 +58,7 @@ public class GameWorld {
 			this.y = y;
 			this.think = think;
 			this.followHero = false;
+			this.duration = Consts.SPEECH_BUBBLE_DURATION;
 		}
 	}
 
@@ -58,8 +71,6 @@ public class GameWorld {
 		this.entityHashMap = new HashMap<String, Entity>();
 		this.speeches = new ArrayList<Speech>();
 
-		// TODO remove
-		speeches.add(new Speech("Hello there", 0, 0, false, true));
 		inventoryVisible = true;
 
 		initEntities();
@@ -76,6 +87,7 @@ public class GameWorld {
 				break;
 			}
 		}
+		this.speeches.clear();
 	}
 
 	protected void addEntity(Entity entity) {
@@ -139,7 +151,7 @@ public class GameWorld {
 	}
 
 	protected void updateSpeeches(float delta) {
-		boolean foundFollowing = false;
+		speechHeroActive = false;
 		for(int i = speeches.size() - 1; i >= 0; i--) {
 			Speech speech = speeches.get(i);
 			speech.age += delta;
@@ -147,17 +159,17 @@ public class GameWorld {
 				speech.x = hero.x;
 				speech.y = hero.y + Consts.SPEECH_BUBBLE_OFFSET;
 			}
-			if(speech.age > Consts.SPEECH_BUBBLE_DURATION || (speech.followHero && foundFollowing)){
+			if(speech.age > speech.duration || (speech.followHero && speechHeroActive)){
 				speeches.remove(i);
 			}
-			foundFollowing = foundFollowing || speech.followHero;
+			speechHeroActive = speechHeroActive || speech.followHero;
 		}
 	}
 
 	public void update(float delta){
 		if(hero.portalAction == null) {
 			updateInput(delta);
-			hero.update(delta, (TiledMapTileLayer) level.get().map.getLayers().get(Consts.LAYER_COLLISION));
+			hero.update(delta, level.get().map, (TiledMapTileLayer) level.get().map.getLayers().get(Consts.LAYER_COLLISION));
 		} else {
 			if(fadeOut.get() == 0 && TimeUtils.millis() > hero.portalAction.start + hero.portalAction.delay - (long)(1000 * Consts.FADE_DURATION)){
 				fadeOut.set(Math.min((hero.portalAction.start + hero.portalAction.delay - TimeUtils.millis()) / 1000.f, Consts.FADE_DURATION));
