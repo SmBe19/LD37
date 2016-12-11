@@ -139,6 +139,14 @@ public class Hero {
 		}
 	}
 
+	public String getVar(String variable) {
+		return variables.get(variable);
+	}
+
+	public void setVar(String variable, String value) {
+		variables.put(variable, value);
+	}
+
 	public String interact(TiledMap map) {
 		MapObject object = findClosestObject(map, new ObjectFilter() {
 			@Override
@@ -177,7 +185,7 @@ public class Hero {
 						addToInventory(object);
 					} else if (Consts.ONINTERACT_SET_VAR.equalsIgnoreCase(cmd[0])) {
 						String[] split = cmd[1].split(" ", 2);
-						variables.put(split[0], split[1]);
+						setVar(split[0], split[1]);
 					} else if (Consts.ONINTERACT_SET_EXAMINE.equalsIgnoreCase(cmd[0])) {
 						String[] split = cmd[1].split(" ", 2);
 						MapObject ob2 = Consts.ONINTERACT_THIS.equals(split[0]) ? object : findObjectByName(map, split[0]);
