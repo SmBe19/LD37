@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="12" height="12" tilewidth="16" tileheight="16" nextobjectid="77">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="12" height="12" tilewidth="16" tileheight="16" nextobjectid="85">
  <tileset firstgid="1" name="Mat" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../img/tiles.png" width="256" height="256"/>
   <terraintypes>
@@ -254,7 +254,7 @@
  </layer>
  <layer name="BG0" width="12" height="12">
   <data encoding="base64" compression="zlib">
-   eJxjYKAOmE4lc0YBKpiKQ3wDXV2BGwAA5jcB3Q==
+   eJxjYKAOmE4lc0bB0AIAK5cAmA==
   </data>
  </layer>
  <objectgroup name="Objects">
@@ -268,6 +268,20 @@
     <property name="animationonly" value="exit1"/>
    </properties>
   </object>
+  <object id="80" name="rat" type="entity" gid="149" x="128" y="128" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Rat"/>
+    <property name="examine" value="He looks delicious. Pretty hard to catch, though."/>
+   </properties>
+  </object>
+  <object id="84" name="key" type="entity" gid="176" x="64" y="176" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Key"/>
+    <property name="examine" value="So the rats have stolen these keys. I wonder what they are for?"/>
+    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract_0" value="take"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="meta">
   <object id="3" name="spawn1" type="spawn" x="32" y="48" width="16" height="32">
@@ -278,9 +292,10 @@
   </object>
   <object id="23" name="exit1" type="exit" x="32" y="16" width="16" height="32">
    <properties>
-    <property name="active" type="bool" value="false"/>
+    <property name="active" type="bool" value="true"/>
     <property name="delay" type="int" value="2000"/>
     <property name="displayname" value="To the Tower"/>
+    <property name="examine" value="Leads back up to the tower."/>
     <property name="portalid" value="cellar_tower"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="tower"/>
@@ -292,9 +307,9 @@
    eJxjYBgFo4B8AAACQAAB
   </data>
  </layer>
- <layer name="collision" width="12" height="12" visible="0" opacity="0.29">
+ <layer name="collision" width="12" height="12" opacity="0.29">
   <data encoding="base64" compression="zlib">
-   eJw7zMTAcHgQ4SNDHI80AADNqUDV
+   eJw7zMTAcHgQ4SOjeEhhAOwLbz0=
   </data>
  </layer>
 </map>

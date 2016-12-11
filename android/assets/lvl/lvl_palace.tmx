@@ -316,6 +316,8 @@
    <properties>
     <property name="active" type="bool" value="false"/>
     <property name="delay" type="int" value="2000"/>
+    <property name="displayname" value="To the Tower."/>
+    <property name="examine" value="This gets me into the tower. But the guards wouldn't like me opening that door."/>
     <property name="portalid" value="palace_tower"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="tower"/>
@@ -324,6 +326,8 @@
   <object id="35" name="exit1" type="exit" x="496" y="32" width="32" height="48">
    <properties>
     <property name="delay" type="int" value="2000"/>
+    <property name="displayname" value="To the Inner Ward"/>
+    <property name="examine" value="The big door leading back outside."/>
     <property name="portalid" value="palace_ward"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="ward"/>
