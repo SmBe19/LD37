@@ -26,6 +26,7 @@ public class GameWorld {
 	public final List<Speech> speeches;
 	public final Queue<Speech> speechQueue;
 	public final Queue<Speech> subtitles;
+	public float heroVeloScale;
 	public boolean speechHeroActive;
 	public boolean inventoryVisible;
 	public boolean inputPaused;
@@ -99,6 +100,7 @@ public class GameWorld {
 		this.speechQueue = new Queue<Speech>();
 		this.subtitles = new Queue<Speech>();
 
+		heroVeloScale = 1;
 		inventoryVisible = true;
 		inputPaused = false;
 		cinematic = false;
@@ -108,10 +110,9 @@ public class GameWorld {
 
 	public void loadLevel(Level level, String portalId) {
 		this.speeches.clear();
-
 		this.cinematic = level == Level.lvl_intro;
-
 		this.level.set(level);
+		this.heroVeloScale = level.map.getProperties().get(Consts.PROP_VELOSCALE, 1.f, Float.class);
 
 		if(this.cinematic){
 			return;
@@ -140,16 +141,16 @@ public class GameWorld {
 
 	protected void updateInput(float delta){
 		if (Gdx.input.isKeyPressed(Consts.INPUT_MOVE_LEFT)) {
-			hero.vx = -Consts.HERO_VELO_X;
+			hero.vx = -Consts.HERO_VELO_X * heroVeloScale;
 		}
 		if (Gdx.input.isKeyPressed(Consts.INPUT_MOVE_RIGHT)) {
-			hero.vx = Consts.HERO_VELO_X;
+			hero.vx = Consts.HERO_VELO_X * heroVeloScale;
 		}
 		if (Gdx.input.isKeyPressed(Consts.INPUT_MOVE_UP)) {
-			hero.vy = Consts.HERO_VELO_Y;
+			hero.vy = Consts.HERO_VELO_Y * heroVeloScale;
 		}
 		if (Gdx.input.isKeyPressed(Consts.INPUT_MOVE_DOWN)) {
-			hero.vy = -Consts.HERO_VELO_Y;
+			hero.vy = -Consts.HERO_VELO_Y * heroVeloScale;
 		}
 		if(!Gdx.input.isKeyPressed(Consts.INPUT_MOVE_LEFT) && !Gdx.input.isKeyPressed(Consts.INPUT_MOVE_RIGHT)){
 			hero.vx = 0;
@@ -205,6 +206,8 @@ public class GameWorld {
 		if(speeches.isEmpty() && speechQueue.size != 0){
 			speeches.add(speechQueue.first());
 			speechQueue.removeFirst();
+		} else if (speeches.isEmpty()){
+			inputPaused = false;
 		}
 	}
 

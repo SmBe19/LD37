@@ -10,7 +10,7 @@ public class LD37 extends Game {
 
 	@Override
 	public void create() {
-		gameScreen = new GameScreen(Level.lvl_intro);
+		gameScreen = new GameScreen(Level.lvl_tavern);
 
 		showGameScreen();
 	}
