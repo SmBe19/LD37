@@ -9,6 +9,10 @@
    <terrain name="Holzwand" tile="96"/>
    <terrain name="Holzboden" tile="112"/>
    <terrain name="Gras" tile="128"/>
+   <terrain name="Holzsäule" tile="123"/>
+   <terrain name="Säule Links" tile="68"/>
+   <terrain name="Säule Rechts" tile="71"/>
+   <terrain name="Säule Ohne" tile="21"/>
   </terraintypes>
   <tile id="0" terrain="0,0,0,0"/>
   <tile id="1" terrain="0,0,0,0"/>
@@ -20,7 +24,29 @@
     <frame tileid="7" duration="1000"/>
    </animation>
   </tile>
+  <tile id="9">
+   <animation>
+    <frame tileid="8" duration="1000"/>
+    <frame tileid="9" duration="100"/>
+    <frame tileid="10" duration="100"/>
+    <frame tileid="11" duration="2000"/>
+    <frame tileid="10" duration="100"/>
+    <frame tileid="9" duration="100"/>
+   </animation>
+  </tile>
   <tile id="17" terrain="2,2,2,2"/>
+  <tile id="21" terrain="9,9,9,9"/>
+  <tile id="22" terrain="9,9,9,9"/>
+  <tile id="25">
+   <animation>
+    <frame tileid="24" duration="1000"/>
+    <frame tileid="25" duration="100"/>
+    <frame tileid="26" duration="100"/>
+    <frame tileid="27" duration="2000"/>
+    <frame tileid="26" duration="100"/>
+    <frame tileid="25" duration="100"/>
+   </animation>
+  </tile>
   <tile id="32" terrain="2,2,2,2"/>
   <tile id="38">
    <animation>
@@ -57,6 +83,10 @@
   <tile id="64" terrain="1,1,1,1"/>
   <tile id="65" terrain="1,1,1,1"/>
   <tile id="66" terrain="1,1,1,1"/>
+  <tile id="68" terrain="7,7,7,7"/>
+  <tile id="69" terrain="7,7,7,7"/>
+  <tile id="71" terrain="8,8,8,8"/>
+  <tile id="72" terrain="8,8,8,8"/>
   <tile id="85">
    <animation>
     <frame tileid="85" duration="2000"/>
@@ -78,9 +108,11 @@
   <tile id="112" terrain="4,4,4,4"/>
   <tile id="113" terrain="4,4,4,4"/>
   <tile id="114" terrain="4,4,4,4"/>
+  <tile id="123" terrain="6,6,6,6"/>
   <tile id="128" terrain="5,5,5,5"/>
   <tile id="129" terrain="5,5,5,5"/>
   <tile id="130" terrain="5,5,5,5"/>
+  <tile id="139" terrain="6,6,6,6"/>
   <tile id="148">
    <animation>
     <frame tileid="148" duration="2000"/>
