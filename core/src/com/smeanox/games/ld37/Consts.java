@@ -84,4 +84,6 @@ public class Consts {
 	public static final String ONINTERACT_SAYXY = "sayxy";
 	public static final String ONINTERACT_QSAY = "qsay";
 	public static final String ONINTERACT_QSAYXY = "qsayxy";
+	public static final String ONINTERACT_QTHINK = "qthink";
+	public static final String ONINTERACT_QTHINKXY = "qthinkxy";
 }

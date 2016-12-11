@@ -226,7 +226,7 @@ public class GameWorld {
 
 	public void skipSpeeches() {
 		for (Speech speech : speeches) {
-			speech.age = speech.duration - Consts.SPEECH_BUBBLE_ANIM_DURATION;
+			speech.age = Math.max(speech.age, speech.duration - Consts.SPEECH_BUBBLE_ANIM_DURATION);
 		}
 	}
 

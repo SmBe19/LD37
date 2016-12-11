@@ -118,18 +118,18 @@ public class Hero {
 				continue;
 			}
 			for (MapObject object : layer.getObjects()) {
+				float dist = getDistance2(object, x, y);
+				if(dist > Consts.HERO_INTERACT_RAD){
+					continue;
+				}
 				if (!object.isVisible() || !filter.filter(object)) {
 					continue;
 				}
-				float dist = getDistance2(object, x, y);
 				if (dist < minDist) {
 					minOb = object;
 					minDist = dist;
 				}
 			}
-		}
-		if (minDist > Consts.HERO_INTERACT_RAD) {
-			return null;
 		}
 		return minOb;
 	}
@@ -261,6 +261,13 @@ public class Hero {
 						} else if (Consts.ONINTERACT_QSAYXY.equalsIgnoreCase(cmd[0])) {
 							String[] split = cmd[1].split(" ", 3);
 							gameWorld.speechQueue.addLast(new GameWorld.Speech(split[2].replace("%N", "\n"), Float.parseFloat(split[0]), Float.parseFloat(split[1]), false));
+						} else if (Consts.ONINTERACT_QTHINK.equalsIgnoreCase(cmd[0])) {
+							gameWorld.speechQueue.addLast(new GameWorld.Speech(cmd[1].replace("%N", "\n"), 0, 0, true, true));
+						} else if (Consts.ONINTERACT_QTHINKXY.equalsIgnoreCase(cmd[0])) {
+							String[] split = cmd[1].split(" ", 3);
+							gameWorld.speechQueue.addLast(new GameWorld.Speech(split[2].replace("%N", "\n"), Float.parseFloat(split[0]), Float.parseFloat(split[1]), true));
+						} else {
+							System.out.println("unknown cmd: " + cmd[0]);
 						}
 					}
 				}

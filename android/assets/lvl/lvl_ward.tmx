@@ -307,12 +307,12 @@
  <objectgroup name="Objects">
   <object id="63" gid="39" x="784" y="112" width="16" height="16">
    <properties>
-    <property name="animationonly" value="exit_tower"/>
+    <property name="animationonly" value="exit_ward"/>
    </properties>
   </object>
   <object id="64" gid="55" x="784" y="128" width="16" height="16">
    <properties>
-    <property name="animationonly" value="exit_tower"/>
+    <property name="animationonly" value="exit_ward"/>
    </properties>
   </object>
   <object id="66" gid="44" x="560" y="480" width="16" height="16"/>
@@ -423,20 +423,53 @@ I guess it's ex-master now.</property>
     <property name="examine">He guards this tower.
 But his eyes say that certain things
 are more important to him than his job.</property>
+    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract_0">pause
+clearspeech
+deactivate $this
+qsayxy 58 33 This tower is off limits for you, kid, I'm afraid.
+qsayI need to get to room 51. I know that it's at%Nthe top of this tower, let me through.
+qsayxy 58 33 No way, kid. Keep your childish%Ncuriosity away from my tower.
+qsayIt's a matter of life and death.
+qsayxy 58 33 That makes no difference to me.%NI'm not about to risk my job%Nfor your drama.%NNot in this economy, anyway.
+qsayYou are worried about money?%NWell maybe I can help with that.
+qsayxy 58 33 Now we're getting somewhere</property>
+    <property name="onnointeract" type="int" value="1"/>
+    <property name="onnointeract_0" value="qsayxy 58 33 Do you have anything to offer?"/>
    </properties>
   </object>
-  <object id="105" name="maid1" type="entity" gid="775" x="352" y="400" width="16" height="16">
+  <object id="105" name="maid" type="entity" gid="775" x="352" y="400" width="16" height="16">
    <properties>
     <property name="displayname" value="Maid"/>
     <property name="examine">The master's set her hair
 on fire multiple times before.</property>
    </properties>
   </object>
-  <object id="107" name="maid2" type="entity" gid="790" x="352" y="416" width="16" height="16">
+  <object id="107" name="maid" type="entity" gid="790" x="352" y="416" width="16" height="16">
    <properties>
     <property name="displayname" value="Maid"/>
     <property name="examine">The master's set her hair
 on fire multiple times before.</property>
+    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract_0">pause
+clearspeech
+deactivate $this
+qsayxy 22.5 16 Oh my god, I just saw that%Nthis stone flew into your master's house.%NAre you all right?
+qsay Yeah, I'm good, thank you. How are you?
+qsayxy 22.5 16 Well what about your master?
+qsay He didn't make it.%NBut he was pretty old anyway.
+qsayxy 22.5 16 … I don't know what to say
+qsay His last words were about%NRoom 51. Do you know%Nwhat that is?
+qsayxy 22.5 16 Of course I do.%NHow do you not know?%NRoom 51 is the room at the top%Nof the castle tower.
+qsay Can you take me there?
+qsayxy 22.5 16 Oh no, the king will not%Nallow anyone to enter that room.
+qsay But why?
+qsayxy 22.5 16 Nobody really knows.%NThe king never talks about it.
+qsay But master said Room 51 is our%Nonly hope or something.
+qsayxy 22.5 16 Well I am really sorry,%Nbut I can't help you
+qthink Well then I'm going to have%Nto ask the king myself.</property>
+    <property name="onnointeract" type="int" value="1"/>
+    <property name="onnointeract_0" value="sayxy 22.5 16 Hope you're doing alright."/>
    </properties>
   </object>
  </objectgroup>
@@ -459,6 +492,7 @@ on fire multiple times before.</property>
   </object>
   <object id="10" name="exit_tower" type="exit" x="960" y="96" width="16" height="32">
    <properties>
+    <property name="active" type="bool" value="false"/>
     <property name="delay" type="int" value="2000"/>
     <property name="portalid" value="wall_tower"/>
     <property name="start" type="int" value="900"/>
@@ -544,6 +578,7 @@ that's the place to be these days.</property>
   </object>
   <object id="93" name="exit_wall" type="exit" x="656" y="384" width="16" height="32">
    <properties>
+    <property name="active" type="bool" value="false"/>
     <property name="delay" type="int" value="2000"/>
     <property name="displayname" value="Barn"/>
     <property name="examine">It's where we store the horses
@@ -567,23 +602,32 @@ and the hay. (The door is locked)</property>
     <property name="delay" type="int" value="2000"/>
     <property name="displayname" value="Tavern"/>
     <property name="examine">This is not room 51. But the place's
-got good drinks I've heard.
-It's not open right now.</property>
+got good drinks I've heard.</property>
     <property name="portalid" value="ward_tavern"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="lvl_tavern"/>
    </properties>
   </object>
-  <object id="108" name="boy1" type="entity" gid="709" x="640" y="512" width="16" height="16">
+  <object id="108" name="boy" type="entity" gid="709" x="640" y="512" width="16" height="16">
    <properties>
     <property name="displayname" value="Thieving Jake"/>
     <property name="examine" value="He's often been caught stealing stuff around here."/>
    </properties>
   </object>
-  <object id="109" name="boy2" type="entity" gid="717" x="640" y="528" width="16" height="16">
+  <object id="109" name="boy" type="entity" gid="717" x="640" y="528" width="16" height="16">
    <properties>
     <property name="displayname" value="Thieving Jake"/>
     <property name="examine" value="He's often been caught stealing stuff around here."/>
+    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract_0">pause
+clearspeech
+qsayxy 40 9 Well if it isn't the apprentice.%NYou survived that projectile? Quite a shame.
+qsay Whatever, Jake. Did you steal the elixicon?
+qsayxy 40 9 Maybe. Depends on your ability to pay.%NIf you give me a gold piece,%Nmaybe I will talk
+qsay Fuck you, Jake</property>
+    <property name="onnointeract" type="int" value="1"/>
+    <property name="onnointeract_0">qsayxy 40 9 It was a pleasure doing business with you
+qsay Fuck you, Jake</property>
    </properties>
   </object>
  </objectgroup>
