@@ -38,12 +38,6 @@
     <frame tileid="49" duration="50"/>
    </animation>
   </tile>
-  <tile id="49">
-   <animation>
-    <frame tileid="48" duration="50"/>
-    <frame tileid="49" duration="2000"/>
-   </animation>
-  </tile>
   <tile id="54">
    <animation>
     <frame tileid="53" duration="1000"/>
@@ -247,12 +241,12 @@
  </layer>
  <layer name="BG1" width="28" height="13">
   <data encoding="base64" compression="zlib">
-   eJyFkusNwjAMhPPaAJgAmAAYAJgoyf4SrhRLp6+u+HGq7cR3Z6ctpVQMzZAXmuTbWV0ocu41j71OroK6c9TgnHoVOhmx8ihXC+qcI+L2exm9zHXulva7UZ6a9nNX8Oh+lFN51QdnLOg/Gc6GS6BFH9xRQ3zkRetXw81whz/9V/i23KXqqr7e89rD8DS8Aq4iNXLSi/r0+hB0wVzoB5irZyLf4o/hbfiufAif9g30dbnv3yH8kfZceo4Z9KjOQJ1n9MZY+f/1M6d3zqe83K966IG+3usp3oHueaZ4puhtOcsMNCMP/I84H3U41xb/AEUcTMw=
+   eJyFktENwjAMRNMkG0AnACYABqCdKMn+EkaKpaerKz5OiS/2+ey2ppSyoRqWiYr491YmMt6d87vzqpWFd40SvGu/In0WuVOHWjXgdY5I2/MWqdWYc9d03A11SjrOXUSH+6EmdelDZ8xSfzFcDWvQS33ojqrcz7yQvxnuhof447+i31Z3yb7szzznnoaX4R1oZXCqqV7o0/kONGBMtBOMWbMbPoYNGtvk9hl36A3EPKndcXb0096utwEjqGGfLry+qTe9U/9fvcbqXeejLvN0hy3oz7yW4h1wzyPFM6lH1uoezrxFfdSb7la/v+d+Ae7mTDs=
   </data>
  </layer>
  <layer name="BG0" width="28" height="13">
   <data encoding="base64" compression="zlib">
-   eJxjYMANwoA4AoijgDgWjzp6A5C7ooE4hoE4d4HUR0H1hANxJJH6aAXCoO4g1v2kAm0kTA8w3O0bBaNgsAAAycUH0Q==
+   eJxjYMANwoA4AoijgDgWjzp6A5C7ooE4hoE4d4HUR0H1hANxJJH6aAXCoO4g1v2kAm0kTA8w3O0jBRQCsREQFw+0Q0bBsAQAWdII5w==
   </data>
  </layer>
  <objectgroup name="Objects">
@@ -305,7 +299,7 @@ as a fire extinguisher.</property>
     <property name="oninteract_0" value="take $this"/>
    </properties>
   </object>
-  <object id="81" name="waterbucket" type="entity" gid="80" x="368" y="144" width="16" height="16">
+  <object id="81" name="waterbucket" type="entity" gid="80" x="272" y="124" width="16" height="16">
    <properties>
     <property name="displayname" value="Water Bucket"/>
     <property name="examine" value="This could help me extinguish the flames."/>
