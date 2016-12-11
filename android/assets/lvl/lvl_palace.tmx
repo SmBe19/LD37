@@ -429,7 +429,7 @@ me opening that door.</property>
  </objectgroup>
  <layer name="FG0" width="37" height="13">
   <data encoding="base64" compression="zlib">
-   eJxjYCAMxAnIi1GonxxAqZ2E9JMDKLWTFm4aDSfiAKV20iKNEzKTUnlywGBMT0PRTYOxzBwIN0nQWH4oAADj5AMt
+   eJxjYCAMxAnIi1GonxxAqZ2E9JMDKLWTFm4aaeF0CYgv45BToZGdIECLNE7ITErlyQGDMT0NRTcNxjJzINwkQWP5oQAAQoME9g==
   </data>
  </layer>
  <layer name="collision" width="37" height="13" visible="0" opacity="0.29">
