@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="36" height="13" tilewidth="16" tileheight="16" nextobjectid="63">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="37" height="13" tilewidth="16" tileheight="16" nextobjectid="79">
  <tileset firstgid="1" name="Mat" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../img/tiles.png" width="256" height="256"/>
   <terraintypes>
@@ -240,19 +240,30 @@
    </properties>
   </tile>
  </tileset>
- <layer name="BG3" width="36" height="13">
+ <tileset firstgid="709" name="Placeholder" tilewidth="16" tileheight="16" tilecount="64" columns="8">
+  <image source="../img/placeholders.png" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="773" name="GianniGraphics" tilewidth="16" tileheight="16" tilecount="150" columns="15">
+  <image source="../img/Spritesheet_sidechar.PNG" width="240" height="160"/>
+ </tileset>
+ <layer name="BG3" width="37" height="13">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2BoAm0oxga06OkQKMDnHit6OgQK8LlnFIxsQI20Qc08Rg33UDOPkeseAMKqAs0=
+   eJxjYhh8gHGgHYAFMA+0A7CAwegmpgG2XxuKkQEsPWnR2S0wgM1NLFDais5ugQFsbnIeCIcQAE4D7QAswHGgHYAF0NJN2NIKMQA9PVEz/5HrJvRwomb+I9dNAGp+BGg=
   </data>
  </layer>
- <layer name="BG2" width="36" height="13">
+ <layer name="BG2" width="37" height="13">
   <data encoding="base64" compression="zlib">
-   eJyFk9lxxSAMRTGmg+RVkKSCJAXw6P8jSwNZGshSQK5nYOb4PuF8nEGWhHQReEkp5c4qilg6tJkzGLEVa7Zcr1M6q+3zmt6vgBEvWD2nYH82nbQL4jmo7WeOauS018F+tFlzCfwl7efB+OhD3ezPOO+BeovVXQJ8rtTr9zZyrsS1OAV3lq0vfZwXdfu78/va7CfxLF7Eq9W+EbfiLpid96BO102dRzPY1jfxLj7EJ3I37sWDeETd6I2UdDkj99Pm7Bjf+BLf4kf8Il7FuUObNFD7GuX9t8frN/N73rD5fT7IZcz9Ne210/ZzVatPHeN7ppM6onotXer1+jXYF91NdHd+Ltd2FJ/1boE9y3efnzE68+w9RTPzs0RvKqo5e1vNcI2uffYf+PwHfwzSRb8=
+   eJyFktttwzAMRWlZG7SdIOkEbQdQvP9HkyzQxwJ5DFAaEIHjG9oNcCCGFMkr0mZmg1M6o1O7bxCbd4KIjTiL3NU6tTNKXmAbPSuIeMWpdyryi2ilXREvSW1L3p7VKbbUwp60K+4Oib/aci6MRx8T/dQQZ+TrPjSHfqLzpWbdYWh6cp6dl47uj/MZxMe5Ubt+h7q72f50js7JOSM2/3bO3nlN5pj1oVbVTq1bs5jPL+fb+XF+RdOb8+58oC7nO0p9nZX6aXOGjM9cnKtzc+6iqTmHDm0ygdbP7N5/OVp/En/rmugLm/+pV+8ypv5mS/209W28a9KLsTWt1JLVnOxRs9ZvSV74TGaZ7VHfp/q24mv9p8QOLMnROvrW7O1r31c2O32PfmOWvHXr+2EP3S/3pXlZD91D8Acr0kXP
   </data>
  </layer>
- <layer name="BG1" width="36" height="13">
+ <layer name="BG1" width="37" height="13">
   <data encoding="base64" compression="zlib">
-   eJxjYEAFYgz4Aa3lSVUvTmP9pJpH7/Ch1P/UDh9C6imVH2zpZ7DFF73dQ+34khhgeXQwm46YGLCajngUkA4ATc8ljg==
+   eJxjYMAEYljE6ClPjh5xGusnx8yBCCdKw4EW4URID6XygzE9Dca4Gwg30SLuJAZYHhuYTUdMLFhNRzwKyAcAB3Eljg==
+  </data>
+ </layer>
+ <layer name="BG0" width="37" height="13">
+  <data encoding="base64" compression="zlib">
+   eJxjYBhaIASIQ7GwqSVPDkgB4lQsbGrJDzU3CQOxCBCLIomx4zCTnUryIHARiC8B8WUgvoLmJmUgVgFiVTRxWofTQyB+BMSPgfgJmpwxEJsAsSmaeAkQl2JhU0v+IxB/AuLPQPyFYRRQA8wB4rkD7Qg0sAaI1w60I0YBQQAAaWgq4w==
   </data>
  </layer>
  <objectgroup name="Objects">
@@ -266,50 +277,119 @@
     <property name="animationonly" value="exit2"/>
    </properties>
   </object>
-  <object id="29" gid="247" x="496" y="112" width="16" height="16">
+  <object id="29" gid="247" x="512" y="112" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit1"/>
    </properties>
   </object>
-  <object id="30" gid="231" x="496" y="96" width="16" height="16">
+  <object id="30" gid="231" x="512" y="96" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit1"/>
    </properties>
   </object>
-  <object id="31" gid="215" x="496" y="80" width="16" height="16">
+  <object id="31" gid="215" x="512" y="80" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit1"/>
    </properties>
   </object>
-  <object id="32" gid="216" x="512" y="80" width="16" height="16">
+  <object id="32" gid="216" x="528" y="80" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit1"/>
    </properties>
   </object>
-  <object id="33" gid="232" x="512" y="96" width="16" height="16">
+  <object id="33" gid="232" x="528" y="96" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit1"/>
    </properties>
   </object>
-  <object id="34" gid="248" x="512" y="112" width="16" height="16">
+  <object id="34" gid="248" x="528" y="112" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit1"/>
    </properties>
   </object>
+  <object id="63" name="king4" type="entity" gid="722" x="96" y="176" width="16" height="16">
+   <properties>
+    <property name="displayname" value="The King"/>
+    <property name="examine">He’s in charge here.
+He might let me into room 51.</property>
+   </properties>
+  </object>
+  <object id="64" name="king1" type="entity" gid="713" x="80" y="160" width="16" height="16">
+   <properties>
+    <property name="displayname" value="The King"/>
+    <property name="examine">He’s in charge here.
+He might let me into room 51.</property>
+   </properties>
+  </object>
+  <object id="65" name="king2" type="entity" gid="714" x="96" y="160" width="16" height="16">
+   <properties>
+    <property name="displayname" value="The King"/>
+    <property name="examine">He’s in charge here.
+He might let me into room 51.</property>
+   </properties>
+  </object>
+  <object id="66" name="king 3" type="entity" gid="721" x="80" y="176" width="16" height="16">
+   <properties>
+    <property name="displayname" value="The King"/>
+    <property name="examine">He’s in charge here.
+He might let me into room 51.</property>
+   </properties>
+  </object>
+  <object id="67" name="bodyguard1" type="entity" gid="779" x="96" y="128" width="16" height="16">
+   <properties>
+    <property name="displayname" value="King's Bodyguard"/>
+    <property name="examine">He's not a man of many words.
+Or any at all.</property>
+   </properties>
+  </object>
+  <object id="68" name="bodyguard2" type="entity" gid="780" x="112" y="128" width="16" height="16">
+   <properties>
+    <property name="displayname" value="King's Bodyguard"/>
+    <property name="examine">He's not a man of many words.
+Or any at all.</property>
+   </properties>
+  </object>
+  <object id="69" name="bodyguard3" type="entity" gid="794" x="96" y="144" width="16" height="16">
+   <properties>
+    <property name="displayname" value="King's Bodyguard"/>
+    <property name="examine">He's not a man of many words.
+Or any at all.</property>
+   </properties>
+  </object>
+  <object id="70" name="bodyguard4" type="entity" gid="795" x="112" y="144" width="16" height="16">
+   <properties>
+    <property name="displayname" value="King's Bodyguard"/>
+    <property name="examine">He's not a man of many words.
+Or any at all.</property>
+   </properties>
+  </object>
+  <object id="71" gid="711" x="48" y="112" width="16" height="16"/>
+  <object id="72" gid="712" x="64" y="112" width="16" height="16"/>
+  <object id="73" name="guard12" type="entity" gid="712" x="16" y="112" width="16" height="16"/>
+  <object id="74" name="guard11" type="entity" gid="711" x="0" y="112" width="16" height="16"/>
+  <object id="75" name="guard13" type="entity" gid="719" x="0" y="128" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Guard"/>
+    <property name="examine" value="That guy’s got a big stick."/>
+   </properties>
+  </object>
+  <object id="76" gid="719" x="48" y="128" width="16" height="16"/>
+  <object id="77" name="guard14" type="entity" gid="720" x="16" y="128" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Guard"/>
+    <property name="examine" value="That guy’s got a big stick."/>
+   </properties>
+  </object>
+  <object id="78" gid="720" x="64" y="128" width="16" height="16"/>
  </objectgroup>
- <layer name="BG0" width="36" height="13">
-  <data encoding="base64" compression="zlib">
-   eJxjYBgaIASIQ7GwqSVPKkgB4lQsbGrJDyX3CAOxCBCLQvnsOMxjp5I8CFwE4ktAfBmIr6C5RxmIVYBYlQT/USr/EIgfAfFjIH6CJmcMxCZAbIokVgLEpVjY1JL/CMSfgPgzEH9hGAXkgjlAPHegHYEE1gDx2oF2xCjACQBJ5Srj
-  </data>
- </layer>
- <objectgroup name="meta">
+ <objectgroup name="meta" visible="0">
   <object id="3" name="spawn2" type="spawn" x="32" y="96" width="16" height="32">
    <properties>
     <property name="fromlevel" value="lvl_tower"/>
     <property name="portalid" value="tower_palace"/>
    </properties>
   </object>
-  <object id="11" name="main" type="spawn" x="464" y="128" width="16" height="32">
+  <object id="11" name="main" type="spawn" x="480" y="128" width="16" height="32">
    <properties>
     <property name="fromlevel" value="main"/>
     <property name="portalid" value="main"/>
@@ -328,7 +408,7 @@ me opening that door.</property>
     <property name="tolevel" value="lvl_tower"/>
    </properties>
   </object>
-  <object id="35" name="exit1" type="exit" x="496" y="64" width="32" height="48">
+  <object id="35" name="exit1" type="exit" x="512" y="64" width="32" height="48">
    <properties>
     <property name="delay" type="int" value="2000"/>
     <property name="displayname" value="To the Inner Ward"/>
@@ -338,27 +418,27 @@ me opening that door.</property>
     <property name="tolevel" value="lvl_ward"/>
    </properties>
   </object>
-  <object id="42" name="spawn1" type="spawn" x="504" y="96" width="16" height="32">
+  <object id="42" name="spawn1" type="spawn" x="520" y="96" width="16" height="32">
    <properties>
     <property name="fromlevel" value="lvl_ward"/>
     <property name="portalid" value="ward_palace"/>
    </properties>
   </object>
-  <object id="43" name="hero_wait_right" type="hero" gid="257" x="64" y="96" width="16" height="32"/>
-  <object id="44" name="hero_wait_left" type="hero" gid="261" x="80" y="96" width="16" height="32"/>
-  <object id="45" name="hero_walk_right" type="hero" gid="289" x="96" y="96" width="16" height="32"/>
-  <object id="47" name="hero_walk_left" type="hero" gid="321" x="112" y="96" width="16" height="32"/>
-  <object id="48" name="hero_walk_down" type="hero" gid="347" x="128" y="96" width="16" height="32"/>
-  <object id="49" name="hero_walk_up" type="hero" gid="353" x="144" y="96" width="16" height="32"/>
+  <object id="43" name="hero_wait_right" type="hero" gid="257" x="80" y="96" width="16" height="32"/>
+  <object id="44" name="hero_wait_left" type="hero" gid="261" x="96" y="96" width="16" height="32"/>
+  <object id="45" name="hero_walk_right" type="hero" gid="289" x="112" y="96" width="16" height="32"/>
+  <object id="47" name="hero_walk_left" type="hero" gid="321" x="128" y="96" width="16" height="32"/>
+  <object id="48" name="hero_walk_down" type="hero" gid="347" x="144" y="96" width="16" height="32"/>
+  <object id="49" name="hero_walk_up" type="hero" gid="353" x="160" y="96" width="16" height="32"/>
  </objectgroup>
- <layer name="FG0" width="36" height="13">
+ <layer name="FG0" width="37" height="13">
   <data encoding="base64" compression="zlib">
-   eJxjYMAPxAnIi1Gon1RAqX2E9JMKKLWP2u4ZDR/a2kft9EzIPErlSQWDLf0MNfcMtvKQ3u6RoLH8YAcAkZQDLQ==
+   eJxjYCAMxAnIi1GonxxAqZ2E9JMDKLWTFm4aDSfiAKV20iKNEzKTUnlywGBMT0PRTYOxzBwIN0nQWH4oAADj5AMt
   </data>
  </layer>
- <layer name="collision" width="36" height="13" visible="0" opacity="0.29">
+ <layer name="collision" width="37" height="13" visible="0" opacity="0.29">
   <data encoding="base64" compression="zlib">
-   eJw7zMTAcHgUj+JRPCLwETSMTYye8kPBPaTqoSUebO4ZLPEzWDAAJ8do2Q==
+   eJw7zMTAcHgUj+JRPIqh+AgecXSMS5xa8rj0DFY3kaqPlngwummg42qg8xY2DABkz3LX
   </data>
  </layer>
 </map>
