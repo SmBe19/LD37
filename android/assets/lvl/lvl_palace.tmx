@@ -237,23 +237,27 @@
    </properties>
   </tile>
  </tileset>
+ <layer name="BG3" width="36" height="11">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFgxVoQzE2oEVPh0ABPvdY0dMhUIDPPaNgZANqpA1q5jFquIeaeYxc9wAAwYoCzQ==
+  </data>
+ </layer>
  <layer name="BG2" width="36" height="11">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFQxFoDbQD0IDVQDtgFIwCJKANxZQAauYxariHmnmMXPcAALdKAcs=
+   eJyFk+txAyEMhIGjgotdwI2TCpIUgOn/hx8N2EkDeRSQvRk0s2zE+cc3CEmIlY5LIYSJmEFsTG1NjdziieJsr/GFfOxPFJ+otsXtHvPnZnO9RGdNE+vNUje285EwHV4/OfTaLOcJ7MBe9HMdOzOTz/yse6F+Y+jnF6n+CZzBBVxJ35p/AM/ghfrT2WSqlyVu+yRxbwY23xu4gw/wSbkrr+ANvNP38t5Ilvsy+W2dQ69D34Sd/wLf4Af8UryAY4NtphKlrV7eozNav4pf88zm/XEjl2PqL6HXzrb2VaQ+67D9SCfr8OrV8F+v1i/OOe/beN9O+1JtW/HR3dWxR/nq0x69nkfvyZuZ9uK9Ka/m6G1VQTWq9tF/oPM3/gDfzkcJ
   </data>
  </layer>
  <layer name="BG1" width="36" height="11">
   <data encoding="base64" compression="zlib">
-   eJyFk9kNwjAQRB3HHQAVABUABTju/4OjAY4GOApgInmlybAOH0929py1nRhC6IWuYvtYSZVIft4nsbGd87mP+a2P2ZPkst96cB/OUe0cE8NUD9dRbRazAEuwEg1ch/vqrKrb5mV9OvcRnMAZXMg3xq/BBmyljteDdapuvtfWGdh6BTdwBw+KHdmBPTg4Z9o7tfncOlk1Vt+E5T3BC7zBh/wZDBXeM4XIdfXi/uVo/SJ2jbM9fw8zsexTew5T7bzXubLUZx323dLJOrx6Jfzq1frZyfPuxrs7nUu1zflbvYuzb8WrTWf0Zm69J+/MdBbvTXk1W2+rCKpRtbf+Az1/4wuP90UU
+   eJxjYBgFo2AUjGQwm06YWLCaTngUkA4AteEhHQ==
   </data>
  </layer>
  <layer name="BG0" width="36" height="11">
   <data encoding="base64" compression="zlib">
-   eJxjYBgaIASIQ7GwqSVPCmAH4hQgToXyYWx2KsmTA0qAuBQLm1ryo2AUjIJRAAD/uQ5N
+   eJxjYMAOQoA4FAubWvKkghQgTsXCppY8KYAdh3nsVJInBwym8AGBEiAuxcKmlvwooB6YA8RzB9oRSGANEK8daEeMAqwAAFAvGks=
   </data>
  </layer>
  <objectgroup name="Objects">
-  <object id="14" name="oldfancywizard" gid="257" x="50.7645" y="27.3664" width="16" height="32" rotation="-86.3252"/>
   <object id="21" gid="55" x="32" y="80" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit2"/>
@@ -295,7 +299,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="meta" visible="0">
+ <objectgroup name="meta">
   <object id="3" name="spawn2" type="spawn" x="32" y="80" width="16" height="32">
    <properties>
     <property name="fromlevel" value="tower"/>
@@ -340,7 +344,7 @@
  </objectgroup>
  <layer name="FG0" width="36" height="11">
   <data encoding="base64" compression="zlib">
-   eJxjYEAFQmh8RQrlCaknBNDVU8on5D5CgJB/KHUPpeFDyH+kxg+13UPt9ESqe6idXkh1jxIB/aTKo7sXXZ5UQCi+CfmX1PRCCAw29xAKX0rliQGOQOwMxU5IbBjfEQk7IYlhUwPjEwsA52ALlA==
+   eJzNkrENACAMw3oF8P+lzGSxrIJEtigtNdCqUyP8BE/1macnUb/lu83TnUfnWZ4uH9VbHrsv1lue1/tEWtCfec63/VZ0H8rt/5B+46H37ea/awNwDQUe
   </data>
  </layer>
  <layer name="collision" width="36" height="11" visible="0" opacity="0.29">

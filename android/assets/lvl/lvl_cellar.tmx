@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="13" tilewidth="16" tileheight="16" nextobjectid="63">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="12" height="12" tilewidth="16" tileheight="16" nextobjectid="77">
  <tileset firstgid="1" name="Mat" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../img/tiles.png" width="256" height="256"/>
   <terraintypes>
@@ -237,135 +237,64 @@
    </properties>
   </tile>
  </tileset>
- <layer name="BG2" width="32" height="13">
+ <layer name="BG3" width="12" height="12">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjALqA20oJgVoDbD9VgNs/0gDAFCiAWc=
+   eJxjYCAPaNNYfBQMDQAAR38ArQ==
   </data>
  </layer>
- <layer name="BG1" width="32" height="13">
+ <layer name="BG2" width="12" height="12">
   <data encoding="base64" compression="zlib">
-   eJx1k+tRxDAMhH1xKjBQgA+oACiASyXhKghUAFTIowEeDfAogPWMdmaz+H58IyeRdy1ZKSmlDchgENrzGFT7trH1GLEc2E+yaHFf6XhvTKNE5DvmU5NaNf0/12jaJb6R0smlr+pqTjZv1dZa2FfNL6ZRLVd1GZlDf55lkPfM09717qum9bm8/mzavLNs9M7h58y2Zo+4R/vPWnWeevc/dNbeS83RO2KP9EwlrfvuM0X/Q/Ov+6jlc+GzrPt0trx2/UduwD7iHFGZO1raB2pqvTqzjSNwDE6sfzW8SfO7D+g9p/X8P4Fn8AJe5Uzqp/PQvp2CM3Bud1ZCn96NB/Hn+yq6b+AdfIBP6Qtz+LyVWi/AJbgSnRw5WmdbPwb03kce93yBb/ADfsVjm9ZztgPXESeLXDeW4BbcRVxizfear+tJfJxJ/Hf2rPvpt5i/4jWovvqpxx+QlzUu
+   eJyNkMsNgDAMQ9PPBqUTABMAA7TZfyd8SCUrVMDhqXFiWWmyiBSwgAoySEYxXU0HEMEKNrC7fjD/YOgDnOAyHcmfnLeBbnDNqM2Uau6z5ix1b/uZM9unudxOOfrSm/l9Fs+/9lU35zy/H9+PayXv7H5Nnn8ZuTcWkR2Q
   </data>
  </layer>
- <layer name="BG0" width="32" height="13">
+ <layer name="BG1" width="12" height="12">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFtAKCQ8j8oeRWWoAwIA4H4kggjgHiWCxqSPUDOxSPNIDNz4TCAV2eknAjx/5RMDAAAPVtAk0=
+   eJxjYBgFo4B8AAACQAAB
+  </data>
+ </layer>
+ <layer name="BG0" width="12" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAOmE4lc0YBKpiKQ3wDXV2BGwAA5jcB3Q==
   </data>
  </layer>
  <objectgroup name="Objects">
-  <object id="14" name="oldfancywizard" gid="257" x="92.25" y="202.25" width="16" height="32" rotation="-86.3252"/>
-  <object id="21" gid="55" x="64" y="176" width="16" height="16">
+  <object id="21" gid="55" x="32" y="48" width="16" height="16">
    <properties>
-    <property name="animationonly" value="exit2"/>
+    <property name="animationonly" value="exit1"/>
    </properties>
   </object>
-  <object id="22" gid="39" x="64" y="160" width="16" height="16">
+  <object id="22" gid="39" x="32" y="32" width="16" height="16">
    <properties>
-    <property name="animationonly" value="exit2"/>
+    <property name="animationonly" value="exit1"/>
    </properties>
   </object>
-  <object id="25" name="kocke" type="entity" gid="150" x="240" y="144" width="16" height="16">
-   <properties>
-    <property name="displayname" value="Kocke"/>
-    <property name="examine" value="its hot"/>
-    <property name="oninteract" type="int" value="2"/>
-    <property name="oninteract_0" value="class"/>
-    <property name="oninteract_1" value="take"/>
-   </properties>
-  </object>
-  <object id="26" name="kerze" type="entity" gid="151" x="224" y="144" width="16" height="16">
-   <properties>
-    <property name="displayname" value="Kerze"/>
-    <property name="examine" value="Tats a kerze"/>
-    <property name="oninteract" type="int" value="2"/>
-    <property name="oninteract_0" value="activate exit2"/>
-    <property name="oninteract_1" value="take"/>
-   </properties>
-  </object>
-  <object id="29" gid="247" x="368" y="176" width="16" height="16">
-   <properties>
-    <property name="animationonly" value="exit3"/>
-   </properties>
-  </object>
-  <object id="30" gid="231" x="368" y="160" width="16" height="16">
-   <properties>
-    <property name="animationonly" value="exit3"/>
-   </properties>
-  </object>
-  <object id="31" gid="215" x="368" y="144" width="16" height="16">
-   <properties>
-    <property name="animationonly" value="exit3"/>
-   </properties>
-  </object>
-  <object id="32" gid="216" x="384" y="144" width="16" height="16">
-   <properties>
-    <property name="animationonly" value="exit3"/>
-   </properties>
-  </object>
-  <object id="33" gid="232" x="384" y="160" width="16" height="16">
-   <properties>
-    <property name="animationonly" value="exit3"/>
-   </properties>
-  </object>
-  <object id="34" gid="248" x="384" y="176" width="16" height="16">
-   <properties>
-    <property name="animationonly" value="exit3"/>
-   </properties>
-  </object>
-  <object id="60" gid="149" x="384" y="192" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="meta">
-  <object id="3" name="spawn1" type="spawn" x="16" y="160" width="16" height="32">
+  <object id="3" name="spawn1" type="spawn" x="32" y="48" width="16" height="32">
    <properties>
-    <property name="fromlevel" value="testlvl"/>
-    <property name="portalid" value="test_test_1"/>
+    <property name="fromlevel" value="tower"/>
+    <property name="portalid" value="tower_cellar"/>
    </properties>
   </object>
-  <object id="10" name="exit1" type="exit" x="480" y="144" width="32" height="64">
-   <properties>
-    <property name="portalid" value="test_test_1"/>
-    <property name="tolevel" value="testlvl"/>
-   </properties>
-  </object>
-  <object id="11" name="main" type="spawn" x="352" y="160" width="16" height="32">
-   <properties>
-    <property name="fromlevel" value="main"/>
-    <property name="portalid" value="main"/>
-   </properties>
-  </object>
-  <object id="23" name="exit2" type="exit" x="64" y="144" width="16" height="32">
+  <object id="23" name="exit1" type="exit" x="32" y="16" width="16" height="32">
    <properties>
     <property name="active" type="bool" value="false"/>
     <property name="delay" type="int" value="2000"/>
-    <property name="portalid" value="test_test_3"/>
+    <property name="displayname" value="To the Tower"/>
+    <property name="portalid" value="cellar_tower"/>
     <property name="start" type="int" value="900"/>
-    <property name="tolevel" value="testlvl"/>
+    <property name="tolevel" value="tower"/>
    </properties>
   </object>
-  <object id="35" name="exit3" type="exit" x="368" y="128" width="32" height="48">
-   <properties>
-    <property name="delay" type="int" value="2000"/>
-    <property name="portalid" value="test_test_1"/>
-    <property name="start" type="int" value="900"/>
-    <property name="tolevel" value="testlvl"/>
-   </properties>
-  </object>
-  <object id="42" name="spawn3" type="spawn" x="416" y="160" width="16" height="32">
-   <properties>
-    <property name="fromlevel" value="testlvl"/>
-    <property name="portalid" value="test_test_3"/>
-   </properties>
-  </object>
-  <object id="43" name="hero_wait_right" type="hero" gid="257" x="80" y="64" width="16" height="32"/>
-  <object id="44" name="hero_wait_left" type="hero" gid="261" x="96" y="64" width="16" height="32"/>
-  <object id="45" name="hero_walk_right" type="hero" gid="289" x="112" y="64" width="16" height="32"/>
-  <object id="47" name="hero_walk_left" type="hero" gid="321" x="128" y="64" width="16" height="32"/>
-  <object id="48" name="hero_walk_down" type="hero" gid="347" x="144" y="64" width="16" height="32"/>
-  <object id="49" name="hero_walk_up" type="hero" gid="353" x="160" y="64" width="16" height="32"/>
  </objectgroup>
- <layer name="collision" width="32" height="13" visible="0" opacity="0.29">
+ <layer name="FG0" width="12" height="12">
   <data encoding="base64" compression="zlib">
-   eJw7zMTAcHgUj+JRPIpJwEegeKjbDwIDaf+REY4BLDQ/sQ==
+   eJxjYBgFo4B8AAACQAAB
+  </data>
+ </layer>
+ <layer name="collision" width="12" height="12" visible="0" opacity="0.29">
+  <data encoding="base64" compression="zlib">
+   eJw7zMTAcHgQ4SNDHI80AADNqUDV
   </data>
  </layer>
 </map>
