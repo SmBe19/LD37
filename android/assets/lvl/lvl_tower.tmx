@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="23" height="8" tilewidth="16" tileheight="16" nextobjectid="77">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="23" height="8" tilewidth="16" tileheight="16" nextobjectid="78">
  <tileset firstgid="1" name="Mat" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../img/tiles.png" width="256" height="256"/>
   <terraintypes>
@@ -258,6 +258,9 @@
   </data>
  </layer>
  <objectgroup name="Objects">
+  <properties>
+   <property name="animationonly" value="exit4"/>
+  </properties>
   <object id="21" gid="55" x="32" y="80" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit1"/>
@@ -280,7 +283,7 @@
   </object>
   <object id="65" gid="39" x="224" y="64" width="16" height="16">
    <properties>
-    <property name="animationonly" value="exit2"/>
+    <property name="animationonly" value="exit3"/>
    </properties>
   </object>
   <object id="66" gid="55" x="224" y="80" width="16" height="16">
@@ -290,7 +293,7 @@
   </object>
   <object id="67" gid="39" x="320" y="64" width="16" height="16">
    <properties>
-    <property name="animationonly" value="exit2"/>
+    <property name="animationonly" value="exit4"/>
    </properties>
   </object>
   <object id="68" gid="55" x="320" y="80" width="16" height="16">
@@ -299,11 +302,16 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="FG0" width="23" height="8">
+  <data encoding="base64" compression="zlib">
+   eJxjYBi6QBiIRYBYlAbiykCsAsSqaGqpIW4MxCZAbIqmllriowABALLpBRE=
+  </data>
+ </layer>
  <objectgroup name="meta">
-  <object id="3" name="spawn1" type="spawn" x="32" y="80" width="16" height="32">
+  <object id="3" name="spawn1" type="spawn" x="32" y="64" width="16" height="32">
    <properties>
     <property name="fromlevel" value="ward"/>
-    <property name="portalid" value="ward_tower"/>
+    <property name="portalid" value="wall_tower"/>
    </properties>
   </object>
   <object id="23" name="exit1" type="exit" x="32" y="48" width="16" height="32">
@@ -312,7 +320,7 @@
     <property name="delay" type="int" value="2000"/>
     <property name="displayname" value="To the Wall"/>
     <property name="examine" value="Back outside, this door leads."/>
-    <property name="portalid" value="tower_ward"/>
+    <property name="portalid" value="tower_wall"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="lvl_ward"/>
    </properties>
@@ -323,7 +331,7 @@
   <object id="47" name="hero_walk_left" type="hero" gid="321" x="105.36" y="30.4488" width="16" height="32"/>
   <object id="48" name="hero_walk_down" type="hero" gid="347" x="121.36" y="30.4488" width="16" height="32"/>
   <object id="49" name="hero_walk_up" type="hero" gid="353" x="137.36" y="30.4488" width="16" height="32"/>
-  <object id="69" name="spawn2" type="spawn" x="128" y="80" width="16" height="32">
+  <object id="69" name="spawn2" type="spawn" x="128" y="64" width="16" height="32">
    <properties>
     <property name="fromlevel" value="palace"/>
     <property name="portalid" value="palace_tower"/>
@@ -334,7 +342,8 @@
     <property name="active" type="bool" value="false"/>
     <property name="delay" type="int" value="2000"/>
     <property name="displayname" value="To the Palace"/>
-    <property name="examine" value="The guards in the Palace wouldn't like seeing me go through that door."/>
+    <property name="examine">The guards in the Palace wouldn't
+like seeing me go through that door.</property>
     <property name="portalid" value="tower_palace"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="lvl_palace"/>
@@ -351,7 +360,7 @@
     <property name="tolevel" value="lvl_room51_door"/>
    </properties>
   </object>
-  <object id="74" name="spawn3" type="spawn" x="224" y="80" width="16" height="32">
+  <object id="74" name="spawn3" type="spawn" x="224" y="64" width="16" height="32">
    <properties>
     <property name="fromlevel" value="room51_door"/>
     <property name="portalid" value="room51_door_tower"/>
@@ -368,18 +377,19 @@
     <property name="tolevel" value="lvl_cellar"/>
    </properties>
   </object>
-  <object id="76" name="spawn3" type="spawn" x="320" y="80" width="16" height="32">
+  <object id="76" name="spawn3" type="spawn" x="320" y="64" width="16" height="32">
    <properties>
     <property name="fromlevel" value="cellar"/>
     <property name="portalid" value="cellar_tower"/>
    </properties>
   </object>
+  <object id="77" name="main" type="spawn" x="176" y="80" width="16" height="32">
+   <properties>
+    <property name="fromlevel" value="main"/>
+    <property name="portalid" value="main"/>
+   </properties>
+  </object>
  </objectgroup>
- <layer name="FG0" width="23" height="8">
-  <data encoding="base64" compression="zlib">
-   eJxjYBgFo2D4AgAC4AAB
-  </data>
- </layer>
  <layer name="collision" width="23" height="8" visible="0" opacity="0.29">
   <data encoding="base64" compression="zlib">
    eJw7zMTAcHgUDwt8ZBRjYADY0I3e

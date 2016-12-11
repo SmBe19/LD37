@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="96" height="48" tilewidth="16" tileheight="16" nextobjectid="98">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="74" height="40" tilewidth="16" tileheight="16" nextobjectid="98">
+ <properties>
+  <property name="mapscale" type="float" value="2"/>
+ </properties>
  <tileset firstgid="1" name="Mat" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../img/tiles.png" width="256" height="256"/>
   <terraintypes>
@@ -269,137 +272,152 @@
    </properties>
   </tile>
  </tileset>
- <layer name="Schwarzer Hintergrund" width="96" height="48" visible="0">
+ <layer name="Schwarzer Hintergrund" width="74" height="40">
   <data encoding="base64" compression="zlib">
-   eJztw0ENAAAMA6HzU//+5mIvSFg1VVVVVVVVVVVVVVVVVVVVVVX19QG1XAYu
+   eJztwwEJAAAMBKHr8/37rcdQcNVUVVVVVVVVVVVVVX3/ACiw8UA=
   </data>
  </layer>
- <layer name="Gras und Mauer und Treppen" width="96" height="48">
+ <layer name="Gras und Mauer und Treppen" width="74" height="40">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
- <layer name="Türme" width="96" height="48">
+ <layer name="Türme" width="74" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt1UEOgjAQheGB9gTcAJZ4A06gS+9/GWnghZHowsUIof+XTERtQvtahmxmaa5mroddW2/LOst6s/tsd5XcuGatPmhOmkNN+ZfSmvd74PemXa+zxeWfXd2D7nEWnS2Zt7btQfpwrT3IbmxU/rp3DfmXDHXulbdKWftPPyY6/3LPq+dfzr/Os/qN1p7s/R2g5yA6/9r6j+8rrX1///oqv0W+f1W1vH9vtp1v7YHv+/7sj+uYLmhOvt9dPf/BlkxL/vtev+83+m9avw9Bc1IvrKH/nJHff/L/P/+8Xb3/nJH6T9mD58FzAQAAAAAg0nj0BCo3HT0BAAAAAAAAAAAAAAAAAAB+9AKYNwfk
+   eJztlMENgzAMAA3JBGwAT7oBE7TP7r9MsYiFG7WPoApk9U6ygDZKnJPtLCJpjW6Nh8RilC1vzT+7Z19Fcuu6EmPjWbZ3ZE8adofalXfYl/cs7Z6yi/sPcj+TQTY3veyu0od3c5Xd2lZPtmdET3pXqyPzYmFO/NOvOepJ94rmSevJ6sP6zO6S5H1GWV0d9RS973w/9fJ9jvvQ347McYuoc/wme72YKz+XfC3NZc3QeJbv32ieJtnurp7qWVT3mf23lO+p8Sy/TzRPZ2IzUF09L84FAAAAAOAfma9OIAjL1QkAAAAAAAAAAAAAAJzMC092B0Y=
   </data>
  </layer>
  <objectgroup name="Objects">
-  <object id="63" gid="39" x="976" y="112" width="16" height="16">
+  <object id="63" gid="39" x="784" y="112" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_tower"/>
    </properties>
   </object>
-  <object id="64" gid="55" x="976" y="128" width="16" height="16">
+  <object id="64" gid="55" x="784" y="96" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_tower"/>
    </properties>
   </object>
-  <object id="66" gid="44" x="560" y="512" width="16" height="16"/>
-  <object id="67" gid="45" x="576" y="512" width="16" height="16"/>
-  <object id="68" gid="60" x="560" y="528" width="16" height="16"/>
-  <object id="69" gid="61" x="576" y="528" width="16" height="16"/>
-  <object id="70" gid="39" x="1152" y="112" width="16" height="16">
+  <object id="66" gid="44" x="560" y="480" width="16" height="16"/>
+  <object id="67" gid="45" x="576" y="480" width="16" height="16"/>
+  <object id="68" name="well" type="entity" gid="60" x="560" y="496" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Well"/>
+    <property name="examine">The water from the well can be used
+to drink or to save the buildings
+from the experimental mishaps of my master.
+I guess it's ex-master now.</property>
+   </properties>
+  </object>
+  <object id="69" gid="61" x="576" y="496" width="16" height="16"/>
+  <object id="70" gid="39" x="960" y="112" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_tower"/>
    </properties>
   </object>
-  <object id="71" gid="55" x="1152" y="128" width="16" height="16">
+  <object id="71" gid="55" x="960" y="96" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_tower"/>
    </properties>
   </object>
-  <object id="72" gid="39" x="432" y="432" width="16" height="16">
+  <object id="72" gid="39" x="432" y="400" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_magelab"/>
    </properties>
   </object>
-  <object id="73" gid="55" x="432" y="448" width="16" height="16">
+  <object id="73" gid="55" x="432" y="416" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_magelab"/>
    </properties>
   </object>
-  <object id="79" gid="38" x="16" y="352" width="16" height="16"/>
-  <object id="80" gid="54" x="16" y="368" width="16" height="16"/>
-  <object id="81" gid="10" x="224" y="432" width="16" height="16">
+  <object id="79" gid="38" x="16" y="320" width="16" height="16"/>
+  <object id="80" name="closeddoor" type="entity" gid="54" x="16" y="336" width="16" height="16">
+   <properties>
+    <property name="displayname" value="Door"/>
+    <property name="examine" value="This door is locked"/>
+    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract_0" value="It's locked"/>
+   </properties>
+  </object>
+  <object id="81" gid="10" x="224" y="400" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_tavern"/>
    </properties>
   </object>
-  <object id="82" gid="10" x="656" y="432" width="16" height="16">
+  <object id="82" gid="10" x="656" y="400" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_barn"/>
    </properties>
   </object>
-  <object id="83" gid="26" x="656" y="448" width="16" height="16">
+  <object id="83" gid="26" x="656" y="416" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_barn"/>
    </properties>
   </object>
-  <object id="84" gid="26" x="224" y="448" width="16" height="16">
+  <object id="84" gid="26" x="224" y="416" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_tavern"/>
    </properties>
   </object>
-  <object id="85" gid="247" x="1200" y="624" width="16" height="16">
+  <object id="85" gid="247" x="1008" y="592" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_palace"/>
    </properties>
   </object>
-  <object id="86" gid="231" x="1200" y="608" width="16" height="16">
+  <object id="86" gid="231" x="1008" y="576" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_palace"/>
    </properties>
   </object>
-  <object id="87" gid="215" x="1200" y="592" width="16" height="16">
+  <object id="87" gid="215" x="1008" y="560" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_palace"/>
    </properties>
   </object>
-  <object id="88" gid="216" x="1216" y="592" width="16" height="16">
+  <object id="88" gid="216" x="1024" y="560" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_palace"/>
    </properties>
   </object>
-  <object id="89" gid="232" x="1216" y="608" width="16" height="16">
+  <object id="89" gid="232" x="1024" y="576" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_palace"/>
    </properties>
   </object>
-  <object id="90" gid="248" x="1216" y="624" width="16" height="16">
+  <object id="90" gid="248" x="1024" y="592" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_palace"/>
    </properties>
   </object>
-  <object id="96" gid="55" x="944" y="352" width="16" height="16">
+  <object id="96" gid="55" x="752" y="320" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_wall"/>
    </properties>
   </object>
-  <object id="97" gid="39" x="944" y="336" width="16" height="16">
+  <object id="97" gid="39" x="752" y="304" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_wall"/>
    </properties>
   </object>
  </objectgroup>
- <layer name="Vordere Mauer und Häuser" width="96" height="48">
+ <layer name="Vordere Mauer und Häuser" width="74" height="40">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
- <layer name="Dächer und Türen" width="96" height="48">
+ <layer name="Dächer und Türen" width="74" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt1stNxDAUheHsKACoAKgA6AQ6gBUzO1ghKkAsgAqACoAKGCoYoAEeDfAogDNSkLKJ5Gtd5ybk/6SjSJYT22fjVBUAAAAAAAAAlHOuXDgH6eg/Fv3H6kv/nvu4NHxvMfdWuUvMfeb5ujg3/ceem/5jz23tf1lZUVad90H/adaUdWXDeR/0n2ZT2VK2nfdB/3ZXyrVTbgzfW8x9UGaJecw8X5u+9D9WQ+v/QJkoU8M7zXu+9FpWQ+v/uH6eGN5p3vOl17IaWv+n9fPM8E7zni+9ltXQ+v9v6D8W/cfy/O/+C/LtKLsO48izp+w7jCMP/cdq6/NQOTLMR562nr3mw26uPCnPykvwXsZmSXlV3pR35aMeQ3c+lS/lW/kJ3gsAAAAAwO4XuvOwlg==
+   eJztlssNAUEAhvemAFSACtAJHXDCjZOoQBxQASpABajAowGPBjwK8G+ykknYzUwyY8b4v+TLJpN57H6X2SAghBBCCCGEEPJthnCkWR9hJznYSQ7TnXTuP1bYL5w7hwtJl+zETj/eKQ0zMMtOieZgHhbYKdEiLMEyOyUqMoFTTc4U9gvnruBa0o3lTr7gSqcGbMKWwhrxvjB9liudutGzp7BGvC9Mn+VKp370HCisEe8L02e50sl12EkOdpJD5//Ny3+gAqsaxn2nBusaxn2HneSI++427CjM9524Hrrm+8wW7uAeHiy/i6uk4BGe4BleojHyzhXe4B0+LL8LIeQzTwLEsJY=
   </data>
  </layer>
  <objectgroup name="meta">
-  <object id="3" name="spawn_tower" type="spawn" x="1136" y="112" width="16" height="32">
+  <object id="3" name="spawn_tower" type="spawn" x="944" y="112" width="16" height="32">
    <properties>
     <property name="fromlevel" value="lvl_tower"/>
     <property name="portalid" value="tower_wall"/>
    </properties>
   </object>
-  <object id="10" name="exit_tower" type="exit" x="1152" y="96" width="16" height="32">
+  <object id="10" name="exit_tower" type="exit" x="960" y="96" width="16" height="32">
    <properties>
     <property name="delay" type="int" value="2000"/>
     <property name="portalid" value="wall_tower"/>
@@ -407,13 +425,13 @@
     <property name="tolevel" value="lvl_tower"/>
    </properties>
   </object>
-  <object id="11" name="main" type="spawn" x="464" y="464" width="16" height="32">
+  <object id="11" name="main" type="spawn" x="464" y="432" width="16" height="32">
    <properties>
     <property name="fromlevel" value="main"/>
     <property name="portalid" value="main"/>
    </properties>
   </object>
-  <object id="23" name="exit_ward" type="exit" x="976" y="96" width="16" height="32">
+  <object id="23" name="exit_ward" type="exit" x="784" y="96" width="16" height="32">
    <properties>
     <property name="delay" type="int" value="2000"/>
     <property name="portalid" value="wall_ward"/>
@@ -421,7 +439,7 @@
     <property name="tolevel" value="lvl_ward"/>
    </properties>
   </object>
-  <object id="42" name="spawn_ward" type="spawn" x="960" y="112" width="16" height="32">
+  <object id="42" name="spawn_ward" type="spawn" x="768" y="112" width="16" height="32">
    <properties>
     <property name="fromlevel" value="lvl_ward"/>
     <property name="portalid" value="ward_wall"/>
@@ -433,85 +451,98 @@
   <object id="47" name="hero_walk_left" type="hero" gid="321" x="128" y="64" width="16" height="32"/>
   <object id="48" name="hero_walk_down" type="hero" gid="347" x="144" y="64" width="16" height="32"/>
   <object id="49" name="hero_walk_up" type="hero" gid="353" x="160" y="64" width="16" height="32"/>
-  <object id="74" name="spawn_wall" type="spawn" x="928" y="336" width="16" height="32">
+  <object id="74" name="spawn_wall" type="spawn" x="768" y="304" width="16" height="32">
    <properties>
     <property name="fromlevel" value="lvl_ward"/>
     <property name="portalid" value="wall_ward"/>
    </properties>
   </object>
-  <object id="75" name="exit_wall" type="exit" x="944" y="320" width="16" height="32">
+  <object id="75" name="exit_wall" type="exit" x="752" y="288" width="16" height="32">
    <properties>
     <property name="delay" type="int" value="2000"/>
+    <property name="displayname" value="Wall"/>
+    <property name="examine">They lead to the wall. Not sure if
+that's the place to be these days.</property>
     <property name="portalid" value="ward_wall"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="lvl_ward"/>
    </properties>
   </object>
-  <object id="76" name="spawn_barn" type="spawn" x="640" y="432" width="16" height="32">
+  <object id="76" name="spawn_barn" type="spawn" x="640" y="400" width="16" height="32">
    <properties>
     <property name="fromlevel" value="lvl_barn"/>
     <property name="portalid" value="barn_ward"/>
    </properties>
   </object>
-  <object id="77" name="spawn_magelab" type="spawn" x="416" y="432" width="16" height="32">
+  <object id="77" name="spawn_magelab" type="spawn" x="448" y="400" width="16" height="32">
    <properties>
     <property name="fromlevel" value="lvl_magelab"/>
     <property name="portalid" value="magelab_ward"/>
    </properties>
   </object>
-  <object id="78" name="spawn_tavern" type="spawn" x="208" y="432" width="16" height="32">
+  <object id="78" name="spawn_tavern" type="spawn" x="240" y="400" width="16" height="32">
    <properties>
     <property name="fromlevel" value="lvl_tavern"/>
     <property name="portalid" value="tavern_ward"/>
    </properties>
   </object>
-  <object id="91" name="spawn_palace" type="spawn" x="1184" y="608" width="16" height="32">
+  <object id="91" name="spawn_palace" type="spawn" x="992" y="576" width="16" height="32">
    <properties>
     <property name="fromlevel" value="lvl_palace"/>
     <property name="portalid" value="palace_ward"/>
    </properties>
   </object>
-  <object id="92" name="exit_palace" type="exit" x="1200" y="592" width="32" height="32">
+  <object id="92" name="exit_palace" type="exit" x="1008" y="560" width="32" height="32">
    <properties>
     <property name="delay" type="int" value="2000"/>
+    <property name="displayname" value="Palace"/>
+    <property name="examine" value="This is where the king lives"/>
     <property name="portalid" value="ward_palace"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="lvl_palace"/>
    </properties>
   </object>
-  <object id="93" name="exit_wall" type="exit" x="656" y="416" width="16" height="32">
+  <object id="93" name="exit_wall" type="exit" x="656" y="384" width="16" height="32">
    <properties>
     <property name="delay" type="int" value="2000"/>
+    <property name="displayname" value="Barn"/>
+    <property name="examine">It's where we store the horses
+and the hay. (The door is locked)</property>
     <property name="portalid" value="ward_barn"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="lvl_barn"/>
    </properties>
   </object>
-  <object id="94" name="exit_wall" type="exit" x="432" y="416" width="16" height="32">
+  <object id="94" name="exit_wall" type="exit" x="432" y="384" width="16" height="32">
    <properties>
     <property name="delay" type="int" value="2000"/>
+    <property name="displayname" value="Mage's lab"/>
     <property name="portalid" value="ward_magelab"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="lvl_magelab"/>
    </properties>
   </object>
-  <object id="95" name="exit_tavern" type="exit" x="224" y="416" width="16" height="32">
+  <object id="95" name="exit_tavern" type="exit" x="224" y="384" width="16" height="32">
    <properties>
     <property name="delay" type="int" value="2000"/>
+    <property name="displayname" value="Tavern"/>
+    <property name="examine">This is not room 51. But the place's
+got good drinks I've heard.
+It's not open right now.</property>
     <property name="portalid" value="ward_tavern"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="lvl_tavern"/>
    </properties>
   </object>
  </objectgroup>
- <layer name="Zinne" width="96" height="48">
+ <layer name="Zinne" width="74" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt0DkKxDAQBEBdj3O6+//HWIEFvUKbOqqCYWBonaUAAAAAvOea9Z310V/ruzGrz6qzWvT2zNdsPNVi1qP3yPQtm3vlGZnvkVv71m32b82I3Dhk6nbmnsv35Jtz79Of5L+c7lvL7x3r4f8BAAAAAAAAAAAAAAAAlhsD/B5+
+   eJztzjEOwzAIBVDHcLiu7f0PU4ZYok66tdt70hcSRuAxAADgvx6VV+WpXuouK1E5KrPVefZXL8/M1otWo83ENtt39Rt9Ptrc2nu0Xn55y+12js//xc3Nu3+tnWsHAAAAAAAAAAC/8QY/GRdC
   </data>
  </layer>
- <layer name="collision" width="96" height="48" visible="0" opacity="0.29">
+ <layer name="collision" width="74" height="40" visible="0" opacity="0.29">
   <data encoding="base64" compression="zlib">
-   eJzt2LERwCAMBEHG/XclCnMLJmAQ/g0211z2qmeMAgAINn+sYxv99U+mv/7J9O/VHwAAAPhuZV+vbvEb/gCn79Bff/31119//dG/N/31T6a//sn01z+Z/von019/AAAA9nkBnqzkVg==
+   eJzt18EJwCAQRUFJ/12ZwlLDQszf6BzmKu4TROc1xgSAw9w/8uWsOu3fKXkm6f10lb4PAQCA91Xe+9W/QeKfsWp9nXTSSSedMp12oZNOOtVm00mnbnTSSSedutJJJzjFAxjs6s8=
   </data>
  </layer>
 </map>

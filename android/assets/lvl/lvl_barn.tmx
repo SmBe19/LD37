@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="26" height="13" tilewidth="16" tileheight="16" nextobjectid="100">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="26" height="13" tilewidth="16" tileheight="16" nextobjectid="102">
  <tileset firstgid="1" name="Mat" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../img/tiles.png" width="256" height="256"/>
   <terraintypes>
@@ -282,9 +282,9 @@
   <object id="71" name="straw" type="entity" gid="62" x="320" y="144" width="16" height="16">
    <properties>
     <property name="displayname" value="Straw"/>
-    <property name="examine" value="This stuff looks fun when it’s on fire."/>
+    <property name="examine" value="This stuff looks fun when it's on fire."/>
     <property name="oninteract" type="int" value="2"/>
-    <property name="oninteract_0" value="take"/>
+    <property name="oninteract_0" value="take $this"/>
     <property name="oninteract_1" value="show $this"/>
    </properties>
   </object>
@@ -294,9 +294,9 @@
   <object id="75" name="straw" type="entity" gid="62" x="224" y="144" width="16" height="16">
    <properties>
     <property name="displayname" value="Straw"/>
-    <property name="examine" value="This stuff looks fun when it’s on fire."/>
+    <property name="examine" value="This stuff looks fun when it's on fire."/>
     <property name="oninteract" type="int" value="2"/>
-    <property name="oninteract_0" value="take"/>
+    <property name="oninteract_0" value="take $this"/>
     <property name="oninteract_1" value="show $this"/>
    </properties>
   </object>
@@ -320,18 +320,26 @@
   <object id="94" gid="64" x="352" y="144" width="16" height="16"/>
   <object id="95" gid="48" x="336" y="112" width="16" height="16"/>
   <object id="96" gid="48" x="352" y="128" width="16" height="16"/>
- </objectgroup>
- <objectgroup name="meta" visible="0">
-  <object id="3" name="spawn1" type="spawn" x="80" y="96" width="16" height="32">
+  <object id="101" name="saw" type="entity" gid="207" x="240" y="176" width="16" height="16">
    <properties>
-    <property name="fromlevel" value="ward"/>
+    <property name="displayname" value="Saw"/>
+    <property name="examine" value="Looks useful."/>
+    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract_0" value="take $this"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="meta">
+  <object id="3" name="spawn1" type="spawn" x="80" y="80" width="16" height="32">
+   <properties>
+    <property name="fromlevel" value="lvl_ward"/>
     <property name="portalid" value="ward_barn"/>
    </properties>
   </object>
   <object id="23" name="exit" type="exit" x="80" y="64" width="16" height="32">
    <properties>
-    <property name="active" type="bool" value="false"/>
     <property name="delay" type="int" value="2000"/>
+    <property name="displayname" value="Ward"/>
     <property name="portalid" value="barn_ward"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="lvl_ward"/>
@@ -343,6 +351,12 @@
   <object id="47" name="hero_walk_left" type="hero" gid="321" x="284" y="60" width="16" height="32"/>
   <object id="48" name="hero_walk_down" type="hero" gid="347" x="300" y="60" width="16" height="32"/>
   <object id="49" name="hero_walk_up" type="hero" gid="353" x="316" y="60" width="16" height="32"/>
+  <object id="100" name="main" type="spawn" x="144" y="112" width="16" height="32">
+   <properties>
+    <property name="fromlevel" value="main"/>
+    <property name="portalid" value="main"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="fg" width="26" height="13">
   <data encoding="base64" compression="zlib">

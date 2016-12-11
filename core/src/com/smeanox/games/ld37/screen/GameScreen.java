@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.smeanox.games.ld37.Consts;
 import com.smeanox.games.ld37.io.Font;
 import com.smeanox.games.ld37.io.Level;
@@ -25,6 +26,8 @@ public class GameScreen implements Screen {
 	private float fadeProgress;
 	private float fadeStart;
 	private boolean isDark;
+	private int screenWidth, screenHeight;
+	private float currentScale;
 
 	private final TextureRegion fadeTexture;
 	private final TextureRegion inventoryBackground;
@@ -35,6 +38,7 @@ public class GameScreen implements Screen {
 		camera = new OrthographicCamera();
 		guicamera = new OrthographicCamera();
 		mapRenderer = null;
+		currentScale = 1;
 
 		fadeTexture = Textures.tiles.getTextureRegion(10, 3);
 		inventoryBackground = Textures.tiles.getTextureRegion(14, 13, 2 * Consts.TEX_SIZE, 2 * Consts.TEX_SIZE);
@@ -56,7 +60,9 @@ public class GameScreen implements Screen {
 		gameWorld.level.addObserver(new Observer() {
 			@Override
 			public void update(Observable o, Object arg) {
-				mapRenderer = new MyMapRenderer(((ObservableValue<Level>) o).get().map, Consts.UNIT_SCALE, spriteBatch, gameWorld);
+				TiledMap map = ((ObservableValue<Level>) o).get().map;
+				mapRenderer = new MyMapRenderer(map, Consts.UNIT_SCALE, spriteBatch, gameWorld);
+				setScale(map.getProperties().get(Consts.PROP_MAPSCALE, 1.f, Float.class));
 			}
 		});
 		gameWorld.fadeOut.addObserver(new Observer() {
@@ -204,8 +210,15 @@ public class GameScreen implements Screen {
 
 	@Override
 	public void resize(int width, int height) {
-		float aspect = ((float) width) / height;
-		float newheight = Consts.HEIGHT * Consts.SCALE;
+		screenWidth = width;
+		screenHeight = height;
+		setScale(currentScale);
+	}
+
+	public void setScale(float scale) {
+		currentScale = scale;
+		float aspect = ((float) screenWidth) / screenHeight;
+		float newheight = Consts.HEIGHT * Consts.SCALE * currentScale;
 		float newwidth = aspect * newheight;
 		camera.setToOrtho(false, newwidth, newheight);
 		guicamera.setToOrtho(false, newwidth, newheight);

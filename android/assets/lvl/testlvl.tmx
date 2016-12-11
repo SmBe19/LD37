@@ -307,7 +307,7 @@
     <property name="examine" value="its hot"/>
     <property name="oninteract" type="int" value="2"/>
     <property name="oninteract_0" value="class"/>
-    <property name="oninteract_1" value="take"/>
+    <property name="oninteract_1" value="take $this"/>
    </properties>
   </object>
   <object id="26" name="kerze" type="entity" gid="151" x="224" y="144" width="16" height="16">
@@ -316,7 +316,7 @@
     <property name="examine" value="Tats a kerze"/>
     <property name="oninteract" type="int" value="4"/>
     <property name="oninteract_0" value="activate exit2"/>
-    <property name="oninteract_1" value="take"/>
+    <property name="oninteract_1" value="take $this"/>
     <property name="oninteract_2">say Oh nice, a kerze!!!
 hide kocke</property>
     <property name="oninteract_3" value="say I think I can now go to the dach"/>

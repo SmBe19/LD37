@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="13" tilewidth="16" tileheight="16" nextobjectid="73">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="13" tilewidth="16" tileheight="16" nextobjectid="74">
  <tileset firstgid="1" name="Mat" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../img/tiles.png" width="256" height="256"/>
   <terraintypes>
@@ -303,7 +303,15 @@
     <property name="animateonly" value="exit"/>
    </properties>
   </object>
-  <object id="68" gid="714" x="192" y="128" width="16" height="32"/>
+  <object id="68" name="barwoman" type="entity" gid="714" x="192" y="128" width="16" height="32">
+   <properties>
+    <property name="displayname" value="Maggie"/>
+    <property name="examine">She might sell me some beverage.
+But I need money.</property>
+    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract_0" value="class"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="meta">
   <object id="3" name="spawn1" type="spawn" x="64" y="96" width="16" height="32">
@@ -327,10 +335,16 @@
   <object id="47" name="hero_walk_left" type="hero" gid="321" x="256" y="96" width="16" height="32"/>
   <object id="48" name="hero_walk_down" type="hero" gid="347" x="272" y="96" width="16" height="32"/>
   <object id="49" name="hero_walk_up" type="hero" gid="353" x="288" y="96" width="16" height="32"/>
+  <object id="73" name="main" type="spawn" x="128" y="112" width="16" height="32">
+   <properties>
+    <property name="fromlevel" value="main"/>
+    <property name="portalid" value="main"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="collision" width="20" height="13" visible="0" opacity="0.29">
   <data encoding="base64" compression="zlib">
-   eJw7zMTAcHgUj2Ii8RESMKnqR/HAYwCCdMiM
+   eJw7zMTAcHgUj2Ii8RESMTl6RvHAYQCCeMiM
   </data>
  </layer>
 </map>

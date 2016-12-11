@@ -138,12 +138,14 @@ public class Hero {
 	public void addToInventory(MapObject object) {
 		Entity entity = gameWorld.entityHashMap.get(object.getName());
 		String examine = object.getProperties().get(Consts.PROP_EXAMINE, "", String.class);
-		if (examine.length() > 0) {
-			entity.examineText = examine;
-		}
-		if (entity != null) {
-			inventory.add(entity);
-			object.setVisible(false);
+		if(!inventory.contains(entity)) {
+			if (examine.length() > 0) {
+				entity.examineText = examine;
+			}
+			if (entity != null) {
+				inventory.add(entity);
+				object.setVisible(false);
+			}
 		}
 	}
 
@@ -199,7 +201,16 @@ public class Hero {
 								ob2.getProperties().put(Consts.PROP_ACTIVE, false);
 							}
 						} else if (Consts.ONINTERACT_TAKE.equalsIgnoreCase(cmd[0])) {
-							addToInventory(object);
+							if (cmd[1].length() == 0 || Consts.ONINTERACT_THIS.equals(cmd[1])){
+								addToInventory(object);
+							} else {
+								Entity entity = gameWorld.entityHashMap.get(cmd[1]);
+								if (entity != null) {
+									if(!inventory.contains(entity)) {
+										inventory.add(entity);
+									}
+								}
+							}
 						} else if (Consts.ONINTERACT_SET_VAR.equalsIgnoreCase(cmd[0])) {
 							String[] split = cmd[1].split(" ", 2);
 							setVar(split[0], split[1]);

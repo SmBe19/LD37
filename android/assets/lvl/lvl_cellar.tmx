@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="12" height="12" tilewidth="16" tileheight="16" nextobjectid="85">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="12" height="13" tilewidth="16" tileheight="16" nextobjectid="92">
  <tileset firstgid="1" name="Mat" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../img/tiles.png" width="256" height="256"/>
   <terraintypes>
@@ -237,24 +237,24 @@
    </properties>
   </tile>
  </tileset>
- <layer name="BG3" width="12" height="12">
+ <layer name="BG3" width="12" height="13">
   <data encoding="base64" compression="zlib">
-   eJxjYCAPaNNYfBQMDQAAR38ArQ==
+   eJxjYCAPaNNYfBQMTwAAZ+8ArQ==
   </data>
  </layer>
- <layer name="BG2" width="12" height="12">
+ <layer name="BG2" width="12" height="13">
   <data encoding="base64" compression="zlib">
-   eJyNkMsNgDAMQ9PPBqUTABMAA7TZfyd8SCUrVMDhqXFiWWmyiBSwgAoySEYxXU0HEMEKNrC7fjD/YOgDnOAyHcmfnLeBbnDNqM2Uau6z5ix1b/uZM9unudxOOfrSm/l9Fs+/9lU35zy/H9+PayXv7H5Nnn8ZuTcWkR2Q
+   eJyNkN0JgEAMg+vPBuoE6gTqAL3uv5MRKoR4qA8f17QhtNeb2QBGMIEedMmQekrdgBbMYAGr9Jv039x6Azs4Urfk78TroCRcM5GzoJr7rDkr5PWfObV9XHIL5cRLr+bXLJ5/7Rsy5zzdj/+P6yBv7f/cnre4PW/T23Wn6z0B8xQgrQ==
   </data>
  </layer>
- <layer name="BG1" width="12" height="12">
+ <layer name="BG1" width="12" height="13">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo4B8AAACQAAB
+   eJxjYBgFo4B+AAACcAAB
   </data>
  </layer>
- <layer name="BG0" width="12" height="12">
+ <layer name="BG0" width="12" height="13">
   <data encoding="base64" compression="zlib">
-   eJxjYKAOmE4lc0bB0AIAK5cAmA==
+   eJxjYKAOmE4lc0bB8AYASBcAmA==
   </data>
  </layer>
  <objectgroup name="Objects">
@@ -271,22 +271,27 @@
   <object id="80" name="rat" type="entity" gid="149" x="128" y="128" width="16" height="16">
    <properties>
     <property name="displayname" value="Rat"/>
-    <property name="examine" value="He looks delicious. Pretty hard to catch, though."/>
+    <property name="examine">He looks delicious.
+Pretty hard to catch, though.</property>
+    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract_0" value="say It's too quick to catch."/>
    </properties>
   </object>
   <object id="84" name="key" type="entity" gid="176" x="64" y="176" width="16" height="16">
    <properties>
     <property name="displayname" value="Key"/>
-    <property name="examine" value="So the rats have stolen these keys. I wonder what they are for?"/>
+    <property name="examine">So the rats have stolen
+these keys. I wonder
+what they are for?</property>
     <property name="oninteract" type="int" value="1"/>
-    <property name="oninteract_0" value="take"/>
+    <property name="oninteract_0" value="take $this"/>
    </properties>
   </object>
  </objectgroup>
  <objectgroup name="meta">
-  <object id="3" name="spawn1" type="spawn" x="32" y="48" width="16" height="32">
+  <object id="3" name="spawn1" type="spawn" x="32" y="32" width="16" height="32">
    <properties>
-    <property name="fromlevel" value="tower"/>
+    <property name="fromlevel" value="lvl_tower"/>
     <property name="portalid" value="tower_cellar"/>
    </properties>
   </object>
@@ -301,15 +306,27 @@
     <property name="tolevel" value="lvl_tower"/>
    </properties>
   </object>
+  <object id="85" name="main" type="spawn" x="64" y="80" width="16" height="32">
+   <properties>
+    <property name="fromlevel" value="main"/>
+    <property name="portalid" value="main"/>
+   </properties>
+  </object>
+  <object id="86" name="hero_wait_right" type="hero" gid="257" x="80" y="80" width="16" height="32"/>
+  <object id="87" name="hero_wait_left" type="hero" gid="261" x="96" y="80" width="16" height="32"/>
+  <object id="88" name="hero_walk_up" type="hero" gid="353" x="160" y="80" width="16" height="32"/>
+  <object id="89" name="hero_walk_left" type="hero" gid="321" x="128" y="80" width="16" height="32"/>
+  <object id="90" name="hero_walk_right" type="hero" gid="289" x="112" y="80" width="16" height="32"/>
+  <object id="91" name="hero_walk_down" type="hero" gid="347" x="144" y="80" width="16" height="32"/>
  </objectgroup>
- <layer name="FG0" width="12" height="12">
+ <layer name="FG0" width="12" height="13">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo4B8AAACQAAB
+   eJxjYBgFo4B+AAACcAAB
   </data>
  </layer>
- <layer name="collision" width="12" height="12" visible="0" opacity="0.29">
+ <layer name="collision" width="12" height="13" visible="0" opacity="0.29">
   <data encoding="base64" compression="zlib">
-   eJw7zMTAcHgQ4SOjeEhhAOwLbz0=
+   eJw7zMTAcHgQ4SOjeFhjALn9eIU=
   </data>
  </layer>
 </map>
