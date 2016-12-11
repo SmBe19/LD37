@@ -289,7 +289,7 @@
  </layer>
  <layer name="BG0" width="20" height="13">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjAIIAAAEEAAB
+   eJxjYBgFo4D2YCUQz4TilQPsllGAGwAAH9QChQ==
   </data>
  </layer>
  <objectgroup name="Objects">
@@ -344,7 +344,7 @@ But I need money.</property>
  </objectgroup>
  <layer name="collision" width="20" height="13" visible="0" opacity="0.29">
   <data encoding="base64" compression="zlib">
-   eJw7zMTAcHgUj2Ii8RESMTl6RvHAYQCCeMiM
+   eJw7zMTAcHgUj2Ii8RES8WEkmhJzRjF9MAB78MiI
   </data>
  </layer>
 </map>
