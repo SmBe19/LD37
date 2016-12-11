@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="23" height="9" tilewidth="16" tileheight="16" nextobjectid="77">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="23" height="8" tilewidth="16" tileheight="16" nextobjectid="77">
  <tileset firstgid="1" name="Mat" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../img/tiles.png" width="256" height="256"/>
   <terraintypes>
@@ -237,24 +237,24 @@
    </properties>
   </tile>
  </tileset>
- <layer name="BG3" width="23" height="9">
+ <layer name="BG3" width="23" height="8">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFuIA2ieJaJKgn1WwrEtWPAtoCULgDAIaSAZI=
+   eJxjYBgFuIA2ieJaJKgn1WwrEtWPAggAAATiAWc=
   </data>
  </layer>
- <layer name="BG2" width="23" height="9">
+ <layer name="BG2" width="23" height="8">
   <data encoding="base64" compression="zlib">
-   eJx1kMERwjAMBC3FHQAVECoAChDpvyf0sGY2N8pjJ9HppLPtY4wNGKjaF3Ph6PN/NppBN/QcmQ7dmhmdrf4tuScP+DfReSfVvfFXzjPZk5fkU5/Yrf7Z+OsN38kn+cLnotcd1W/I1T2R/Bb8JweI9e183UygDqmZq172VA+ZYX2VyZ3dnqPJ1jeJcT6v3pNnuur/AYPoHX4=
+   eJx1kNENwzAIRA3xBkknaDtBmwFo9t+pfBjp6UQ+nmyOg5PtY4wNGKjaF3Ph6PM+G82gG3qOTIduzYzOVn9PjuQB/yY636S6N/7KeSav5C351Cd2q382/vrDT/JNTvhc9Hqj+g25uieS34J3coFYZ+frZgJ1SM1c9bKnesgM67tM7uz2XOj9Ae7yF5E=
   </data>
  </layer>
- <layer name="BG1" width="23" height="9">
+ <layer name="BG1" width="23" height="8">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUkAMAAzwAAQ==
+   eJxjYBgFo2D4AgAC4AAB
   </data>
  </layer>
- <layer name="BG0" width="23" height="9">
+ <layer name="BG0" width="23" height="8">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFxAB2KomPguEDACzoABY=
+   eJxjYBgFxAB2KomPAvoCACUAABY=
   </data>
  </layer>
  <objectgroup name="Objects">
@@ -330,12 +330,12 @@
   </object>
   <object id="70" name="exit2" type="exit" x="128" y="48" width="16" height="32">
    <properties>
-    <property name="active" type="bool" value="false"/>
+    <property name="active" type="bool" value="true"/>
     <property name="delay" type="int" value="2000"/>
     <property name="displayname" value="To the Palace"/>
     <property name="portalid" value="tower_palace"/>
     <property name="start" type="int" value="900"/>
-    <property name="tolevel" value="ward"/>
+    <property name="tolevel" value="palace"/>
    </properties>
   </object>
   <object id="73" name="exit3" type="exit" x="224" y="48" width="16" height="32">
@@ -345,7 +345,7 @@
     <property name="displayname" value="To Room 51"/>
     <property name="portalid" value="tower_room51door"/>
     <property name="start" type="int" value="900"/>
-    <property name="tolevel" value="ward"/>
+    <property name="tolevel" value="room51_door"/>
    </properties>
   </object>
   <object id="74" name="spawn3" type="spawn" x="224" y="80" width="16" height="32">
@@ -361,7 +361,7 @@
     <property name="displayname" value="To the Cellar"/>
     <property name="portalid" value="tower_cellar"/>
     <property name="start" type="int" value="900"/>
-    <property name="tolevel" value="ward"/>
+    <property name="tolevel" value="cellar"/>
    </properties>
   </object>
   <object id="76" name="spawn3" type="spawn" x="320" y="80" width="16" height="32">
@@ -371,14 +371,14 @@
    </properties>
   </object>
  </objectgroup>
- <layer name="FG0" width="23" height="9">
+ <layer name="FG0" width="23" height="8">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUkAMAAzwAAQ==
+   eJxjYBgFo2D4AgAC4AAB
   </data>
  </layer>
- <layer name="collision" width="23" height="9" visible="0" opacity="0.29">
+ <layer name="collision" width="23" height="8" visible="0" opacity="0.29">
   <data encoding="base64" compression="zlib">
-   eJw7zMTAcHgUDwt8ZBTTFQMALYOfqA==
+   eJw7zMTAcHgUDwt8ZBRjYADY0I3e
   </data>
  </layer>
 </map>
