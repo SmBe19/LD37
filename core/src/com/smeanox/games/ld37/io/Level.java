@@ -18,9 +18,18 @@ public enum Level {
 	lvl_ward("lvl/lvl_ward.tmx"),
 	;
 
-	public final TiledMap map;
+	public TiledMap map;
+	private String path;
 
 	Level(String path) {
+		this.path = path;
+		map = new TmxMapLoader().load(path);
+	}
+
+	public void reload(){
+		if (map != null) {
+			map.dispose();
+		}
 		map = new TmxMapLoader().load(path);
 	}
 }

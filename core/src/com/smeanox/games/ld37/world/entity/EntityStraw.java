@@ -21,6 +21,7 @@ public class EntityStraw extends Entity {
 		if("flamearrow".equals(object.getName())){
 			hero.removeCurrentItemFromInventory();
 			hero.inventory.add(hero.gameWorld.entityHashMap.get("burningstrawman"));
+			hero.activeInventory = hero.inventory.size() - 1;
 			return null;
 		}
 		return getDontDoThisString();

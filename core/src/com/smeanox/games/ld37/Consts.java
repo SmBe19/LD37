@@ -21,7 +21,7 @@ public class Consts {
 	public static final float SPEECH_BUBBLE_OFFSET = 0.5f;
 	public static final float SPEECH_BUBBLE_SIZE = 0.5f;
 	public static final float SPEECH_BUBBLE_DURATION = 2f;
-	public static final float SPEECH_BUBBLE_DURATION_PER_CHAR = 0.03f;
+	public static final float SPEECH_BUBBLE_DURATION_PER_CHAR = 0.04f;
 	public static final float SPEECH_BUBBLE_ANIM_OFFSET = 0.5f;
 	public static final float SPEECH_BUBBLE_ANIM_DURATION = 0.5f;
 	public static final float SUBTITLES_OFFSET_Y = 0.5f;

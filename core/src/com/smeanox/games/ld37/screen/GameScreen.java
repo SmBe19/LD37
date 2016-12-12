@@ -51,6 +51,7 @@ public class GameScreen implements Screen {
 	private final TextureRegion inventoryBackground;
 	private final TextureRegion[] speechBubble;
 	private final Music introNarration;
+	private final Music music;
 
 	private class Keyframe {
 		float time;
@@ -116,6 +117,8 @@ public class GameScreen implements Screen {
 		drawCreditsDragon = false;
 
 		introNarration = Gdx.audio.newMusic(Gdx.files.internal("snd/IntroNarration.mp3"));
+		music = Gdx.audio.newMusic(Gdx.files.internal("snd/Song001.mp3"));
+		music.setLooping(true);
 		fadeTexture = Textures.tiles.getTextureRegion(10, 3);
 		logo = Textures.logo.texture;
 		dragon = Textures.dragon.getTextureRegion(4, 0, 32, 32, 32);
@@ -170,7 +173,6 @@ public class GameScreen implements Screen {
 	private void initIntro(){
 		beforeStart = true;
 		cinematicNextLevel = Level.lvl_magelab;
-		MyMapRenderer.forceOwnTiming = true;
 		keyframes = keyframesIntro;
 		gameWorld.subtitles.addLast(new GameWorld.Speech("Once upon a time, there was a cute\nlittle castle on a hill.", 10));
 		gameWorld.subtitles.addLast(new GameWorld.Speech("Unfortunately, that castle was attacked\nby an enemy army and is now under siege.", 10));
@@ -182,6 +184,9 @@ public class GameScreen implements Screen {
 	}
 
 	private void initOutro(){
+		gameWorld.hero.inventory.clear();
+		gameWorld.hero.activeInventory = 0;
+
 		cinematicNextLevel = Level.lvl_intro;
 		drawCreditsDragon = true;
 		keyframes = keyframesOutro;
@@ -190,6 +195,15 @@ public class GameScreen implements Screen {
 		gameWorld.subtitles.addLast(new GameWorld.Speech("and also all the defenders", 3));
 		gameWorld.subtitles.addLast(new GameWorld.Speech("and lived happily ever after", 5));
 		cinematicDragon = Level.lvl_outro.map.getLayers().get("Objects").getObjects().get("Dragon");
+	}
+
+	private void resetGame() {
+		gameWorld.hero.inventory.clear();
+		gameWorld.hero.activeInventory = 0;
+		gameWorld.hero.variables.clear();
+		for (Level level : Level.values()) {
+			level.reload();
+		}
 	}
 
 	@Override
@@ -409,6 +423,9 @@ public class GameScreen implements Screen {
 			}
 		}
 		if(Gdx.input.isKeyJustPressed(Consts.INPUT_SKIP)){
+			if (keyframes == keyframesOutro) {
+				resetGame();
+			}
 			keyframes = null;
 			cinematicDragon = null;
 			introNarration.stop();
@@ -419,6 +436,9 @@ public class GameScreen implements Screen {
 			return;
 		}
 		if (aidx < 0 || aidx >= keyframes.length - 1) {
+			if (keyframes == keyframesOutro) {
+				resetGame();
+			}
 			keyframes = null;
 			cinematicDragon = null;
 			gameWorld.loadLevel(cinematicNextLevel, "main");
@@ -457,9 +477,15 @@ public class GameScreen implements Screen {
 					if (introNarration.isPlaying()) {
 						introNarration.stop();
 					}
+					if (music.isPlaying()) {
+						music.stop();
+					}
 					introNarration.play();
+					music.play();
+					MyMapRenderer.forceOwnTiming = true;
 				}
 				MyMapRenderer.initialTimeOffset = TimeUtils.millis();
+				return;
 			}
 			updateCinematic(0);
 			draw(delta);

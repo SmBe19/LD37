@@ -25,7 +25,7 @@ public class EntitySaw extends Entity {
 			object.setVisible(false);
 			Hero.findObjectByName(hero.gameWorld.level.get().map, "ratdead", false).setVisible(true);
 			return null;
-		} else if ("king".equals(object.getName())) {
+		} else if ("king".equals(object.getName()) || "sleepingking".equals(object.getName())) {
 			if(hero.getVar("greenelixir").length() == 0){
 				return "The bodyguard will notice";
 			}
