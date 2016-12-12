@@ -8,7 +8,10 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.objects.TiledMapTileMapObject;
+import com.badlogic.gdx.utils.TimeUtils;
 import com.smeanox.games.ld37.Consts;
 import com.smeanox.games.ld37.io.Font;
 import com.smeanox.games.ld37.io.Level;
@@ -32,12 +35,18 @@ public class GameScreen implements Screen {
 	private float bgwidth;
 	private float bgheight;
 	private float currentScale;
+	public boolean beforeStart;
+	public Level cinematicNextLevel;
 	public float cinematicProgress;
 	public float cinematicAlpha;
-	public float logoAlpha;
+	public MapObject cinematicDragon;
+	public float cinematicLogoAlpha;
+	public float cinematicCreditsAlpha;
+	public boolean drawCreditsDragon;
 
 	private final TextureRegion fadeTexture;
 	private final Texture logo;
+	private final TextureRegion dragon;
 	private final Texture castlebg;
 	private final TextureRegion inventoryBackground;
 	private final TextureRegion[] speechBubble;
@@ -50,41 +59,50 @@ public class GameScreen implements Screen {
 		float centery;
 		float alpha;
 		float logo;
+		float credits;
+		float dragonX;
+		float dragonY;
 
-		public Keyframe(float time, float scale, float centerx, float centery, float alpha, float logo) {
+		public Keyframe(float time, float scale, float centerx, float centery, float alpha, float credits, float logo) {
 			this.time = time;
 			this.scale = scale;
 			this.centerx = centerx;
 			this.centery = centery;
 			this.alpha = alpha;
+			this.credits = credits;
 			this.logo = logo;
+		}
+
+		public Keyframe(float time, float scale, float centerx, float centery, float alpha, float credits, float dragonX, float dragonY) {
+			this.time = time;
+			this.scale = scale;
+			this.centerx = centerx;
+			this.centery = centery;
+			this.alpha = alpha;
+			this.credits = credits;
+			this.dragonX = dragonX;
+			this.dragonY = dragonY;
 		}
 	}
 
 	private Keyframe[] keyframesIntro = new Keyframe[]{
-			new Keyframe(0, 0.1f, 9, 12, 1, 0),
-			new Keyframe(2, 0.1f, 11f, 11.4f, 0, 0),
-			new Keyframe(4, 0.2f, 12, 8.75f, 0, 0),
-			new Keyframe(4.01f, 0.1f, 12, 8.75f, 0, 0),
-			new Keyframe(6, 0.1f, 13.5f, 7, 0, 0),
-			new Keyframe(7, 0.1f, 13.5f, 7, 0, 0),
-			new Keyframe(12, 0.5f, 12, 7, 0, 0),
-			new Keyframe(18, 1, 12, 7, 0, 1),
-			new Keyframe(26, 1, 12, 7, 0, 1),
-			new Keyframe(30, 1, 12, 7, 1, 1),
+			new Keyframe(0, 0.1f, 9, 12, 1, 1, 0),
+			new Keyframe(2, 0.1f, 11f, 11.4f, 0, 0, 0),
+			new Keyframe(4, 0.2f, 12, 8.75f, 0, 0, 0),
+			new Keyframe(4.01f, 0.1f, 12, 8.75f, 0, 0, 0),
+			new Keyframe(6, 0.1f, 13.5f, 7, 0, 0, 0),
+			new Keyframe(7, 0.1f, 13.5f, 7, 0, 0, 0),
+			new Keyframe(12, 0.5f, 12, 7, 0, 0, 0),
+			new Keyframe(18, 1, 12, 7, 0, 0, 1),
+			new Keyframe(26, 1, 12, 7, 0, 0, 1),
+			new Keyframe(30, 1, 12, 7, 1, 0, 1),
 	};
 
 	private Keyframe[] keyframesOutro = new Keyframe[]{
-			new Keyframe(0, 0.1f, 9, 12, 1, 0),
-			new Keyframe(2, 0.1f, 11f, 11.4f, 0, 0),
-			new Keyframe(4, 0.2f, 12, 8.75f, 0, 0),
-			new Keyframe(4.01f, 0.1f, 12, 8.75f, 0, 0),
-			new Keyframe(6, 0.1f, 13.5f, 7, 0, 0),
-			new Keyframe(7, 0.1f, 13.5f, 7, 0, 0),
-			new Keyframe(12, 0.5f, 12, 7, 0, 0),
-			new Keyframe(18, 1, 12, 7, 0, 1),
-			new Keyframe(26, 1, 12, 7, 0, 1),
-			new Keyframe(30, 1, 12, 7, 1, 1),
+			new Keyframe(0, 1, 12, 7, 0, 0, 13, 7),
+			new Keyframe(10, 0.2f, 22, 12, 0, 0, 20, 10),
+			new Keyframe(15, 0.1f, 23, 12, 1, 0, 21, 11),
+			new Keyframe(17, 0.1f, 23, 12, 1, 1, 21, 11),
 	};
 
 	private Keyframe[] keyframes = null;
@@ -95,10 +113,12 @@ public class GameScreen implements Screen {
 		guicamera = new OrthographicCamera();
 		mapRenderer = null;
 		currentScale = 1;
+		drawCreditsDragon = false;
 
 		introNarration = Gdx.audio.newMusic(Gdx.files.internal("snd/IntroNarration.mp3"));
 		fadeTexture = Textures.tiles.getTextureRegion(10, 3);
 		logo = Textures.logo.texture;
+		dragon = Textures.dragon.getTextureRegion(4, 0, 32, 32, 32);
 		castlebg = Textures.castlebg.texture;
 		inventoryBackground = Textures.tiles.getTextureRegion(14, 13, 2 * Consts.TEX_SIZE, 2 * Consts.TEX_SIZE);
 		speechBubble = new TextureRegion[]{
@@ -148,6 +168,9 @@ public class GameScreen implements Screen {
 	}
 
 	private void initIntro(){
+		beforeStart = true;
+		cinematicNextLevel = Level.lvl_magelab;
+		MyMapRenderer.forceOwnTiming = true;
 		keyframes = keyframesIntro;
 		gameWorld.subtitles.addLast(new GameWorld.Speech("Once upon a time, there was a cute\nlittle castle on a hill.", 10));
 		gameWorld.subtitles.addLast(new GameWorld.Speech("Unfortunately, that castle was attacked\nby an enemy army and is now under siege.", 10));
@@ -155,16 +178,17 @@ public class GameScreen implements Screen {
 		gameWorld.subtitles.addLast(new GameWorld.Speech("Aaaaaah! I was hit!", 4));
 		gameWorld.subtitles.addLast(new GameWorld.Speech("Press F to pay respect", 60));
 		gameWorld.walkingPaused = true;
-		if (introNarration.isPlaying()) {
-			introNarration.stop();
-		}
-		introNarration.play();
 	}
 
 	private void initOutro(){
+		cinematicNextLevel = Level.lvl_intro;
+		drawCreditsDragon = true;
 		keyframes = keyframesOutro;
-		gameWorld.subtitles.addLast(new GameWorld.Speech("Once upon a time, there was a cute\nlittle castle on a hill.", 10));
-		gameWorld.subtitles.addLast(new GameWorld.Speech("Unfortunately, that castle was attacked\nby an enemy army and is now under siege.", 10));
+		gameWorld.subtitles.addLast(new GameWorld.Speech("The dragon killed all the invaders", 5));
+		gameWorld.subtitles.addLast(new GameWorld.Speech("", 2));
+		gameWorld.subtitles.addLast(new GameWorld.Speech("and also all the defenders", 3));
+		gameWorld.subtitles.addLast(new GameWorld.Speech("and lived happily ever after", 5));
+		cinematicDragon = Level.lvl_outro.map.getLayers().get("Objects").getObjects().get("Dragon");
 	}
 
 	@Override
@@ -217,6 +241,27 @@ public class GameScreen implements Screen {
 		spriteBatch.setColor(1, 1, 1, 1);
 	}
 
+	private void drawCentered(String text, float y) {
+		float width = Font.mango.getWidth(text);
+		Font.mango.draw(spriteBatch, text, (guicamera.viewportWidth - width) / 2, y);
+	}
+
+	private void drawCredits(float alpha) {
+		spriteBatch.setColor(1, 1, 1, alpha);
+		spriteBatch.begin();
+		if(drawCreditsDragon){
+			spriteBatch.draw(dragon, guicamera.viewportWidth / 2 - 2, guicamera.viewportHeight - 5, 4, 4);
+		}
+		spriteBatch.draw(logo, guicamera.viewportWidth / 2 - 3, guicamera.viewportHeight - 7, 6, 3);
+		float y = guicamera.viewportHeight - 8;
+		for (String line : Consts.GAME_CREDITS.split("\n")) {
+			drawCentered(line, y);
+			y -= Font.mango.getLineHeight() * Consts.FONT_LINE_SPACING_CREDITS;
+		}
+		spriteBatch.end();
+		spriteBatch.setColor(1, 1, 1, 1);
+	}
+
 	private void drawGUI(float delta) {
 		spriteBatch.begin();
 		if (gameWorld.inventoryVisible && gameWorld.hero.inventory.size() > 0) {
@@ -242,6 +287,12 @@ public class GameScreen implements Screen {
 		float progress = subtitle.age < Consts.SPEECH_BUBBLE_ANIM_DURATION ? (subtitle.age / Consts.SPEECH_BUBBLE_ANIM_DURATION) : 1;
 		progress = subtitle.age > subtitle.duration - Consts.SPEECH_BUBBLE_ANIM_DURATION
 				? (subtitle.duration - subtitle.age) / Consts.SPEECH_BUBBLE_ANIM_DURATION : progress;
+		spriteBatch.setColor(0, 0, 0, progress);
+		float off = 1.f / 16;
+		Font.mango.draw(spriteBatch, text, (guicamera.viewportWidth - width) / 2 - off, Consts.SUBTITLES_OFFSET_Y + height);
+		Font.mango.draw(spriteBatch, text, (guicamera.viewportWidth - width) / 2 + off, Consts.SUBTITLES_OFFSET_Y + height);
+		Font.mango.draw(spriteBatch, text, (guicamera.viewportWidth - width) / 2, Consts.SUBTITLES_OFFSET_Y + height - off);
+		Font.mango.draw(spriteBatch, text, (guicamera.viewportWidth - width) / 2, Consts.SUBTITLES_OFFSET_Y + height + off);
 		spriteBatch.setColor(1, 1, 1, progress);
 		Font.mango.draw(spriteBatch, text, (guicamera.viewportWidth - width) / 2, Consts.SUBTITLES_OFFSET_Y + height);
 		spriteBatch.setColor(1, 1, 1, 1);
@@ -303,7 +354,7 @@ public class GameScreen implements Screen {
 		mapRenderer.render();
 
 		if (gameWorld.cinematic) {
-			drawLogo(logoAlpha);
+			drawLogo(cinematicLogoAlpha);
 		}
 
 		drawSpeechBubbles();
@@ -330,6 +381,10 @@ public class GameScreen implements Screen {
 		if (isDark) {
 			drawDark(1);
 		}
+
+		if (gameWorld.cinematic) {
+			drawCredits(cinematicCreditsAlpha);
+		}
 	}
 
 	protected float interpolate(float a, float b, float progress) {
@@ -351,16 +406,20 @@ public class GameScreen implements Screen {
 			}
 		}
 		if(Gdx.input.isKeyJustPressed(Consts.INPUT_SKIP)){
-			gameWorld.loadLevel(Level.lvl_magelab, "main");
 			keyframes = null;
+			cinematicDragon = null;
 			introNarration.stop();
 			gameWorld.speechQueue.clear();
 			gameWorld.subtitles.clear();
+			gameWorld.loadLevel(cinematicNextLevel, "main");
+			MyMapRenderer.forceOwnTiming = false;
 			return;
 		}
 		if (aidx < 0 || aidx >= keyframes.length - 1) {
-			gameWorld.loadLevel(Level.lvl_magelab, "main");
 			keyframes = null;
+			cinematicDragon = null;
+			gameWorld.loadLevel(cinematicNextLevel, "main");
+			MyMapRenderer.forceOwnTiming = false;
 			return;
 		}
 
@@ -368,7 +427,10 @@ public class GameScreen implements Screen {
 		Keyframe k2 = keyframes[aidx+1];
 		float progress = (cinematicProgress - k1.time) / (k2.time - k1.time);
 		cinematicAlpha = interpolate(k1.alpha, k2.alpha, progress);
-		logoAlpha = interpolate(k1.logo, k2.logo, progress);
+		cinematicLogoAlpha = interpolate(k1.logo, k2.logo, progress);
+		cinematicCreditsAlpha = interpolate(k1.credits, k2.credits, progress);
+		float dragonX = interpolate(k1.dragonX, k2.dragonX, progress);
+		float dragonY = interpolate(k1.dragonY, k2.dragonY, progress);
 		float centerx = interpolate(k1.centerx, k2.centerx, progress);
 		float centery = interpolate(k1.centery, k2.centery, progress);
 		float scale = interpolate(k1.scale, k2.scale, progress);
@@ -376,10 +438,30 @@ public class GameScreen implements Screen {
 		setScale(scale);
 		camera.position.x = centerx;
 		camera.position.y = centery;
+
+		if (cinematicDragon != null) {
+			((TiledMapTileMapObject) cinematicDragon).setX(dragonX/Consts.UNIT_SCALE);
+			((TiledMapTileMapObject) cinematicDragon).setY(dragonY/Consts.UNIT_SCALE);
+		}
 	}
 
 	@Override
 	public void render(float delta) {
+		if(beforeStart && gameWorld.cinematic){
+			if(Gdx.input.isKeyJustPressed(Consts.INPUT_SKIP) || Gdx.input.isTouched()){
+				beforeStart = false;
+				if(keyframes == keyframesIntro) {
+					if (introNarration.isPlaying()) {
+						introNarration.stop();
+					}
+					introNarration.play();
+				}
+				MyMapRenderer.initialTimeOffset = TimeUtils.millis();
+			}
+			updateCinematic(0);
+			draw(delta);
+			return;
+		}
 		if (gameWorld.cinematic) {
 			updateCinematic(delta);
 		}

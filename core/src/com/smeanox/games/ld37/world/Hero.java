@@ -1,5 +1,6 @@
 package com.smeanox.games.ld37.world;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
@@ -7,9 +8,11 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.objects.TiledMapTileMapObject;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.StringBuilder;
 import com.badlogic.gdx.utils.TimeUtils;
 import com.smeanox.games.ld37.Consts;
+import com.smeanox.games.ld37.io.Sounds;
 import com.smeanox.games.ld37.world.entity.Entity;
 
 import java.util.ArrayList;
@@ -159,11 +162,12 @@ public class Hero {
 		Entity entity = gameWorld.entityHashMap.get(object.getName());
 		String examine = object.getProperties().get(Consts.PROP_EXAMINE, "", String.class);
 		if(!inventory.contains(entity)) {
-			if (examine.length() > 0 && entity.examineText.length() == 0) {
+			if (examine.length() > 0 && (entity.examineText == null || entity.examineText.length() == 0)) {
 				entity.examineText = examine;
 			}
 			if (entity != null) {
 				inventory.add(entity);
+				activeInventory = inventory.size() - 1;
 				object.setVisible(false);
 			}
 		}
@@ -205,6 +209,11 @@ public class Hero {
 						object.getName(), object.getProperties().get(Consts.PROP_TOLEVEL, "", String.class),
 						TimeUtils.millis() - object.getProperties().get(Consts.PROP_START, 0, Integer.class),
 						object.getProperties().get(Consts.PROP_DELAY, 0, Integer.class));
+				if(MathUtils.randomBoolean()) {
+					Sounds.door2.sound.play();
+				} else {
+					Sounds.door.sound.play();
+				}
 			} else {
 				StringBuilder sayText = new StringBuilder();
 				String oninteracteprefix = object.getProperties().get(Consts.PROP_ACTIVE, true, Boolean.class) ? Consts.PROP_ONINTERACT : Consts.PROP_ONNOINTERACT;
@@ -240,6 +249,8 @@ public class Hero {
 							gameWorld.walkingPaused = false;
 						} else if (Consts.ONINTERACT_CLEARSPEECH.equalsIgnoreCase(cmd[0])) {
 							gameWorld.skipSpeeches();
+						} else if (Consts.ONINTERACT_CLEARSUBS.equalsIgnoreCase(cmd[0])) {
+							gameWorld.subtitles.clear();
 						} else if (Consts.ONINTERACT_TAKE.equalsIgnoreCase(cmd[0])) {
 							if (cmd[1].length() == 0 || Consts.ONINTERACT_THIS.equals(cmd[1])){
 								addToInventory(object);
@@ -248,6 +259,7 @@ public class Hero {
 								if (entity != null) {
 									if(!inventory.contains(entity)) {
 										inventory.add(entity);
+										activeInventory = inventory.size() - 1;
 									}
 								}
 							}
@@ -337,6 +349,9 @@ public class Hero {
 	}
 
 	protected boolean checkCollisionXY(int colx, int coly, TiledMapTileLayer collisionLayer) {
+		if (collisionLayer == null) {
+			return true;
+		}
 		TiledMapTileLayer.Cell cell = collisionLayer.getCell(colx, coly);
 		if (cell == null) {
 			return true;

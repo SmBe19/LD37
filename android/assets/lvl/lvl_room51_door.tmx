@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="18" height="8" tilewidth="16" tileheight="16" nextobjectid="89">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="18" height="14" tilewidth="16" tileheight="16" nextobjectid="89">
  <tileset firstgid="1" name="Mat" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../img/tiles.png" width="256" height="256"/>
   <terraintypes>
@@ -237,71 +237,71 @@
    </properties>
   </tile>
  </tileset>
- <layer name="BG3" width="18" height="8">
+ <layer name="BG3" width="18" height="14">
   <data encoding="base64" compression="zlib">
-   eJxjYBjaQBuK8ckPJnOGGwAApOMBWQ==
+   eJxjYBgFo4B+QBuK8ckPJnOGGwAAppMBWQ==
   </data>
  </layer>
- <layer name="BG2" width="18" height="8">
+ <layer name="BG2" width="18" height="14">
   <data encoding="base64" compression="zlib">
-   eJyFj9ENgDAIBVvbDdQJ1AnUAcD9d5ImkFz40CaXPgoPylRKaaCCiCenO6EbclHbk68iz/qvGbOxGCv6NX/n/OGLk3cYNZuxG0d65565T0Vd7Hsal3FjPv/AXeKEt/kthjrU5AHit0Izp9CMNXkEsSQPtfz0Z2/u8ALX/A/y
+   eJyFkokNwyAMRQEzQdoOkB4TtB0Auv9ONZItvXxVaqQnDNjfB9lKKebUoMXaZW1Bl3XF7kGFVt5Z+BriqMfzLahC5mI9Vo61dOTJelo51kJf1ci9IU/W03/c68wMfvSlDvOx//TXmZhobdGXlWMtzKlvxRmlLufcJU7fruFcc+yhc3LOzgV6FufMv+LyYw+pc3PuzkPysE/V4RssjavzdF7OW+bN98le8uP/szSGMwPa5ANGrBM27yZs7qfEDOyHxNAef/SpzR6+dTgS1Q==
   </data>
  </layer>
- <layer name="BG1" width="18" height="8" visible="0">
+ <layer name="BG1" width="18" height="14">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo4B8AAACQAAB
+   eJxjYBgFo2AUjBQAAAPwAAE=
   </data>
  </layer>
- <layer name="BG0" width="18" height="8">
+ <layer name="BG0" width="18" height="14">
   <data encoding="base64" compression="zlib">
-   eJxjYBg5gB0HjU/tKMAPACWUAB0=
+   eJxjYBjaIASIQ6lgTgoQpw5Dc0qAuJQK5gwEYMdB41M7CvADAEoWBAo=
   </data>
  </layer>
  <objectgroup name="Objects">
   <properties>
    <property name="animationonly" value="exit4"/>
   </properties>
-  <object id="21" gid="55" x="32" y="80" width="16" height="16">
+  <object id="21" gid="55" x="32" y="176" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit1"/>
    </properties>
   </object>
-  <object id="22" gid="39" x="32" y="64" width="16" height="16">
+  <object id="22" gid="39" x="32" y="160" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit1"/>
    </properties>
   </object>
-  <object id="81" gid="215" x="192" y="48" width="16" height="16">
+  <object id="81" gid="215" x="192" y="144" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit2"/>
    </properties>
   </object>
-  <object id="82" gid="231" x="192" y="64" width="16" height="16">
+  <object id="82" gid="231" x="192" y="160" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit2"/>
    </properties>
   </object>
-  <object id="83" gid="247" x="192" y="80" width="16" height="16">
+  <object id="83" gid="247" x="192" y="176" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit2"/>
    </properties>
   </object>
-  <object id="84" gid="216" x="208" y="48" width="16" height="16">
+  <object id="84" gid="216" x="208" y="144" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit2"/>
    </properties>
   </object>
-  <object id="85" gid="232" x="208" y="64" width="16" height="16">
+  <object id="85" gid="232" x="208" y="160" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit2"/>
    </properties>
   </object>
-  <object id="86" gid="248" x="208" y="80" width="16" height="16">
+  <object id="86" gid="248" x="208" y="176" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit2"/>
    </properties>
   </object>
-  <object id="88" name="handscanner" type="entity" gid="6" x="160" y="64" width="16" height="16">
+  <object id="88" name="handscanner" type="entity" gid="6" x="160" y="160" width="16" height="16">
    <properties>
     <property name="displayname" value="Hand Scanner"/>
     <property name="examine">This piece of technology seems
@@ -312,19 +312,19 @@ What does this hand shape mean?</property>
    </properties>
   </object>
  </objectgroup>
- <layer name="FG0" width="18" height="8">
+ <layer name="FG0" width="18" height="14">
   <data encoding="base64" compression="zlib">
-   eJxjYBh8QBiIRYBYlIC6i0B8CYgvA/EVLPLKQKwCxKo49D8C4sdA/BCJ/QSLOmMgNgFiUwLu+QjEn4D4MxB/IaB2uAAAlngNqA==
+   eJxjYBgFo4AyIAzEIkAsSkDdRSC+BMSXgfgKFnllIFYBYlUc+h8B8WMgfojEfoJFnTEQmwCxKQH3fATiT0D8GYi/EFA7XAAAmCgNqA==
   </data>
  </layer>
  <objectgroup name="meta">
-  <object id="3" name="spawn1" type="spawn" x="32" y="64" width="16" height="32">
+  <object id="3" name="spawn1" type="spawn" x="32" y="160" width="16" height="32">
    <properties>
     <property name="fromlevel" value="lvl_tower"/>
     <property name="portalid" value="tower_room51_door"/>
    </properties>
   </object>
-  <object id="23" name="exit1" type="exit" x="32" y="48" width="16" height="32">
+  <object id="23" name="exit1" type="exit" x="32" y="144" width="16" height="32">
    <properties>
     <property name="active" type="bool" value="true"/>
     <property name="delay" type="int" value="2000"/>
@@ -335,19 +335,19 @@ What does this hand shape mean?</property>
     <property name="tolevel" value="lvl_tower"/>
    </properties>
   </object>
-  <object id="43" name="hero_wait_right" type="hero" gid="257" x="57.3597" y="30.4488" width="16" height="32"/>
-  <object id="44" name="hero_wait_left" type="hero" gid="261" x="73.3597" y="30.4488" width="16" height="32"/>
-  <object id="45" name="hero_walk_right" type="hero" gid="289" x="89.3597" y="30.4488" width="16" height="32"/>
-  <object id="47" name="hero_walk_left" type="hero" gid="321" x="105.36" y="30.4488" width="16" height="32"/>
-  <object id="48" name="hero_walk_down" type="hero" gid="347" x="121.36" y="30.4488" width="16" height="32"/>
-  <object id="49" name="hero_walk_up" type="hero" gid="353" x="137.36" y="30.4488" width="16" height="32"/>
-  <object id="69" name="spawn2" type="spawn" x="176" y="64" width="16" height="32">
+  <object id="43" name="hero_wait_right" type="hero" gid="257" x="57.3597" y="126.449" width="16" height="32"/>
+  <object id="44" name="hero_wait_left" type="hero" gid="261" x="73.3597" y="126.449" width="16" height="32"/>
+  <object id="45" name="hero_walk_right" type="hero" gid="289" x="89.3597" y="126.449" width="16" height="32"/>
+  <object id="47" name="hero_walk_left" type="hero" gid="321" x="105.36" y="126.449" width="16" height="32"/>
+  <object id="48" name="hero_walk_down" type="hero" gid="347" x="121.36" y="126.449" width="16" height="32"/>
+  <object id="49" name="hero_walk_up" type="hero" gid="353" x="137.36" y="126.449" width="16" height="32"/>
+  <object id="69" name="spawn2" type="spawn" x="176" y="160" width="16" height="32">
    <properties>
     <property name="fromlevel" value="lvl_room51"/>
     <property name="portalid" value="room_51_room51_door"/>
    </properties>
   </object>
-  <object id="70" name="exit2" type="exit" x="192" y="48" width="32" height="32">
+  <object id="70" name="exit2" type="exit" x="192" y="144" width="32" height="32">
    <properties>
     <property name="active" type="bool" value="false"/>
     <property name="delay" type="int" value="2000"/>
@@ -358,16 +358,16 @@ What does this hand shape mean?</property>
     <property name="tolevel" value="lvl_room51"/>
    </properties>
   </object>
-  <object id="77" name="main" type="spawn" x="16" y="96" width="16" height="32">
+  <object id="77" name="main" type="spawn" x="16" y="192" width="16" height="32">
    <properties>
     <property name="fromlevel" value="main"/>
     <property name="portalid" value="main"/>
    </properties>
   </object>
  </objectgroup>
- <layer name="collision" width="18" height="8" visible="0" opacity="0.29">
+ <layer name="collision" width="18" height="14" visible="0" opacity="0.29">
   <data encoding="base64" compression="zlib">
-   eJw7zMTAcHgU0xwfoQAPZnMApHdu/g==
+   eJxjYBgFQwkcZhrF9MBHKMCD2RwApidu/g==
   </data>
  </layer>
 </map>

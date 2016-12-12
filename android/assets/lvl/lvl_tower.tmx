@@ -254,7 +254,7 @@
  </layer>
  <layer name="BG0" width="23" height="14">
   <data encoding="base64" compression="zlib">
-   eJxjYBg+IASIQ2mgFgRSgDiVBmqHstklQFxKA7VDGbBTSXwU0BcAAKqSB/A=
+   eJxTZKANEIJiWpmtiEU8BIhDiTQDl1pFBuzuTgHiVCLNxqWW1mZjCxNqmI0rLkuAuJRIs3GpxRUm1AC40gk1AC53s+NQT4o4yFwlchxFBKCVuUMdAABQ0woj
   </data>
  </layer>
  <objectgroup name="Objects">

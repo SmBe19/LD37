@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.MapObject;
 import com.smeanox.games.ld37.Consts;
 import com.smeanox.games.ld37.io.Level;
+import com.smeanox.games.ld37.io.Sounds;
 import com.smeanox.games.ld37.world.Hero;
 
 
@@ -27,6 +28,9 @@ public class EntityBurningStraw extends Entity {
 				while ((fire = Hero.findObjectByName(hero.gameWorld.level.get().map, "guardfire", false)) != null){
 					fire.setVisible(true);
 				}
+				while ((fire = Hero.findObjectByName(hero.gameWorld.level.get().map, "guardfire2", false)) != null){
+					fire.setVisible(true);
+				}
 				Hero.findObjectByName(Level.lvl_palace.map, "exit2").getProperties().put(Consts.PROP_ACTIVE, true);
 				Hero.findObjectByName(Level.lvl_tower.map, "exit2").getProperties().put(Consts.PROP_ACTIVE, true);
 				while ((fire = Hero.findObjectByName(Level.lvl_palace.map, "guard1")) != null){
@@ -38,6 +42,8 @@ public class EntityBurningStraw extends Entity {
 
 				hero.removeCurrentItemFromInventory();
 				Hero.findObjectByName(hero.gameWorld.level.get().map, "exit_barn").getProperties().put(Consts.PROP_ACTIVE, true);
+
+				Sounds.fire.sound.play();
 			} else {
 				return "As long as the well is still operational\nthe guards will just extinguish it";
 			}

@@ -29,6 +29,6 @@ public class EntityGreenElixir extends Entity {
 			hero.setVar("greenelixir", "1");
 			return null;
 		}
-		return getDontDoThisString();
+		return getWrongPersonString();
 	}
 }

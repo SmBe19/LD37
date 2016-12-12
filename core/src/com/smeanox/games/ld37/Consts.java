@@ -4,6 +4,7 @@ import com.badlogic.gdx.Input;
 
 public class Consts {
 	public static final String GAME_NAME = "Room 51";
+	public static final String GAME_CREDITS = "Matteo Signer\nGianluca Vagli\nBenjamin Schmid\nPhilipp Wallimann";
 	public static final int WIDTH = 800;
 	public static final int HEIGHT = 600;
 	public static final float SCALE = 1/48f;
@@ -15,6 +16,7 @@ public class Consts {
 	public static final float INVENTORY_ACTIVE_SIZE = 1;
 	public static final float FONT_SIZE = 1.f/16;
 	public static final float FONT_LINE_SPACING = 1.125f;
+	public static final float FONT_LINE_SPACING_CREDITS = 1.5f;
 	public static final long OBSERVE_MIN_DURATION = 1000;
 	public static final float SPEECH_BUBBLE_OFFSET = 0.5f;
 	public static final float SPEECH_BUBBLE_SIZE = 0.5f;
@@ -76,6 +78,7 @@ public class Consts {
 	public static final String ONINTERACT_PAUSEWALK = "pausewalk";
 	public static final String ONINTERACT_UNPAUSEWALK = "unpausewalk";
 	public static final String ONINTERACT_CLEARSPEECH = "clearspeech";
+	public static final String ONINTERACT_CLEARSUBS = "clearsubs";
 	public static final String ONINTERACT_ACTIVATE = "activate";
 	public static final String ONINTERACT_DEACTIVATE = "deactivate";
 	public static final String ONINTERACT_SET_EXAMINE = "set_examine";

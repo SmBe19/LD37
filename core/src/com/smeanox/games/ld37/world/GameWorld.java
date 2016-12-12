@@ -9,6 +9,7 @@ import com.smeanox.games.ld37.Consts;
 import com.smeanox.games.ld37.io.Level;
 import com.smeanox.games.ld37.io.Textures;
 import com.smeanox.games.ld37.world.entity.Entity;
+import com.smeanox.games.ld37.world.entity.EntityAmazon;
 import com.smeanox.games.ld37.world.entity.EntityBlueElixir;
 import com.smeanox.games.ld37.world.entity.EntityBurningStraw;
 import com.smeanox.games.ld37.world.entity.EntityCheese;
@@ -165,7 +166,7 @@ public class GameWorld {
 		addEntity(new EntitySilverCoin("silvercoin", Textures.tiles.getTextureRegion(14, 4), "Even during a siege, you can\nstill buy stuff with it."));
 		addEntity(new EntityStraw("straw", Textures.tiles.getTextureRegion(14, 5)));
 		addEntity(new Entity("strawman", Textures.tiles.getTextureRegion(14, 6)));
-		addEntity(new EntityBurningStraw("burningstrawman", Textures.tiles.getTextureRegion(14, 7), "Burns like a guy.\nNot that I'd know about that."));
+		addEntity(new EntityBurningStraw("burningstrawman", Textures.tiles.getTextureRegion(14, 7), "Shit's on fire, yo!"));
 		addEntity(new Entity("elixicon", Textures.tiles.getTextureRegion(14, 8), "It contains interesting information and recipes.\nTwo are of interest to me:\nThe green potion can turn people into frogs\nand a blue sleeping elixir is made by\ncooking a rat tail in the cauldron."));
 		addEntity(new EntityCheese("cheese", Textures.tiles.getTextureRegion(14, 9), "Loved by man and beast alike."));
 		addEntity(new Entity("king", Textures.tiles.getTextureRegion(14, 10)));
@@ -173,6 +174,7 @@ public class GameWorld {
 		addEntity(new EntityKing("kingshand", Textures.tiles.getTextureRegion(14, 11), "Might come in handy later."));
 		addEntity(new EntitySaw("saw", Textures.tiles.getTextureRegion(14, 12), "Potentially Dangerous."));
 		addEntity(new EntityMead("mead", Textures.tiles.getTextureRegion(15, 12), "Cheers people up in times like these."));
+		addEntity(new EntityAmazon("amazon", Textures.tiles.getTextureRegion(15, 5), "A dragon."));
 	}
 
 	protected void updateInput(float delta){

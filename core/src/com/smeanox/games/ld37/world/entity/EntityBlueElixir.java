@@ -31,6 +31,6 @@ public class EntityBlueElixir extends Entity {
 			hero.setVar("sleepingking", "1");
 			return null;
 		}
-		return getDontDoThisString();
+		return getWrongPersonString();
 	}
 }

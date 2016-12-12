@@ -19,6 +19,8 @@ import com.smeanox.games.ld37.world.Hero;
 public class MyMapRenderer extends OrthogonalTiledMapRenderer {
 
 	private final GameWorld gameWorld;
+	public static long initialTimeOffset = TimeUtils.millis();
+	public static boolean forceOwnTiming = false;
 
 	public MyMapRenderer(TiledMap map, float unitScale, Batch batch, GameWorld gameWorld) {
 		super(map, unitScale, batch);
@@ -43,7 +45,12 @@ public class MyMapRenderer extends OrthogonalTiledMapRenderer {
 
 		final boolean flipX = object.isFlipHorizontally();
 		final boolean flipY = object.isFlipVertically();
-		TextureRegion region = tile.getTextureRegion();
+		TextureRegion region;
+		if(forceOwnTiming) {
+			region = getAnimationRegion(object, TimeUtils.millis() - initialTimeOffset);
+		} else {
+			region = tile.getTextureRegion();
+		}
 
 		float x = (object.getX() + tile.getOffsetX()) * unitScale;
 		float y = (object.getY() + tile.getOffsetY()) * unitScale;
@@ -89,9 +96,6 @@ public class MyMapRenderer extends OrthogonalTiledMapRenderer {
 			return object.getTile().getTextureRegion();
 		}
 
-		if (object.getProperties().get(Consts.PROP_ANIMATIONONLY, "", String.class).length() > 0) {
-			animationTime = animationTime;
-		}
 		AnimatedTiledMapTile tile = (AnimatedTiledMapTile) object.getTile();
 		int[] animationIntervals = tile.getAnimationIntervals();
 		StaticTiledMapTile[] frameTiles = tile.getFrameTiles();

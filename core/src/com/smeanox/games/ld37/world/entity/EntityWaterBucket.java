@@ -3,6 +3,7 @@ package com.smeanox.games.ld37.world.entity;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.MapObject;
 import com.smeanox.games.ld37.Consts;
+import com.smeanox.games.ld37.io.Sounds;
 import com.smeanox.games.ld37.world.Hero;
 
 
@@ -24,6 +25,7 @@ public class EntityWaterBucket extends Entity {
 				fire.setVisible(false);
 			}
 			Hero.findObjectByName(hero.gameWorld.level.get().map, "exit2").getProperties().put(Consts.PROP_ACTIVE, true);
+			Sounds.watersplash.sound.play();
 			return null;
 		}
 		return getDontDoThisString();

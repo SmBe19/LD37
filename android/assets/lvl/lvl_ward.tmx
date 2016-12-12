@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="74" height="40" tilewidth="16" tileheight="16" nextobjectid="256">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="74" height="40" tilewidth="16" tileheight="16" nextobjectid="340">
  <properties>
   <property name="mapscale" type="float" value="1.5"/>
   <property name="veloscale" type="float" value="1.5"/>
@@ -355,6 +355,24 @@
     <frame tileid="56" duration="300"/>
     <frame tileid="58" duration="300"/>
     <frame tileid="88" duration="300"/>
+   </animation>
+  </tile>
+  <tile id="120">
+   <animation>
+    <frame tileid="120" duration="250"/>
+    <frame tileid="121" duration="250"/>
+    <frame tileid="122" duration="250"/>
+    <frame tileid="123" duration="250"/>
+    <frame tileid="124" duration="250"/>
+   </animation>
+  </tile>
+  <tile id="135">
+   <animation>
+    <frame tileid="135" duration="250"/>
+    <frame tileid="136" duration="250"/>
+    <frame tileid="137" duration="250"/>
+    <frame tileid="138" duration="250"/>
+    <frame tileid="139" duration="250"/>
    </animation>
   </tile>
  </tileset>
@@ -884,5 +902,83 @@ got good drinks I've heard.</property>
   <object id="252" name="guardfire" type="entity" gid="828" x="720" y="384" width="16" height="16" visible="0"/>
   <object id="253" name="guardfire" type="entity" gid="829" x="736" y="384" width="16" height="16" visible="0"/>
   <object id="255" name="guardfire" type="entity" gid="2147484477" x="528" y="384" width="16" height="16" visible="0"/>
+  <object id="256" name="guardfire2" type="entity" gid="893" x="768" y="448" width="16" height="16" visible="0"/>
+  <object id="257" name="guardfire2" type="entity" gid="908" x="768" y="464" width="16" height="16" visible="0"/>
+  <object id="258" name="guardfire2" type="entity" gid="908" x="496" y="528" width="16" height="16" visible="0"/>
+  <object id="259" name="guardfire2" type="entity" gid="908" x="416" y="512" width="16" height="16" visible="0"/>
+  <object id="260" name="guardfire2" type="entity" gid="908" x="544" y="592" width="16" height="16" visible="0"/>
+  <object id="261" name="guardfire2" type="entity" gid="908" x="784" y="624" width="16" height="16" visible="0"/>
+  <object id="262" name="guardfire2" type="entity" gid="908" x="816" y="384" width="16" height="16" visible="0"/>
+  <object id="263" name="guardfire2" type="entity" gid="908" x="448" y="608" width="16" height="16" visible="0"/>
+  <object id="264" name="guardfire2" type="entity" gid="908" x="896" y="624" width="16" height="16" visible="0"/>
+  <object id="265" name="guardfire2" type="entity" gid="908" x="832" y="352" width="16" height="16" visible="0"/>
+  <object id="266" name="guardfire2" type="entity" gid="908" x="640" y="608" width="16" height="16" visible="0"/>
+  <object id="267" name="guardfire2" type="entity" gid="893" x="896" y="608" width="16" height="16" visible="0"/>
+  <object id="268" name="guardfire2" type="entity" gid="893" x="784" y="608" width="16" height="16" visible="0"/>
+  <object id="270" name="guardfire2" type="entity" gid="893" x="816" y="368" width="16" height="16" visible="0"/>
+  <object id="271" name="guardfire2" type="entity" gid="893" x="832" y="336" width="16" height="16" visible="0"/>
+  <object id="272" name="guardfire2" type="entity" gid="893" x="640" y="592" width="16" height="16" visible="0"/>
+  <object id="273" name="guardfire2" type="entity" gid="893" x="544" y="576" width="16" height="16" visible="0"/>
+  <object id="274" name="guardfire2" type="entity" gid="893" x="496" y="512" width="16" height="16" visible="0"/>
+  <object id="275" name="guardfire2" type="entity" gid="893" x="448" y="592" width="16" height="16" visible="0"/>
+  <object id="276" name="guardfire2" type="entity" gid="893" x="416" y="496" width="16" height="16" visible="0"/>
+  <object id="277" name="guardfire2" type="entity" gid="908" x="720" y="496" width="16" height="16" visible="0"/>
+  <object id="278" name="guardfire2" type="entity" gid="908" x="704" y="608" width="16" height="16" visible="0"/>
+  <object id="279" name="guardfire2" type="entity" gid="908" x="752" y="560" width="16" height="16" visible="0"/>
+  <object id="280" name="guardfire2" type="entity" gid="908" x="656" y="560" width="16" height="16" visible="0"/>
+  <object id="281" name="guardfire2" type="entity" gid="908" x="400" y="624" width="16" height="16" visible="0"/>
+  <object id="282" name="guardfire2" type="entity" gid="908" x="384" y="560" width="16" height="16" visible="0"/>
+  <object id="283" name="guardfire2" type="entity" gid="908" x="496" y="128" width="16" height="16" visible="0"/>
+  <object id="284" name="guardfire2" type="entity" gid="908" x="384" y="128" width="16" height="16" visible="0"/>
+  <object id="285" name="guardfire2" type="entity" gid="908" x="656" y="128" width="16" height="16" visible="0"/>
+  <object id="287" name="guardfire2" type="entity" gid="908" x="608" y="144" width="16" height="16" visible="0"/>
+  <object id="288" name="guardfire2" type="entity" gid="908" x="560" y="112" width="16" height="16" visible="0"/>
+  <object id="289" name="guardfire2" type="entity" gid="908" x="832" y="144" width="16" height="16" visible="0"/>
+  <object id="290" name="guardfire2" type="entity" gid="908" x="1056" y="624" width="16" height="16" visible="0"/>
+  <object id="291" name="guardfire2" type="entity" gid="908" x="1136" y="624" width="16" height="16" visible="0"/>
+  <object id="292" name="guardfire2" type="entity" gid="908" x="1120" y="128" width="16" height="16" visible="0"/>
+  <object id="293" name="guardfire2" type="entity" gid="908" x="208" y="128" width="16" height="16" visible="0"/>
+  <object id="294" name="guardfire2" type="entity" gid="908" x="112" y="128" width="16" height="16" visible="0"/>
+  <object id="295" name="guardfire2" type="entity" gid="908" x="288" y="144" width="16" height="16" visible="0"/>
+  <object id="296" name="guardfire2" type="entity" gid="908" x="160" y="112" width="16" height="16" visible="0"/>
+  <object id="297" name="guardfire2" type="entity" gid="908" x="112" y="544" width="16" height="16" visible="0"/>
+  <object id="298" name="guardfire2" type="entity" gid="908" x="256" y="576" width="16" height="16" visible="0"/>
+  <object id="299" name="guardfire2" type="entity" gid="908" x="240" y="624" width="16" height="16" visible="0"/>
+  <object id="300" name="guardfire2" type="entity" gid="908" x="112" y="592" width="16" height="16" visible="0"/>
+  <object id="301" name="guardfire2" type="entity" gid="908" x="32" y="608" width="16" height="16" visible="0"/>
+  <object id="302" name="guardfire2" type="entity" gid="908" x="48" y="448" width="16" height="16" visible="0"/>
+  <object id="303" name="guardfire2" type="entity" gid="908" x="192" y="512" width="16" height="16" visible="0"/>
+  <object id="304" name="guardfire2" type="entity" gid="908" x="304" y="496" width="16" height="16" visible="0"/>
+  <object id="305" name="guardfire2" type="entity" gid="908" x="320" y="544" width="16" height="16" visible="0"/>
+  <object id="306" name="guardfire2" type="entity" gid="908" x="304" y="624" width="16" height="16" visible="0"/>
+  <object id="307" name="guardfire2" type="entity" gid="893" x="1136" y="608" width="16" height="16" visible="0"/>
+  <object id="308" name="guardfire2" type="entity" gid="893" x="1056" y="608" width="16" height="16" visible="0"/>
+  <object id="309" name="guardfire2" type="entity" gid="893" x="1120" y="112" width="16" height="16" visible="0"/>
+  <object id="310" name="guardfire2" type="entity" gid="893" x="832" y="128" width="16" height="16" visible="0"/>
+  <object id="311" name="guardfire2" type="entity" gid="893" x="656" y="112" width="16" height="16" visible="0"/>
+  <object id="312" name="guardfire2" type="entity" gid="893" x="608" y="128" width="16" height="16" visible="0"/>
+  <object id="313" name="guardfire2" type="entity" gid="893" x="560" y="96" width="16" height="16" visible="0"/>
+  <object id="315" name="guardfire2" type="entity" gid="893" x="496" y="112" width="16" height="16" visible="0"/>
+  <object id="316" name="guardfire2" type="entity" gid="893" x="384" y="112" width="16" height="16" visible="0"/>
+  <object id="317" name="guardfire2" type="entity" gid="893" x="288" y="128" width="16" height="16" visible="0"/>
+  <object id="318" name="guardfire2" type="entity" gid="893" x="208" y="112" width="16" height="16" visible="0"/>
+  <object id="319" name="guardfire2" type="entity" gid="893" x="160" y="96" width="16" height="16" visible="0"/>
+  <object id="320" name="guardfire2" type="entity" gid="893" x="112" y="112" width="16" height="16" visible="0"/>
+  <object id="321" name="guardfire2" type="entity" gid="893" x="48" y="432" width="16" height="16" visible="0"/>
+  <object id="322" name="guardfire2" type="entity" gid="893" x="32" y="592" width="16" height="16" visible="0"/>
+  <object id="324" name="guardfire2" type="entity" gid="893" x="112" y="576" width="16" height="16" visible="0"/>
+  <object id="326" name="guardfire2" type="entity" gid="893" x="112" y="528" width="16" height="16" visible="0"/>
+  <object id="327" name="guardfire2" type="entity" gid="893" x="192" y="496" width="16" height="16" visible="0"/>
+  <object id="328" name="guardfire2" type="entity" gid="893" x="256" y="560" width="16" height="16" visible="0"/>
+  <object id="329" name="guardfire2" type="entity" gid="893" x="240" y="608" width="16" height="16" visible="0"/>
+  <object id="330" name="guardfire2" type="entity" gid="893" x="304" y="608" width="16" height="16" visible="0"/>
+  <object id="331" name="guardfire2" type="entity" gid="893" x="320" y="528" width="16" height="16" visible="0"/>
+  <object id="332" name="guardfire2" type="entity" gid="893" x="304" y="480" width="16" height="16" visible="0"/>
+  <object id="333" name="guardfire2" type="entity" gid="893" x="384" y="544" width="16" height="16" visible="0"/>
+  <object id="334" name="guardfire2" type="entity" gid="893" x="400" y="608" width="16" height="16" visible="0"/>
+  <object id="335" name="guardfire2" type="entity" gid="893" x="656" y="544" width="16" height="16" visible="0"/>
+  <object id="337" name="guardfire2" type="entity" gid="893" x="704" y="592" width="16" height="16" visible="0"/>
+  <object id="338" name="guardfire2" type="entity" gid="893" x="752" y="544" width="16" height="16" visible="0"/>
+  <object id="339" name="guardfire2" type="entity" gid="893" x="720" y="480" width="16" height="16" visible="0"/>
  </objectgroup>
 </map>

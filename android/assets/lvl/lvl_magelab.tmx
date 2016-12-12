@@ -311,8 +311,9 @@ May he rest in pieces</property>
     <property name="oninteract_0" value="take emerald"/>
     <property name="oninteract_1" value="deactivate deadmage1"/>
     <property name="oninteract_2" value="deactivate deadmage2"/>
-    <property name="oninteract_3">saysub You successfully plundered%Nyour former master's body.%NYou've found a valuable emerald.
-saysub Now press e to examine him.
+    <property name="oninteract_3">clearsubs
+saysub You successfully plundered%Nyour former master's body.%NYou've found a valuable emerald.
+saysub Now press E to examine him.
 saysub F can always be used to interact%Nand E to investigate.%NBefore you can calm down,%Nyou should extinguish that flame.</property>
     <property name="oninteract_4" value="unpausewalk"/>
    </properties>
@@ -338,8 +339,8 @@ as a fire extinguisher.</property>
     <property name="examine" value="This could help me extinguish the flames."/>
     <property name="oninteract" type="int" value="2"/>
     <property name="oninteract_0" value="take $this"/>
-    <property name="oninteract_1">saysub This should be useful. Press I to show/hide your currently equipped item.%N
-saysub You can use R to cycle through your items.%NWhile an item is displayed,%Nthe examination button gives you information on it.
+    <property name="oninteract_1">saysub This should be useful.%NPress C to show/hide your%Ncurrently equipped item.
+saysub You can use R to cycle%Nthrough your items.%NWhile an item is displayed,%Nthe examination button%Ngives you information on it.
 saysub If you want to use an item,%Nstand near an object and press Q.%NThis might not always be sensible.</property>
    </properties>
   </object>

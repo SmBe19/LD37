@@ -293,7 +293,7 @@
   </object>
   <object id="88" name="amazon" type="entity" gid="187" x="128" y="256" width="16" height="16">
    <properties>
-    <property name="displayname" value="Box"/>
+    <property name="displayname" value="Press F to tar xvf dragon.tar.gz"/>
     <property name="examine">I see an odd magical force
 flowing through that box.</property>
     <property name="oninteract" type="int" value="1"/>
@@ -302,7 +302,7 @@ flowing through that box.</property>
   </object>
   <object id="89" name="amazon" type="entity" gid="188" x="144" y="256" width="16" height="16">
    <properties>
-    <property name="displayname" value="Box"/>
+    <property name="displayname" value="Press F to tar xvf dragon.tar.gz"/>
     <property name="examine">I see an odd magical force
 flowing through that box.</property>
     <property name="oninteract" type="int" value="1"/>
@@ -311,7 +311,7 @@ flowing through that box.</property>
   </object>
   <object id="90" name="amazon" type="entity" gid="203" x="128" y="272" width="16" height="16">
    <properties>
-    <property name="displayname" value="Box"/>
+    <property name="displayname" value="Press F to tar xvf dragon.tar.gz"/>
     <property name="examine">I see an odd magical force
 flowing through that box.</property>
     <property name="oninteract" type="int" value="1"/>
@@ -320,7 +320,7 @@ flowing through that box.</property>
   </object>
   <object id="91" name="amazon" type="entity" gid="204" x="144" y="272" width="16" height="16">
    <properties>
-    <property name="displayname" value="Box"/>
+    <property name="displayname" value="Press F to tar xvf dragon.tar.gz"/>
     <property name="examine">I see an odd magical force
 flowing through that box.</property>
     <property name="oninteract" type="int" value="1"/>
