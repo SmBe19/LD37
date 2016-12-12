@@ -155,26 +155,30 @@ public class GameWorld {
 		addEntity(new Entity("kocke", Textures.tiles.getTextureRegion(5, 9)));
 
 		addEntity(new EntityGreenElixir("greenelixir", Textures.tiles.getTextureRegion(15, 5)));
-		addEntity(new EntityBlueElixir("blueelixir", Textures.tiles.getTextureRegion(15, 6), "Makes a person fall asleep.\nI can use it by throwing it at someone."));
-		addEntity(new EntityRattail("rattail", Textures.tiles.getTextureRegion(15, 7), "Like Spaghetti, except more rat-tail-y."));
+		addEntity(new EntityBlueElixir("blueelixir", Textures.tiles.getTextureRegion(15, 6), "Blue Elixir:\nMakes a person fall asleep.\nI can use it by throwing it at someone."));
+		addEntity(new EntityRattail("rattail", Textures.tiles.getTextureRegion(15, 7), "Rat tail:\nLike Spaghetti, except more rat-tail-y."));
 		addEntity(new Entity("rat", Textures.tiles.getTextureRegion(4, 9)));
-		addEntity(new EntityEmerald("emerald", Textures.tiles.getTextureRegion(15, 8), "A glittering green gem."));
-		addEntity(new Entity("bucket", Textures.tiles.getTextureRegion(15, 9), "Can carry liquids.\nOne of these is used in the well."));
-		addEntity(new EntityWaterBucket("waterbucket", Textures.tiles.getTextureRegion(15, 4), "The water seems like a good way to extinguish flames."));
-		addEntity(new EntityKeys("key", Textures.tiles.getTextureRegion(15, 10), "Opens doors, probably."));
+		addEntity(new EntityEmerald("emerald", Textures.tiles.getTextureRegion(15, 8), "Emerald:\nA glittering green gem."));
+		addEntity(new Entity("bucket", Textures.tiles.getTextureRegion(15, 9), "Bucket:\nCan carry liquids.\nOne of these is used in the well."));
+		addEntity(new EntityWaterBucket("waterbucket", Textures.tiles.getTextureRegion(15, 4), "Bucket with water:\nThe water seems like a good way to extinguish flames."));
+		addEntity(new EntityKeys("key", Textures.tiles.getTextureRegion(15, 10), "Key:\nOpens doors, probably."));
 		addEntity(new EntityGoldCoin("goldcoin", Textures.tiles.getTextureRegion(15, 11)));
-		addEntity(new EntitySilverCoin("silvercoin", Textures.tiles.getTextureRegion(14, 4), "Even during a siege, you can\nstill buy stuff with it."));
+		addEntity(new EntitySilverCoin("silvercoin", Textures.tiles.getTextureRegion(14, 4), "Silver coin:\nEven during a siege, you can\nstill buy stuff with it."));
 		addEntity(new EntityStraw("straw", Textures.tiles.getTextureRegion(14, 5)));
 		addEntity(new Entity("strawman", Textures.tiles.getTextureRegion(14, 6)));
-		addEntity(new EntityBurningStraw("burningstrawman", Textures.tiles.getTextureRegion(14, 7), "Shit's on fire, yo!"));
-		addEntity(new Entity("elixicon", Textures.tiles.getTextureRegion(14, 8), "It contains interesting information and recipes.\nTwo are of interest to me:\nThe green potion can turn people into frogs\nand a blue sleeping elixir is made by\ncooking a rat tail in the cauldron."));
-		addEntity(new EntityCheese("cheese", Textures.tiles.getTextureRegion(14, 9), "Loved by man and beast alike."));
+		addEntity(new EntityBurningStraw("burningstrawman", Textures.tiles.getTextureRegion(14, 7), "Burning straw:\nShit's on fire, yo!"));
+		addEntity(new Entity("elixicon", Textures.tiles.getTextureRegion(14, 8), "Elixicon:\nIt contains interesting information and recipes.\nTwo are of interest to me:\nThe green potion can turn people into frogs\nand a blue sleeping elixir is made by\ncooking a rat tail in the cauldron."));
+		addEntity(new EntityCheese("cheese", Textures.tiles.getTextureRegion(14, 9), "Cheese:\nLoved by man and beast alike."));
 		addEntity(new Entity("king", Textures.tiles.getTextureRegion(14, 10)));
-		addEntity(new EntityKing("sleepingking", Textures.tiles.getTextureRegion(14, 10), "I can't believe he fit in my pocket."));
-		addEntity(new EntityKing("kingshand", Textures.tiles.getTextureRegion(14, 11), "Might come in handy later."));
-		addEntity(new EntitySaw("saw", Textures.tiles.getTextureRegion(14, 12), "Potentially Dangerous."));
-		addEntity(new EntityMead("mead", Textures.tiles.getTextureRegion(15, 12), "Cheers people up in times like these."));
-		addEntity(new EntityAmazon("amazon", Textures.tiles.getTextureRegion(15, 5), "A dragon."));
+		addEntity(new EntityKing("sleepingking", Textures.tiles.getTextureRegion(14, 10), "Sleeping king:\nI can't believe he fit in my pocket."));
+		addEntity(new EntityKing("kingshand", Textures.tiles.getTextureRegion(14, 11), "King's hand:\nMight come in handy later."));
+		addEntity(new EntitySaw("saw", Textures.tiles.getTextureRegion(14, 12), "Saw:\nPotentially Dangerous."));
+		addEntity(new EntityMead("mead", Textures.tiles.getTextureRegion(15, 12), "Mead:\nCheers people up in times like these."));
+		addEntity(new EntityAmazon("amazon", Textures.tiles.getTextureRegion(15, 5), "Amazon box:\nA dragon."));
+
+		hero.inventory.add(entityHashMap.get("emerald"));
+		hero.inventory.add(entityHashMap.get("mead"));
+		hero.inventory.add(entityHashMap.get("saw"));
 	}
 
 	protected void updateInput(float delta){

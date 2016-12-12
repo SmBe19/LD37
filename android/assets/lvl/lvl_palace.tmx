@@ -489,8 +489,11 @@ He might let me into room 51.</property>
     <property name="displayname" value="The King"/>
     <property name="examine">He looks heavy asleep like that.
 I'd love it if he could lend me a hand.</property>
-    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract" type="int" value="2"/>
     <property name="oninteract_0" value="take $this"/>
+    <property name="oninteract_1">hide sleepingking
+hide sleepingking
+hide sleepingking</property>
    </properties>
   </object>
   <object id="93" name="sleepingking" type="entity" gid="866" x="96" y="160" width="16" height="16" visible="0">

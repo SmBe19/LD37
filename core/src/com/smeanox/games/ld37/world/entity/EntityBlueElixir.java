@@ -17,6 +17,9 @@ public class EntityBlueElixir extends Entity {
 	@Override
 	public String useItem(Hero hero, MapObject object) {
 		if("king".equals(object.getName())){
+			if(hero.getVar("fire").length() == 0){
+				return "The guards will notice";
+			}
 			if(hero.getVar("greenelixir").length() == 0){
 				return "The bodyguard will notice";
 			}
@@ -26,7 +29,7 @@ public class EntityBlueElixir extends Entity {
 				fire.setVisible(false);
 			}
 			while ((fire = Hero.findObjectByName(hero.gameWorld.level.get().map, "sleepingking", false)) != null){
-				fire.setVisible(false);
+				fire.setVisible(true);
 			}
 			hero.setVar("sleepingking", "1");
 			return null;

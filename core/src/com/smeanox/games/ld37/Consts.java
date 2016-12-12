@@ -48,6 +48,8 @@ public class Consts {
 	public static final String PROP_MAPSCALE = "mapscale";
 	public static final String PROP_VELOSCALE = "veloscale";
 	public static final String PROP_DRAWBACKGROUND = "drawbackground";
+	public static final String PROP_ANIMATIONSTART = "animationstart";
+	public static final String PROP_ANIMATIONONCE = "animationonce";
 
 //	public static final int INPUT_MOVE_UP = Input.Keys.UP;
 //	public static final int INPUT_MOVE_LEFT = Input.Keys.LEFT;

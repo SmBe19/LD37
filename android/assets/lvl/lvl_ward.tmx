@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="74" height="40" tilewidth="16" tileheight="16" nextobjectid="340">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="74" height="40" tilewidth="16" tileheight="16" nextobjectid="342">
  <properties>
   <property name="drawbackground" type="bool" value="true"/>
   <property name="mapscale" type="float" value="1.5"/>
@@ -358,6 +358,34 @@
     <frame tileid="88" duration="300"/>
    </animation>
   </tile>
+  <tile id="65">
+   <animation>
+    <frame tileid="65" duration="5000"/>
+    <frame tileid="66" duration="500"/>
+   </animation>
+  </tile>
+  <tile id="67">
+   <animation>
+    <frame tileid="65" duration="1000"/>
+    <frame tileid="67" duration="200"/>
+    <frame tileid="68" duration="200"/>
+    <frame tileid="69" duration="2000"/>
+   </animation>
+  </tile>
+  <tile id="80">
+   <animation>
+    <frame tileid="80" duration="5000"/>
+    <frame tileid="81" duration="500"/>
+   </animation>
+  </tile>
+  <tile id="82">
+   <animation>
+    <frame tileid="80" duration="1000"/>
+    <frame tileid="82" duration="200"/>
+    <frame tileid="83" duration="200"/>
+    <frame tileid="84" duration="2000"/>
+   </animation>
+  </tile>
   <tile id="120">
    <animation>
     <frame tileid="120" duration="250"/>
@@ -638,6 +666,21 @@ qsay Fuck you, Jake</property>
     <property name="examine" value="He's often been caught stealing stuff around here."/>
    </properties>
   </object>
+  <object id="340" name="drunkguardsleep" type="entity" gid="855" x="672" y="96" width="16" height="16" visible="0">
+   <properties>
+    <property name="animationonce" type="bool" value="true"/>
+    <property name="animationstart" type="int" value="1"/>
+    <property name="displayname" value="Drunk Guard"/>
+    <property name="examine" value="He doesn't seem very responsive..."/>
+    <property name="oninteract" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="341" name="drunkguardsleep" type="entity" gid="840" x="672" y="80" width="16" height="16" visible="0">
+   <properties>
+    <property name="animationonce" type="bool" value="true"/>
+    <property name="animationstart" type="int" value="1"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="Vordere Mauer und Häuser" width="74" height="40">
   <data encoding="base64" compression="zlib">
@@ -787,7 +830,7 @@ got good drinks I've heard.</property>
  </layer>
  <layer name="collision" width="74" height="40" visible="0" opacity="0.29">
   <data encoding="base64" compression="zlib">
-   eJzt19EJwCAMQEHp/lulg3WGQGvSeB/3G/QJonGtFQBwmPtHdu5Vp/mdKs+kej1dVd+HAADA+zLv/ezfoOKf8dV8nXTSaX+nSMzTaW6nKXTSSafc3nTSqRuddNJJp6500glO8QD1terN
+   eJzt19EJwCAMQEHp/lulg3WGgJpU7+N+hTxBTDxjBABc5v2RnbPqdH6n7Jwz76R6nq6q30MAAGC+zH8/uxtU7BmrztdJJ532d4rEeTqd2+kUOumkU242nXTqRieddNKpK510glt80Z3qzA==
   </data>
  </layer>
  <objectgroup name="fire">

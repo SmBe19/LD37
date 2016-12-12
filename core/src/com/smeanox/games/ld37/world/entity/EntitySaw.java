@@ -18,12 +18,12 @@ public class EntitySaw extends Entity {
 	@Override
 	public String useItem(Hero hero, MapObject object) {
 		if("rat".equals(object.getName())){
-			if(object.getProperties().get(Consts.PROP_ACTIVE, true, Boolean.class)){
-				return "It's too fast.";
-			}
-			object.setVisible(false);
+			return "It's too fast.";
+		} else if ("ratcheese".equals(object.getName())) {
 			hero.inventory.add(hero.gameWorld.entityHashMap.get("rattail"));
 			hero.activeInventory = hero.inventory.size() - 1;
+			object.setVisible(false);
+			Hero.findObjectByName(hero.gameWorld.level.get().map, "ratdead", false).setVisible(true);
 			return null;
 		} else if ("king".equals(object.getName())) {
 			if(hero.getVar("greenelixir").length() == 0){
@@ -34,6 +34,7 @@ public class EntitySaw extends Entity {
 			}
 			hero.inventory.add(hero.gameWorld.entityHashMap.get("kingshand"));
 			hero.activeInventory = hero.inventory.size() - 1;
+			return null;
 		}
 		return getDontDoThisString();
 	}

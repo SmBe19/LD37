@@ -19,7 +19,8 @@ public class EntityCheese extends Entity {
 	public String useItem(Hero hero, MapObject object) {
 		if("rat".equals(object.getName())){
 			hero.removeCurrentItemFromInventory();
-			object.getProperties().put(Consts.PROP_ACTIVE, false);
+			object.setVisible(false);
+			Hero.findObjectByName(hero.gameWorld.level.get().map, "ratcheese", false).setVisible(true);
 			return null;
 		}
 		return getDontDoThisString();

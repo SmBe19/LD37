@@ -44,10 +44,11 @@ public class EntityBurningStraw extends Entity {
 				Hero.findObjectByName(hero.gameWorld.level.get().map, "exit_barn").getProperties().put(Consts.PROP_ACTIVE, true);
 
 				Sounds.fire.sound.play();
+				hero.setVar("fire", "1");
+				return "This should distract the guards for a while.";
 			} else {
-				return "As long as the well is still operational\nthe guards will just extinguish it";
+				return "As long as the well is still operational\nthe guards will just extinguish it.";
 			}
-			return null;
 		}
 		return getDontDoThisString();
 	}

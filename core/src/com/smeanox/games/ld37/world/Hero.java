@@ -55,10 +55,10 @@ public class Hero {
 			"I don't think that's going to work.",
 			"That doesn't make sense.",
 			"Bad idea.",
-			"That's not how the programmer envisioned it.",
+			"That's not how the programmer\nenvisioned it.",
 			"This won't get me ahead.",
 			"I should try something else.",
-			"Doesn't seem to be making any progress.",
+			"Doesn't seem to be making\nany progress.",
 	};
 
 	public static final String[] wrongpersonstrings = new String[]{
@@ -163,7 +163,11 @@ public class Hero {
 		String examine = object.getProperties().get(Consts.PROP_EXAMINE, "", String.class);
 		if(!inventory.contains(entity)) {
 			if (examine.length() > 0 && (entity.examineText == null || entity.examineText.length() == 0)) {
-				entity.examineText = examine;
+				String prefix = object.getProperties().get(Consts.PROP_DISPLAYNAME, "", String.class);
+				if (prefix.length() > 0) {
+					prefix += ":\n";
+				}
+				entity.examineText = prefix + examine;
 			}
 			if (entity != null) {
 				inventory.add(entity);
@@ -323,7 +327,11 @@ public class Hero {
 		});
 
 		if (object != null && object.getProperties().get(Consts.PROP_EXAMINE, "", String.class).length() > 0) {
-			return object.getProperties().get(Consts.PROP_EXAMINE, "", String.class);
+			String prefix = object.getProperties().get(Consts.PROP_DISPLAYNAME, "", String.class);
+			if (prefix.length() > 0) {
+				prefix += ":\n";
+			}
+			return prefix + object.getProperties().get(Consts.PROP_EXAMINE, "", String.class);
 		}
 
 		if (inventory.size() > 0 && inventory.get(activeInventory).examineText.length() > 0) {

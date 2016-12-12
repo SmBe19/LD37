@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="12" height="13" tilewidth="16" tileheight="16" nextobjectid="92">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="12" height="13" tilewidth="16" tileheight="16" nextobjectid="98">
  <tileset firstgid="1" name="Mat" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../img/tiles.png" width="256" height="256"/>
   <terraintypes>
@@ -275,8 +275,6 @@
 Pretty hard to catch, though.</property>
     <property name="oninteract" type="int" value="1"/>
     <property name="oninteract_0" value="say It's too quick to catch."/>
-    <property name="onnointeract" type="int" value="1"/>
-    <property name="onnointeract_0" value="say I only need the tail."/>
    </properties>
   </object>
   <object id="84" name="key" type="entity" gid="176" x="64" y="176" width="16" height="16">
@@ -287,6 +285,20 @@ these keys. I wonder
 what they are for?</property>
     <property name="oninteract" type="int" value="1"/>
     <property name="oninteract_0" value="take $this"/>
+   </properties>
+  </object>
+  <object id="93" name="ratcheese" type="entity" gid="181" x="128" y="128" width="16" height="16" visible="0">
+   <properties>
+    <property name="displayname" value="Rat with cheese"/>
+    <property name="examine" value="The cheese distracts it."/>
+    <property name="oninteract" type="int" value="1"/>
+    <property name="oninteract_0" value="say I only need the tail."/>
+   </properties>
+  </object>
+  <object id="97" name="ratdead" type="entity" gid="197" x="128" y="128" width="16" height="16" visible="0">
+   <properties>
+    <property name="displayname" value="Dead rat"/>
+    <property name="examine" value="This was once a rat."/>
    </properties>
   </object>
  </objectgroup>

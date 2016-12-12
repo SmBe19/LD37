@@ -46,8 +46,12 @@ public class MyMapRenderer extends OrthogonalTiledMapRenderer {
 		final boolean flipX = object.isFlipHorizontally();
 		final boolean flipY = object.isFlipVertically();
 		TextureRegion region;
-		if(forceOwnTiming) {
-			region = getAnimationRegion(object, TimeUtils.millis() - initialTimeOffset);
+		final long ownStart = object.getProperties().get(Consts.PROP_ANIMATIONSTART, -1L, Long.class);
+		final boolean animationOnce = object.getProperties().get(Consts.PROP_ANIMATIONONCE, false, Boolean.class);
+		if (ownStart >= 0) {
+			region = getAnimationRegion(object, TimeUtils.millis() - ownStart, animationOnce);
+		} else if (forceOwnTiming) {
+			region = getAnimationRegion(object, TimeUtils.millis() - initialTimeOffset, animationOnce);
 		} else {
 			region = tile.getTextureRegion();
 		}
@@ -76,7 +80,7 @@ public class MyMapRenderer extends OrthogonalTiledMapRenderer {
 			y = hero.y - height * scaleY * 0.5f;
 		} else if (object.getProperties().get(Consts.PROP_ANIMATIONONLY, "", String.class).length() > 0) {
 			String animationonly = object.getProperties().get(Consts.PROP_ANIMATIONONLY, "", String.class);
-			if(gameWorld.hero.portalAction != null && animationonly.equals(gameWorld.hero.portalAction.name)){
+			if (gameWorld.hero.portalAction != null && animationonly.equals(gameWorld.hero.portalAction.name)) {
 				region = getAnimationRegion(object, TimeUtils.millis() - gameWorld.hero.portalAction.start);
 			} else {
 				region = getAnimationRegion(object, 0);
@@ -91,8 +95,12 @@ public class MyMapRenderer extends OrthogonalTiledMapRenderer {
 		batch.draw(region.getTexture(), x, y, originX, originY, width, height, scaleX, scaleY, rotation, srcX, srcY, srcWidth, srcHeight, flipX, flipY);
 	}
 
-	protected TextureRegion getAnimationRegion(TiledMapTileMapObject object, long animationTime){
-		if(!(object.getTile() instanceof AnimatedTiledMapTile)){
+	protected TextureRegion getAnimationRegion(TiledMapTileMapObject object, long animationTime) {
+		return getAnimationRegion(object, animationTime, false);
+	}
+
+	protected TextureRegion getAnimationRegion(TiledMapTileMapObject object, long animationTime, boolean doNotLoop) {
+		if (!(object.getTile() instanceof AnimatedTiledMapTile)) {
 			return object.getTile().getTextureRegion();
 		}
 
@@ -105,9 +113,13 @@ public class MyMapRenderer extends OrthogonalTiledMapRenderer {
 			loopDuration += i;
 		}
 
+		if (animationTime >= loopDuration && doNotLoop) {
+			return frameTiles[frameTiles.length - 1].getTextureRegion();
+		}
+
 		animationTime %= loopDuration;
 
-		for(int i = 0; i < animationIntervals.length; i++) {
+		for (int i = 0; i < animationIntervals.length; i++) {
 			if (animationTime <= animationIntervals[i]) {
 				return frameTiles[i].getTextureRegion();
 			}

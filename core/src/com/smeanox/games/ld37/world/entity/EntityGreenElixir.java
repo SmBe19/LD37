@@ -18,6 +18,9 @@ public class EntityGreenElixir extends Entity {
 	@Override
 	public String useItem(Hero hero, MapObject object) {
 		if("bodyguard".equals(object.getName())){
+			if(hero.getVar("fire").length() == 0){
+				return "The guards will notice";
+			}
 			hero.removeCurrentItemFromInventory();
 			MapObject fire;
 			while ((fire = Hero.findObjectByName(hero.gameWorld.level.get().map, "bodyguard")) != null){

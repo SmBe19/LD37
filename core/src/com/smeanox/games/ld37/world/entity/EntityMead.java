@@ -2,6 +2,7 @@ package com.smeanox.games.ld37.world.entity;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.MapObject;
+import com.badlogic.gdx.utils.TimeUtils;
 import com.smeanox.games.ld37.Consts;
 import com.smeanox.games.ld37.world.GameWorld;
 import com.smeanox.games.ld37.world.Hero;
@@ -23,7 +24,14 @@ public class EntityMead extends Entity {
 			hero.inventory.add(hero.gameWorld.entityHashMap.get("cheese"));
 			hero.activeInventory = hero.inventory.size() - 1;
 			hero.gameWorld.speeches.add(new GameWorld.Speech("Sha-Shank youuuuu.", 42, 36, false));
-			object.getProperties().put(Consts.PROP_ONNOINTERACT + "_0", "say He doesn't seem very responsive...");
+			MapObject fire;
+			while ((fire = Hero.findObjectByName(hero.gameWorld.level.get().map, "drunkguard")) != null){
+				fire.setVisible(false);
+			}
+			while ((fire = Hero.findObjectByName(hero.gameWorld.level.get().map, "drunkguardsleep", false)) != null){
+				fire.setVisible(true);
+				fire.getProperties().put(Consts.PROP_ANIMATIONSTART, TimeUtils.millis());
+			}
 			return null;
 		}
 		return getDontDoThisString();
