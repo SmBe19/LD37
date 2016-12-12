@@ -21,7 +21,7 @@ public class Consts {
 	public static final float SPEECH_BUBBLE_OFFSET = 0.5f;
 	public static final float SPEECH_BUBBLE_SIZE = 0.5f;
 	public static final float SPEECH_BUBBLE_DURATION = 2f;
-	public static final float SPEECH_BUBBLE_DURATION_PER_CHAR = 0.025f;
+	public static final float SPEECH_BUBBLE_DURATION_PER_CHAR = 0.05f;
 	public static final float SPEECH_BUBBLE_ANIM_OFFSET = 0.5f;
 	public static final float SPEECH_BUBBLE_ANIM_DURATION = 0.5f;
 	public static final float SUBTITLES_OFFSET_Y = 0.5f;
@@ -47,15 +47,16 @@ public class Consts {
 	public static final String PROP_TYPE = "type";
 	public static final String PROP_MAPSCALE = "mapscale";
 	public static final String PROP_VELOSCALE = "veloscale";
+	public static final String PROP_DRAWBACKGROUND = "drawbackground";
 
-	public static final int INPUT_MOVE_UP = Input.Keys.UP;
-	public static final int INPUT_MOVE_LEFT = Input.Keys.LEFT;
-	public static final int INPUT_MOVE_DOWN = Input.Keys.DOWN;
-	public static final int INPUT_MOVE_RIGHT = Input.Keys.RIGHT;
-//	public static final int INPUT_MOVE_UP = Input.Keys.W;
-//	public static final int INPUT_MOVE_LEFT = Input.Keys.A;
-//	public static final int INPUT_MOVE_DOWN = Input.Keys.S;
-//	public static final int INPUT_MOVE_RIGHT = Input.Keys.D;
+//	public static final int INPUT_MOVE_UP = Input.Keys.UP;
+//	public static final int INPUT_MOVE_LEFT = Input.Keys.LEFT;
+//	public static final int INPUT_MOVE_DOWN = Input.Keys.DOWN;
+//	public static final int INPUT_MOVE_RIGHT = Input.Keys.RIGHT;
+	public static final int INPUT_MOVE_UP = Input.Keys.W;
+	public static final int INPUT_MOVE_LEFT = Input.Keys.A;
+	public static final int INPUT_MOVE_DOWN = Input.Keys.S;
+	public static final int INPUT_MOVE_RIGHT = Input.Keys.D;
 	public static final int INPUT_INTERACT = Input.Keys.F;
 	public static final int INPUT_EXAMINE = Input.Keys.E;
 	public static final int INPUT_USE_ITEM = Input.Keys.Q;

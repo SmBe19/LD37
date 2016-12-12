@@ -26,6 +26,7 @@ public class EntityGoldCoin extends Entity {
 			hero.activeInventory = hero.inventory.size() - 1;
 			hero.gameWorld.speeches.add(new GameWorld.Speech("It was a pleasure doing\nbusiness with you,\nhere's your stupid old book.", 40, 8, false));
 			object.getProperties().put(Consts.PROP_ACTIVE, false);
+			object.getProperties().put(Consts.PROP_ONNOINTERACT + "_0", "qsayxy 40 9 It was a pleasure doing business with you\nqsay Fuck you, Jake");
 			return null;
 		}
 		return getDontDoThisString();

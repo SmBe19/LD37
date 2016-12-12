@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="74" height="40" tilewidth="16" tileheight="16" nextobjectid="340">
  <properties>
+  <property name="drawbackground" type="bool" value="true"/>
   <property name="mapscale" type="float" value="1.5"/>
   <property name="veloscale" type="float" value="1.5"/>
  </properties>
@@ -519,11 +520,11 @@ are more important to him than his job.</property>
 clearspeech
 deactivate $this
 qsayxy 58 33 This tower is off limits for you, kid, I'm afraid.
-qsayI need to get to room 51. I know that it's at%Nthe top of this tower, let me through.
+qsay I need to get to room 51. I know that it's at%Nthe top of this tower, let me through.
 qsayxy 58 33 No way, kid. Keep your childish%Ncuriosity away from my tower.
-qsayIt's a matter of life and death.
+qsay It's a matter of life and death.
 qsayxy 58 33 That makes no difference to me.%NI'm not about to risk my job%Nfor your drama.%NNot in this economy, anyway.
-qsayYou are worried about money?%NWell maybe I can help with that.
+qsay You are worried about money?%NWell maybe I can help with that.
 qsayxy 58 33 Now we're getting somewhere</property>
     <property name="onnointeract" type="int" value="1"/>
     <property name="onnointeract_0" value="qsayxy 58 33 Do you have anything to offer?"/>
@@ -549,7 +550,7 @@ qsayxy 22.5 16 Oh my god, I just saw that%Nthis stone flew into your master's ho
 qsay Yeah, I'm good, thank you. How are you?
 qsayxy 22.5 16 Well what about your master?
 qsay He didn't make it.%NBut he was pretty old anyway.
-qsayxy 22.5 16 … I don't know what to say
+qsayxy 22.5 16 ... I don't know what to say
 qsay His last words were about%NRoom 51. Do you know%Nwhat that is?
 qsayxy 22.5 16 Of course I do.%NHow do you not know?%NRoom 51 is the room at the top%Nof the castle tower.
 qsay Can you take me there?
@@ -567,7 +568,7 @@ qthink Well then I'm going to have%Nto ask the king myself.</property>
   <object id="112" name="drunkguard" type="entity" gid="853" x="672" y="96" width="16" height="16">
    <properties>
     <property name="displayname" value="Drunk Guard"/>
-    <property name="examine">Looks like he’s barely conscious enough
+    <property name="examine">Looks like he's barely conscious enough
 to eat that piece of cheese in his hand.</property>
     <property name="oninteract" type="int" value="1"/>
     <property name="oninteract_0">deactivate $this
@@ -621,12 +622,13 @@ catches fire.</property>
     <property name="oninteract" type="int" value="1"/>
     <property name="oninteract_0">pause
 clearspeech
+deactivate $this
 qsayxy 40 9 Well if it isn't the apprentice.%NYou survived that projectile? Quite a shame.
 qsay Whatever, Jake. Did you steal the elixicon?
 qsayxy 40 9 Maybe. Depends on your ability to pay.%NIf you give me a gold piece,%Nmaybe I will talk
 qsay Fuck you, Jake</property>
     <property name="onnointeract" type="int" value="1"/>
-    <property name="onnointeract_0">qsayxy 40 9 It was a pleasure doing business with you
+    <property name="onnointeract_0">qsayxy 40 9 Where is my gold?
 qsay Fuck you, Jake</property>
    </properties>
   </object>
@@ -639,7 +641,7 @@ qsay Fuck you, Jake</property>
  </objectgroup>
  <layer name="Vordere Mauer und Häuser" width="74" height="40">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="Dächer und Türen" width="74" height="40">

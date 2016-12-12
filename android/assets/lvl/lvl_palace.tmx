@@ -410,77 +410,77 @@ Or any at all.</property>
 clearspeech
 deactivate $this
 qsay Hi
-qsayxy 22.5 16 ...
+qsayxy 7 6 ...
 qsay how's it going?
-qsayxy 22.5 16 ...
+qsayxy 7 6 ...
 qsay Well bye then I guess</property>
     <property name="onnointeract" type="int" value="1"/>
-    <property name="onnointeract_0" value="qsayxy 22.5 16 ..."/>
+    <property name="onnointeract_0" value="qsayxy 7 6 ..."/>
    </properties>
   </object>
   <object id="79" name="guard1" type="entity" gid="803" x="16" y="112" width="16" height="16"/>
   <object id="80" name="guard1" type="entity" gid="818" x="16" y="128" width="16" height="16">
    <properties>
     <property name="displayname" value="Guard"/>
-    <property name="examine" value="That guy’s got a big stick."/>
+    <property name="examine" value="That guy's got a big stick."/>
     <property name="oninteract" type="int" value="0"/>
     <property name="onnointeract" type="int" value="1"/>
-    <property name="onnointeract_0" value="qsayxy 22.5 16 There's nothing for you to see here."/>
+    <property name="onnointeract_0" value="qsayxy 1 7 There's nothing for you to see here."/>
    </properties>
   </object>
   <object id="81" name="guard2" type="entity" gid="803" x="48" y="112" width="16" height="16"/>
   <object id="82" name="guard2" type="entity" gid="818" x="48" y="128" width="16" height="16">
    <properties>
     <property name="displayname" value="Guard"/>
-    <property name="examine" value="That guy’s got a big stick."/>
+    <property name="examine" value="That guy's got a big stick."/>
     <property name="oninteract" type="int" value="1"/>
     <property name="oninteract_0">pause
 clearspeech
 deactivate $this
-qsayxy 22.5 16 Without direct permission by the king, we can't let you through here, kid.</property>
+qsayxy 3 7 Without direct permission by the king, we can't let you through here, kid.</property>
     <property name="onnointeract" type="int" value="1"/>
-    <property name="onnointeract_0" value="qsayxy 22.5 16 There's nothing for you to see here."/>
+    <property name="onnointeract_0" value="qsayxy 3 7 There's nothing for you to see here."/>
    </properties>
   </object>
   <object id="83" name="king" type="entity" gid="863" x="80" y="160" width="16" height="16">
    <properties>
     <property name="displayname" value="The King"/>
-    <property name="examine">He’s in charge here.
+    <property name="examine">He's in charge here.
 He might let me into room 51.</property>
    </properties>
   </object>
   <object id="84" name="king" type="entity" gid="864" x="96" y="160" width="16" height="16">
    <properties>
     <property name="displayname" value="The King"/>
-    <property name="examine">He’s in charge here.
+    <property name="examine">He's in charge here.
 He might let me into room 51.</property>
     <property name="oninteract" type="int" value="1"/>
     <property name="oninteract_0">pause
 clearspeech
 deactivate $this
 qsay Your Majesty.
-qsayxy 22.5 16 Oh loyal subject, what is your inquiry?
+qsayxy 6 4 Oh loyal subject, what is your inquiry?
 qsay I am here on a quest given to me by my master. %N I need to access Room 51 as soon as possible.
-qsayxy 22.5 16 Impossible! Room 51 is not to be entered by lowly peasants such as you.
-qsay But it is our only hope to survive this siege. My master said this: %N There is only one hope for all of us %N This siege turned out disastrous. %N That hope is the one room, room 51. %N If you don’t …
-qsayxy 22.5 16 Silence! Room 51 is not to be used %N under any circumstances.  %N We are facing a great crisis here; %N your master’s ridiculous prophecies do not help! %N Tell min to keep his insane ramblings to himself!”  
-qsay He’s dead.
-qsayxy 22.5 16 I … didn’t know that. … %N Well good riddance, I say! %N Now get out of my sight.</property>
+qsayxy 6 4 Impossible! Room 51 is not to be entered by lowly peasants such as you.
+qsay But it is our only hope to survive this siege. My master said this: %N There is only one hope for all of us %N This siege turned out disastrous. %N That hope is the one room, room 51. %N If you don't...
+qsayxy 6 4 Silence! Room 51 is not to be used %N under any circumstances.  %N We are facing a great crisis here; %N your master's ridiculous prophecies do not help! %N Tell min to keep his insane ramblings to himself!”  
+qsay He's dead.
+qsayxy 6 4 I ... didn't know that. ... %N Well good riddance, I say! %N Now get out of my sight.</property>
     <property name="onnointeract" type="int" value="1"/>
-    <property name="onnointeract_0" value="sayxy 22.5 16 Didn’t you hear me? Get out of here!"/>
+    <property name="onnointeract_0" value="sayxy 6 4 Didn't you hear me? Get out of here!"/>
    </properties>
   </object>
   <object id="85" name="king" type="entity" gid="878" x="80" y="176" width="16" height="16">
    <properties>
     <property name="displayname" value="The King"/>
-    <property name="examine">He’s in charge here.
+    <property name="examine">He's in charge here.
 He might let me into room 51.</property>
    </properties>
   </object>
   <object id="86" name="king" type="entity" gid="879" x="96" y="176" width="16" height="16">
    <properties>
     <property name="displayname" value="The King"/>
-    <property name="examine">He’s in charge here.
+    <property name="examine">He's in charge here.
 He might let me into room 51.</property>
    </properties>
   </object>
@@ -488,7 +488,7 @@ He might let me into room 51.</property>
    <properties>
     <property name="displayname" value="The King"/>
     <property name="examine">He looks heavy asleep like that.
-I’d love it if he could lend me a hand.</property>
+I'd love it if he could lend me a hand.</property>
     <property name="oninteract" type="int" value="1"/>
     <property name="oninteract_0" value="take $this"/>
    </properties>

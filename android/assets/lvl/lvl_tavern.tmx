@@ -314,9 +314,9 @@ clearspeech
 deactivate $this
 qsayxy 12.5 7 What'll it be for you?
 qsay You seem to be someone who hears %N a lot of stories. What is so %N special about Room 51?
-qsayxy 12.5 7 Nobody really knows anything specific about it. %N But there certainly is rumours. %N Some people think there’s ghosts in there %N  or some sort of mystical creature. %N What’s for sure is that the king %N doesn’t want anyone finding it out.</property>
+qsayxy 12.5 7 Nobody really knows anything specific about it. %N But there certainly is rumours. %N Some people think there's ghosts in there %N  or some sort of mystical creature. %N What's for sure is that the king %N doesn't want anyone finding it out.</property>
     <property name="onnointeract" type="int" value="1"/>
-    <property name="onnointeract_0" value="qsayxy 12.5 7 Drinks ain’t free around here. %N If you want anything, you’ll need some money.”"/>
+    <property name="onnointeract_0" value="qsayxy 12.5 7 Drinks ain't free around here. %N If you want anything, you'll need some money.”"/>
    </properties>
   </object>
  </objectgroup>
@@ -331,6 +331,7 @@ qsayxy 12.5 7 Nobody really knows anything specific about it. %N But there certa
    <properties>
     <property name="active" type="bool" value="true"/>
     <property name="delay" type="int" value="2000"/>
+    <property name="displayname" value="Ward"/>
     <property name="portalid" value="tavern_ward"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="lvl_ward"/>

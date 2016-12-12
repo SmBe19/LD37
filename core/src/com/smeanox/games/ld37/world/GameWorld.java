@@ -161,7 +161,7 @@ public class GameWorld {
 		addEntity(new EntityEmerald("emerald", Textures.tiles.getTextureRegion(15, 8), "A glittering green gem."));
 		addEntity(new Entity("bucket", Textures.tiles.getTextureRegion(15, 9), "Can carry liquids.\nOne of these is used in the well."));
 		addEntity(new EntityWaterBucket("waterbucket", Textures.tiles.getTextureRegion(15, 4), "The water seems like a good way to extinguish flames."));
-		addEntity(new EntityKeys("keys", Textures.tiles.getTextureRegion(15, 10), "Opens doors, probably."));
+		addEntity(new EntityKeys("key", Textures.tiles.getTextureRegion(15, 10), "Opens doors, probably."));
 		addEntity(new EntityGoldCoin("goldcoin", Textures.tiles.getTextureRegion(15, 11)));
 		addEntity(new EntitySilverCoin("silvercoin", Textures.tiles.getTextureRegion(14, 4), "Even during a siege, you can\nstill buy stuff with it."));
 		addEntity(new EntityStraw("straw", Textures.tiles.getTextureRegion(14, 5)));

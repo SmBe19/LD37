@@ -355,7 +355,7 @@ like seeing me go through that door.</property>
     <property name="delay" type="int" value="2000"/>
     <property name="displayname" value="To Room 51"/>
     <property name="examine" value="This door seems to lead to Room 51."/>
-    <property name="portalid" value="tower_room51door"/>
+    <property name="portalid" value="tower_room51_door"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="lvl_room51_door"/>
    </properties>

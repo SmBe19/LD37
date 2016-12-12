@@ -176,7 +176,8 @@ public class GameScreen implements Screen {
 		gameWorld.subtitles.addLast(new GameWorld.Speech("Unfortunately, that castle was attacked\nby an enemy army and is now under siege.", 10));
 		gameWorld.subtitles.addLast(new GameWorld.Speech("It would seem that there is only one hope...", 6));
 		gameWorld.subtitles.addLast(new GameWorld.Speech("Aaaaaah! I was hit!", 4));
-		gameWorld.subtitles.addLast(new GameWorld.Speech("Press F to pay respect", 60));
+		gameWorld.subtitles.addLast(new GameWorld.Speech("", 20));
+		gameWorld.subtitles.addLast(new GameWorld.Speech("Press F to pay respects", 60));
 		gameWorld.walkingPaused = true;
 	}
 
@@ -344,10 +345,12 @@ public class GameScreen implements Screen {
 		camera.update();
 		guicamera.update();
 
-		spriteBatch.setProjectionMatrix(guicamera.combined);
-		spriteBatch.begin();
-		spriteBatch.draw(Textures.castlebg.texture, 0, guicamera.viewportHeight - bgheight, bgwidth, bgheight);
-		spriteBatch.end();
+		if(gameWorld.level.get().map.getProperties().get(Consts.PROP_DRAWBACKGROUND, false, Boolean.class)) {
+			spriteBatch.setProjectionMatrix(guicamera.combined);
+			spriteBatch.begin();
+			spriteBatch.draw(Textures.castlebg.texture, 0, guicamera.viewportHeight - bgheight, bgwidth, bgheight);
+			spriteBatch.end();
+		}
 
 		spriteBatch.setProjectionMatrix(camera.combined);
 		mapRenderer.setView(camera);

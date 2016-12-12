@@ -296,7 +296,7 @@
    <properties>
     <property name="displayname" value=""/>
     <property name="examine">He really grew on me throughout
-the two days I’ve known him.
+the two days I've known him.
 May he rest in pieces</property>
     <property name="oninteract" type="int" value="0"/>
    </properties>
@@ -305,7 +305,7 @@ May he rest in pieces</property>
    <properties>
     <property name="displayname" value=""/>
     <property name="examine">He really grew on me throughout
-the two days I’ve known him.
+the two days I've known him.
 May he rest in pieces</property>
     <property name="oninteract" type="int" value="5"/>
     <property name="oninteract_0" value="take emerald"/>
@@ -321,14 +321,14 @@ saysub F can always be used to interact%Nand E to investigate.%NBefore you can c
   <object id="77" name="cauldron" type="entity" gid="150" x="352" y="128" width="16" height="16">
    <properties>
     <property name="displayname" value="Cauldron"/>
-    <property name="examine">It’s too heavy to use
+    <property name="examine">It's too heavy to use
 as a fire extinguisher.</property>
    </properties>
   </object>
   <object id="80" name="greenelixir" type="entity" gid="96" x="384" y="192" width="16" height="16">
    <properties>
     <property name="displayname" value="Green Elixir"/>
-    <property name="examine" value="I don’t know what this elixir does."/>
+    <property name="examine" value="I don't know what this elixir does."/>
     <property name="oninteract" type="int" value="1"/>
     <property name="oninteract_0" value="take $this"/>
    </properties>
@@ -632,7 +632,7 @@ the Elixcicon, is missing.</property>
  </objectgroup>
  <layer name="collision" width="28" height="13" visible="0" opacity="0.29">
   <data encoding="base64" compression="zlib">
-   eJw7zMTAcHgUj+JRDMZHaIRpaTYt3UxPd9PbvqGIAcehGM8=
+   eJw7zMTAcHgUj+JRDMZHyMDE6CPX7IHElITJULBvKGIAxTUYzg==
   </data>
  </layer>
 </map>
