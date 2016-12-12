@@ -21,6 +21,7 @@ public class EntityKeys extends Entity {
 		if("barndoor".equals(object.getName())){
 			hero.removeCurrentItemFromInventory();
 			Hero.findObjectByName(hero.gameWorld.level.get().map, "exit_barn").getProperties().put(Consts.PROP_ACTIVE, true);
+			Hero.findObjectByName(hero.gameWorld.level.get().map, "exit_barn").getProperties().put(Consts.PROP_EXAMINE, "It's where we store the horses\nand the hay.");
 			return null;
 		}
 		return getDontDoThisString();

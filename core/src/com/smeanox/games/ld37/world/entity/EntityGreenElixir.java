@@ -24,7 +24,7 @@ public class EntityGreenElixir extends Entity {
 				fire.setVisible(false);
 			}
 			while ((fire = Hero.findObjectByName(hero.gameWorld.level.get().map, "bodyguard_frog", false)) != null){
-				fire.setVisible(false);
+				fire.setVisible(true);
 			}
 			hero.setVar("greenelixir", "1");
 			return null;

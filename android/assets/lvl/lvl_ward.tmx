@@ -572,7 +572,7 @@ qthink Well then I'm going to have%Nto ask the king myself.</property>
 to eat that piece of cheese in his hand.</property>
     <property name="oninteract" type="int" value="1"/>
     <property name="oninteract_0">deactivate $this
-qsayxy 42 36 Heeeeeey theeere. Are youuu %N [hick] %N here to bring me more mead?” </property>
+qsayxy 42 36 Heeeeeey theeere. Are youuu%N[hick]%Nhere to bring me more mead?” </property>
     <property name="onnointeract" type="int" value="1"/>
     <property name="onnointeract_0" value="qsayxy 42 36 Shome more mead, pleashe."/>
    </properties>

@@ -411,7 +411,7 @@ clearspeech
 deactivate $this
 qsay Hi
 qsayxy 7 6 ...
-qsay how's it going?
+qsay How's it going?
 qsayxy 7 6 ...
 qsay Well bye then I guess</property>
     <property name="onnointeract" type="int" value="1"/>
@@ -437,7 +437,7 @@ qsay Well bye then I guess</property>
     <property name="oninteract_0">pause
 clearspeech
 deactivate $this
-qsayxy 3 7 Without direct permission by the king, we can't let you through here, kid.</property>
+qsayxy 3 7 Without direct permission by the king,%Nwe can't let you through here, kid.</property>
     <property name="onnointeract" type="int" value="1"/>
     <property name="onnointeract_0" value="qsayxy 3 7 There's nothing for you to see here."/>
    </properties>
@@ -460,12 +460,12 @@ clearspeech
 deactivate $this
 qsay Your Majesty.
 qsayxy 6 4 Oh loyal subject, what is your inquiry?
-qsay I am here on a quest given to me by my master. %N I need to access Room 51 as soon as possible.
-qsayxy 6 4 Impossible! Room 51 is not to be entered by lowly peasants such as you.
-qsay But it is our only hope to survive this siege. My master said this: %N There is only one hope for all of us %N This siege turned out disastrous. %N That hope is the one room, room 51. %N If you don't...
-qsayxy 6 4 Silence! Room 51 is not to be used %N under any circumstances.  %N We are facing a great crisis here; %N your master's ridiculous prophecies do not help! %N Tell min to keep his insane ramblings to himself!”  
+qsay I am here on a quest%Ngiven to me by my master.%NI need to access%NRoom 51 as soon as possible.
+qsayxy 6 4 Impossible! Room 51 is not to be%Nentered by lowly peasants such as you.
+qsay But it is our only hope to survive this siege.%NMy master said this:%NThere is only one hope for all of us%NThis siege turned out disastrous.%NThat hope is the one room, room 51.%NIf you don't...
+qsayxy 6 4 Silence! Room 51 is not to be used%Nunder any circumstances.%NWe are facing a great crisis here;%Nyour master's ridiculous%Nprophecies do not help!%NTell hin to keep his insane ramblings to himself!”
 qsay He's dead.
-qsayxy 6 4 I ... didn't know that. ... %N Well good riddance, I say! %N Now get out of my sight.</property>
+qsayxy 6 4 I ... didn't know that. ...%NWell good riddance, I say!%NNow get out of my sight.</property>
     <property name="onnointeract" type="int" value="1"/>
     <property name="onnointeract_0" value="sayxy 6 4 Didn't you hear me? Get out of here!"/>
    </properties>

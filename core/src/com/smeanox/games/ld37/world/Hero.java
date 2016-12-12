@@ -248,7 +248,7 @@ public class Hero {
 						} else if (Consts.ONINTERACT_UNPAUSEWALK.equalsIgnoreCase(cmd[0])) {
 							gameWorld.walkingPaused = false;
 						} else if (Consts.ONINTERACT_CLEARSPEECH.equalsIgnoreCase(cmd[0])) {
-							gameWorld.skipSpeeches();
+							gameWorld.skipSpeeches(true);
 						} else if (Consts.ONINTERACT_CLEARSUBS.equalsIgnoreCase(cmd[0])) {
 							gameWorld.subtitles.clear();
 						} else if (Consts.ONINTERACT_TAKE.equalsIgnoreCase(cmd[0])) {

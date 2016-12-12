@@ -228,7 +228,7 @@ public class GameWorld {
 			}
 		}
 		if(Gdx.input.isKeyJustPressed(Consts.INPUT_SKIP)){
-			skipSpeeches();
+			skipSpeeches(false);
 			if (subtitles.size > 0) {
 				subtitles.first().age = subtitles.first().duration - Consts.SPEECH_BUBBLE_ANIM_DURATION;
 			}
@@ -268,9 +268,12 @@ public class GameWorld {
 		}
 	}
 
-	public void skipSpeeches() {
+	public void skipSpeeches(boolean all) {
 		for (Speech speech : speeches) {
 			speech.age = Math.max(speech.age, speech.duration - Consts.SPEECH_BUBBLE_ANIM_DURATION);
+		}
+		if(all) {
+			speechQueue.clear();
 		}
 	}
 
@@ -291,7 +294,7 @@ public class GameWorld {
 				}
 			} else {
 				if(Gdx.input.isKeyJustPressed(Consts.INPUT_SKIP)){
-					skipSpeeches();
+					skipSpeeches(false);
 					if (subtitles.size > 0) {
 						subtitles.first().age = subtitles.first().duration - Consts.SPEECH_BUBBLE_ANIM_DURATION;
 					}
