@@ -372,9 +372,21 @@ Number denotes actions that have to be taken in order. Letters denote actions th
 Promo Text
 ==========
 
-In a world, where nobody seems to give a shit, help Merlin, a magic apprentice, save his besieged castle from inevitable doom after his master bites the dust. Join him on his quest to overcome challenges such as passive aggressiveness of people in power, long walking segments and most of all: bugs.
-Seriously, though, thinks might be a little wonky. If you ever can’t properly interact with an object, try to approach it from different angles and keep attempting to interact.
-Feel the excitement of long awkward dialogues (you can skip shit using the return key), a barely developed medieval-punk world and a twist ending that nobody saw coming, because we literally just pulled it out of our ass.
-Starring: A young guy, a drunk guy, a fat guy, a quiet guy and a girl perpetually cleaning the same glass.
+In a world, where one room seems to hold the key for unlimited power, help Merlin, a magic apprentice, save his besieged castle from inevitable doom after his master bites the dust. Join him on his quest to overcome challenges such as passive aggressiveness of people in power, long walking segments and most of all: bugs.
+Seriously, though, things might be a little wonky. If you ever can’t properly interact with an object, try to approach it from different angles and keep attempting to interact.
+Feel the excitement of long awkward dialogues, a barely developed medieval-punk world and a twist ending that nobody saw coming, because we literally just pulled it out of our ass.
+Starring: A guy in a silly robe, a drunk guy, a fat guy, a quiet guy, a girl perpetually cleaning the same glass and Jake.
 
-Now on computers near you.
+Coming soon to computers near you.
+
+-------------------------------
+Instructions
+WASD = move
+F = interact
+E = examine
+Q = use item
+C = show equipped item
+R = cycle through items
+Enter/Return = skip dialogue (might mess up some timings if you do it during the first cut scene)
+-------------------------------
+
