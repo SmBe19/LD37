@@ -24,6 +24,7 @@ import com.smeanox.games.ld37.world.entity.EntitySaw;
 import com.smeanox.games.ld37.world.entity.EntitySilverCoin;
 import com.smeanox.games.ld37.world.entity.EntityStraw;
 import com.smeanox.games.ld37.world.entity.EntityWaterBucket;
+import com.smeanox.games.ld37.world.entity.EntityWell;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -160,6 +161,7 @@ public class GameWorld {
 		addEntity(new Entity("rat", Textures.tiles.getTextureRegion(4, 9)));
 		addEntity(new EntityEmerald("emerald", Textures.tiles.getTextureRegion(15, 8), "Emerald:\nA glittering green gem."));
 		addEntity(new Entity("bucket", Textures.tiles.getTextureRegion(15, 9), "Bucket:\nCan carry liquids.\nOne of these is used in the well."));
+		addEntity(new EntityWell("well", Textures.tiles.getTextureRegion(15, 9), "Well:\nA well."));
 		addEntity(new EntityWaterBucket("waterbucket", Textures.tiles.getTextureRegion(15, 4), "Bucket with water:\nThe water seems like a good way to extinguish flames."));
 		addEntity(new EntityKeys("key", Textures.tiles.getTextureRegion(15, 10), "Key:\nOpens doors, probably."));
 		addEntity(new EntityGoldCoin("goldcoin", Textures.tiles.getTextureRegion(15, 11)));
@@ -175,10 +177,6 @@ public class GameWorld {
 		addEntity(new EntitySaw("saw", Textures.tiles.getTextureRegion(14, 12), "Saw:\nPotentially Dangerous."));
 		addEntity(new EntityMead("mead", Textures.tiles.getTextureRegion(15, 12), "Mead:\nCheers people up in times like these."));
 		addEntity(new EntityAmazon("amazon", Textures.tiles.getTextureRegion(15, 5), "Amazon box:\nA dragon."));
-
-		hero.inventory.add(entityHashMap.get("emerald"));
-		hero.inventory.add(entityHashMap.get("mead"));
-		hero.inventory.add(entityHashMap.get("saw"));
 	}
 
 	protected void updateInput(float delta){

@@ -314,9 +314,11 @@ clearspeech
 deactivate $this
 qsayxy 12.5 7 What'll it be for you?
 qsay You seem to be someone who hears%Na lot of stories. What is so%Nspecial about Room 51?
-qsayxy 12.5 7 Nobody really knows anything specific about it.%NBut there certainly is rumours.%NSome people think there's ghosts in there%Nor some sort of mystical creature.%NWhat's for sure is that the king%Ndoesn't want anyone finding it out.</property>
+qsayxy 12.5 7 Nobody really knows%Nanything specific about it.%NBut there certainly is rumours.
+qsayxy 12.5 7 Some people think%Nthere's ghosts in there%Nor some sort of mystical creature.%NWhat's for sure is that the king%Ndoesn't want anyone finding it out.</property>
     <property name="onnointeract" type="int" value="1"/>
-    <property name="onnointeract_0" value="qsayxy 12.5 7 Drinks ain't free around here.%NIf you want anything, you'll need some money.”"/>
+    <property name="onnointeract_0">clearspeech
+qsayxy 12.5 7 Drinks ain't free around here.%NIf you want anything, you'll need some money.</property>
    </properties>
   </object>
  </objectgroup>

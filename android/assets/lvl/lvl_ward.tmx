@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="74" height="40" tilewidth="16" tileheight="16" nextobjectid="342">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="74" height="40" tilewidth="16" tileheight="16" nextobjectid="346">
  <properties>
   <property name="drawbackground" type="bool" value="true"/>
   <property name="mapscale" type="float" value="1.5"/>
@@ -366,7 +366,7 @@
   </tile>
   <tile id="67">
    <animation>
-    <frame tileid="65" duration="1000"/>
+    <frame tileid="65" duration="3000"/>
     <frame tileid="67" duration="200"/>
     <frame tileid="68" duration="200"/>
     <frame tileid="69" duration="2000"/>
@@ -380,7 +380,7 @@
   </tile>
   <tile id="82">
    <animation>
-    <frame tileid="80" duration="1000"/>
+    <frame tileid="80" duration="3000"/>
     <frame tileid="82" duration="200"/>
     <frame tileid="83" duration="200"/>
     <frame tileid="84" duration="2000"/>
@@ -431,8 +431,8 @@
     <property name="animationonly" value="exit_ward"/>
    </properties>
   </object>
-  <object id="66" gid="44" x="560" y="480" width="16" height="16"/>
-  <object id="67" gid="45" x="576" y="480" width="16" height="16"/>
+  <object id="66" name="well" type="entity" gid="44" x="560" y="480" width="16" height="16"/>
+  <object id="67" name="well" type="entity" gid="45" x="576" y="480" width="16" height="16"/>
   <object id="68" name="well" type="entity" gid="60" x="560" y="496" width="16" height="16">
    <properties>
     <property name="displayname" value="Well"/>
@@ -440,13 +440,14 @@
 to drink or to save the buildings
 from the experimental mishaps of my master.
 I guess it's ex-master now.</property>
-    <property name="oninteract" type="int" value="3"/>
+    <property name="oninteract" type="int" value="4"/>
     <property name="oninteract_0" value="take bucket"/>
     <property name="oninteract_1" value="deactivate $this"/>
     <property name="oninteract_2" value="setvar bucket 1"/>
+    <property name="oninteract_3" value="class"/>
    </properties>
   </object>
-  <object id="69" gid="61" x="576" y="496" width="16" height="16"/>
+  <object id="69" name="well" type="entity" gid="61" x="576" y="496" width="16" height="16"/>
   <object id="70" gid="39" x="960" y="112" width="16" height="16">
    <properties>
     <property name="animationonly" value="exit_tower"/>
@@ -555,7 +556,8 @@ qsayxy 58 33 That makes no difference to me.%NI'm not about to risk my job%Nfor 
 qsay You are worried about money?%NWell maybe I can help with that.
 qsayxy 58 33 Now we're getting somewhere</property>
     <property name="onnointeract" type="int" value="1"/>
-    <property name="onnointeract_0" value="qsayxy 58 33 Do you have anything to offer?"/>
+    <property name="onnointeract_0">clearspeech
+qsayxy 58 33 Do you have anything to offer?</property>
    </properties>
   </object>
   <object id="105" name="maid" type="entity" gid="775" x="352" y="400" width="16" height="16">
@@ -602,7 +604,8 @@ to eat that piece of cheese in his hand.</property>
     <property name="oninteract_0">deactivate $this
 qsayxy 42 36 Heeeeeey theeere. Are youuu%N[hick]%Nhere to bring me more mead?” </property>
     <property name="onnointeract" type="int" value="1"/>
-    <property name="onnointeract_0" value="qsayxy 42 36 Shome more mead, pleashe."/>
+    <property name="onnointeract_0">clearspeech
+qsayxy 42 36 Shome more mead, pleashe.</property>
    </properties>
   </object>
   <object id="117" name="flamearrow" type="entity" gid="75" x="720" y="544" width="16" height="16">
@@ -643,7 +646,7 @@ catches fire.</property>
   <object id="210" name="barnfire" type="entity" x="608" y="400" width="16" height="16"/>
   <object id="211" name="barnfire" type="entity" x="624" y="400" width="16" height="16"/>
   <object id="212" name="barnfire" type="entity" x="688" y="400" width="16" height="16"/>
-  <object id="214" name="boy" gid="826" x="640" y="528" width="16" height="16">
+  <object id="214" name="boy" type="entity" gid="826" x="640" y="528" width="16" height="16">
    <properties>
     <property name="displayname" value="Thieving Jake"/>
     <property name="examine" value="He's often been caught stealing stuff around here."/>
@@ -656,11 +659,12 @@ qsay Whatever, Jake. Did you steal the elixicon?
 qsayxy 40 9 Maybe. Depends on your ability to pay.%NIf you give me a gold piece,%Nmaybe I will talk
 qsay Fuck you, Jake</property>
     <property name="onnointeract" type="int" value="1"/>
-    <property name="onnointeract_0">qsayxy 40 9 Where is my gold?
+    <property name="onnointeract_0">clearspeech
+qsayxy 40 9 Where is my gold?
 qsay Fuck you, Jake</property>
    </properties>
   </object>
-  <object id="215" name="boy" gid="811" x="640" y="512" width="16" height="16">
+  <object id="215" name="boy" type="entity" gid="811" x="640" y="512" width="16" height="16">
    <properties>
     <property name="displayname" value="Thieving Jake"/>
     <property name="examine" value="He's often been caught stealing stuff around here."/>
@@ -681,6 +685,18 @@ qsay Fuck you, Jake</property>
     <property name="animationstart" type="int" value="1"/>
    </properties>
   </object>
+  <object id="342" name="wellempty" type="entity" gid="29" x="560" y="496" width="16" height="16" visible="0">
+   <properties>
+    <property name="displayname" value="Well"/>
+    <property name="examine">The water from the well can be used
+to drink or to save the buildings
+from the experimental mishaps of my master.
+I guess it's ex-master now.</property>
+   </properties>
+  </object>
+  <object id="343" name="wellempty" type="entity" gid="13" x="560" y="480" width="16" height="16" visible="0"/>
+  <object id="344" name="wellempty" type="entity" gid="14" x="576" y="480" width="16" height="16" visible="0"/>
+  <object id="345" name="wellempty" type="entity" gid="30" x="576" y="496" width="16" height="16" visible="0"/>
  </objectgroup>
  <layer name="Vordere Mauer und Häuser" width="74" height="40">
   <data encoding="base64" compression="zlib">

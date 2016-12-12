@@ -314,6 +314,7 @@ May he rest in pieces</property>
     <property name="oninteract_3">clearsubs
 saysub You successfully plundered%Nyour former master's body.%NYou've found a valuable emerald.
 saysub Now press E to examine him.
+saysub F can always be used to interact%Nand E to investigate.%NBefore you can calm down,%Nyou should extinguish that flame.
 saysub F can always be used to interact%Nand E to investigate.%NBefore you can calm down,%Nyou should extinguish that flame.</property>
     <property name="oninteract_4" value="unpausewalk"/>
    </properties>
@@ -336,7 +337,8 @@ as a fire extinguisher.</property>
   <object id="81" name="waterbucket" type="entity" gid="80" x="272" y="124" width="16" height="16">
    <properties>
     <property name="displayname" value="Water Bucket"/>
-    <property name="examine" value="This could help me extinguish the flames."/>
+    <property name="examine">This could help me
+extinguish the flames.</property>
     <property name="oninteract" type="int" value="2"/>
     <property name="oninteract_0" value="take $this"/>
     <property name="oninteract_1">saysub This should be useful.%NPress C to show/hide your%Ncurrently equipped item.

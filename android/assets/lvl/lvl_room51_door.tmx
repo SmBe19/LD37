@@ -305,8 +305,10 @@
    <properties>
     <property name="displayname" value="Hand Scanner"/>
     <property name="examine">This piece of technology seems
-to have something to do with the door lock.
-What does this hand shape mean?</property>
+to have something to
+do with the door lock.
+What does this
+hand shape mean?</property>
     <property name="oninteract" type="int" value="1"/>
     <property name="oninteract_0" value="qsay Nothing happens"/>
    </properties>
@@ -352,7 +354,8 @@ What does this hand shape mean?</property>
     <property name="active" type="bool" value="false"/>
     <property name="delay" type="int" value="2000"/>
     <property name="displayname" value="Room 51"/>
-    <property name="examine" value="This is where I need to go. But it is locked."/>
+    <property name="examine">This is where I need to go.
+But it is locked.</property>
     <property name="portalid" value="room51_door_room51"/>
     <property name="start" type="int" value="900"/>
     <property name="tolevel" value="lvl_room51"/>
