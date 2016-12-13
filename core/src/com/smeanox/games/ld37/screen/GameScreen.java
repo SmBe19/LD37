@@ -140,9 +140,9 @@ public class GameScreen implements Screen {
 				mapRenderer = new MyMapRenderer(map, Consts.UNIT_SCALE, spriteBatch, gameWorld);
 				setScale(map.getProperties().get(Consts.PROP_MAPSCALE, 1.f, Float.class));
 				cinematicProgress = 0;
-				if(o.get() == level.lvl_intro){
+				if(o.get() == Level.lvl_intro){
 					initIntro();
-				} else if (o.get() == level.lvl_outro){
+				} else if (o.get() == Level.lvl_outro){
 					initOutro();
 				}
 			}
