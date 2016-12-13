@@ -19,9 +19,6 @@ import com.smeanox.games.ld37.io.Textures;
 import com.smeanox.games.ld37.world.GameWorld;
 import com.smeanox.games.ld37.world.ObservableValue;
 
-import java.util.Observable;
-import java.util.Observer;
-
 public class GameScreen implements Screen {
 
 	private final SpriteBatch spriteBatch;
@@ -139,31 +136,31 @@ public class GameScreen implements Screen {
 		};
 
 		gameWorld = new GameWorld();
-		gameWorld.level.addObserver(new Observer() {
+		gameWorld.level.addObserver(new ObservableValue.Observer<Level>() {
 			@Override
-			public void update(Observable o, Object arg) {
-				TiledMap map = ((ObservableValue<Level>) o).get().map;
+			public void update(ObservableValue<Level> o) {
+				TiledMap map = o.get().map;
 				mapRenderer = new MyMapRenderer(map, Consts.UNIT_SCALE, spriteBatch, gameWorld);
 				setScale(map.getProperties().get(Consts.PROP_MAPSCALE, 1.f, Float.class));
 				cinematicProgress = 0;
-				if(((ObservableValue<Level>) o).get() == level.lvl_intro){
+				if(o.get() == Level.lvl_intro){
 					initIntro();
-				} else if (((ObservableValue<Level>) o).get() == level.lvl_outro){
+				} else if (o.get() == Level.lvl_outro){
 					initOutro();
 				}
 			}
 		});
-		gameWorld.fadeOut.addObserver(new Observer() {
+		gameWorld.fadeOut.addObserver(new ObservableValue.Observer<Float>() {
 			@Override
-			public void update(Observable o, Object arg) {
-				fadeStart = fadeProgress = ((ObservableValue<Float>) o).get();
+			public void update(ObservableValue<Float> o) {
+				fadeStart = fadeProgress = o.get();
 				isDark = false;
 			}
 		});
-		gameWorld.fadeIn.addObserver(new Observer() {
+		gameWorld.fadeIn.addObserver(new ObservableValue.Observer<Float>() {
 			@Override
-			public void update(Observable o, Object arg) {
-				fadeStart = fadeProgress = -((ObservableValue<Float>) o).get();
+			public void update(ObservableValue<Float> o) {
+				fadeStart = fadeProgress = -o.get();
 				isDark = false;
 			}
 		});
