@@ -379,6 +379,8 @@ Starring: A guy in a silly robe, a drunk guy, a fat guy, a quiet guy, a girl per
 
 Coming soon to computers near you.
 
+Playtime: 5 - 30 Minutes
+
 -------------------------------
 Instructions
 WASD = move

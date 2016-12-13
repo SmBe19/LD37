@@ -109,7 +109,7 @@ public class Hero {
 		return (ox - x) * (ox - x) + (oy - y) * (oy - y);
 	}
 
-	protected interface ObjectFilter {
+	public interface ObjectFilter {
 		boolean filter(MapObject object);
 	}
 

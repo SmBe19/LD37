@@ -4,7 +4,18 @@ canvas {
 }
 
 body {
-    background-color: #222222;
+    background-color: #000;
+	color: #FFF;
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+a:link {
+	color: #FA0;
+}
+
+a:visited {
+	color: #AA0;
 }
 
 .superdev {

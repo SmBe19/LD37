@@ -8,4 +8,9 @@
 	<entry-point class='com.smeanox.games.ld37.client.HtmlLauncher' />
 	<set-configuration-property name='xsiframe.failIfScriptTag' value='FALSE'/>
 	<set-configuration-property name="gdx.assetpath" value="../android/assets" />
+	<extend-configuration-property name="gdx.reflect.include" value="com.smeanox.games.ld37" />
+	<extend-configuration-property name="gdx.reflect.include" value="com.badlogic.gdx.maps.tiled.tiles.StaticTiledMapTile" />
+	<extend-configuration-property name="gdx.reflect.include" value="com.badlogic.gdx.maps.tiled.tiles.AnimatedTiledMapTile" />
+	<extend-configuration-property name="gdx.reflect.include" value="com.badlogic.gdx.maps.objects.RectangleMapObject" />
+	<extend-configuration-property name="gdx.reflect.include" value="com.badlogic.gdx.maps.tiled.objects.TiledMapTileMapObject" />
 </module>
