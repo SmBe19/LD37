@@ -1,13 +1,23 @@
 Room 51 Solution
 ================
 
+## Controls
+
 WASD: Move
+
 F: interact / pick up
+
 E: examine
+
 Q: use item
+
 R: cycle through items
+
 C: show / hide inventory
+
 Enter: skip dialog
+
+## Solution
 
 1. Watch intro sequence
 1. You are now in *mage's lab*
@@ -50,6 +60,6 @@ Enter: skip dialog
 1. Go through 3rd door to *door to room 51*
 1. Use **sleeping king** or **king's hand** on **hand scanner** to unlock the door
 1. Enter *room 51* through the door
-1. Go to the *box*
-1. Interact with the *box* to unpack the dragon
+1. Go to the **box**
+1. Interact with the **box** to unpack the dragon
 1. Watch outro sequence
